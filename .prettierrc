@@ -1,0 +1,13 @@
+{
+    "endOfLine": "lf",
+    "proseWrap": "always",
+    "quoteProps": "consistent",
+    "arrowParens": "always",
+    "trailingComma": "all",
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+    "printWidth": 300,
+    "plugins": ["prettier-plugin-tailwindcss"]
+  }

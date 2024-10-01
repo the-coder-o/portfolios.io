@@ -76,3 +76,15 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
