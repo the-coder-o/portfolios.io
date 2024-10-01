@@ -1,9 +1,11 @@
 'use client'
 
-import React, { useEffect, useId, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import React, { useEffect, useId, useState } from 'react'
 import { useRef } from 'react'
+
 import { cn } from '@/lib/utils'
+
 import { SparklesCore } from './sparkles'
 
 export const Cover = ({ children, className }: { children?: React.ReactNode; className?: string }) => {
@@ -169,6 +171,6 @@ export const Beam = ({
   )
 }
 
-export const CircleIcon = ({ className, delay }: { className?: string; delay?: number }) => {
+export const CircleIcon = ({ className }: { className?: string; delay?: number }) => {
   return <div className={cn(`group pointer-events-none h-2 w-2 animate-pulse rounded-full bg-neutral-600 opacity-20 group-hover/cover:hidden group-hover/cover:bg-white group-hover/cover:opacity-100 dark:bg-white`, className)}></div>
 }
