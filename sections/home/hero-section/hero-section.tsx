@@ -6,7 +6,7 @@ import { Spotlight } from '@/components/animation/spotlight'
 
 export const HeroSection = () => {
   return (
-    <div>
+    <>
       <Spotlight />
       <div className="flex flex-col gap-3">
         <h1 className="relative z-20 mx-auto mt-[90px] max-w-7xl bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 bg-clip-text py-6 text-center text-4xl font-semibold text-transparent dark:from-neutral-800 dark:via-white dark:to-white md:text-4xl lg:text-7xl">
@@ -69,6 +69,6 @@ export const HeroSection = () => {
           <span className="flex-shrink-0 text-sm font-semibold text-neutral-500">Framer Motion</span>
         </div>
       </div>
-    </div>
+    </>
   )
 }
