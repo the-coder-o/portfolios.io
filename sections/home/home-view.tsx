@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { HeroSection } from './hero/hero-section'
+import { HeroSection } from './hero-section/hero-section'
 
-export const HomeView = () => {
+const HomeView = () => {
   return (
-    <>
-      <div>
-        <HeroSection />
-      </div>
-    </>
+    <div className="container">
+      <HeroSection />
+    </div>
   )
 }
+
+export default HomeView
