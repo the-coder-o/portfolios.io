@@ -1,8 +1,12 @@
-import type { Metadata } from 'next'
+'use client'
+
+import Intercom from '@intercom/messenger-js-sdk'
 import localFont from 'next/font/local'
+import React, { useEffect } from 'react'
 
 import { ThemeProvider } from '@/components/providers'
 import { Header } from '@/components/shared'
+
 import './globals.css'
 
 const geistSans = localFont({
@@ -10,18 +14,20 @@ const geistSans = localFont({
   variable: '--font-geist-sans',
   weight: '100 900',
 })
+
 const geistMono = localFont({
   src: './fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
   weight: '100 900',
 })
 
-export const metadata: Metadata = {
-  title: 'Home | Portfoliosio',
-  description: 'Best place to find portfolio inspiration Browse our curated collection of 309+ exceptional designs to help you create your best portfolio yet.',
-}
-
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  useEffect(() => {
+    Intercom({
+      app_id: 'ik3vkbyu', // Replace with your actual Intercom App ID
+    })
+  }, []) // Ensures this only runs once on the client side
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-[#000]`}>
