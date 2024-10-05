@@ -5,7 +5,7 @@ import localFont from 'next/font/local'
 import React, { useEffect } from 'react'
 
 import { ThemeProvider } from '@/components/providers'
-import { Header } from '@/components/shared'
+import { Footer, Header } from '@/components/shared'
 
 import './globals.css'
 
@@ -24,9 +24,9 @@ const geistMono = localFont({
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   useEffect(() => {
     Intercom({
-      app_id: 'ik3vkbyu', // Replace with your actual Intercom App ID
+      app_id: 'ik3vkbyu',
     })
-  }, []) // Ensures this only runs once on the client side
+  }, [])
 
   return (
     <html lang="en">
@@ -34,6 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
