@@ -20,9 +20,10 @@ export const AnimatedTooltip = ({
   const rotate = useSpring(useTransform(x, [-100, 100], [-45, 45]), springConfig)
   // translate the tooltip
   const translateX = useSpring(useTransform(x, [-100, 100], [-50, 50]), springConfig)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleMouseMove = (event: any) => {
     const halfWidth = event.target.offsetWidth / 2
-    x.set(event.nativeEvent.offsetX - halfWidth) // set the x value, which is then used in transform and rotate
+    x.set(event.nativeEvent.offsetX - halfWidth)
   }
 
   return (
