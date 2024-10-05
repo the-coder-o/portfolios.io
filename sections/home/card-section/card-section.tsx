@@ -19,7 +19,7 @@ export const CardSection = () => {
           <Input type="search" placeholder="Search portfolios" className="w-[250px] rounded-xl" />
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-6 gap-y-9">
+      <div className="grid grid-cols-3 gap-6 gap-y-9">
         {cardData.map((card, index) => (
           <Link key={index} className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 antialiased dark:border-neutral-800 dark:bg-neutral-900" href="">
             <div className="relative overflow-hidden rounded-2xl transition duration-200 group-hover:shadow-xl">
@@ -60,7 +60,7 @@ export const CardSection = () => {
   )
 }
 
-const cardData = Array(8).fill({
+const cardData = Array(9).fill({
   title: 'Hero Sections',
   description: 'A collection of hero sections that are modern and stand out',
   priceTag: 'Free',
