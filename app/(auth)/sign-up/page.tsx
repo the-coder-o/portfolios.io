@@ -1,11 +1,13 @@
 import PageTitle from '@/components/page-title'
-import { SignInSection } from '@/sections/home/auth-section/signin-section'
+import { SignUpSection } from '@/modules/auth/ui/signup-section'
 
-export default function SignUp() {
+const Page = () => {
   return (
     <>
       <PageTitle title="Sign Up" />
-      <SignInSection />
+      <SignUpSection />
     </>
   )
 }
+
+export default Page
