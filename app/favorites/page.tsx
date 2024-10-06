@@ -1,11 +1,11 @@
 import PageTitle from '@/components/page-title'
-import { SignIn } from '@/modules/auth/ui/signin'
+import { Favorites } from '@/modules/favorites/ui/favorites'
 
 const Page = () => {
   return (
     <>
-      <PageTitle title="Sign In" />
-      <SignIn />
+      <PageTitle title="Favorites" />
+      <Favorites />
     </>
   )
 }

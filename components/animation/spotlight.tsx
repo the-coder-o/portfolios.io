@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Spotlight = () => {
   return (
-    <div className="pointer-events-none absolute left-0 top-0 z-40">
+    <div className="pointer-events-none absolute left-0 top-0 z-40 max-lg:hidden">
       <div
         className="absolute left-0 top-0"
         style={{

@@ -9,7 +9,7 @@ import { SignUpForm } from '../section/sign-up'
 
 import { AuthBanner } from './auth-banner'
 
-export const SignUpSection = () => {
+export const SignUp = () => {
   return (
     <div className="grid min-h-screen w-full grid-cols-1 md:grid-cols-2">
       <div className="flex h-full min-h-screen w-full">

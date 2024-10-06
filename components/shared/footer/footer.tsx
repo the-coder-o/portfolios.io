@@ -12,7 +12,7 @@ export const Footer = () => {
         <div className="flex items-center justify-between max-lg:flex-col max-lg:items-start max-lg:gap-10">
           <div className="flex flex-col items-start gap-4">
             <Logo />
-            <p className="w-[500px] text-sm text-muted-foreground">Explore the finest portfolios and showcase your work with brilliance! Whether you&apos;re a designer, developer, or creative professional, let your projects shine and make a lasting impression.</p>
+            <p className="w-[500px] text-sm text-muted-foreground max-md:w-full">Explore the finest portfolios and showcase your work with brilliance! Whether you&apos;re a designer, developer, or creative professional, let your projects shine and make a lasting impression.</p>
           </div>
           <div className="flex justify-between gap-20 max-md:flex-col max-md:gap-10">
             <div className="space-y-2">
