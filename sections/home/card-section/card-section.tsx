@@ -5,7 +5,6 @@ import React from 'react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 
 export const CardSection = () => {
   return (
@@ -13,13 +12,15 @@ export const CardSection = () => {
       <div className="mb-5 flex items-center justify-between">
         <div className="flex flex-col gap-1">
           <h2 className="text-base font-bold text-purple-500 md:text-lg">Best Templates</h2>
-          <p className="relative z-20 w-full text-left text-sm text-neutral-600 dark:text-neutral-400">Here are some templates that you can use to get started, both paid and free.</p>
+          <p className="relative z-20 w-full text-left text-sm text-neutral-600 dark:text-neutral-400 max-md:hidden">Here are some templates that you can use to get started, both paid and free.</p>
         </div>
         <div>
-          <Input type="search" placeholder="Search portfolios" className="w-[250px] rounded-xl" />
+          <Link className="group relative z-20 flex h-10 w-full cursor-pointer items-center justify-center space-x-2 rounded-lg bg-black p-px px-4 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-52" href="/products">
+            View all templates
+          </Link>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-9">
+      <div className="grid grid-cols-3 gap-9 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
         {cardData.map((card, index) => (
           <Link key={index} className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 antialiased dark:border-neutral-800 dark:bg-neutral-900" href="">
             <div className="relative overflow-hidden rounded-2xl transition duration-200 group-hover:shadow-xl">

@@ -25,7 +25,7 @@ export const Searchmodal = () => {
     <>
       <Button
         onClick={() => setOpen(true)}
-        className="relative flex w-fit items-center justify-start rounded-xl border border-transparent bg-white px-4 py-2 text-sm text-muted-foreground shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] dark:border-white/[0.2] dark:bg-[#111111]"
+        className="relative flex w-fit items-center justify-start rounded-xl border border-transparent bg-white px-4 py-2 text-sm text-muted-foreground shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] dark:border-white/[0.2] dark:bg-[#111111] max-[900px]:hidden"
       >
         <Search size={18} />
         <span className="pl-2 pr-4 text-xs font-medium text-foreground/60 transition-colors hover:text-foreground/80 sm:text-sm">Search Portfolios</span>
