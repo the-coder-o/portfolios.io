@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CardSection } from '../ui/card'
+import { HomeCardSection } from '../ui/card'
 import { HeroSection } from '../ui/hero'
 
 export const HomeView = () => {
@@ -10,7 +10,7 @@ export const HomeView = () => {
         <HeroSection />
       </div>
       <div className="mb-[160px]">
-        <CardSection />
+        <HomeCardSection />
       </div>
     </div>
   )

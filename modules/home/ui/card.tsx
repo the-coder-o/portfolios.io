@@ -6,7 +6,7 @@ import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
-export const CardSection = () => {
+export const HomeCardSection = () => {
   return (
     <>
       <div className="mb-5 flex items-center justify-between">

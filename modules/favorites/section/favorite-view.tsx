@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CardSection } from '../ui/card'
+import { FavoriteCardSection } from '../ui/card'
 
 export const FavoriteView = () => {
   return (
@@ -11,7 +11,7 @@ export const FavoriteView = () => {
             <h1 className="text-3xl font-bold md:text-4xl">Favorites</h1>
           </div>
         </div>
-        <CardSection />
+        <FavoriteCardSection />
       </div>
     </div>
   )

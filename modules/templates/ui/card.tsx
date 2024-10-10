@@ -6,7 +6,7 @@ import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
-export const FavoriteCardSection = () => {
+export const TemplateCardSection = () => {
   return (
     <>
       <div className="grid grid-cols-3 gap-9 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
