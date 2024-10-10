@@ -35,7 +35,7 @@ body {
     --radius: 0.5rem;
   }
   .dark {
-  --neutral-400: #d1d5db; 
+    --neutral-400: #d1d5db;
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
@@ -63,7 +63,6 @@ body {
   }
 }
 
-
 @layer base {
   * {
     @apply border-border;
@@ -73,7 +72,7 @@ body {
   }
 }
 
-.container{
+.container {
   max-width: 1300px;
   margin: 0 auto;
   width: 100%;

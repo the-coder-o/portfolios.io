@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx}\""
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
+    "prepare": "husky",
+    "types": "tsc --noEmit",
+    "format": "prettier --write .",
+    "check:packages": "npm audit"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -24,6 +28,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
+    "date-fns": "^4.1.0",
     "flatten-tailwindcss-theme": "^1.0.0",
     "framer-motion": "^11.9.0",
     "lucide-react": "^0.446.0",
@@ -44,6 +49,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.13",
     "eslint-plugin-import": "^2.30.0",
+    "husky": "^9.1.6",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",

@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { CardSection } from './card-section/card-section'
-import { HeroSection } from './hero-section/hero-section'
+import { CardSection } from '../ui/card'
+import { HeroSection } from '../ui/hero'
 
-const HomeView = () => {
+export const HomeView = () => {
   return (
     <div className="container">
       <div className="mb-[160px]">
@@ -15,5 +15,3 @@ const HomeView = () => {
     </div>
   )
 }
-
-export default HomeView

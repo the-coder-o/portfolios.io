@@ -1,11 +1,11 @@
 import PageTitle from '@/components/page-title'
-import { Favorites } from '@/modules/favorites/ui/favorites'
+import { FavoriteView } from '@/modules/favorites/section/favorite-view'
 
 const Page = () => {
   return (
     <>
       <PageTitle title="Favorites" />
-      <Favorites />
+      <FavoriteView />
     </>
   )
 }

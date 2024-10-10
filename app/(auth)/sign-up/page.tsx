@@ -1,11 +1,11 @@
 import PageTitle from '@/components/page-title'
-import { SignUp } from '@/modules/auth/ui/signup'
+import { SignUpView } from '@/modules/auth/section/signup-view'
 
 const Page = () => {
   return (
     <>
       <PageTitle title="Sign Up" />
-      <SignUp />
+      <SignUpView />
     </>
   )
 }

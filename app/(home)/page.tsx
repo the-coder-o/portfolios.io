@@ -1,11 +1,11 @@
 import PageTitle from '@/components/page-title'
-import { HomePage } from '@/sections/home'
+import { HomeView } from '@/modules/home/section/home-view'
 
 const Page = () => {
   return (
     <>
       <PageTitle title="Home" />
-      <HomePage />
+      <HomeView />
     </>
   )
 }

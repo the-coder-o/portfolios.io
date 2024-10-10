@@ -5,11 +5,10 @@ import React from 'react'
 import { Logo } from '@/components/logo'
 import { Button } from '@/components/ui/button'
 
-import { SignInForm } from '../section/sign-in'
+import { AuthBanner } from '../ui/auth-banner'
+import { SignInForm } from '../ui/sign-in'
 
-import { AuthBanner } from './auth-banner'
-
-export const SignIn = () => {
+export const SignInView = () => {
   return (
     <div className="grid min-h-screen w-full grid-cols-1 md:grid-cols-2">
       <div className="flex h-full min-h-screen w-full">

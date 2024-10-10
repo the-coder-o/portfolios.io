@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { CardSection } from '../section/card-section'
+import { CardSection } from '../ui/card'
 
-export const Favorites = () => {
+export const FavoriteView = () => {
   return (
     <div className="container">
       <div className="mb-[150px] mt-10">

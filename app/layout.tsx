@@ -5,7 +5,8 @@ import localFont from 'next/font/local'
 import React, { useEffect } from 'react'
 
 import { ThemeProvider } from '@/components/providers'
-import { Footer, Header } from '@/components/shared'
+import { Footer } from '@/sections/footer/footer'
+import { Header } from '@/sections/header/header'
 
 import './globals.css'
 
