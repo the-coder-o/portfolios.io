@@ -78,3 +78,7 @@ body {
   width: 100%;
   padding: 0 20px;
 }
+
+#gradientColor {
+  background: linear-gradient(45deg, #6366f1, #a855f7, #ec4899);
+}
