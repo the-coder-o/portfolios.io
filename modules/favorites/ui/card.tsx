@@ -11,7 +11,7 @@ export const FavoriteCardSection = () => {
     <>
       <div className="grid grid-cols-3 gap-9 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
         {cardData.map((card, index) => (
-          <Link key={index} className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 antialiased dark:border-neutral-800 dark:bg-neutral-900" href="">
+          <Link key={index} href={'/portfolios/wefwefef'} className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 antialiased dark:border-neutral-800 dark:bg-neutral-900">
             <div className="relative overflow-hidden rounded-2xl transition duration-200 group-hover:shadow-xl">
               <Image alt="Component Thumbnail" loading="lazy" width="720" height="500" decoding="async" className="aspect-video h-[14rem] rounded-2xl bg-cover object-cover object-top blur-0 transition duration-300 group-hover:scale-105" src={card.imageUrl} style={{ color: 'transparent' }} />
             </div>

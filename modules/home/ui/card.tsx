@@ -15,14 +15,14 @@ export const HomeCardSection = () => {
           <p className="relative z-20 w-full text-left text-sm text-neutral-600 dark:text-neutral-400 max-md:hidden">Here are some templates that you can use to get started, both paid and free.</p>
         </div>
         <div>
-          <Link className="group relative z-20 flex h-10 w-full cursor-pointer items-center justify-center space-x-2 rounded-lg bg-black p-px px-4 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-52" href="/products">
+          <Link href="/templates" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center rounded-xl bg-black p-px px-2 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-52">
             View all templates
           </Link>
         </div>
       </div>
       <div className="grid grid-cols-3 gap-9 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
         {cardData.map((card, index) => (
-          <Link key={index} className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 antialiased dark:border-neutral-800 dark:bg-neutral-900" href="">
+          <Link key={index} href="/portfolios/dwdwd" className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 antialiased dark:border-neutral-800 dark:bg-neutral-900">
             <div className="relative overflow-hidden rounded-2xl transition duration-200 group-hover:shadow-xl">
               <Image alt="Component Thumbnail" loading="lazy" width="720" height="500" decoding="async" className="aspect-video h-[14rem] rounded-2xl bg-cover object-cover object-top blur-0 transition duration-300 group-hover:scale-105" src={card.imageUrl} style={{ color: 'transparent' }} />
             </div>
