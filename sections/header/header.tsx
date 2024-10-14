@@ -21,9 +21,12 @@ export const Header = () => {
             <div className="flex items-center gap-10">
               <Logo />
               <nav className="flex items-center gap-7">
-                <Link href={'/favorites'} className="hidden space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 sm:flex">
-                  Favorites
+                <Link href={'/portfolios'} className="hidden space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 sm:flex">
+                  Portfolios
                 </Link>
+                {/* <Link href={'/favorites'} className="hidden space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 sm:flex">
+                  Favorites
+                </Link> */}
                 <Link href={'/templates'} className="hidden space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 sm:flex">
                   Templates
                 </Link>

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import { BreadcrumbComponent } from '@/components/breadcrumb'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -13,7 +14,7 @@ export const PortfolioDetailView = () => {
   return (
     <div className="container">
       <div className="mb-[150px] mt-10">
-        <BreadcrumbComponent items={[{ label: 'Home', href: '/' }, { label: 'Portfolios', href: '/favorites' }, { label: 'Detail View' }]} />
+        <BreadcrumbComponent items={[{ label: 'Home', href: '/' }, { label: 'Portfolios', href: '/portfolios' }, { label: 'Detail View' }]} />
         <div className="mt-7 flex flex-col gap-6">
           <div>
             <h1 className="text-[2.25rem] font-bold text-black dark:text-white">Kapo — Saas Website</h1>
@@ -88,7 +89,7 @@ export const PortfolioDetailView = () => {
             />
           </div>
         </div>
-        <div className="mt-12 flex justify-between gap-5">
+        <div className="mt-12 flex w-full justify-between gap-[50px]">
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
@@ -119,16 +120,26 @@ export const PortfolioDetailView = () => {
                 </Link>
               </div>
             </div>
-            <p className="text-xl text-[#999]">
+            <p className="text-md text-[#999]">
               Agentic is meticulously crafted to serve as the ultimate template for design agencies, startups, and businesses aiming to create a striking online presence. Our approach centers around providing a responsive, minimalist design that combines dynamic animation effects with seamless
               functionality. Agentic ensures a smooth development process, enabling designers and developers to focus on showcasing their work in the most compelling manner.
             </p>
+            <Accordion type="single" collapsible className="flex w-full flex-col gap-3">
+              <AccordionItem value="item-1" className="rounded-xl border-2 px-5 hover:no-underline dark:border-white/10">
+                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="rounded-xl border-2 px-5 hover:no-underline dark:border-white/10">
+                <AccordionTrigger>Is it styled?</AccordionTrigger>
+                <AccordionContent>Yes. It comes with default styles that matches the other components&apos; aesthetic.</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" className="rounded-xl border-2 px-5 hover:no-underline dark:border-white/10">
+                <AccordionTrigger>Is it animated?</AccordionTrigger>
+                <AccordionContent>Yes. It&apos;s animated by default, but you can disable it if you prefer.</AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
           <div className="flex w-full flex-col gap-10">
-            <div>
-              <h2>Template Information</h2>
-              <p>Details about the template, its contents, and support options</p>
-            </div>
             <div className="grid gap-6">
               <div className="space-y-2">
                 <h3 className="text-lg font-semibold">Categories</h3>
@@ -154,22 +165,22 @@ export const PortfolioDetailView = () => {
               <ul className="grid gap-2">
                 <li>
                   <Link href={''} className="flex h-auto p-0 text-blue-500">
-                    <Mail className="mr-2 h-4 w-4" /> Contact Cristian Mielu
+                    <Mail size={20} className="mr-2" /> Contact Cristian Mielu
                   </Link>
                 </li>
                 <li>
                   <Link href={''} className="flex h-auto p-0 text-blue-500">
-                    <HelpCircle className="mr-2 h-4 w-4" /> How templates work
+                    <HelpCircle size={20} className="mr-2" /> How templates work
                   </Link>
                 </li>
                 <li>
                   <Link href={''} className="flex h-auto p-0 text-blue-500">
-                    <Users className="mr-2 h-4 w-4" /> Get help from the community
+                    <Users size={20} className="mr-2" /> Get help from the community
                   </Link>
                 </li>
                 <li>
                   <Link href={''} className="flex h-auto p-0 text-blue-500">
-                    <Info className="mr-2 h-4 w-4" /> Report this template
+                    <Info size={20} className="mr-2" /> Report this template
                   </Link>
                 </li>
               </ul>
