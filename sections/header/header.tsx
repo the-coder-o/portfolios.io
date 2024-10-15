@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
-import { Logo } from '@/components/logo'
+import { Logo } from '@/components/logo/logo'
 import { Searchmodal } from '@/components/modals/search-modal'
 import { ModeToggle } from '@/components/mode-toggle'
 import { cn } from '@/lib/utils'

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { LogoAuth } from '@/components/logo-auth'
+import { LogoAuth } from '@/components/logo/logo-auth'
 
 interface AuthHeaderProps {
   title: string

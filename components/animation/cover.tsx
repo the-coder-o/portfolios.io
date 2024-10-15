@@ -20,7 +20,7 @@ export const Cover = ({ children, className }: { children?: React.ReactNode; cla
       setContainerWidth(ref.current?.clientWidth ?? 0)
 
       const height = ref.current?.clientHeight ?? 0
-      const numberOfBeams = Math.floor(height / 10) // Adjust the divisor to control the spacing
+      const numberOfBeams = Math.floor(height / 10)
       const positions = Array.from({ length: numberOfBeams }, (_, i) => (i + 1) * (height / (numberOfBeams + 1)))
       setBeamPositions(positions)
     }
@@ -104,7 +104,7 @@ export const Cover = ({ children, className }: { children?: React.ReactNode; cla
             duration: 0.2,
           },
         }}
-        className={cn('relative z-20 inline-block text-neutral-900 transition duration-200 group-hover/cover:text-white dark:text-white', className)}
+        className={cn('relative z-20 inline-block !bg-gradient-to-r !from-[#6366f1] !via-[#a855f7] !to-[#ec4899] !bg-clip-text font-bold text-transparent transition duration-200 group-hover/cover:text-white', className)}
       >
         {children}
       </motion.span>

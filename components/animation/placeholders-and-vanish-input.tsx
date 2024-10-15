@@ -165,7 +165,7 @@ export function PlaceholdersAndVanishInput({ placeholders, onChange, onSubmit }:
       onSubmit={handleSubmit}
     >
       <canvas className={cn('pointer-events-none absolute left-2 top-[20%] origin-top-left scale-50 transform pr-20 text-base invert filter dark:invert-0 sm:left-8', !animating ? 'opacity-0' : 'opacity-100')} ref={canvasRef} />
-      <div className="absolute left-[15.5px] top-1/2 z-50 -translate-y-1/2">
+      <div className="absolute left-[15.5px] top-1/2 -translate-y-1/2">
         <SearchIcon className="h-5 w-5 text-gray-400 dark:text-gray-300" />
       </div>
       <input
@@ -179,10 +179,10 @@ export function PlaceholdersAndVanishInput({ placeholders, onChange, onSubmit }:
         ref={inputRef}
         value={value}
         type="text"
-        className={cn('relative z-50 h-full w-full rounded-xl border-none bg-transparent pl-4 pr-20 text-sm text-black focus:outline-none focus:ring-0 dark:text-white sm:pl-12 sm:text-base', animating && 'text-transparent dark:text-transparent')}
+        className={cn('relative z-10 h-full w-full rounded-xl border-none bg-transparent pl-4 pr-20 text-sm text-black focus:outline-none focus:ring-0 dark:text-white sm:pl-12 sm:text-base', animating && 'text-transparent dark:text-transparent')}
       />
 
-      <button disabled={!value} type="submit" className="absolute right-2 top-1/2 z-50 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-xl bg-black transition duration-200 disabled:bg-gray-100 dark:bg-zinc-900 dark:disabled:bg-zinc-800">
+      <button disabled={!value} type="submit" className="absolute right-2 top-1/2 z-20 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-xl bg-black transition duration-200 disabled:bg-gray-100 dark:bg-zinc-900 dark:disabled:bg-zinc-800">
         <motion.svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-gray-300">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <motion.path

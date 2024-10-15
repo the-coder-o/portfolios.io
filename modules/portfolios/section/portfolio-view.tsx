@@ -2,12 +2,12 @@ import React from 'react'
 
 import { PlaceholdersAndVanishInput } from '@/components/animation/placeholders-and-vanish-input'
 import { Spotlight } from '@/components/animation/spotlight'
+import { Card } from '@/components/card'
 
-import { TemplateCardSection } from '../ui/card'
 import { Categories } from '../ui/categories'
 
 export const PortfoliView = () => {
-  const placeholders = ["What's the first rule of Fight Club?", 'Who is Tyler Durden?', 'Where is Andrew Laeddis Hiding?', 'Write a Javascript method to reverse a string', 'How to assemble your own PC?']
+  const placeholders = ['Explore the top portfolio templates in my project.', 'Discover the best designs to showcase your work.', 'Create a stunning portfolio with ease.', 'Find your perfect portfolio template here.', 'Build your portfolio using top-rated designs.']
 
   return (
     <>
@@ -15,18 +15,33 @@ export const PortfoliView = () => {
       <div className="container">
         <div className="mb-[150px] mt-[150px]">
           <div className="relative mb-[180px] flex flex-col overflow-hidden sm:items-center sm:text-center">
-            <div className="space-y-3 sm:max-w-[300px] md:max-w-[740px] md:space-y-5">
-              <h1 className="w-[600px] text-5xl font-bold leading-[60px]">The best resources from the Portfolio.io community.</h1>
-              <p className="text-balance text-xl text-white/80">Clone stunning sites with templates and plugins .</p>
+            <div className="flex flex-col items-center justify-center gap-5">
+              <h1 className="w-[650px] text-5xl font-bold leading-[60px]">
+                The best resources from the <span className="bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899] bg-clip-text text-transparent">Portfolios.io</span> community.
+              </h1>
+              <p className="w-[100%] text-balance text-[16px] text-white/80">Browse our curated collection of 315+ exceptional designs to help you create your best portfolio yet. Explore a wide range of professionally crafted templates designed to highlight your work and personal brand.</p>
               <PlaceholdersAndVanishInput placeholders={placeholders} />
             </div>
           </div>
           <div>
             <Categories />
-            <TemplateCardSection />
+            <div className="grid grid-cols-3 gap-9 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
+              {cardData.map((card, index) => (
+                <Card key={index} {...card} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </>
   )
 }
+
+const cardData = Array(12).fill({
+  title: 'Hero Sections',
+  description: 'A collection of hero sections that are modern and stand out',
+  priceTag: 'Free',
+  imageUrl: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2f3v613gp8nt71f8jmpf1z7x6zkgry&w=640&q=75',
+  badges: ['Developer', 'Designer'],
+  link: '/portfolios/sws',
+})
