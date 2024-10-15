@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Cover } from '@/components/animation/cover'
 import { PlaceholdersAndVanishInput } from '@/components/animation/placeholders-and-vanish-input'
 import { Spotlight } from '@/components/animation/spotlight'
 import { Card } from '@/components/card'
@@ -13,13 +14,15 @@ export const PortfoliView = () => {
     <>
       <Spotlight />
       <div className="container">
-        <div className="mb-[150px] mt-[150px]">
+        <div className="mb-[150px] mt-[120px] max-md:mt-[50px]">
           <div className="relative mb-[180px] flex flex-col overflow-hidden sm:items-center sm:text-center">
             <div className="flex flex-col items-center justify-center gap-5">
-              <h1 className="w-[650px] text-5xl font-bold leading-[60px]">
-                The best resources from the <span className="bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899] bg-clip-text text-transparent">Portfolios.io</span> community.
+              <h1 className="relative z-20 mx-auto max-w-[700px] bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 bg-clip-text text-center text-4xl font-semibold text-transparent dark:from-neutral-800 dark:via-white dark:to-white md:text-4xl lg:text-7xl">
+                The best resources from <Cover>Portfolios.io</Cover>
               </h1>
-              <p className="w-[100%] text-balance text-[16px] text-white/80">Browse our curated collection of 315+ exceptional designs to help you create your best portfolio yet. Explore a wide range of professionally crafted templates designed to highlight your work and personal brand.</p>
+              <p className="relative z-20 mx-auto max-w-4xl text-center text-base font-normal text-neutral-600 dark:text-neutral-200 md:text-[19px]">
+                Browse our curated collection of 315+ exceptional designs to help you create your best portfolio yet. Explore a wide range of professionally crafted templates designed to highlight your work and personal brand.
+              </p>
               <PlaceholdersAndVanishInput placeholders={placeholders} />
             </div>
           </div>
