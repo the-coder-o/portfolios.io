@@ -8,8 +8,8 @@ export const ProfileView = () => {
     <div className="container">
       <div className="mb-[150px] mt-[120px] max-md:mt-[50px]">
         <ProfileHeader />
-        <ProfileTabs />
       </div>
+      <ProfileTabs />
     </div>
   )
 }
