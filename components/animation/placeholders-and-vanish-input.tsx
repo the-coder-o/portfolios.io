@@ -226,6 +226,8 @@ export function PlaceholdersAndVanishInput({ placeholders, onChange, onSubmit }:
                 ease: 'linear',
               }}
               className="w-[calc(100%-2rem)] truncate pl-4 text-left text-sm font-normal text-neutral-500 dark:text-zinc-500 sm:pl-12 sm:text-base"
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              {...({} as any)}
             >
               {placeholders[currentPlaceholder]}
             </motion.p>

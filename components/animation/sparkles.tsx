@@ -45,7 +45,8 @@ export const SparklesCore = (props: ParticlesProps) => {
 
   const generatedId = useId()
   return (
-    <motion.div animate={controls} className={cn('opacity-0', className)}>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    <motion.div animate={controls} className={cn('opacity-0', className)} {...({} as any)}>
       {init && (
         <Particles
           id={id || generatedId}

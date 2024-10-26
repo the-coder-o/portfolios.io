@@ -40,6 +40,8 @@ export const Cover = ({ children, className }: { children?: React.ReactNode; cla
               },
             }}
             className="absolute inset-0 h-full w-full overflow-hidden"
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            {...({} as any)}
           >
             <motion.div
               animate={{
@@ -53,6 +55,8 @@ export const Cover = ({ children, className }: { children?: React.ReactNode; cla
                 },
               }}
               className="flex h-full w-[200%]"
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              {...({} as any)}
             >
               <SparklesCore background="transparent" minSize={0.4} maxSize={1} particleDensity={500} className="h-full w-full" particleColor="#FFFFFF" />
               <SparklesCore background="transparent" minSize={0.4} maxSize={1} particleDensity={500} className="h-full w-full" particleColor="#FFFFFF" />
@@ -104,6 +108,8 @@ export const Cover = ({ children, className }: { children?: React.ReactNode; cla
             duration: 0.2,
           },
         }}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        {...({} as any)}
         className={cn('relative z-20 inline-block !bg-gradient-to-r !from-[#6366f1] !via-[#a855f7] !to-[#ec4899] !bg-clip-text font-bold text-transparent transition duration-200 group-hover/cover:text-white', className)}
       >
         {children}

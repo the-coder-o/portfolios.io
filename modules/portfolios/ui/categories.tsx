@@ -41,7 +41,6 @@ export const Categories = () => {
   const visibleCategories = categories.slice(0, 5)
   const hasMoreCategories = categories.length > 5
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const CategoryButton = ({ category, onClick }: any) => {
     const Icon = category.icon
     return (
@@ -51,6 +50,7 @@ export const Categories = () => {
         onClick={() => onClick(category.name)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        {...({} as any)}
       >
         <Icon className="h-4 w-4" />
         <span>{category.name}</span>
@@ -65,7 +65,7 @@ export const Categories = () => {
           <CategoryButton key={category.name} category={category} onClick={setActiveCategory} />
         ))}
         {hasMoreCategories && (
-          <motion.button className="flex h-10 items-center space-x-2 rounded-xl bg-muted px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/80" onClick={() => setShowAllCategories(true)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.button className="flex h-10 items-center space-x-2 rounded-xl bg-muted px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/80" onClick={() => setShowAllCategories(true)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} {...({} as any)}>
             <span className="flex items-center gap-1.5">
               <Grid size={16} />
               View All Categories
@@ -79,7 +79,7 @@ export const Categories = () => {
           <ChevronDown className="ml-2 h-4 w-4" />
         </button>
         {isOpen && (
-          <motion.div className="absolute z-10 mt-1 w-[200px] rounded-xl border bg-background shadow-lg" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
+          <motion.div className="absolute z-10 mt-1 w-[200px] rounded-xl border bg-background shadow-lg" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} {...({} as any)}>
             {sortOptions.map((option) => (
               <button
                 key={option.value}
@@ -97,8 +97,8 @@ export const Categories = () => {
       </div>
       <AnimatePresence>
         {showAllCategories && (
-          <motion.div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <motion.div className="relative max-h-[80vh] w-full max-w-2xl overflow-y-auto rounded-xl bg-background p-6 shadow-xl" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}>
+          <motion.div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} {...({} as any)}>
+            <motion.div className="relative max-h-[80vh] w-full max-w-2xl overflow-y-auto rounded-xl bg-background p-6 shadow-xl" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} {...({} as any)}>
               <button className="absolute right-4 top-4 text-gray-500 hover:text-gray-700" onClick={() => setShowAllCategories(false)}>
                 <X className="h-6 w-6" />
               </button>
