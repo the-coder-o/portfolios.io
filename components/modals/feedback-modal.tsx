@@ -24,13 +24,13 @@ export const FeedbackModal = () => {
           <MessageSquare className="mr-2 h-4 w-4" /> Send Feedback
         </Button>
       </DialogTrigger>
-      <DialogContent className="!rounded-xl border-transparent !bg-[#0a0a0a] sm:max-w-[425px]">
+      <DialogContent className="!rounded-xl !bg-[#0a0a0a] sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Leave Feedback</DialogTitle>
           <DialogDescription className="!mt-2.5">We&apos;d love to hear what went well or how we can improve the product experience.</DialogDescription>
         </DialogHeader>
         <Textarea value={feedback} onChange={(e) => setFeedback(e.target.value)} placeholder="Your feedback" className="min-h-[100px] rounded-xl" />
-        <div className="flex space-x-4 py-4">
+        <div className="flex space-x-2 py-4">
           <Button variant="outline" size="icon" onClick={() => setMood('sad')} className={cn('rounded-xl', mood === 'sad' ? 'bg-primary' : '')}>
             😞
           </Button>

@@ -26,7 +26,7 @@ export const ProfileHeader = () => {
         </div>
       </div>
       <div className="flex items-center gap-1.5">
-        <Link href="/templates" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-4 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-40">
+        <Link href="/edit-profile" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-4 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-40">
           Edit your profile
         </Link>
         <Button size={'icon'} variant={'secondary'} className="h-11 w-11 rounded-xl">

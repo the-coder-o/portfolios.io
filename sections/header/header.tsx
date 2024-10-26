@@ -5,7 +5,6 @@ import React from 'react'
 import { Logo } from '@/components/logo/logo'
 import { FeedbackModal } from '@/components/modals/feedback-modal'
 import { Searchmodal } from '@/components/modals/search-modal'
-import { ModeToggle } from '@/components/mode-toggle'
 import { cn } from '@/lib/utils'
 
 export const Header = () => {
@@ -31,7 +30,7 @@ export const Header = () => {
               </nav>
             </div>
             <div className="flex flex-1 items-center justify-end gap-2 sm:gap-2 md:justify-end">
-              <ModeToggle />
+              {/* <ModeToggle /> */}
               <Searchmodal />
               <FeedbackModal />
               <Link href="/sign-in" className="group relative z-20 flex h-10 cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-8 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black max-[900px]:hidden">
