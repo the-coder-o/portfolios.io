@@ -165,7 +165,7 @@ export function PlaceholdersAndVanishInput({ placeholders, onChange, onSubmit }:
       onSubmit={handleSubmit}
     >
       <canvas className={cn('pointer-events-none absolute left-2 top-[20%] origin-top-left scale-50 transform pr-20 text-base invert filter dark:invert-0 sm:left-8', !animating ? 'opacity-0' : 'opacity-100')} ref={canvasRef} />
-      <div className="absolute left-[15.5px] top-1/2 -translate-y-1/2">
+      <div className="absolute left-[15.5px] top-1/2 -translate-y-1/2 max-sm:hidden">
         <SearchIcon className="h-5 w-5 text-gray-400 dark:text-gray-300" />
       </div>
       <input

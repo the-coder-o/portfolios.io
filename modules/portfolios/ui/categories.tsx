@@ -46,7 +46,7 @@ export const Categories = () => {
     return (
       <motion.button
         key={category.name}
-        className={cn('flex h-10 items-center space-x-2 rounded-xl px-4 py-2 text-sm font-medium transition-colors', activeCategory === category.name ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80')}
+        className={cn('flex h-10 items-center space-x-2 rounded-xl px-4 py-2 text-sm font-medium transition-colors max-md:hidden', activeCategory === category.name ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80')}
         onClick={() => onClick(category.name)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -65,7 +65,7 @@ export const Categories = () => {
           <CategoryButton key={category.name} category={category} onClick={setActiveCategory} />
         ))}
         {hasMoreCategories && (
-          <motion.button className="flex h-10 items-center space-x-2 rounded-xl bg-muted px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/80" onClick={() => setShowAllCategories(true)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} {...({} as any)}>
+          <motion.button className="flex h-10 items-center space-x-2 rounded-xl bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-muted/80" onClick={() => setShowAllCategories(true)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} {...({} as any)}>
             <span className="flex items-center gap-1.5">
               <Grid size={16} />
               View All Categories
@@ -73,8 +73,8 @@ export const Categories = () => {
           </motion.button>
         )}
       </div>
-      <div className="relative">
-        <button className="flex h-10 w-[200px] items-center justify-between rounded-xl bg-muted px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/80" onClick={() => setIsOpen(!isOpen)}>
+      <div className="relative ml-5">
+        <button className="flex h-11 w-[200px] items-center justify-between rounded-xl bg-muted px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/80 max-sm:w-full" onClick={() => setIsOpen(!isOpen)}>
           <span>{sortOptions.find((option) => option.value === sort)?.label}</span>
           <ChevronDown className="ml-2 h-4 w-4" />
         </button>
@@ -98,7 +98,7 @@ export const Categories = () => {
       <AnimatePresence>
         {showAllCategories && (
           <motion.div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} {...({} as any)}>
-            <motion.div className="relative max-h-[80vh] w-full max-w-2xl overflow-y-auto rounded-xl bg-background p-6 shadow-xl" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} {...({} as any)}>
+            <motion.div className="relative max-h-[80vh] w-full max-w-2xl overflow-y-auto rounded-xl border-2 border-border bg-black p-6 shadow-xl" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} {...({} as any)}>
               <button className="absolute right-4 top-4 text-gray-500 hover:text-gray-700" onClick={() => setShowAllCategories(false)}>
                 <X className="h-6 w-6" />
               </button>

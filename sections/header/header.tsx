@@ -13,7 +13,7 @@ export const Header = () => {
   return (
     <div className="sticky left-0 right-0 top-0 z-50 bg-black/10 backdrop-blur-lg">
       <div className={cn(route === '/sign-in' || route === '/sign-up' ? 'fixed left-0 right-0 top-0 z-50' : '')}>
-        <div className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-4 py-1 text-left font-sans text-sm font-medium tracking-tight text-white md:text-center">Our new website is coming soon.😍</div>
+        <div className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-4 py-1 text-center font-sans text-sm font-medium tracking-tight text-white">Our new website is coming soon.😍</div>
       </div>
       <div className={cn(route === '/sign-in' || route === '/sign-up' ? 'hidden' : 'block')}>
         <header className="container">
@@ -22,7 +22,7 @@ export const Header = () => {
               <Logo />
               <nav className="flex items-center gap-7">
                 <Link href={'/portfolios'} className={cn('hidden space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 sm:flex', route === '/portfolios' ? 'dark:text-white' : 'dark:text-foreground/60')}>
-                  Portfolioss
+                  Portfolios
                 </Link>
                 <Link href={'/templates'} className={cn('hidden space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 sm:flex', route === '/templates' ? 'dark:text-white' : 'dark:text-foreground/60')}>
                   Templates
