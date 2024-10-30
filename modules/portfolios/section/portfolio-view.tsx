@@ -17,10 +17,10 @@ export const PortfoliView = () => {
         <div className="mb-[150px] mt-[120px] max-md:mt-[50px]">
           <div className="relative mb-[180px] flex flex-col overflow-hidden sm:items-center sm:text-center">
             <div className="flex flex-col items-center justify-center gap-5">
-              <h1 className="relative z-20 mx-auto max-w-[700px] bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 bg-clip-text text-center text-4xl font-semibold text-transparent dark:from-neutral-800 dark:via-white dark:to-white md:text-4xl lg:text-7xl">
+              <h1 className="relative z-20 max-w-[700px] bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 bg-clip-text text-center text-4xl font-semibold text-transparent dark:from-neutral-800 dark:via-white dark:to-white max-sm:text-start md:text-4xl lg:text-7xl">
                 The best resources from <Cover>Portfolios.io</Cover>
               </h1>
-              <p className="relative z-20 mx-auto max-w-4xl text-center text-base font-normal text-neutral-600 dark:text-neutral-200 md:text-[19px]">
+              <p className="relative z-20 max-w-4xl text-center text-base font-normal text-neutral-600 dark:text-neutral-200 max-sm:text-start md:text-[19px]">
                 Browse our curated collection of 315+ exceptional designs to help you create your best portfolio yet. Explore a wide range of professionally crafted templates designed to highlight your work and personal brand.
               </p>
               <PlaceholdersAndVanishInput placeholders={placeholders} />

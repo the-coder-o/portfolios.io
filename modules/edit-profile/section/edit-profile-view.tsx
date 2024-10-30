@@ -1,6 +1,6 @@
 'use client'
 
-import { Settings, User, Lock, Share2, Briefcase, Mail, CreditCard, Laptop, AppWindow, Database, X } from 'lucide-react'
+import { Settings, User, Lock, Share2, Briefcase, Mail, CreditCard, Laptop, AppWindow, Database, X, Trash } from 'lucide-react'
 import { useState } from 'react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -52,7 +52,8 @@ export const EditProfileView = () => {
               ))}
             </div>
             <Separator className="my-4" />
-            <Button variant={'destructive'} className="flex w-full items-center justify-start rounded-xl bg-transparent px-3 py-2">
+            <Button variant={'destructive'} className="flex w-full items-center justify-start gap-2 rounded-xl bg-transparent px-3 py-2">
+              <Trash className="h-4 w-4" />
               Delete Account
             </Button>
           </div>
