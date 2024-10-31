@@ -5,7 +5,7 @@ import { PlaceholdersAndVanishInput } from '@/components/animation/placeholders-
 import { Spotlight } from '@/components/animation/spotlight'
 import { Card } from '@/components/card'
 
-import { Categories } from '../ui/categories'
+import { Categories } from '../components/categories'
 
 export const PortfoliView = () => {
   const placeholders = ['Explore the top portfolio templates in my project.', 'Discover the best designs to showcase your work.', 'Create a stunning portfolio with ease.', 'Find your perfect portfolio template here.', 'Build your portfolio using top-rated designs.']

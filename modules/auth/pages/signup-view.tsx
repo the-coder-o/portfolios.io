@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { AuthBanner } from '../ui/auth-banner'
-import { AuthHeader } from '../ui/auth-header'
-import { SignUpFooter } from '../ui/sign-up-footer'
-import { SignUpForm } from '../ui/sign-up-form'
+import { AuthFooter } from '../components/footers/auth-footer'
+import { SignUpForm } from '../components/forms/sign-up-form'
+import { AuthBanner } from '../components/header/auth-banner'
+import { AuthHeader } from '../components/header/auth-header'
 
 export const SignUpView = () => {
   return (
@@ -13,7 +13,7 @@ export const SignUpView = () => {
           <div className="mx-auto w-full max-w-md">
             <AuthHeader title={'Sign Up'} />
             <SignUpForm />
-            <SignUpFooter />
+            <AuthFooter pageUrl="sign-in" pageTitle="Sign In" pageDescription="Already have an account?" description="By clicking on sign up, you agree to our Terms of Service and Privacy Policy." />
           </div>
         </div>
       </div>

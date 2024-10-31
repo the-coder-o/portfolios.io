@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { FavoriteCardSection } from '../ui/card'
+import { FavoriteCardSection } from '../components/card'
 
 export const FavoriteView = () => {
   return (

@@ -4,14 +4,21 @@ import React from 'react'
 
 import { Button } from '@/components/ui/button'
 
-export const SignUpFooter = () => {
+interface AuthFooterProps {
+  pageTitle: string
+  pageDescription: string
+  description: string
+  pageUrl: string
+}
+
+export const AuthFooter = ({ pageTitle, pageDescription, description, pageUrl }: AuthFooterProps) => {
   return (
     <div>
       <div className="mt-10">
         <p className="mt-4 text-center text-sm text-muted dark:text-[#a3a3a3]">
-          Already have an account?
-          <Link className="text-black dark:text-white" href="/sign-in">
-            Sign In
+          {pageDescription}{' '}
+          <Link href={pageUrl} className="text-black dark:text-white">
+            {pageTitle}
           </Link>
         </p>
       </div>
@@ -30,7 +37,7 @@ export const SignUpFooter = () => {
             <span className="ml-2 text-sm font-semibold leading-6">Github</span>
           </Button>
         </div>
-        <p className="mt-8 text-center text-sm text-neutral-600 dark:text-[#a3a3a3]">By clicking on sign up, you agree to our Terms of Service and Privacy Policy.</p>
+        <p className="mt-8 text-center text-sm text-neutral-600 dark:text-[#a3a3a3]">{description}</p>
       </div>
     </div>
   )

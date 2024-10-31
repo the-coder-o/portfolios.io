@@ -1,3 +1,4 @@
+import { cx } from 'class-variance-authority'
 import { useFormContext } from 'react-hook-form'
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
@@ -8,10 +9,10 @@ interface IProps {
   label?: string
   placeholder?: string
   required?: boolean
-  type?: string
+  className?: string
 }
 
-export default function TextField({ placeholder, required, name, label, type = 'text' }: IProps) {
+export default function TextField({ placeholder, required, name, label, className }: IProps) {
   const { control } = useFormContext()
 
   return (
@@ -19,7 +20,7 @@ export default function TextField({ placeholder, required, name, label, type = '
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem className="w-full">
+        <FormItem className={cx('w-full', className)}>
           {label && (
             <FormLabel>
               {`${label} `}
@@ -27,19 +28,7 @@ export default function TextField({ placeholder, required, name, label, type = '
             </FormLabel>
           )}
           <FormControl>
-            <Input
-              {...field}
-              value={type === 'number' && field.value === 0 ? '' : field.value}
-              onChange={(event) => {
-                if (type === 'number') {
-                  field.onChange(Number(event.target.value))
-                } else {
-                  field.onChange(event.target.value)
-                }
-              }}
-              placeholder={placeholder}
-              type={type}
-            />
+            <Input {...field} className="rounded-xl" placeholder={placeholder} />
           </FormControl>
           <FormMessage />
         </FormItem>
