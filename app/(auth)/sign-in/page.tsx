@@ -1,5 +1,5 @@
 import PageTitle from '@/components/page-title'
-import { SignInView } from '@/modules/auth/section/signin-view'
+import { SignInView } from '@/modules/auth/pages/signin-view'
 
 const Page = () => {
   return (

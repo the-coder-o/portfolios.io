@@ -1,5 +1,5 @@
 import PageTitle from '@/components/page-title'
-import { HomeView } from '@/modules/home/section/home-view'
+import { HomeView } from '@/modules/home/pages/home-view'
 
 const Page = () => {
   return (

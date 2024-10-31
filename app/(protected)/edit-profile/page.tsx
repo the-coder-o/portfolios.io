@@ -1,5 +1,5 @@
 import PageTitle from '@/components/page-title'
-import { EditProfileView } from '@/modules/edit-profile/section/edit-profile-view'
+import { EditProfileView } from '@/modules/edit-profile/pages/edit-profile-view'
 
 const Page = () => {
   return (

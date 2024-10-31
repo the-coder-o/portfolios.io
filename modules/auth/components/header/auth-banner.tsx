@@ -26,35 +26,35 @@ export const AuthBanner = () => {
         </defs>
       </svg>
       <svg width="1595" height="2" viewBox="0 0 1595 2" fill="none" xmlns="http://www.w3.org/2000/svg" className="pointer-events-none absolute bottom-20 w-full object-contain">
-        <path d="M0 1H1594.5" stroke="url(#line-path-gradient-:rb6:)" stroke-dasharray="8 8"></path>
+        <path d="M0 1H1594.5" stroke="url(#line-path-gradient-:rb6:)" strokeDasharray="8 8"></path>
         <defs>
           <linearGradient id="line-path-gradient-:rb6:" x1="0" y1="1.5" x2="1594.5" y2="1.5" gradientUnits="userSpaceOnUse">
-            <stop stop-color="white" stop-opacity="0"></stop>
-            <stop offset="0.2" stop-color="var(--neutral-400)"></stop>
-            <stop offset="0.8" stop-color="var(--neutral-400)"></stop>
-            <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+            <stop stopColor="white" stop-opacity="0"></stop>
+            <stop offset="0.2" stopColor="var(--neutral-400)"></stop>
+            <stop offset="0.8" stopColor="var(--neutral-400)"></stop>
+            <stop offset="1" stopColor="white" stop-opacity="0"></stop>
           </linearGradient>
         </defs>
       </svg>
       <svg width="1595" height="2" viewBox="0 0 1595 2" fill="none" xmlns="http://www.w3.org/2000/svg" className="pointer-events-none absolute inset-y-0 -right-80 h-full w-full rotate-90 scale-x-150 transform object-contain">
-        <path d="M0 1H1594.5" stroke="url(#line-path-gradient-:rb7:)" stroke-dasharray="8 8"></path>
+        <path d="M0 1H1594.5" stroke="url(#line-path-gradient-:rb7:)" strokeDasharray="8 8"></path>
         <defs>
           <linearGradient id="line-path-gradient-:rb7:" x1="0" y1="1.5" x2="1594.5" y2="1.5" gradientUnits="userSpaceOnUse">
-            <stop stop-color="white" stop-opacity="0"></stop>
-            <stop offset="0.2" stop-color="var(--neutral-400)"></stop>
-            <stop offset="0.8" stop-color="var(--neutral-400)"></stop>
-            <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+            <stop stopColor="white" stop-opacity="0"></stop>
+            <stop offset="0.2" stopColor="var(--neutral-400)"></stop>
+            <stop offset="0.8" stopColor="var(--neutral-400)"></stop>
+            <stop offset="1" stopColor="white" stop-opacity="0"></stop>
           </linearGradient>
         </defs>
       </svg>
       <svg width="1595" height="2" viewBox="0 0 1595 2" fill="none" xmlns="http://www.w3.org/2000/svg" className="pointer-events-none absolute inset-y-0 -left-80 h-full w-full rotate-90 scale-x-150 transform object-contain">
-        <path d="M0 1H1594.5" stroke="url(#line-path-gradient-:rb8:)" stroke-dasharray="8 8"></path>
+        <path d="M0 1H1594.5" stroke="url(#line-path-gradient-:rb8:)" strokeDasharray="8 8"></path>
         <defs>
           <linearGradient id="line-path-gradient-:rb8:" x1="0" y1="1.5" x2="1594.5" y2="1.5" gradientUnits="userSpaceOnUse">
-            <stop stop-color="white" stop-opacity="0"></stop>
-            <stop offset="0.2" stop-color="var(--neutral-400)"></stop>
-            <stop offset="0.8" stop-color="var(--neutral-400)"></stop>
-            <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+            <stop stopColor="white" stop-opacity="0"></stop>
+            <stop offset="0.2" stopColor="var(--neutral-400)"></stop>
+            <stop offset="0.8" stopColor="var(--neutral-400)"></stop>
+            <stop offset="1" stopColor="white" stop-opacity="0"></stop>
           </linearGradient>
         </defs>
       </svg>
