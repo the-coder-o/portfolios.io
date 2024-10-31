@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 'use client'
 
 import { AnimatePresence, motion } from 'framer-motion'
@@ -38,7 +37,6 @@ export function PlaceholdersAndVanishInput({ placeholders, onChange, onSubmit }:
   }, [placeholders])
 
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const newDataRef = useRef<any[]>([])
   const inputRef = useRef<HTMLInputElement>(null)
   const [value, setValue] = useState('')
@@ -63,7 +61,6 @@ export function PlaceholdersAndVanishInput({ placeholders, onChange, onSubmit }:
 
     const imageData = ctx.getImageData(0, 0, 800, 800)
     const pixelData = imageData.data
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const newData: any[] = []
 
     for (let t = 0; t < 800; t++) {
@@ -157,6 +154,7 @@ export function PlaceholdersAndVanishInput({ placeholders, onChange, onSubmit }:
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     vanishAndSubmit()
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     onSubmit && onSubmit(e)
   }
   return (
@@ -172,6 +170,7 @@ export function PlaceholdersAndVanishInput({ placeholders, onChange, onSubmit }:
         onChange={(e) => {
           if (!animating) {
             setValue(e.target.value)
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
             onChange && onChange(e)
           }
         }}
