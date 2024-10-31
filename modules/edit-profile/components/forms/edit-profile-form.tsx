@@ -26,7 +26,7 @@ export const editProfileSchema = z.object({
 
 type EditProfileFormSchema = z.infer<typeof editProfileSchema>
 
-const EditProfile = () => {
+const EditProfileForm = () => {
   const methods = useForm<EditProfileFormSchema>({
     resolver: zodResolver(editProfileSchema),
     defaultValues: { workHistory: [], bio: '', location: '', name: '' },
@@ -68,4 +68,4 @@ const EditProfile = () => {
   )
 }
 
-export default EditProfile
+export default EditProfileForm

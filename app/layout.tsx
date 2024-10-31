@@ -1,8 +1,5 @@
 'use client'
 
-import Intercom from '@intercom/messenger-js-sdk'
-import React, { useEffect } from 'react'
-
 import { ThemeProvider } from '@/components/providers'
 import { Footer } from '@/sections/footer/footer'
 import { Header } from '@/sections/header/header'
@@ -10,12 +7,6 @@ import { Header } from '@/sections/header/header'
 import './globals.css'
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  useEffect(() => {
-    Intercom({
-      app_id: 'ik3vkbyu',
-    })
-  }, [])
-
   return (
     <html lang="en">
       <head>

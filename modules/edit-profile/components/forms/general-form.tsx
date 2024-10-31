@@ -15,7 +15,7 @@ export const generalSchema = z.object({
 
 type GeneralFormSchema = z.infer<typeof generalSchema>
 
-const General = () => {
+const GeneralForm = () => {
   const methods = useForm<GeneralFormSchema>({
     resolver: zodResolver(generalSchema),
     defaultValues: { email: '', username: '' },
@@ -30,8 +30,10 @@ const General = () => {
   return (
     <Form {...methods}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <TextField name="username" label="Username" placeholder="Enter your username" className="mt-1 rounded-xl" />
-        <TextField name="email" label="Email" placeholder="Enter your email" className="mt-1 rounded-xl" />
+        <div className="flex flex-col gap-5">
+          <TextField name="username" label="Username" placeholder="Enter your username" className="mt-1 rounded-xl" />
+          <TextField name="email" label="Email" placeholder="Enter your email" className="mt-1 rounded-xl" />
+        </div>
         <div className="flex justify-end">
           <Button type="submit" variant={'secondary'} className="mt-5 rounded-xl">
             Save chnages
@@ -42,4 +44,4 @@ const General = () => {
   )
 }
 
-export default General
+export default GeneralForm

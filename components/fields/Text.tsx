@@ -20,7 +20,7 @@ export default function TextField({ placeholder, required, name, label, classNam
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem className={cx('w-full', className)}>
+        <FormItem className={cx('w-full')}>
           {label && (
             <FormLabel>
               {`${label} `}
@@ -28,7 +28,7 @@ export default function TextField({ placeholder, required, name, label, classNam
             </FormLabel>
           )}
           <FormControl>
-            <Input {...field} className="rounded-xl" placeholder={placeholder} />
+            <Input {...field} placeholder={placeholder} className={cx('rounded-xl', className)} />
           </FormControl>
           <FormMessage />
         </FormItem>
