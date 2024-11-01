@@ -41,31 +41,33 @@ export const Categories = () => {
   const visibleCategories = categories.slice(0, 5)
   const hasMoreCategories = categories.length > 5
 
-  const CategoryButton = ({ category, onClick }: any) => {
+  const CategoryButton = ({ category, onClick, className }: any) => {
     const Icon = category.icon
     return (
-      <motion.button
-        key={category.name}
-        className={cn('flex h-10 items-center space-x-2 rounded-xl px-4 py-2 text-sm font-medium transition-colors max-md:hidden', activeCategory === category.name ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80')}
-        onClick={() => onClick(category.name)}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        {...({} as any)}
-      >
-        <Icon className="h-4 w-4" />
-        <span>{category.name}</span>
-      </motion.button>
+      <>
+        <motion.button
+          key={category.name}
+          className={cn('flex h-10 items-center space-x-2 rounded-xl px-4 py-2 text-sm font-medium transition-colors', activeCategory === category.name ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80', className)}
+          onClick={() => onClick(category.name)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          {...({} as any)}
+        >
+          <Icon className="h-4 w-4" />
+          <span>{category.name}</span>
+        </motion.button>
+      </>
     )
   }
 
   return (
-    <div className="mb-8 flex w-full justify-between">
+    <div className="mb-8 flex w-full justify-between max-sm:mb-4">
       <div className="flex flex-wrap gap-2">
         {visibleCategories.map((category) => (
-          <CategoryButton key={category.name} category={category} onClick={setActiveCategory} />
+          <CategoryButton key={category.name} category={category} onClick={setActiveCategory} className={'max-md:hidden'} />
         ))}
         {hasMoreCategories && (
-          <motion.button className="flex h-10 items-center space-x-2 rounded-xl bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-muted/80" onClick={() => setShowAllCategories(true)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} {...({} as any)}>
+          <motion.button className="flex h-10 items-center space-x-2 rounded-xl bg-white px-4 py-2 text-sm font-medium text-black transition-colors" onClick={() => setShowAllCategories(true)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} {...({} as any)}>
             <span className="flex items-center gap-1.5">
               <Grid size={16} />
               View All Categories

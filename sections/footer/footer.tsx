@@ -77,9 +77,9 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-between py-5 max-md:flex-col">
-          <div className="mt-12 text-sm text-muted-foreground">&copy; 2024 Acme Inc. All rights reserved.</div>
-          <div className="mt-12 text-sm text-muted-foreground">
+        <div className="flex items-center justify-between py-5 max-md:flex-col-reverse max-md:items-start">
+          <div className="mt-12 text-sm text-muted-foreground max-md:mt-3">&copy; 2024 Acme Inc. All rights reserved.</div>
+          <div className="mt-12 text-sm text-muted-foreground max-md:mt-5">
             Created by:{' '}
             <Link href={'https://www.a-bd.me'} target="_blank" className="font-bold text-white">
               www.a-bd.me
