@@ -15,7 +15,7 @@ export const PortfoliView = () => {
       <Spotlight />
       <div className="container">
         <div className="mb-[150px] mt-[120px] max-md:mt-[50px]">
-          <div className="relative mb-[180px] flex flex-col overflow-hidden sm:items-center sm:text-center">
+          <div className="relative mb-[180px] flex flex-col overflow-hidden max-sm:mb-10 sm:items-center sm:text-center">
             <div className="flex flex-col items-center justify-center gap-5">
               <h1 className="relative z-20 max-w-[700px] bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 bg-clip-text text-center text-4xl font-semibold text-transparent dark:from-neutral-800 dark:via-white dark:to-white max-sm:text-start md:text-4xl lg:text-7xl">
                 The best resources from <Cover>Portfolios.io</Cover>

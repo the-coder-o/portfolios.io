@@ -8,7 +8,7 @@ import { HeroSection } from '../components/hero'
 export const HomeView = () => {
   return (
     <div className="container">
-      <div className="mb-[160px]">
+      <div className="mb-[160px] max-sm:mb-10">
         <HeroSection />
       </div>
       <div className="mb-[160px]">
@@ -18,7 +18,10 @@ export const HomeView = () => {
             <p className="relative z-20 w-full text-left text-sm text-neutral-600 dark:text-neutral-400 max-md:hidden">Here are some templates that you can use to get started, both paid and free.</p>
           </div>
           <div>
-            <Link href="/portfolios" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center rounded-xl bg-black px-5 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-52">
+            <Link href="/portfolios" className="hidden text-white underline max-md:block">
+              View all Portfolios
+            </Link>
+            <Link href="/portfolios" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center rounded-xl bg-black px-5 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black max-md:hidden sm:w-52">
               View all Portfolios
             </Link>
           </div>
