@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
+import { portfoliosData } from '@/.mock/portfolios.data'
 import { Card } from '@/components/card'
 
 import { HeroSection } from '../components/hero'
@@ -27,7 +28,7 @@ export const HomeView = () => {
           </div>
         </div>
         <div className="grid grid-cols-3 gap-9 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
-          {cardData.map((card, index) => (
+          {portfoliosData.slice(0, 9).map((card, index) => (
             <Card key={index} {...card} />
           ))}
         </div>
@@ -35,12 +36,3 @@ export const HomeView = () => {
     </div>
   )
 }
-
-const cardData = Array(6).fill({
-  title: 'Hero Sections',
-  description: 'A collection of hero sections that are modern and stand out',
-  priceTag: 'Free',
-  imageUrl: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2f3v613gp8nt71f8jmpf1z7x6zkgry&w=640&q=75',
-  badges: ['Developer', 'Designer'],
-  link: '/portfolios/sws',
-})
