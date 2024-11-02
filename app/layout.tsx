@@ -1,9 +1,10 @@
 'use client'
 
+import { Analytics } from '@vercel/analytics/react'
+
 import { ThemeProvider } from '@/components/providers'
 import { Footer } from '@/sections/footer/footer'
 import { Header } from '@/sections/header/header'
-
 import './globals.css'
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {children}
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
