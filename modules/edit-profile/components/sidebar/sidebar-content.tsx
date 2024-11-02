@@ -1,9 +1,12 @@
 import React from 'react'
 
+import { DataExport } from '../data-export'
+import CompanyForm from '../forms/company-form'
 import EditProfileForm from '../forms/edit-profile-form'
 import GeneralForm from '../forms/general-form'
 import PasswordForm from '../forms/password-form'
 import SocialProfileForm from '../forms/social-profile-form'
+import { Session } from '../session'
 
 export const SidebarContent = ({ activeTab }: any) => {
   return (
@@ -16,6 +19,9 @@ export const SidebarContent = ({ activeTab }: any) => {
         {activeTab === 'Edit Profile' && <EditProfileForm />}
         {activeTab === 'Password' && <PasswordForm />}
         {activeTab === 'Social Profiles' && <SocialProfileForm />}
+        {activeTab === 'Company' && <CompanyForm />}
+        {activeTab === 'Sessions' && <Session />}
+        {activeTab === 'Data Export' && <DataExport />}
       </div>
     </div>
   )
