@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
+import { portfoliosData } from '@/.mock/portfolios.data'
 import { Cover } from '@/components/animation/cover'
 import { Spotlight } from '@/components/animation/spotlight'
 
@@ -18,7 +19,7 @@ export const HeroSection = () => {
           Best place to find <br /> portfolio <Cover>inspiration.</Cover>
         </h1>
         <p className="relative z-20 max-w-4xl text-center text-base font-normal text-neutral-600 dark:text-neutral-200 max-sm:text-start md:text-[19px]">
-          Unlock your potential with our curated collection of 309+ exceptional portfolio designs. Each template is crafted to highlight your unique skills and creativity, helping you stand out in any industry.
+          Unlock your potential with our curated collection of {portfoliosData?.length}+ exceptional portfolio designs. Each template is crafted to highlight your unique skills and creativity, helping you stand out in any industry.
         </p>
         <div className="mt-4 flex w-full flex-col items-center justify-center gap-4 px-8 max-md:px-0 sm:flex-row">
           <Link href="/templates" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-4 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-52">

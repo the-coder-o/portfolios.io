@@ -46,7 +46,7 @@ export const PortfoliView = () => {
                 The best resources from <Cover>Portfolios.io</Cover>
               </h1>
               <p className="relative z-20 max-w-4xl text-center text-base font-normal text-neutral-600 dark:text-neutral-200 max-sm:text-start md:text-[19px]">
-                Browse our curated collection of 315+ exceptional designs to help you create your best portfolio yet. Explore a wide range of professionally crafted templates designed to highlight your work and personal brand.
+                Browse our curated collection of {portfoliosData?.length}+ exceptional designs to help you create your best portfolio yet. Explore a wide range of professionally crafted templates designed to highlight your work and personal brand.
               </p>
               <PlaceholdersAndVanishInput placeholders={placeholders} />
             </div>
