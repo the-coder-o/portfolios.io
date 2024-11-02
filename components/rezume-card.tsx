@@ -1,3 +1,4 @@
+import { User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -24,8 +25,10 @@ export const RezumeCard = ({ url, title, image, creatorName, creatorLink }: Card
         </div>
         {creatorName && (
           <div className="mt-5 flex w-full items-center justify-between">
-            <Link href={creatorLink} className="flex items-center">
-              <Image src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" alt={`${creatorName}'s profile`} width={24} height={24} className="mr-2 rounded-full" />
+            <Link href={creatorLink} className="flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-white text-black">
+                <User size={20} className="rounded-xl text-black" />
+              </div>
               <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">{creatorName}</span>
             </Link>
           </div>
