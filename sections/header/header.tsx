@@ -24,6 +24,9 @@ export const Header = () => {
                 <Link href={'/portfolios'} className={cn('hidden space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 sm:flex', route === '/portfolios' ? 'dark:text-white' : 'dark:text-foreground/60')}>
                   Portfolios
                 </Link>
+                <Link href={'/rezume'} className={cn('hidden space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 sm:flex', route === '/rezume' ? 'dark:text-white' : 'dark:text-foreground/60')}>
+                  Rezume
+                </Link>
                 <Link href={'/templates'} className={cn('hidden space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 sm:flex', route === '/templates' ? 'dark:text-white' : 'dark:text-foreground/60')}>
                   Templates
                 </Link>
