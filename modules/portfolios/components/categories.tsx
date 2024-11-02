@@ -67,7 +67,13 @@ export const Categories = () => {
           <CategoryButton key={category.name} category={category} onClick={setActiveCategory} className={'max-md:hidden'} />
         ))}
         {hasMoreCategories && (
-          <motion.button className="flex h-10 items-center space-x-2 rounded-xl bg-white px-4 py-2 text-sm font-medium text-black transition-colors" onClick={() => setShowAllCategories(true)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} {...({} as any)}>
+          <motion.button
+            className="flex h-10 items-center space-x-2 rounded-xl bg-muted px-4 py-2 text-sm font-medium text-black text-white transition-colors max-md:bg-white max-sm:text-black"
+            onClick={() => setShowAllCategories(true)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            {...({} as any)}
+          >
             <span className="flex items-center gap-1.5">
               <Grid size={16} />
               View All Categories

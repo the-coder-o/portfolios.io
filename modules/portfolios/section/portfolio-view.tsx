@@ -1,5 +1,8 @@
-import React from 'react'
+'use client'
 
+import React, { useState, useEffect } from 'react'
+
+import { portfoliosData } from '@/.mock/portfolios.data'
 import { Cover } from '@/components/animation/cover'
 import { PlaceholdersAndVanishInput } from '@/components/animation/placeholders-and-vanish-input'
 import { Spotlight } from '@/components/animation/spotlight'
@@ -9,6 +12,28 @@ import { Categories } from '../components/categories'
 
 export const PortfoliView = () => {
   const placeholders = ['Explore the top portfolio templates in my project.', 'Discover the best designs to showcase your work.', 'Create a stunning portfolio with ease.', 'Find your perfect portfolio template here.', 'Build your portfolio using top-rated designs.']
+
+  const itemsPerPage = 6
+  const [displayedItems, setDisplayedItems] = useState(portfoliosData.slice(0, itemsPerPage))
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const loadMoreItems = () => {
+    const nextPage = currentPage + 1
+    const newItems = portfoliosData.slice(0, itemsPerPage * nextPage)
+    setDisplayedItems(newItems)
+    setCurrentPage(nextPage)
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerHeight + document.documentElement.scrollTop + 50 >= document.documentElement.scrollHeight) {
+        loadMoreItems()
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [currentPage])
 
   return (
     <>
@@ -29,7 +54,7 @@ export const PortfoliView = () => {
           <div>
             <Categories />
             <div className="grid grid-cols-3 gap-9 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
-              {cardData.map((card, index) => (
+              {displayedItems.map((card, index) => (
                 <Card key={index} {...card} />
               ))}
             </div>
@@ -39,12 +64,3 @@ export const PortfoliView = () => {
     </>
   )
 }
-
-const cardData = Array(12).fill({
-  title: 'Hero Sections',
-  description: 'A collection of hero sections that are modern and stand out',
-  priceTag: 'Free',
-  imageUrl: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2f3v613gp8nt71f8jmpf1z7x6zkgry&w=640&q=75',
-  badges: ['Developer', 'Designer'],
-  link: '/portfolios/sws',
-})
