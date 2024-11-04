@@ -61,7 +61,7 @@ export const Categories = () => {
   }
 
   return (
-    <div className="mb-8 flex w-full justify-between max-sm:mb-4">
+    <div className="mb-4 flex w-full justify-between">
       <div className="flex flex-wrap gap-2">
         {visibleCategories.map((category) => (
           <CategoryButton key={category.name} category={category} onClick={setActiveCategory} className={'max-md:hidden'} />

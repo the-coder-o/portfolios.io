@@ -1,10 +1,17 @@
 'use client'
 
-import { Calculator, Calendar, CreditCard, Search, Settings, Smile, User } from 'lucide-react'
+import { Search } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
+import { portfoliosData } from '@/.mock/portfolios.data'
+import { rezumeData } from '@/.mock/rezume.data'
 import { Button } from '@/components/ui/button'
-import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from '@/components/ui/command'
+import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command'
+
+import { CardProps } from '../cards/portfolio-card'
+import { RezumeProps } from '../cards/rezume-card'
 
 export const Searchmodal = () => {
   const [open, setOpen] = useState(false)
@@ -34,40 +41,40 @@ export const Searchmodal = () => {
         </kbd>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput placeholder="Type the author's name or portfolio name..." />
         <CommandList className="rounded-xl">
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Suggestions">
-            <CommandItem>
-              <Calendar className="mr-2 h-4 w-4" />
-              <span>Calendar</span>
-            </CommandItem>
-            <CommandItem>
-              <Smile className="mr-2 h-4 w-4" />
-              <span>Search Emoji</span>
-            </CommandItem>
-            <CommandItem>
-              <Calculator className="mr-2 h-4 w-4" />
-              <span>Calculator</span>
-            </CommandItem>
+          <CommandGroup heading="Top Portfolios">
+            {portfoliosData.slice(0, 5).map((portfolios: CardProps, index: number) => (
+              <CommandItem key={index} className="flex items-center justify-between">
+                <Link href={portfolios?.singlePageDetails?.githubLink} target="_blank" className="flex">
+                  <Image src={portfolios?.image} alt={`${portfolios?.author?.name}'s profile`} width={1200} height={1200} className="mr-2 !h-[80px] !w-[110px] rounded-lg bg-cover object-cover" />
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center">
+                      <Image src={portfolios?.author?.profileImage} alt={`${portfolios?.author?.name}'s profile`} width={24} height={24} className="mr-2 rounded-lg" />
+                      <h2 className="text-[18px] text-xl font-medium">{portfolios?.author?.name}</h2>
+                    </div>
+                    <p className="line-clamp-2">{portfolios?.description}</p>
+                  </div>
+                </Link>
+              </CommandItem>
+            ))}
           </CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Settings">
-            <CommandItem>
-              <User className="mr-2 h-4 w-4" />
-              <span>Profile</span>
-              <CommandShortcut>⌘P</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <CreditCard className="mr-2 h-4 w-4" />
-              <span>Billing</span>
-              <CommandShortcut>⌘B</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <Settings className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
-            </CommandItem>
+          <CommandGroup heading="Top Rezume">
+            {rezumeData.slice(0, 5).map((rezume: RezumeProps) => (
+              <CommandItem key={rezume?.id} className="flex items-center justify-between">
+                <Link href={rezume?.url} target="_blank" className="flex">
+                  <Image src={rezume?.image} alt={`${rezume?.creatorName}'s profile`} width={1200} height={1200} className="mr-2 !h-[80px] !w-[55px] rounded-lg bg-cover object-cover" />
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center">
+                      <Image src={'https://cdn-icons-png.flaticon.com/512/149/149071.png'} alt={`${rezume?.creatorName}'s profile`} width={24} height={24} className="mr-2 rounded-lg" />
+                      <h2 className="text-[18px] text-xl font-medium">{rezume?.creatorName}</h2>
+                    </div>
+                    <p className="line-clamp-3">{rezume?.title}</p>
+                  </div>
+                </Link>
+              </CommandItem>
+            ))}
           </CommandGroup>
         </CommandList>
       </CommandDialog>

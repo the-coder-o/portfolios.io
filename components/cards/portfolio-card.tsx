@@ -2,15 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export interface CardProps {
-  title?: string
-  description?: string
+  title?: string | any
+  description?: string | any
   image?: string | any
   author?: {
-    name: string
-    profileImage: string
+    name: string | any
+    profileImage: string | any
   }
   price?: string
-  link?: string
+  link?: string | any
   singlePageDetails?: {
     description: string
     images: string[]
@@ -18,7 +18,7 @@ export interface CardProps {
       name: string
       profileImage: string
     }
-    githubLink?: string
+    githubLink?: string | any
     cost?: string
   }
 }
@@ -40,16 +40,16 @@ export const Card = ({ image, title, price, description, author, singlePageDetai
           <div className="mt-5 flex w-full items-center justify-between">
             {singlePageDetails?.githubLink ? (
               <Link href={singlePageDetails.githubLink} className="flex items-center">
-                <Image src={author.profileImage} alt={`${author.name}'s profile`} width={24} height={24} className="mr-2 rounded-full" />
+                <Image src={author.profileImage} alt={`${author.name}'s profile`} width={24} height={24} className="mr-2 rounded-lg" />
                 <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">{author.name}</span>
               </Link>
             ) : (
               <div className="flex items-center">
-                <Image src={author.profileImage} alt={`${author.name}'s profile`} width={24} height={24} className="mr-2 rounded-full" />
+                <Image src={author.profileImage} alt={`${author.name}'s profile`} width={24} height={24} className="mr-2 rounded-lg" />
                 <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">{author.name}</span>
               </div>
             )}
-            <div className="flex h-[22px] w-[60px] items-center justify-center rounded-full border border-transparent bg-primary text-sm font-semibold text-foreground transition-colors hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 dark:border-green-300 dark:bg-green-700">
+            <div className="flex h-[22px] w-[60px] items-center justify-center rounded-lg border border-transparent bg-primary text-sm font-semibold text-foreground transition-colors hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 dark:border-green-300 dark:bg-green-700">
               {price}
             </div>
           </div>
