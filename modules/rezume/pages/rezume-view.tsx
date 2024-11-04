@@ -3,16 +3,21 @@
 import React, { useEffect, useState } from 'react'
 
 import { rezumeData } from '@/.mock/rezume.data'
-import { RezumeCard } from '@/components/rezume-card'
+import { RezumeCard } from '@/components/cards/rezume-card'
 
 const RezumeView = () => {
   const itemsPerPage = 12
-  const [displayedItems, setDisplayedItems] = useState(rezumeData.slice(0, itemsPerPage))
+
+  const filteredData = rezumeData.filter((item, index, self) => {
+    return index === self.findIndex((i) => i.image === item.image)
+  })
+
+  const [displayedItems, setDisplayedItems] = useState(filteredData.slice(0, itemsPerPage))
   const [currentPage, setCurrentPage] = useState(1)
 
   const loadMoreItems = () => {
     const nextPage = currentPage + 1
-    const newItems = rezumeData.slice(0, itemsPerPage * nextPage)
+    const newItems = filteredData.slice(0, itemsPerPage * nextPage)
     setDisplayedItems(newItems)
     setCurrentPage(nextPage)
   }
@@ -26,6 +31,7 @@ const RezumeView = () => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage])
 
   return (
@@ -36,8 +42,8 @@ const RezumeView = () => {
           <p className="text-muted-foreground">Here are rezume templates that you can use to get started, both paid and free.</p>
         </div>
         <div className="grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
-          {displayedItems.map((card, index) => (
-            <RezumeCard key={index} {...card} />
+          {displayedItems.map((card) => (
+            <RezumeCard key={card.id} {...card} />
           ))}
         </div>
       </div>

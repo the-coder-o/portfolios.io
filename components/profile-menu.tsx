@@ -13,7 +13,7 @@ export const ProfileMenu = () => {
       <DropdownMenuTrigger className="rounded-xl">
         <Avatar className="rounded-xl">
           <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" className="bg-cover object-cover" />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarFallback className="rounded-xl">CN</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="mt-2 w-[250px] rounded-xl dark:bg-background">

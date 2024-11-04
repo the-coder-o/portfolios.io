@@ -5,14 +5,14 @@ import { AnimatedTooltip } from '@/components/animation/animated-toolip'
 
 export const LogoSlider = () => {
   return (
-    <div className="mt-5 flex items-center justify-center gap-8">
-      <div className="relative flex flex-col justify-center gap-3">
+    <div className="mt-5 flex items-center justify-center gap-8 max-md:mt-10 max-md:flex-col max-md:gap-0 max-sm:items-start max-sm:justify-normal">
+      <div className="relative flex flex-col justify-center gap-3 max-sm:justify-normal">
         <h2 className="relative z-10 text-xs text-neutral-500">Trusted by thousands of developers:</h2>
         <div className="flex">
           <AnimatedTooltip items={people} />
         </div>
       </div>
-      <div className="mt-10 flex flex-wrap items-center justify-center max-sm:mt-auto max-sm:justify-normal">
+      <div className="mt-10 flex flex-wrap items-center justify-center max-md:mt-auto max-sm:mt-auto max-sm:justify-normal">
         <Image src="https://i.postimg.cc/0Qw3VHk1/white-horizontal.png" alt="astro" width={200} height={200} className="h-8 !w-[120px]" />
         <Image src="https://i.postimg.cc/NjcnpxVW/que-es-nextjs-y-para-que-sirve-1-1697560678-removebg-preview.png" alt="astro" width={200} height={200} className="!w-[140px]" />
         <Image src="https://tailwindcss.com/_next/static/media/tailwindcss-logotype-white.944c5d0ef628083bb316f9b3d643385c86bcdb3d.svg" alt="astro" width={200} height={200} className="!w-[140px]" />
