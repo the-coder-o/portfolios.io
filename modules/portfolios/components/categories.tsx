@@ -31,14 +31,35 @@ const sortOptions = [
   { value: 'popular', label: 'Most Popular' },
 ]
 
+const filterOptions = [
+  { value: 'all', label: 'All Tools' },
+  { value: 'nextjs', label: 'Next.js' },
+  { value: 'reactjs', label: 'React.js' },
+  { value: 'vuejs', label: 'Vue.js' },
+  { value: 'angular', label: 'Angular' },
+  { value: 'svelte', label: 'Svelte' },
+  { value: 'typescript', label: 'TypeScript' },
+  { value: 'javascript', label: 'JavaScript' },
+  { value: 'gatsby', label: 'Gatsby' },
+  { value: 'solidjs', label: 'Solid.js' },
+  { value: 'preact', label: 'Preact' },
+  { value: 'ember', label: 'Ember.js' },
+  { value: 'backbone', label: 'Backbone.js' },
+  { value: 'lit', label: 'Lit' },
+  { value: 'alpinejs', label: 'Alpine.js' },
+  { value: 'stencil', label: 'Stencil' },
+]
+
 export const Categories = () => {
   const [activeCategory, setActiveCategory] = useState('All')
   const [sort, setSort] = useState('recent')
+  const [languages, setLanguages] = useState('all')
   const [isOpen, setIsOpen] = useState(false)
+  const [isOpenLanguage, setIsOpenLanguage] = useState(false)
   const [showAllCategories, setShowAllCategories] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
 
-  const visibleCategories = categories.slice(0, 5)
+  const visibleCategories = categories.slice(0, 4)
   const hasMoreCategories = categories.length > 5
 
   const CategoryButton = ({ category, onClick, className }: any) => {
@@ -81,27 +102,51 @@ export const Categories = () => {
           </motion.button>
         )}
       </div>
-      <div className="relative ml-5">
-        <button className="flex h-11 w-[200px] items-center justify-between rounded-xl bg-muted px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/80 max-sm:w-full" onClick={() => setIsOpen(!isOpen)}>
-          <span>{sortOptions.find((option) => option.value === sort)?.label}</span>
-          <ChevronDown className="ml-2 h-4 w-4" />
-        </button>
-        {isOpen && (
-          <motion.div className="absolute z-10 mt-1 w-[200px] rounded-xl border bg-background shadow-lg" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} {...({} as any)}>
-            {sortOptions.map((option) => (
-              <button
-                key={option.value}
-                className="block w-full px-4 py-2 text-left text-sm transition-colors hover:bg-muted/50"
-                onClick={() => {
-                  setSort(option.value)
-                  setIsOpen(false)
-                }}
-              >
-                {option.label}
-              </button>
-            ))}
-          </motion.div>
-        )}
+      <div className="flex items-center gap-2">
+        <div className="relative">
+          <button className="flex h-11 w-[200px] items-center justify-between rounded-xl bg-muted px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/80 max-sm:w-full" onClick={() => setIsOpenLanguage(!isOpenLanguage)}>
+            <span>{filterOptions.find((option) => option.value === languages)?.label}</span>
+            <ChevronDown className="ml-2 h-4 w-4" />
+          </button>
+          {isOpenLanguage && (
+            <motion.div className="absolute z-10 mt-1 w-[200px] rounded-xl border bg-background shadow-lg" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} {...({} as any)}>
+              {filterOptions.map((option) => (
+                <button
+                  key={option.value}
+                  className="block w-full px-4 py-2 text-left text-sm transition-colors hover:bg-muted/50"
+                  onClick={() => {
+                    setLanguages(option.value)
+                    setIsOpenLanguage(false)
+                  }}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </motion.div>
+          )}
+        </div>
+        <div className="relative">
+          <button className="flex h-11 w-[200px] items-center justify-between rounded-xl bg-muted px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/80 max-sm:w-full" onClick={() => setIsOpen(!isOpen)}>
+            <span>{sortOptions.find((option) => option.value === sort)?.label}</span>
+            <ChevronDown className="ml-2 h-4 w-4" />
+          </button>
+          {isOpen && (
+            <motion.div className="absolute z-10 mt-1 w-[200px] rounded-xl border bg-background shadow-lg" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} {...({} as any)}>
+              {sortOptions.map((option) => (
+                <button
+                  key={option.value}
+                  className="block w-full px-4 py-2 text-left text-sm transition-colors hover:bg-muted/50"
+                  onClick={() => {
+                    setSort(option.value)
+                    setIsOpen(false)
+                  }}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </motion.div>
+          )}
+        </div>
       </div>
       <AnimatePresence>
         {showAllCategories && (
