@@ -28,8 +28,8 @@ export const AnimatedTooltip = ({
 
   return (
     <>
-      {items.map((item) => (
-        <div className="group relative -mr-4" key={item.id} onMouseEnter={() => setHoveredIndex(item.id)} onMouseLeave={() => setHoveredIndex(null)}>
+      {items.map((item, index) => (
+        <div className={`group relative ${index !== 8 ? '-mr-4' : ''}`} key={item.id} onMouseEnter={() => setHoveredIndex(item.id)} onMouseLeave={() => setHoveredIndex(null)}>
           <AnimatePresence mode="popLayout">
             {hoveredIndex === item.id && (
               <motion.div

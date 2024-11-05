@@ -103,3 +103,21 @@ body {
 #gradientColor {
   background: linear-gradient(45deg, #6366f1, #a855f7, #ec4899);
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 25s linear infinite;
+}

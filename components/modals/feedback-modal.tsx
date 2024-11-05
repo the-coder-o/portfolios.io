@@ -19,7 +19,7 @@ export const FeedbackModal = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild className="max-md:hidden">
+      <DialogTrigger asChild>
         <Button variant="outline" className="h-11 rounded-xl">
           <MessageSquare className="mr-2 h-4 w-4" /> Send Feedback
         </Button>
