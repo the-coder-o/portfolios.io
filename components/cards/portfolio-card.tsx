@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { formatToSlug } from '@/lib/format-to-slug'
+
 export interface CardProps {
   title?: string | any
   description?: string | any
@@ -25,7 +27,7 @@ export interface CardProps {
 
 export const Card = ({ image, title, price, description, author, singlePageDetails }: CardProps) => {
   return (
-    <Link href={'#'} className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 antialiased dark:border-neutral-800 dark:bg-[#111]">
+    <Link href={`/portfolios/${formatToSlug(title)}`} className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 antialiased dark:border-neutral-800 dark:bg-[#111]">
       <div className="relative overflow-hidden rounded-2xl transition duration-200">
         <Image alt="Component Thumbnail" loading="lazy" width={720} height={500} decoding="async" className="aspect-video rounded-2xl bg-cover object-cover object-top blur-0 transition duration-300 group-hover:scale-105" src={image || '/fallback-image.jpg'} style={{ color: 'transparent' }} />
       </div>

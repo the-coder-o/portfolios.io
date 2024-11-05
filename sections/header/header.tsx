@@ -14,10 +14,10 @@ export const Header = () => {
 
   return (
     <div className="sticky left-0 right-0 top-0 z-50 bg-black/10 backdrop-blur-lg">
-      <div className={cn(route === '/sign-in' || route === '/sign-up' ? 'fixed left-0 right-0 top-0 z-50' : '')}>
+      <div className={cn(route === '/sign-in' || route === '/sign-up' || route.startsWith('/dashboard') ? 'fixed left-0 right-0 top-0 z-50 hidden' : 'block')}>
         <div className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-4 py-1 text-center font-sans text-sm font-medium tracking-tight text-white">Our new website is coming soon.😍</div>
       </div>
-      <div className={cn(route === '/sign-in' || route === '/sign-up' ? 'hidden' : 'block')}>
+      <div className={cn(route === '/sign-in' || route === '/sign-up' || route.startsWith('/dashboard') ? 'hidden' : 'block')}>
         <header className="container">
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center gap-10">
@@ -27,13 +27,13 @@ export const Header = () => {
                   Portfolios
                 </Link>
                 <Link href={'/rezume'} className={cn('hidden items-center gap-1.5 space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 dark:hover:text-white sm:flex', route === '/rezume' ? 'dark:text-white' : 'dark:text-foreground/60')}>
-                  <Badge className="flex h-[20px] items-center justify-center gap-1 rounded-lg dark:border-green-300 dark:bg-green-700 dark:text-white">
+                  <Badge className="flex h-[20px] items-center justify-center gap-1 rounded-lg px-1 dark:border-green-300 dark:bg-green-700 dark:text-white">
                     <Sparkle size={12} /> New
                   </Badge>
                   Rezume
                 </Link>
                 <Link href={'#'} className={cn('hidden items-center gap-1.5 space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 dark:hover:text-white sm:flex', route === '/templates' ? 'dark:text-white' : 'dark:text-foreground/60')}>
-                  <Badge className="flex h-[20px] items-center justify-center gap-1 rounded-lg dark:border-green-300 dark:bg-green-700 dark:text-white">
+                  <Badge className="flex h-[20px] items-center justify-center gap-1 rounded-lg px-1 dark:border-green-300 dark:bg-green-700 dark:text-white">
                     <Clock size={12} /> Soon
                   </Badge>
                   Templates
