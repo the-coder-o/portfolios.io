@@ -32,10 +32,12 @@ export const Searchmodal = () => {
     <>
       <Button
         onClick={() => setOpen(true)}
-        className="relative flex w-fit items-center justify-start rounded-xl border border-transparent bg-white px-4 py-2 text-sm text-muted-foreground shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] dark:border-white/[0.2] dark:bg-[#111111] max-[900px]:hidden"
+        className="relative flex h-11 w-full items-center justify-between rounded-xl border border-transparent bg-white px-4 py-2 text-sm text-muted-foreground shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] dark:border-white/[0.2] dark:bg-[#111111]"
       >
-        <Search size={18} />
-        <span className="pl-2 pr-4 text-xs font-medium text-foreground/60 transition-colors hover:text-foreground/80 sm:text-sm">Search Portfolios</span>
+        <div className="flex items-center">
+          <Search size={18} />
+          <span className="pl-2 pr-4 text-xs font-medium text-foreground/60 transition-colors hover:text-foreground/80 sm:text-sm">Search Portfolios</span>
+        </div>
         <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
           <span className="text-xs">⌘</span>J
         </kbd>
