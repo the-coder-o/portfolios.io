@@ -1,5 +1,5 @@
 import PageTitle from '@/components/page-title'
-import { AboutView } from '@/modules/profile/pages/about/section/about-view'
+import { AboutView } from '@/modules/profile/pages/about/about-view'
 
 const Page = () => {
   return (

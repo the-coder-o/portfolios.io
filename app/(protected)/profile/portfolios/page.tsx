@@ -1,5 +1,5 @@
 import PageTitle from '@/components/page-title'
-import { PortfolioView } from '@/modules/profile/pages/portfolios/section/portfolio-view'
+import { PortfolioView } from '@/modules/profile/pages/portfolios/portfolio-view'
 
 const Page = () => {
   return (

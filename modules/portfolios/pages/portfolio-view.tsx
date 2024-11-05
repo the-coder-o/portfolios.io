@@ -1,64 +1,16 @@
-'use client'
-
-import React, { useState, useEffect } from 'react'
-
-import { portfoliosData } from '@/.mock/portfolios.data'
-import { Cover } from '@/components/animation/cover'
-import { PlaceholdersAndVanishInput } from '@/components/animation/placeholders-and-vanish-input'
 import { Spotlight } from '@/components/animation/spotlight'
-import { Card } from '@/components/cards/portfolio-card'
 
-import { Categories } from '../components/categories'
+import { Portfolioscard } from '../components/portfolios-card'
+import { HeroSection } from '../components/sections/hero-section'
 
 export const PortfoliView = () => {
-  const placeholders = ['Explore the top portfolio templates in my project.', 'Discover the best designs to showcase your work.', 'Create a stunning portfolio with ease.', 'Find your perfect portfolio template here.', 'Build your portfolio using top-rated designs.']
-
-  const itemsPerPage = 6
-  const [displayedItems, setDisplayedItems] = useState(portfoliosData.slice(0, itemsPerPage))
-  const [currentPage, setCurrentPage] = useState(1)
-
-  const loadMoreItems = () => {
-    const nextPage = currentPage + 1
-    const newItems = portfoliosData.slice(0, itemsPerPage * nextPage)
-    setDisplayedItems(newItems)
-    setCurrentPage(nextPage)
-  }
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerHeight + document.documentElement.scrollTop + 50 >= document.documentElement.scrollHeight) {
-        loadMoreItems()
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [currentPage])
-
   return (
     <>
       <Spotlight />
       <div className="container">
         <div className="mb-[150px] mt-[120px] max-md:mt-[50px]">
-          <div className="relative mb-[180px] flex flex-col overflow-hidden max-sm:mb-10 sm:items-center sm:text-center">
-            <div className="flex flex-col items-center justify-center gap-5">
-              <h1 className="relative z-20 max-w-7xl bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 bg-clip-text py-6 text-center text-4xl font-semibold text-transparent dark:from-neutral-800 dark:via-white dark:to-white max-sm:text-start md:text-4xl lg:text-7xl">
-                Best place to find <br /> portfolio <Cover>inspiration.</Cover>
-              </h1>
-              <p className="relative z-20 max-w-4xl text-center text-base font-normal text-neutral-600 dark:text-neutral-200 max-sm:text-start md:text-[19px]">
-                Unlock your potential with our curated collection of {portfoliosData?.length}+ exceptional portfolio designs. Each template is crafted to highlight your unique skills and creativity, helping you stand out in any industry.
-              </p>
-              <PlaceholdersAndVanishInput placeholders={placeholders} />
-            </div>
-          </div>
-          <div>
-            <Categories />
-            <div className="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
-              {displayedItems.map((card, index) => (
-                <Card key={index} {...card} />
-              ))}
-            </div>
-          </div>
+          <HeroSection />
+          <Portfolioscard />
         </div>
       </div>
     </>
