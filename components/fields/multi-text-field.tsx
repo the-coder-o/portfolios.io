@@ -4,7 +4,7 @@ import { useFieldArray, useFormContext } from 'react-hook-form'
 
 import { Button } from '../ui/button'
 
-import TextField from './Text'
+import TextField from './text'
 
 interface DynamicFieldArrayProps {
   name: string

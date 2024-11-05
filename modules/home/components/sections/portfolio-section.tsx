@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import { portfoliosData } from '@/.mock/portfolios.data'
-import { Card } from '@/components/cards/portfolio-card'
+import { PortfolioCard } from '@/components/cards/portfolio-card'
 
 export const PortfolioSection = () => {
   return (
@@ -23,7 +23,7 @@ export const PortfolioSection = () => {
       </div>
       <div className="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
         {portfoliosData.slice(0, 9).map((card, index) => (
-          <Card key={index} {...card} />
+          <PortfolioCard key={index} {...card} />
         ))}
       </div>
     </div>

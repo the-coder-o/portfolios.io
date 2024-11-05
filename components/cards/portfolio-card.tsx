@@ -25,7 +25,7 @@ export interface CardProps {
   }
 }
 
-export const Card = ({ image, title, price, description, author, singlePageDetails }: CardProps) => {
+export const PortfolioCard = ({ image, title, price, description, author, singlePageDetails }: CardProps) => {
   return (
     <Link href={`/portfolios/${formatToSlug(title)}`} className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 antialiased dark:border-neutral-800 dark:bg-[#111]">
       <div className="relative overflow-hidden rounded-2xl transition duration-200">

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card } from '@/components/cards/portfolio-card'
+import { PortfolioCard } from '@/components/cards/portfolio-card'
 
 export const LikedView = () => {
   return (
@@ -8,7 +8,7 @@ export const LikedView = () => {
       <div className="my-10">
         <div className="grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
           {cardData.map((card, index) => (
-            <Card key={index} {...card} />
+            <PortfolioCard key={index} {...card} />
           ))}
         </div>
       </div>

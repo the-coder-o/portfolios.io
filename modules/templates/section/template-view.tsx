@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card } from '@/components/cards/portfolio-card'
+import { PortfolioCard } from '@/components/cards/portfolio-card'
 
 export const TemplateView = () => {
   return (
@@ -12,7 +12,7 @@ export const TemplateView = () => {
         </div>
         <div className="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
           {cardData.map((card, index) => (
-            <Card key={index} {...card} />
+            <PortfolioCard key={index} {...card} />
           ))}
         </div>
       </div>
