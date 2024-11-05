@@ -2,9 +2,11 @@
 
 import { ChevronRight, Clock, type LucideIcon } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuAction, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem } from '@/components/ui/sidebar'
+import { cn } from '@/lib/utils'
 
 import { Badge } from '../ui/badge'
 
@@ -22,6 +24,8 @@ export function NavMain({
     }[]
   }[]
 }) {
+  const route = usePathname()
+
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
@@ -30,7 +34,7 @@ export function NavMain({
           <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
             <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip={item.title}>
-                <a href={item.url}>
+                <Link href={item.url}>
                   <item.icon />
                   <span className="flex w-full items-center justify-between">
                     {item.title}
@@ -38,7 +42,7 @@ export function NavMain({
                       <Clock size={10} /> Soon
                     </Badge>
                   </span>
-                </a>
+                </Link>
               </SidebarMenuButton>
               {item.items?.length ? (
                 <>
@@ -52,7 +56,7 @@ export function NavMain({
                     <SidebarMenuSub>
                       {item.items?.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.title}>
-                          <SidebarMenuSubButton asChild>
+                          <SidebarMenuSubButton asChild className={cn(route.split('/')[3].toLowerCase() === subItem.url.toLowerCase() ? '!bg-sidebar-accent' : '')}>
                             <Link href={subItem.url}>
                               <span>{subItem.title}</span>
                             </Link>
