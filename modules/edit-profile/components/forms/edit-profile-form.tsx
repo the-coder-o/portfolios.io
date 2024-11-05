@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import MultiTextField from '@/components/fields/multi-text-field'
-import TextField from '@/components/fields/text'
+import TextField from '@/components/fields/text-field'
 import TextAreaField from '@/components/fields/text-area'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
