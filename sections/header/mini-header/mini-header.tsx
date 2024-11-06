@@ -1,14 +1,15 @@
 'use client'
 
-import { Clock, Menu, Sparkle } from 'lucide-react'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { FeedbackModal } from '@/components/modals/feedback-modal'
-import { Searchmodal } from '@/components/modals/search-modal'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import Link from 'next/link'
+import { Clock, Menu, Sparkle } from 'lucide-react'
+
 import { cn } from '@/lib/utils'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Searchmodal } from '@/components/modals/search-modal'
+import { FeedbackModal } from '@/components/modals/feedback-modal'
 
 export const MiniHeader = () => {
   const route = usePathname()

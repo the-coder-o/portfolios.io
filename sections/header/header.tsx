@@ -1,9 +1,11 @@
-import { Clock, Sparkle } from 'lucide-react'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Logo } from '@/components/logo/logo'
-import { Badge } from '@/components/ui/badge'
+import Link from 'next/link'
+import { Clock, Sparkle } from 'lucide-react'
+
 import { cn } from '@/lib/utils'
+import { Badge } from '@/components/ui/badge'
+import { Logo } from '@/components/logo/logo'
+
 import { MiniHeader } from './mini-header/mini-header'
 
 export const Header = () => {

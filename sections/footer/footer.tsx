@@ -1,5 +1,7 @@
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import { Clock, Sparkle } from 'lucide-react'
+
 import { Logo } from '@/components/logo/logo'
 
 export const Footer = () => {
@@ -15,21 +17,21 @@ export const Footer = () => {
           </div>
           <div className="flex justify-between gap-20 max-md:flex-col max-md:gap-10">
             <div className="space-y-2">
-              <h4 className="text-lg font-semibold">Product</h4>
+              <h4 className="text-lg font-semibold">Pages</h4>
               <ul className="space-y-1">
                 <li>
-                  <Link href="#" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
-                    Features
+                  <Link href="/portfolios" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-white" prefetch={false}>
+                    <Sparkle size={14} className="text-pink-500" /> Portfolios
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
-                    Pricing
+                  <Link href="/rezume" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-white" prefetch={false}>
+                    <Sparkle size={14} className="text-pink-500" /> Rezume
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
-                    Integrations
+                  <Link href="#" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-white" prefetch={false}>
+                    <Clock size={13.5} className="text-pink-500" /> Templates
                   </Link>
                 </li>
               </ul>
@@ -58,18 +60,13 @@ export const Footer = () => {
               <h4 className="text-lg font-semibold">Resources</h4>
               <ul className="space-y-1">
                 <li>
-                  <Link href="#" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
-                    Documentation
+                  <Link href="#" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-white" prefetch={false}>
+                    <Clock size={13.5} className="text-pink-500" /> Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
-                    Support
+                  <Link href="/timeline" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-white" prefetch={false}>
+                    <Sparkle size={14} className="text-pink-500" /> Timeline
                   </Link>
                 </li>
               </ul>
