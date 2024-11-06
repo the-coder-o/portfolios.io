@@ -1,19 +1,20 @@
 'use client'
 
-import Autoplay from 'embla-carousel-autoplay'
-import { Bookmark, CalendarRange, CircleDollarSign, Clock, Eye, Heart, Layers } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from 'react'
 import { usePathname } from 'next/navigation'
-import * as React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Bookmark, CalendarRange, CircleDollarSign, Clock, Eye, Heart, Layers } from 'lucide-react'
+import Autoplay from 'embla-carousel-autoplay'
 
-import { BreadcrumbComponent } from '@/components/breadcrumb'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import { Separator } from '@/components/ui/separator'
 import { formatToSlug } from '@/lib/format-to-slug'
+import { Separator } from '@/components/ui/separator'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { PortfolioCard } from '@/components/cards/portfolio-card'
+import { BreadcrumbComponent } from '@/components/breadcrumb'
 
 import { portfoliosData } from '@/.mock/portfolios.data'
 
@@ -23,16 +24,16 @@ export const PortfolioDetailView = () => {
   const portfolio: any = portfoliosData.find((item) => formatToSlug(item.title) === pathname.split('/')[2])
 
   return (
-    <div className="container mx-auto px-4 py-8 md:py-12">
-      <BreadcrumbComponent items={[{ label: 'Home', href: '/' }, { label: 'Portfolios', href: '/portfolios' }, { label: portfolio?.title }]} />
-      <div className="mt-8 space-y-8">
+    <div className="container">
+      <div className="mb-[150px] mt-10 space-y-8">
+        <BreadcrumbComponent items={[{ label: 'Home', href: '/' }, { label: 'Portfolios', href: '/portfolios' }, { label: portfolio?.title }]} />
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
           <div className="flex items-center gap-4">
             <Avatar className="h-16 w-16 rounded-xl">
               <AvatarImage src={portfolio?.author?.profileImage} alt={portfolio?.author?.name} />
               <AvatarFallback className="rounded-xl">{portfolio?.author?.name?.slice(0, 2)}</AvatarFallback>
             </Avatar>
-            <div>
+            <div className="flex flex-col">
               <h2 className="text-xl font-semibold">Template by {portfolio?.author?.name}</h2>
               <p className="text-sm text-muted-foreground">Professional Web Designer & Developer</p>
             </div>
@@ -61,7 +62,7 @@ export const PortfolioDetailView = () => {
           </div>
         </div>
         <Separator />
-        <div className="space-y-4">
+        <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{portfolio?.title}</h1>
           <p className="max-w-2xl text-lg text-muted-foreground">{portfolio?.description}</p>
         </div>
@@ -73,7 +74,7 @@ export const PortfolioDetailView = () => {
               }}
               plugins={[
                 Autoplay({
-                  delay: 3500,
+                  delay: 2500,
                 }),
               ]}
               className="w-full"
@@ -113,6 +114,33 @@ export const PortfolioDetailView = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+        <div className="pt-10">
+          <div className="mb-3">
+            <h3 className="text-xl font-semibold">Related Project</h3>
+            <p className="text-sm text-muted-foreground">A brief description of the related project.</p>
+          </div>
+          <Carousel
+            opts={{
+              align: 'start',
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {portfoliosData.slice(0, 6).map((card, index) => (
+                <>
+                  {portfolio?.title !== card.title ? (
+                    <CarouselItem key={index} className="flex items-center md:basis-1/2 lg:basis-1/3">
+                      <PortfolioCard key={index} {...card} />
+                    </CarouselItem>
+                  ) : null}
+                </>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </div>
     </div>
