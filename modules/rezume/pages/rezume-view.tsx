@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-
 import { rezumeData } from '@/.mock/rezume.data'
 import { RezumeCard } from '@/components/cards/rezume-card'
 

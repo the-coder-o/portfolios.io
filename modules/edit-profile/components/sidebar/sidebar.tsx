@@ -1,11 +1,9 @@
 'use client'
 
-import { Settings, User, Lock, Share2, Briefcase, Mail, CreditCard, Laptop, AppWindow, Database, Trash } from 'lucide-react'
 import { useState } from 'react'
-
+import { AppWindow, Briefcase, CreditCard, Database, Laptop, Lock, Mail, Settings, Share2, Trash, User } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-
 import { SidebarContent } from './sidebar-content'
 
 export const Sidebar = () => {

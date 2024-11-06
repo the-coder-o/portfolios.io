@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { LogoAuth } from '@/components/logo/logo-auth'
 
 interface AuthHeaderProps {

@@ -1,6 +1,5 @@
-import Image from 'next/image'
 import React from 'react'
-
+import Image from 'next/image'
 import { logos } from '@/.mock/logos.data'
 import { people } from '@/.mock/people.data'
 import { AnimatedTooltip } from '@/components/animation/animated-toolip'

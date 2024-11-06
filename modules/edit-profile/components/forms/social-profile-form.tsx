@@ -1,13 +1,11 @@
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Linkedin, Github, Twitter, Facebook, Instagram, Globe, File, FileText, Briefcase, PenTool, MessageCircle, Send } from 'lucide-react'
 import React from 'react'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Briefcase, Facebook, File, FileText, Github, Globe, Instagram, Linkedin, MessageCircle, PenTool, Send, Twitter } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-
 import TextField from '@/components/fields/text-field'
 import { Button } from '@/components/ui/button'
 import { Form } from '@/components/ui/form'
-
 import { SocialProfileInterface } from '../../types/socialprofile-interface'
 
 const socialProfileSchema = z.object({

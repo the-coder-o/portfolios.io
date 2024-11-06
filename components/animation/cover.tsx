@@ -1,7 +1,7 @@
 'use client'
+
 import { AnimatePresence, motion } from 'framer-motion'
-import React, { useEffect, useId, useState } from 'react'
-import { useRef } from 'react'
+import React, { useEffect, useId, useRef, useState } from 'react'
 
 import { cn } from '@/lib/utils'
 

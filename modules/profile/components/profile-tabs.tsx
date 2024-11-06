@@ -1,8 +1,6 @@
 import { LayoutDashboard } from 'lucide-react'
 import { usePathname } from 'next/navigation'
-
 import { tabData } from '@/constants/tab-data'
-
 import { TabButton } from './tab-button'
 
 export const ProfileTabs = () => {

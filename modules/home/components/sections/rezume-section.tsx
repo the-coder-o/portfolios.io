@@ -1,6 +1,5 @@
-import Link from 'next/link'
 import React from 'react'
-
+import Link from 'next/link'
 import { rezumeData } from '@/.mock/rezume.data'
 import { RezumeCard } from '@/components/cards/rezume-card'
 

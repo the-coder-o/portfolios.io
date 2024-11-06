@@ -1,6 +1,5 @@
-import { Calendar, MapPin, Facebook, Twitter, Send } from 'lucide-react'
 import React from 'react'
-
+import { Calendar, Facebook, MapPin, Send, Twitter } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'

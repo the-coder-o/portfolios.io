@@ -1,10 +1,8 @@
-import Link from 'next/link'
 import React from 'react'
-
+import Link from 'next/link'
 import { portfoliosData } from '@/.mock/portfolios.data'
 import { Cover } from '@/components/animation/cover'
 import { Spotlight } from '@/components/animation/spotlight'
-
 import { LogoSlider } from './logo-slider'
 
 export const HeroSection = () => {

@@ -1,3 +1,4 @@
+import { Eye } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -27,9 +28,14 @@ export interface CardProps {
 
 export const PortfolioCard = ({ image, title, price, description, author, singlePageDetails }: CardProps) => {
   return (
-    <Link href={`/portfolios/${formatToSlug(title)}`} className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 antialiased dark:border-neutral-800 dark:bg-[#111]">
+    <Link href={`/portfolios/${formatToSlug(title)}`} className="group relative h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 antialiased dark:border-neutral-800 dark:bg-[#111]">
       <div className="relative overflow-hidden rounded-2xl transition duration-200">
         <Image alt="Component Thumbnail" loading="lazy" width={720} height={500} decoding="async" className="aspect-video rounded-2xl bg-cover object-cover object-top blur-0 transition duration-300 group-hover:scale-105" src={image || '/fallback-image.jpg'} style={{ color: 'transparent' }} />
+        <div className="absolute inset-0 z-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <Link href={`${singlePageDetails?.githubLink}`} className="flex h-11 w-11 items-center justify-center rounded-full bg-background/80 shadow-md backdrop-blur-sm">
+            <Eye className="h-6 w-6" />
+          </Link>
+        </div>
       </div>
       <div className="mt-4 flex flex-col items-start p-3">
         <div className="mb-2 flex w-full items-center justify-between">
@@ -41,10 +47,10 @@ export const PortfolioCard = ({ image, title, price, description, author, single
         {author && (
           <div className="mt-5 flex w-full items-center justify-between">
             {singlePageDetails?.githubLink ? (
-              <Link href={singlePageDetails.githubLink} className="flex items-center">
+              <div className="flex items-center">
                 <Image src={author.profileImage} alt={`${author.name}'s profile`} width={24} height={24} className="mr-2 rounded-lg" />
                 <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">{author.name}</span>
-              </Link>
+              </div>
             ) : (
               <div className="flex items-center">
                 <Image src={author.profileImage} alt={`${author.name}'s profile`} width={24} height={24} className="mr-2 rounded-lg" />

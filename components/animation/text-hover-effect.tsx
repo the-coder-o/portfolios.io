@@ -1,6 +1,7 @@
 'use client'
+
 import { motion } from 'framer-motion'
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 export const TextHoverEffect = ({ text, duration }: { text: string; duration?: number; automatic?: boolean }) => {
   const svgRef = useRef<SVGSVGElement>(null)

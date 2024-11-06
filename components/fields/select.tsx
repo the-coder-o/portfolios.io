@@ -28,7 +28,7 @@ export default function SelectField({ data, placeholder, name, label, required }
           )}
           <FormControl>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
-              <SelectTrigger className="rounded-xl">
+              <SelectTrigger className="w-[200px] rounded-xl">
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
               <SelectContent className="rounded-xl">

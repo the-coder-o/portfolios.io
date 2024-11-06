@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { AnimatedTooltip } from '@/components/animation/animated-toolip'
 
 export const AuthBanner = () => {

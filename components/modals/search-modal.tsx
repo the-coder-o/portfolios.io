@@ -5,10 +5,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-import { portfoliosData } from '@/.mock/portfolios.data'
-import { rezumeData } from '@/.mock/rezume.data'
 import { Button } from '@/components/ui/button'
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command'
+
+import { portfoliosData } from '@/.mock/portfolios.data'
+import { rezumeData } from '@/.mock/rezume.data'
 
 import { CardProps } from '../cards/portfolio-card'
 import { RezumeProps } from '../cards/rezume-card'
