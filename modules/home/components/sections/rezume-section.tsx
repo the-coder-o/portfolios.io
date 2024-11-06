@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import { rezumeData } from '@/.mock/rezume.data'
+
 import { RezumeCard } from '@/components/cards/rezume-card'
+
+import { rezumeData } from '@/.mock/rezume.data'
 
 export const RezumeSection = () => {
   const filteredData = rezumeData.filter((item, index, self) => {
@@ -24,7 +26,7 @@ export const RezumeSection = () => {
           </Link>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
+      <div className="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
         {filteredData.slice(0, 12).map((card) => (
           <RezumeCard key={card.id} {...card} />
         ))}

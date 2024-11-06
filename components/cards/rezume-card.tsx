@@ -26,11 +26,14 @@ export const RezumeCard = ({ url, title, image, creatorName, creatorLink }: Rezu
         {creatorName && (
           <div className="mt-5 flex w-full items-center justify-between">
             <Link href={creatorLink} className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-xl bg-white text-black">
+              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white text-black">
                 <User size={18} className="rounded-xl text-black" />
               </div>
               <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">{creatorName}</span>
             </Link>
+            <div className="flex h-[22px] w-[60px] items-center justify-center rounded-lg border border-transparent bg-primary text-sm font-semibold text-foreground transition-colors hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 dark:border-green-300 dark:bg-green-700">
+              Free
+            </div>
           </div>
         )}
       </div>
