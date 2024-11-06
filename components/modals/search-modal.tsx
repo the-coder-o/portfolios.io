@@ -1,18 +1,18 @@
 'use client'
 
-import { Search } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Search } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command'
+import { Button } from '@/components/ui/button'
 
-import { portfoliosData } from '@/.mock/portfolios.data'
 import { rezumeData } from '@/.mock/rezume.data'
+import { portfoliosData } from '@/.mock/portfolios.data'
 
-import { CardProps } from '../cards/portfolio-card'
 import { RezumeProps } from '../cards/rezume-card'
+import { CardProps } from '../cards/portfolio-card'
 
 export const Searchmodal = () => {
   const [open, setOpen] = useState(false)

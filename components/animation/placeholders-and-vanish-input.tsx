@@ -1,8 +1,8 @@
 'use client'
 
-import { AnimatePresence, motion } from 'framer-motion'
-import { SearchIcon } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { SearchIcon } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { cn } from '@/lib/utils'
 

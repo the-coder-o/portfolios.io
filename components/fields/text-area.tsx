@@ -1,8 +1,8 @@
-import { cx } from 'class-variance-authority'
 import { useFormContext } from 'react-hook-form'
+import { cx } from 'class-variance-authority'
 
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
 import { Textarea } from '../ui/textarea'
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
 
 interface IProps {
   name: string

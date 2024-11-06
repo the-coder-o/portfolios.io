@@ -1,12 +1,12 @@
 'use client'
 
-import { ChevronRight, Clock, type LucideIcon } from 'lucide-react'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import { ChevronRight, Clock, type LucideIcon } from 'lucide-react'
 
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
-import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuAction, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem } from '@/components/ui/sidebar'
 import { cn } from '@/lib/utils'
+import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuAction, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem } from '@/components/ui/sidebar'
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 
 import { Badge } from '../ui/badge'
 

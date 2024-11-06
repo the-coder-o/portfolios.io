@@ -1,5 +1,5 @@
-import PageTitle from '@/components/page-title'
 import { FavoritesView } from '@/modules/profile/pages/favorites/favorites-view'
+import PageTitle from '@/components/page-title'
 
 const Page = () => {
   return (

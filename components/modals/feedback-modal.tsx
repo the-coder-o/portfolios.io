@@ -1,10 +1,10 @@
-import { MessageSquare } from 'lucide-react'
 import { useState } from 'react'
+import { MessageSquare } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
+import { Textarea } from '@/components/ui/textarea'
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
 
 export const FeedbackModal = () => {
   const [isOpen, setIsOpen] = useState(false)

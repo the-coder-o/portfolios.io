@@ -1,13 +1,13 @@
 'use client'
 
-import { Briefcase, FileUser, LifeBuoy, Send } from 'lucide-react'
-import Link from 'next/link'
 import * as React from 'react'
+import Link from 'next/link'
+import { Briefcase, FileUser, LifeBuoy, Send } from 'lucide-react'
 
-import { NavMain } from '@/components/sidebar/nav-main'
-import { NavSecondary } from '@/components/sidebar/nav-secondary'
-import { NavUser } from '@/components/sidebar/nav-user'
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar'
+import { NavUser } from '@/components/sidebar/nav-user'
+import { NavSecondary } from '@/components/sidebar/nav-secondary'
+import { NavMain } from '@/components/sidebar/nav-main'
 
 import { LogoAuth } from '../logo/logo-auth'
 

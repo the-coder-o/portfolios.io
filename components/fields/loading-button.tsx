@@ -1,6 +1,6 @@
-import { VariantProps } from 'class-variance-authority'
-import { Loader2 } from 'lucide-react'
 import { ReactNode } from 'react'
+import { Loader2 } from 'lucide-react'
+import { VariantProps } from 'class-variance-authority'
 
 import { Button, buttonVariants } from '../ui/button'
 

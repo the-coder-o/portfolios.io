@@ -1,6 +1,6 @@
-import { X } from 'lucide-react'
-import React from 'react'
 import { useFieldArray, useFormContext } from 'react-hook-form'
+import React from 'react'
+import { X } from 'lucide-react'
 
 import { Button } from '../ui/button'
 
