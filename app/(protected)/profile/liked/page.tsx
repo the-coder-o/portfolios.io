@@ -1,5 +1,5 @@
-import PageTitle from '@/components/page-title'
 import { LikedView } from '@/modules/profile/pages/liked/liked-view'
+import PageTitle from '@/components/page-title'
 
 const Page = () => {
   return (

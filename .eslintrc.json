@@ -28,7 +28,7 @@
         ],
         "pathGroupsExcludedImportTypes": ["builtin"],
         "alphabetize": {
-          "order": "asc", // Alphabetical order within groups
+          "order": "desc", // Alphabetical order within groups
           "caseInsensitive": true // Case insensitive sorting
         }
       }

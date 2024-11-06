@@ -1,156 +1,118 @@
-import { Bookmark, CalendarRange, CircleDollarSign, Clock, Eye, Facebook, Github, Heart, HelpCircle, Info, Layers, Linkedin, Mail, Twitter, Users, Youtube } from 'lucide-react'
+'use client'
+
+import Autoplay from 'embla-carousel-autoplay'
+import { Bookmark, CalendarRange, CircleDollarSign, Clock, Eye, Heart, Layers } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import { usePathname } from 'next/navigation'
+import * as React from 'react'
 
 import { BreadcrumbComponent } from '@/components/breadcrumb'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+import { Separator } from '@/components/ui/separator'
+import { formatToSlug } from '@/lib/format-to-slug'
+
+import { portfoliosData } from '@/.mock/portfolios.data'
 
 export const PortfolioDetailView = () => {
+  const pathname = usePathname()
+
+  const portfolio: any = portfoliosData.find((item) => formatToSlug(item.title) === pathname.split('/')[2])
+
   return (
-    <div className="container">
-      <div className="mb-[150px] mt-10">
-        <BreadcrumbComponent items={[{ label: 'Home', href: '/' }, { label: 'Portfolios', href: '/portfolios' }, { label: 'Detail View' }]} />
-        <div className="mt-7 flex flex-col gap-6">
-          <div>
-            <h1 className="text-2xl font-bold text-black dark:text-white sm:text-[2.25rem]">Kapo — Saas Website</h1>
-            <p className="max-w-[600px] text-[1.125rem] text-[#999]">Launch your next SaaS project with Kapo - A minimal and modern Framer template with vibrant colors, stellar animations, and much more.</p>
+    <div className="container mx-auto px-4 py-8 md:py-12">
+      <BreadcrumbComponent items={[{ label: 'Home', href: '/' }, { label: 'Portfolios', href: '/portfolios' }, { label: portfolio?.title }]} />
+      <div className="mt-8 space-y-8">
+        <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+          <div className="flex items-center gap-4">
+            <Avatar className="h-16 w-16 rounded-xl">
+              <AvatarImage src={portfolio?.author?.profileImage} alt={portfolio?.author?.name} />
+              <AvatarFallback className="rounded-xl">{portfolio?.author?.name?.slice(0, 2)}</AvatarFallback>
+            </Avatar>
+            <div>
+              <h2 className="text-xl font-semibold">Template by {portfolio?.author?.name}</h2>
+              <p className="text-sm text-muted-foreground">Professional Web Designer & Developer</p>
+            </div>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <Link href="#" className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black px-4 py-2 text-center text-sm font-semibold text-white dark:bg-white dark:text-black sm:w-44">
-              Use for Free
-              <CircleDollarSign size={18} />
-            </Link>
-            <Link href="/sign-in" className="flex h-11 items-center justify-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black dark:bg-neutral-800 dark:text-white sm:w-44">
-              Preview
-              <Eye size={18} />
-            </Link>
-            <Button size={'icon'} variant={'secondary'} className="h-11 w-11 rounded-xl">
-              <Heart size={20} />
+          <div className="flex flex-wrap gap-2">
+            <Button asChild>
+              <Link href={`${portfolio?.singlePageDetails?.githubLink}`} target="_blank" className="rounded-xl">
+                Use for Free
+                <CircleDollarSign className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
-            <Button size={'icon'} variant={'secondary'} className="h-11 w-11 rounded-xl">
-              <Bookmark size={20} />
+            {portfolio?.singlePageDetails?.demoLink && (
+              <Button asChild variant="secondary">
+                <Link href={`${portfolio?.singlePageDetails?.demoLink}`} className="rounded-xl">
+                  Live Preview
+                  <Eye className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            )}
+            <Button variant="outline" size="icon" className="rounded-xl">
+              <Heart className="h-5 w-5" />
             </Button>
-          </div>
-          <div className="flex flex-wrap items-center justify-between gap-10 border-t-[2px] border-white/10 py-10 max-sm:grid max-sm:grid-cols-2">
-            <div className="flex flex-col items-center gap-2.5">
-              <CalendarRange />
-              <h3 className="text-center font-medium !text-white">36d ago</h3>
-              <span className="text-[0.75rem] font-medium text-[#999]">Posted</span>
-            </div>
-            <div className="flex flex-col items-center gap-2.5">
-              <Clock />
-              <h3 className="text-center font-medium !text-white">36d ago</h3>
-              <span className="text-[0.75rem] font-medium text-[#999]">Updated</span>
-            </div>
-            <div className="flex flex-col items-center gap-2.5">
-              <Eye />
-              <h3 className="text-center font-medium !text-white">19.5K+</h3>
-              <span className="text-[0.75rem] font-medium text-[#999]">View</span>
-            </div>
-            <div className="flex flex-col items-center gap-2.5">
-              <Layers />
-              <h3 className="text-center font-medium !text-white">3+</h3>
-              <span className="text-[0.75rem] font-medium text-[#999]">Pages</span>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {[1, 2, 3, 4].map((index) => (
-              <Image
-                key={index}
-                src={'https://www.framer.com/marketplace/_next/image/?url=https%3A%2F%2Fy4pdgnepgswqffpt.public.blob.vercel-storage.com%2Ftemplates%2F45969%2Fagentic-sNCXPQuuNWJ0s6sCJ1j6JRvrIWLbBr&w=1920&q=100'}
-                alt=""
-                width={1600}
-                height={1200}
-                className="!h-full !w-full rounded-lg bg-cover object-cover"
-              />
-            ))}
+            <Button variant="outline" size="icon" className="rounded-xl">
+              <Bookmark className="h-5 w-5" />
+            </Button>
           </div>
         </div>
-        <div className="mt-12 flex w-full flex-col justify-between gap-[50px] lg:flex-row">
-          <div className="flex flex-1 flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Avatar className="h-12 w-12">
-                  <AvatarImage src="/placeholder.svg" alt="Cristian Mielu" />
-                  <AvatarFallback>CM</AvatarFallback>
-                </Avatar>
-                <div>
-                  <h2>Template by Cristian Mielu</h2>
-                  <p>Professional Web Designer & Developer</p>
-                </div>
-              </div>
-              <div className="mt-4 flex flex-wrap items-center gap-4">
-                {[Twitter, Linkedin, Github, Youtube, Facebook].map((Icon, index) => (
-                  <Link key={index} href={''} className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-secondary-foreground hover:bg-secondary/80">
-                    <Icon size={20} />
-                  </Link>
+        <Separator />
+        <div className="space-y-4">
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{portfolio?.title}</h1>
+          <p className="max-w-2xl text-lg text-muted-foreground">{portfolio?.description}</p>
+        </div>
+        <div className="overflow-hidden rounded-xl">
+          {portfolio?.singlePageDetails?.images?.length ? (
+            <Carousel
+              opts={{
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 3500,
+                }),
+              ]}
+              className="w-full"
+            >
+              <CarouselContent>
+                {portfolio?.singlePageDetails?.images?.map((image: string, index: number) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      <Card className="overflow-hidden rounded-xl">
+                        <CardContent className="aspect-video p-0">
+                          <Image src={image} width={2000} height={2000} alt={`${portfolio?.title} image ${index + 1}`} className="h-full w-full object-cover" />
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
                 ))}
-              </div>
-            </div>
-            <p className="text-md text-[#999]">
-              Agentic is meticulously crafted to serve as the ultimate template for design agencies, startups, and businesses aiming to create a striking online presence. Our approach centers around providing a responsive, minimalist design that combines dynamic animation effects with seamless
-              functionality. Agentic ensures a smooth development process, enabling designers and developers to focus on showcasing their work in the most compelling manner.
-            </p>
-            <Accordion type="single" collapsible className="flex w-full flex-col gap-3">
-              <AccordionItem value="item-1" className="rounded-xl border-2 px-5 hover:no-underline dark:border-white/10">
-                <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2" className="rounded-xl border-2 px-5 hover:no-underline dark:border-white/10">
-                <AccordionTrigger>Is it styled?</AccordionTrigger>
-                <AccordionContent>Yes. It comes with default styles that matches the other components&apos; aesthetic.</AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3" className="rounded-xl border-2 px-5 hover:no-underline dark:border-white/10">
-                <AccordionTrigger>Is it animated?</AccordionTrigger>
-                <AccordionContent>Yes. It&apos;s animated by default, but you can disable it if you prefer.</AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-          <div className="flex w-full flex-col gap-10 lg:w-[400px]">
-            <div className="grid gap-6">
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold">Categories</h3>
-                <div className="flex flex-wrap gap-2">
-                  {['Business', 'Agency', 'Portfolio'].map((category) => (
-                    <Badge key={category} variant="secondary" className="flex select-none items-center space-x-1.5 whitespace-nowrap rounded-xl px-3.5 py-1 text-xs font-semibold leading-[1.6] shadow-[rgba(0,0,0,0.05)0px_2px_8px_0px] transition-all duration-300 hover:opacity-80 md:text-sm">
-                      {category}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-lg font-semibold">Pages</h3>
-              <p className="body-xs text-[#999]">Home, Works, Works Pages (CMS), 404, Licensing</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-lg font-semibold">Support</h3>
-              <ul className="grid gap-2">
-                {[
-                  { icon: Mail, text: 'Contact Cristian Mielu' },
-                  { icon: HelpCircle, text: 'How templates work' },
-                  { icon: Users, text: 'Get help from the community' },
-                  { icon: Info, text: 'Report this template' },
-                ].map(({ icon: Icon, text }, index) => (
-                  <li key={index}>
-                    <Link href={''} className="flex h-auto p-0 text-blue-500">
-                      <Icon size={20} className="mr-2" /> {text}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold">Refund Policy</h3>
-                <p className="text-[16px] text-muted-foreground">Framer does not handle refunds directly. All purchases go through the template creators. Please review the creators&apos; refund policies before buying.</p>
-              </div>
-            </div>
-          </div>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          ) : (
+            <Image src={portfolio?.image} width={2000} height={2000} alt={`${portfolio?.title}`} className="h-[600px] w-full rounded-xl object-cover" />
+          )}
+        </div>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {[
+            { icon: CalendarRange, label: 'Posted', value: '36d ago' },
+            { icon: Clock, label: 'Updated', value: '36d ago' },
+            { icon: Eye, label: 'Views', value: '19.5K+' },
+            { icon: Layers, label: 'Pages', value: '3+' },
+          ].map((item, index) => (
+            <Card key={index} className="rounded-xl">
+              <CardContent className="flex flex-col items-center justify-center p-6">
+                <item.icon className="mb-2 h-6 w-6" />
+                <p className="text-sm font-medium">{item.label}</p>
+                <p className="text-2xl font-bold">{item.value}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </div>

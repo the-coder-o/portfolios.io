@@ -1,7 +1,7 @@
 import { useFormContext } from 'react-hook-form'
 
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
 
 interface IProps {
   name: string

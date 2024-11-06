@@ -1,7 +1,7 @@
 import React from 'react'
 
-import PageTitle from '@/components/page-title'
 import { PortfoliView } from '@/modules/portfolios/pages/portfolio-view'
+import PageTitle from '@/components/page-title'
 
 const Page = () => {
   return (

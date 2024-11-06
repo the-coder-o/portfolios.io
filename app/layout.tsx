@@ -1,15 +1,24 @@
 'use client'
 
-import { QueryClientProvider } from '@tanstack/react-query'
+import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
+import { QueryClientProvider } from '@tanstack/react-query'
 
-import { ThemeProvider } from '@/components/providers'
-import { Footer } from '@/sections/footer/footer'
-import { Header } from '@/sections/header/header'
 import { queryClient } from '@/services/react-query/query-client'
+import { Header } from '@/sections/header/header'
+import { Footer } from '@/sections/footer/footer'
+import { ThemeProvider } from '@/components/providers'
+
 import './globals.css'
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
   return (
     <html lang="en">
       <head>

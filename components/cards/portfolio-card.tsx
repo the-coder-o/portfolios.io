@@ -1,6 +1,6 @@
-import { Eye } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
+import { Eye } from 'lucide-react'
 
 import { formatToSlug } from '@/lib/format-to-slug'
 

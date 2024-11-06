@@ -1,8 +1,10 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { rezumeData } from '@/.mock/rezume.data'
+
 import { RezumeCard } from '@/components/cards/rezume-card'
+
+import { rezumeData } from '@/.mock/rezume.data'
 
 const RezumeView = () => {
   const itemsPerPage = 12
