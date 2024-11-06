@@ -18,7 +18,12 @@ export const Footer = () => {
           <div className="flex justify-between gap-20 max-md:flex-col max-md:gap-10">
             <div className="space-y-2">
               <h4 className="text-lg font-semibold">Pages</h4>
-              <ul className="space-y-1">
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/portfolios" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-white" prefetch={false}>
+                    <Clock size={14} className="text-pink-500" /> Dashboard
+                  </Link>
+                </li>
                 <li>
                   <Link href="/portfolios" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-white" prefetch={false}>
                     <Sparkle size={14} className="text-pink-500" /> Portfolios
@@ -58,7 +63,7 @@ export const Footer = () => {
             </div>
             <div className="space-y-2">
               <h4 className="text-lg font-semibold">Resources</h4>
-              <ul className="space-y-1">
+              <ul className="space-y-2">
                 <li>
                   <Link href="#" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-white" prefetch={false}>
                     <Clock size={13.5} className="text-pink-500" /> Blog

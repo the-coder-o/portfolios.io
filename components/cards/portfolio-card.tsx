@@ -31,7 +31,7 @@ export const PortfolioCard = ({ image, title, price, description, author, single
     <Link href={`/portfolios/${formatToSlug(title)}`} className="group relative h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 antialiased dark:border-neutral-800 dark:bg-[#111]">
       <div className="relative overflow-hidden rounded-2xl transition duration-200">
         <Image alt="Component Thumbnail" loading="lazy" width={720} height={500} decoding="async" className="aspect-video rounded-2xl bg-cover object-cover object-top blur-0 transition duration-300 group-hover:scale-105" src={image || '/fallback-image.jpg'} style={{ color: 'transparent' }} />
-        <div className="absolute inset-0 z-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <Link href={`${singlePageDetails?.githubLink}`} className="flex h-11 w-11 items-center justify-center rounded-full bg-background/80 shadow-md backdrop-blur-sm">
             <Eye className="h-6 w-6" />
           </Link>
