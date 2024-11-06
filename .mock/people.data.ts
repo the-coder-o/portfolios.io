@@ -5,7 +5,7 @@ export const people = [
   { id: 4, name: 'Muhammadqodir', designation: 'FullStack Developer', image: 'https://avatars.githubusercontent.com/u/114002954?s=100&v=4' },
   { id: 5, name: 'Shokhjakhon', designation: 'FullStack Developer', image: 'https://avatars.githubusercontent.com/u/78145953?v=4' },
   { id: 6, name: 'Ibrohim', designation: 'Frontend Developer', image: 'https://avatars.githubusercontent.com/u/46422014?v=4' },
-  { id: 7, name: 'Azim Pulat', designation: 'Software Engineering', image: 'https://avatars.githubusercontent.com/u/35038240?v=4' },
+  { id: 7, name: 'Jontstaz', designation: 'Cryptocurrency', image: 'https://avatars.githubusercontent.com/u/6379873?v=4' },
   { id: 8, name: 'Saidov Zohid', designation: 'Backend Developer', image: 'https://avatars.githubusercontent.com/u/116626702?v=4' },
   { id: 9, name: 'Mukhammadjon', designation: 'Frontend Developer', image: 'https://avatars.githubusercontent.com/u/99827567?v=4' },
 ]
