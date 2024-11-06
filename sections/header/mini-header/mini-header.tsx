@@ -32,7 +32,8 @@ export const MiniHeader = () => {
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="flex w-[300px] flex-col justify-between sm:w-[400px]">
-          <nav className="flex flex-col gap-4">
+          <nav className="mt-8 flex flex-col gap-4">
+            <Searchmodal />
             <Link href={'/portfolios'} className={cn('text-foreground/60 transition-colors hover:text-foreground/80 dark:hover:text-white', route === '/portfolios' ? 'dark:text-white' : 'dark:text-foreground/60')}>
               Portfolios
             </Link>
@@ -50,7 +51,6 @@ export const MiniHeader = () => {
             </Link>
           </nav>
           <div className="flex flex-col gap-3">
-            <Searchmodal />
             <FeedbackModal />
             <Link href="/sign-in" className="group relative z-20 flex h-10 cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-8 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black">
               Login

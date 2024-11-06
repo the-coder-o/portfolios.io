@@ -1,5 +1,3 @@
-'use client'
-
 import { Clock, Sparkle } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
