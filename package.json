@@ -11,7 +11,6 @@
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install",
     "types": "tsc --noEmit",
-    "format": "prettier --write .",
     "check:packages": "npm audit"
   },
   "dependencies": {
@@ -60,13 +59,15 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "@types/node": "^20",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^8",
     "eslint-config-next": "15.0.1",
-    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-import": "^2.31.0",
     "husky": "^9.1.6",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",

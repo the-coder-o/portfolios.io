@@ -7,7 +7,6 @@ import { ThemeProvider } from '@/components/providers'
 import { Footer } from '@/sections/footer/footer'
 import { Header } from '@/sections/header/header'
 import { queryClient } from '@/services/react-query/query-client'
-
 import './globals.css'
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

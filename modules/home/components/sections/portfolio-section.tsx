@@ -1,6 +1,5 @@
-import Link from 'next/link'
 import React from 'react'
-
+import Link from 'next/link'
 import { portfoliosData } from '@/.mock/portfolios.data'
 import { PortfolioCard } from '@/components/cards/portfolio-card'
 

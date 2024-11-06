@@ -1,13 +1,36 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"],
-  "plugins": ["import"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
+  "plugins": ["import", "@typescript-eslint"],
   "rules": {
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
-        "alphabetize": { "order": "asc", "caseInsensitive": true },
-        "newlines-between": "always"
+        "groups": [
+          "builtin", // Node.js built-in modules (e.g., 'fs', 'path')
+          "external", // Packages from npm (e.g., 'react')
+          "internal", // Absolute imports (e.g., '@/components/SomeComponent')
+          "parent", // Relative imports from parent directories (e.g., '../../')
+          "sibling", // Relative imports from sibling directories (e.g., '../')
+          "index" // Import from index files (e.g., './')
+        ],
+        "newlines-between": "always", // New line between each group
+        "pathGroups": [
+          {
+            "pattern": "@/domain/**", // Match your absolute imports
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**", // Match all absolute imports starting with "@"
+            "group": "internal",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc", // Alphabetical order within groups
+          "caseInsensitive": true // Case insensitive sorting
+        }
       }
     ],
     "@typescript-eslint/no-explicit-any": "off"
