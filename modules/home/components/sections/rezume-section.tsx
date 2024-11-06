@@ -13,7 +13,7 @@ export const RezumeSection = () => {
     <div className="mb-[160px]">
       <div className="mb-5 flex items-center justify-between">
         <div className="flex flex-col gap-1">
-          <h2 className="text-base font-bold text-purple-500 md:text-lg">Rezume only for developers</h2>
+          <h2 className="text-xl font-bold text-purple-500 md:text-lg">Rezume for developers</h2>
           <p className="relative z-20 w-full text-left text-sm text-neutral-600 dark:text-neutral-400 max-md:hidden">Here are some rezume templates that you can use to get started.</p>
         </div>
         <div>
