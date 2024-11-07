@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Clock, Sparkle } from 'lucide-react'
@@ -11,12 +12,44 @@ import { MiniHeader } from './mini-header/mini-header'
 export const Header = () => {
   const route = usePathname()
 
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 })
+
+  useEffect(() => {
+    const targetDate = new Date()
+    targetDate.setDate(targetDate.getDate() + 30)
+
+    const updateCountdown = () => {
+      const now = new Date()
+      const difference = targetDate.getTime() - now.getTime()
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
+
+        setTimeLeft({ days, hours, minutes })
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0 })
+      }
+    }
+
+    updateCountdown()
+    const timer = setInterval(updateCountdown, 60000)
+
+    return () => clearInterval(timer)
+  }, [])
+
   const isHidden = route === '/sign-in' || route === '/sign-up' || route.startsWith('/dashboard')
 
   return (
     <div className="sticky left-0 right-0 top-0 z-50 bg-black/10 backdrop-blur-lg">
       <div className={cn(isHidden ? 'fixed left-0 right-0 top-0 z-50 hidden' : 'block')}>
-        <div className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-4 py-1 text-center font-sans text-sm font-medium tracking-tight text-white">Our new website is coming soon.😍</div>
+        <div className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-4 py-0.5 text-center font-sans text-sm font-medium tracking-tight text-white">
+          Our new website is coming soon. 😍
+          <span className="ml-2 font-medium">
+            {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m remaining
+          </span>
+        </div>
       </div>
       <div className={cn(isHidden ? 'hidden' : 'block')}>
         <header className="container">

@@ -13,18 +13,18 @@ export const ProfileMenu = () => {
       <DropdownMenuTrigger className="rounded-xl">
         <Avatar className="rounded-xl">
           <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" className="bg-cover object-cover" />
-          <AvatarFallback className="rounded-xl">CN</AvatarFallback>
+          <AvatarFallback className="rounded-xl">TS</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="mt-2 w-[250px] rounded-xl dark:bg-background">
         <div className="flex items-center gap-2 p-2">
           <Avatar className="h-14 w-14 rounded-xl">
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" className="bg-cover object-cover" />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback>TS</AvatarFallback>
           </Avatar>
           <div className="flex flex-col gap-1">
-            <h2 className="font-medium">Abdulbosit Sharipov</h2>
-            <p className="text-xs dark:text-[#999]">abdulbasit@gmail.com</p>
+            <h2 className="font-medium">Test Test</h2>
+            <p className="text-xs dark:text-[#999]">test@gmail.com</p>
           </div>
         </div>
         <DropdownMenuSeparator />

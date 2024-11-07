@@ -1,13 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
-import { logos } from '@/.mock/logos.data'
-import { people } from '@/.mock/people.data'
-import { AnimatedTooltip } from '@/components/animation/animated-toolip'
+
 import { cn } from '@/lib/utils'
+import { AnimatedTooltip } from '@/components/animation/animated-toolip'
+
+import { people } from '@/.mock/people.data'
+import { logos } from '@/.mock/logos.data'
 
 export const LogoSlider = () => {
   return (
-    <div className="flex items-center justify-center gap-5 max-md:mt-10 max-md:flex-col max-md:gap-2">
+    <div className="flex items-center justify-center gap-10 max-md:mt-10 max-md:flex-col max-md:gap-2 max-sm:gap-2">
       <div className="relative mt-5 flex flex-col items-center justify-center gap-3">
         <h2 className="relative z-10 text-center text-xs text-neutral-500">Trusted by Founders and Entrepreneurs from all over the world</h2>
         <div className="flex">

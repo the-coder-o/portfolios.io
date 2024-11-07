@@ -1,7 +1,7 @@
 'use client'
 
-import { ProfileHeader } from '../components/profile-header'
 import { ProfileTabs } from '../components/profile-tabs'
+import { ProfileHeader } from '../components/profile-header'
 
 export const ProfileView = () => {
   return (

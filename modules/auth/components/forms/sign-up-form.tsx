@@ -10,12 +10,10 @@ import TextField from '@/components/fields/text-field'
 
 import { useAuthSignUp } from '../../hooks/useAuthSignUp'
 
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/
-
 const signUpSchema = z.object({
   name: z.string().min(1, 'Full name is required'),
   email: z.string().email('Invalid email address'),
-  password: z.string().min(6, 'Password must be at least 6 characters').regex(passwordRegex, 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character'),
+  password: z.string().min(6, 'Password must be at least 6 characters'),
 })
 
 type SignUpFormSchema = z.infer<typeof signUpSchema>
