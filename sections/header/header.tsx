@@ -44,7 +44,7 @@ export const Header = () => {
   return (
     <div className="sticky left-0 right-0 top-0 z-50 bg-black/10 backdrop-blur-lg">
       <div className={cn(isHidden ? 'fixed left-0 right-0 top-0 z-50 hidden' : 'block')}>
-        <div className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-4 py-2 text-center font-sans text-sm font-medium tracking-tight text-white">
+        <div className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-4 py-0.5 text-center font-sans text-sm font-medium tracking-tight text-white">
           Our new website is coming soon. 😍
           <span className="ml-2 font-medium">
             {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m remaining
