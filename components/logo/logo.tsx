@@ -10,7 +10,7 @@ interface LogoProps {
 export const Logo = ({ className }: LogoProps) => {
   return (
     <Link href={'/'} className={cn('flex items-center gap-1 text-xl font-bold', className)}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" className="fill-foreground duration-200 hover:text-muted-foreground">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" className="!rotate-90 fill-foreground duration-200 hover:text-muted-foreground">
         <defs>
           <linearGradient id="gradientColor" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#6366f1" />
