@@ -74,7 +74,7 @@ export const PortfolioDetailView = () => {
               }}
               plugins={[
                 Autoplay({
-                  delay: 2500,
+                  delay: 2000,
                 }),
               ]}
               className="w-full"
@@ -96,7 +96,7 @@ export const PortfolioDetailView = () => {
               <CarouselNext />
             </Carousel>
           ) : (
-            <Image src={portfolio?.image} width={2000} height={2000} alt={`${portfolio?.title}`} className="h-[600px] w-full rounded-xl object-cover" />
+            <Image src={portfolio?.image} width={2000} height={2000} alt={`${portfolio?.title}`} className="h-[600px] w-full rounded-xl object-cover max-md:h-full" />
           )}
         </div>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -125,6 +125,11 @@ export const PortfolioDetailView = () => {
               align: 'start',
               loop: true,
             }}
+            plugins={[
+              Autoplay({
+                delay: 2000,
+              }),
+            ]}
             className="w-full"
           >
             <CarouselContent>
@@ -138,8 +143,10 @@ export const PortfolioDetailView = () => {
                 </>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <div className="max-md:hidden">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
           </Carousel>
         </div>
       </div>

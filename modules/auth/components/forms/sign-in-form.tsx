@@ -10,11 +10,9 @@ import TextField from '@/components/fields/text-field'
 
 import { useAuthSignIn } from '../../hooks/useAuthSignin'
 
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/
-
 const signInSchema = z.object({
   email: z.string().email('Invalid email address'),
-  password: z.string().min(6, 'Password must be at least 6 characters').regex(passwordRegex, 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character'),
+  password: z.string().min(6, 'Password must be at least 6 characters'),
 })
 
 type SignInFormSchema = z.infer<typeof signInSchema>
@@ -38,7 +36,7 @@ export const SignInForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <TextField name="email" label="Email address" placeholder="jhondou@gmail.com" required />
         <TextField name="password" label="Password" placeholder="Enter your password" required />
-        <AuthButton isPending={isPending} type="submit" title={'Sign Up'} />
+        <AuthButton isPending={isPending} type="submit" title={'Sign In'} />
       </form>
     </Form>
   )

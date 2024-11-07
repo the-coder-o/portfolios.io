@@ -1,8 +1,8 @@
 import React from 'react'
-import { Ellipsis, LocateFixed, Mail } from 'lucide-react'
 import Link from 'next/link'
+import { LocateFixed, Mail } from 'lucide-react'
+
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
 
 export const ProfileHeader = () => {
   return (
@@ -24,13 +24,16 @@ export const ProfileHeader = () => {
           </p>
         </div>
       </div>
-      <div className="flex items-center gap-1.5">
-        <Link href="/edit-profile" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-4 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-40">
+      <div className="flex items-center gap-1.5 max-sm:w-full max-sm:flex-col max-sm:gap-3">
+        <Link href="/edit-profile" className="group relative flex h-11 w-full cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-4 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-40">
           Edit your profile
         </Link>
-        <Button size={'icon'} variant={'secondary'} className="h-11 w-11 rounded-xl">
-          <Ellipsis />
-        </Button>
+        <Link
+          href="/dashboard/portfolios/all-portfolios"
+          className="group relative flex h-11 w-full cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-4 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white/15 dark:text-white sm:w-40"
+        >
+          Dahboard
+        </Link>
       </div>
     </div>
   )

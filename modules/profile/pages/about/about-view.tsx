@@ -1,15 +1,16 @@
 import React from 'react'
 import { Calendar, Facebook, MapPin, Send, Twitter } from 'lucide-react'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
+
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import { Button } from '@/components/ui/button'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export const AboutView = () => {
   return (
     <div className="container">
       <div className="my-10">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <Avatar className="h-20 w-20 rounded-xl">
               <AvatarImage src="/placeholder.svg?height=80&width=80" alt="User" className="rounded-xl" />
               <AvatarFallback className="rounded-xl">UN</AvatarFallback>
@@ -27,7 +28,7 @@ export const AboutView = () => {
             </div>
           </div>
           <TooltipProvider>
-            <div className="flex space-x-2">
+            <div className="flex flex-wrap gap-2">
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button variant="outline" size="icon" className="h-9 w-9 rounded-xl">
