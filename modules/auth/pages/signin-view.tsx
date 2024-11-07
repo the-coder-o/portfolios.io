@@ -1,8 +1,9 @@
 import React from 'react'
-import { AuthBanner } from '../components/auth-banner'
-import { AuthFooter } from '../components/footers/auth-footer'
-import { SignInForm } from '../components/forms/sign-in-form'
+
 import { AuthHeader } from '../components/header/auth-header'
+import { SignInForm } from '../components/forms/sign-in-form'
+import { AuthFooter } from '../components/footers/auth-footer'
+import { AuthBanner } from '../components/auth-banner'
 
 export const SignInView = () => {
   return (

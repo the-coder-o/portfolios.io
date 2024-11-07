@@ -1,6 +1,7 @@
 import React from 'react'
-import { Github } from 'lucide-react'
 import Link from 'next/link'
+import { Github } from 'lucide-react'
+
 import { Button } from '@/components/ui/button'
 
 interface AuthFooterProps {
@@ -31,7 +32,7 @@ export const AuthFooter = ({ pageTitle, pageDescription, description, pageUrl }:
           </div>
         </div>
         <div className="mt-6 flex w-full items-center justify-center">
-          <Button className="justify-centxl relative z-10 flex w-full items-center rounded-xl border border-transparent bg-neutral-900 px-4 py-1.5 text-sm font-medium text-white shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset] transition duration-200 hover:bg-black/90 md:text-sm">
+          <Button className="justify-centxl border-[#FFFFFF40 relative z-10 flex w-full items-center rounded-xl border-2 bg-neutral-900 px-4 py-1.5 text-sm font-medium text-white transition duration-200 hover:bg-black/90 md:text-sm">
             <Github size={17} />
             <span className="ml-2 text-sm font-semibold leading-6">Github</span>
           </Button>
