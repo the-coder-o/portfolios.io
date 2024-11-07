@@ -24,8 +24,8 @@ http.interceptors.response.use(
   },
   (error) => {
     if (error?.response?.status === 401) {
-      window.location.reload()
       Cookies.remove('access_token')
+      window.location.reload()
     }
     return Promise.reject(error)
   },
