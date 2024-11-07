@@ -1,5 +1,6 @@
 'use client'
 
+import { Toaster } from 'sonner'
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
@@ -8,7 +9,7 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from '@/services/react-query/query-client'
 import { Header } from '@/sections/header/header'
 import { Footer } from '@/sections/footer/footer'
-import { ThemeProvider } from '@/components/providers'
+import { ThemeProvider } from '@/providers'
 
 import './globals.css'
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body className="antialiased dark:bg-[#000]">
         <QueryClientProvider client={queryClient}>
+          <Toaster position="top-right" />
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <Header />
             {children}
