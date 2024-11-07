@@ -2,7 +2,7 @@ import Cookies from 'js-cookie'
 import axios from 'axios'
 
 const http = axios.create({
-  baseURL: 'https://portfolio.shohjahon1code.uz/api',
+  baseURL: process.env.NEXT_PUBLIC_BACK_URL,
 })
 
 http.interceptors.request.use(
