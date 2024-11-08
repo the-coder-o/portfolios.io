@@ -1,11 +1,12 @@
 import React from 'react'
-import { DataExport } from '../data-export'
-import CompanyForm from '../forms/company-form'
-import EditProfileForm from '../forms/edit-profile-form'
-import GeneralForm from '../forms/general-form'
-import PasswordForm from '../forms/password-form'
-import SocialProfileForm from '../forms/social-profile-form'
+
 import { Session } from '../session'
+import SocialProfileForm from '../forms/social-profile-form'
+import PasswordForm from '../forms/password-form'
+import GeneralForm from '../forms/general-form'
+import EditProfileForm from '../forms/edit-profile-form'
+import CompanyForm from '../forms/company-form'
+import { DataExport } from '../data-export'
 
 export const SidebarContent = ({ activeTab }: any) => {
   return (
