@@ -2,8 +2,10 @@
 
 import { useState } from 'react'
 import { AppWindow, Briefcase, CreditCard, Database, Laptop, Lock, Mail, Settings, Share2, Trash, User } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+
 import { Separator } from '@/components/ui/separator'
+import { Button } from '@/components/ui/button'
+
 import { SidebarContent } from './sidebar-content'
 
 export const Sidebar = () => {
