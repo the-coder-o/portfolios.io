@@ -1,6 +1,7 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { BookmarkCheck, Plus, Settings, User } from 'lucide-react'
 
@@ -12,9 +13,16 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export const ProfileMenu = () => {
   const { data: profile, isLoading } = useGetProfileMe()
+  const [isOpen, setIsOpen] = useState(false)
+
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
 
   return (
-    <DropdownMenu>
+    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger className="rounded-xl">
         <Avatar className="rounded-xl">
           {isLoading ? (

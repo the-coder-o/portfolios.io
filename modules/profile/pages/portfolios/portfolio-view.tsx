@@ -1,24 +1,17 @@
 import React from 'react'
-
-import { PortfolioCard } from '@/components/cards/portfolio-card'
-
-const cardData = Array(4).fill({
-  title: 'Hero Sections',
-  description: 'A collection of hero sections that are modern and stand out',
-  priceTag: 'Free',
-  imageUrl: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2f3v613gp8nt71f8jmpf1z7x6zkgry&w=640&q=75',
-  badges: ['Developer', 'Designer'],
-  link: '/portfolios/sws',
-})
+import Link from 'next/link'
 
 export const PortfolioView = () => {
   return (
     <div className="container">
-      <div className="my-10">
-        <div className="grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
-          {cardData.map((card, index) => (
-            <PortfolioCard key={index} {...card} />
-          ))}
+      <div className="mb-10 mt-5">
+        <div className="rounded-xl border border-dashed border-border p-8 text-center">
+          <div className="mb-4 flex justify-center"></div>
+          <h3 className="mb-2 text-2xl font-semibold">Create your first portfolio</h3>
+          <p className="mx-auto mb-6 max-w-sm text-muted-foreground">Show off your best work. Get feedback, likes and be a part of a growing community.</p>
+          <Link href="/dashboard/portfolios/all-portfolios" className="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90">
+            Create portfolio
+          </Link>
         </div>
       </div>
     </div>

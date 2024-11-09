@@ -1,5 +1,7 @@
 import { useFormContext } from 'react-hook-form'
 
+import { cn } from '@/lib/utils'
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
 
@@ -9,9 +11,10 @@ interface IProps {
   data: { name: string; type: string; disabled?: boolean }[]
   label?: string
   required?: boolean
+  className?: string
 }
 
-export default function SelectField({ data, placeholder, name, label, required }: IProps) {
+export default function SelectField({ data, placeholder, name, label, required, className }: IProps) {
   const { control } = useFormContext()
 
   return (
@@ -28,12 +31,12 @@ export default function SelectField({ data, placeholder, name, label, required }
           )}
           <FormControl>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
-              <SelectTrigger className="w-[200px] rounded-xl">
+              <SelectTrigger className={cn('w-full rounded-xl', className)}>
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
               <SelectContent className="rounded-xl">
                 {data.map((item) => (
-                  <SelectItem value={item.type} key={item.type} disabled={item.disabled}>
+                  <SelectItem value={item.name} key={item.type} disabled={item.disabled}>
                     {item.name}
                   </SelectItem>
                 ))}
