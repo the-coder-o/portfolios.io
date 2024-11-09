@@ -9,7 +9,7 @@ import { queryClient } from '@/services/react-query/query-client'
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <Toaster position="top-right" />
+      <Toaster position="top-center" />
       {children}
       <Analytics />
     </QueryClientProvider>

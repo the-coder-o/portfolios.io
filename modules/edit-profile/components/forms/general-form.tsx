@@ -1,16 +1,12 @@
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import TextField from '@/components/fields/text-field'
-import { Button } from '@/components/ui/button'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+
 import { Form } from '@/components/ui/form'
+import { Button } from '@/components/ui/button'
+import TextField from '@/components/fields/text-field'
 
-const usernameRegExp = /^[a-zA-Z0-9_-]+$/
-
-export const generalSchema = z.object({
-  username: z.string().max(30, 'Username must be between 1 and 30 characters').regex(usernameRegExp, 'Username can only contain letters, numbers, underscores, and dashes').optional(),
-  email: z.string().email('Invalid email address').optional(),
-})
+import { generalSchema } from './form-schema'
 
 type GeneralFormSchema = z.infer<typeof generalSchema>
 

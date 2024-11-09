@@ -10,20 +10,7 @@ import TextField from '@/components/fields/text-field'
 
 import { SocialProfileInterface } from '../../types/socialprofile-interface'
 
-const socialProfileSchema = z.object({
-  linkedIn: z.string().optional(),
-  github: z.string().optional(),
-  twitter: z.string().optional(),
-  facebook: z.string().optional(),
-  instagram: z.string().optional(),
-  website: z.string().optional(),
-  resume: z.string().optional(),
-  cv: z.string().optional(),
-  portfolio: z.string().optional(),
-  blog: z.string().optional(),
-  discord: z.string().optional(),
-  telegram: z.string().optional(),
-})
+import { socialProfileSchema } from './form-schema'
 
 type SocialProfileFormSchema = z.infer<typeof socialProfileSchema>
 
