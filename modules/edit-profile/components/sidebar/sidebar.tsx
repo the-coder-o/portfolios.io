@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { AppWindow, CreditCard, Database, Laptop, Lock, Mail, Settings, Share2, Trash, User } from 'lucide-react'
+import { Database, Laptop, Lock, Settings, Share2, Trash, User } from 'lucide-react'
 
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
@@ -16,10 +16,7 @@ export const Sidebar = () => {
     { name: 'Edit Profile', icon: User },
     { name: 'Password', icon: Lock },
     { name: 'Social Profiles', icon: Share2 },
-    { name: 'Email Notifications', icon: Mail },
-    { name: 'Billing', icon: CreditCard },
     { name: 'Sessions', icon: Laptop },
-    { name: 'Applications', icon: AppWindow },
     { name: 'Data Export', icon: Database },
   ]
 
