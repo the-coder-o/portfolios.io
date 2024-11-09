@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Set the font family to Inter globally */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
 @layer base {
@@ -42,6 +43,7 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
     --neutral-400: #d1d5db;
     --background: 0 0% 3.9%;
@@ -88,6 +90,7 @@ body {
   }
 }
 
+/* Add Inter as the default font family */
 * {
   font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
