@@ -25,13 +25,6 @@ export const MiniHeader = () => {
       <div className="max-md:hidden">
         <FeedbackModal />
       </div>
-      {isAuthUser ? (
-        <ProfileMenu />
-      ) : (
-        <Link href="/sign-in" className="group relative z-20 hidden h-10 cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-8 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:flex">
-          Login
-        </Link>
-      )}
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon" className="lg:hidden">
@@ -65,6 +58,13 @@ export const MiniHeader = () => {
           </div>
         </SheetContent>
       </Sheet>
+      {isAuthUser ? (
+        <ProfileMenu />
+      ) : (
+        <Link href="/sign-in" className="group relative z-20 hidden h-10 cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-8 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:flex">
+          Login
+        </Link>
+      )}
     </div>
   )
 }
