@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import { BookmarkCheck, LogOut, Plus, Settings, User } from 'lucide-react'
+import { BookmarkCheck, Plus, Settings, User } from 'lucide-react'
 
+import SignOutButton from '@/hooks/use-signout'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 
-import { Button } from './ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 
 export const ProfileMenu = () => {
@@ -48,10 +48,7 @@ export const ProfileMenu = () => {
           </Link>
         </div>
         <DropdownMenuSeparator />
-        <Button className="flex h-[35px] w-full items-center justify-center gap-2 rounded-xl text-[15px] dark:bg-accent dark:text-white dark:hover:text-white">
-          Sign out
-          <LogOut size={16} />
-        </Button>
+        <SignOutButton />
       </DropdownMenuContent>
     </DropdownMenu>
   )
