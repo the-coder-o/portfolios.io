@@ -1,40 +1,42 @@
-import React from 'react'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import MultiTextField from '@/components/fields/multi-text-field'
-import TextAreaField from '@/components/fields/text-area'
-import TextField from '@/components/fields/text-field'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+
 import { Form } from '@/components/ui/form'
+import { Button } from '@/components/ui/button'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import TextField from '@/components/fields/text-field'
+import TextAreaField from '@/components/fields/text-area'
 
-export const editProfileSchema = z.object({
-  name: z.string().optional(),
-  location: z.string().optional(),
-  bio: z.string().optional(),
-  workHistory: z
-    .array(
-      z.object({
-        role: z.string().optional(),
-        company: z.string().optional(),
-      }),
-    )
-    .optional(),
-})
+import { IProfile } from '../../types/profile.interface'
+import { useEditProfileMe } from '../../hooks/useEditProfileMe'
 
-type EditProfileFormSchema = z.infer<typeof editProfileSchema>
+import { userProfileSchema } from './form-schema'
 
-const EditProfileForm = () => {
+type EditProfileFormSchema = z.infer<typeof userProfileSchema>
+
+interface IProps {
+  profile: IProfile
+}
+
+const EditProfileForm = ({ profile }: IProps) => {
+  const { triggerProfileEdit } = useEditProfileMe()
+
   const methods = useForm<EditProfileFormSchema>({
-    resolver: zodResolver(editProfileSchema),
-    defaultValues: { workHistory: [], bio: '', location: '', name: '' },
+    resolver: zodResolver(userProfileSchema),
+    defaultValues: {
+      bio: profile.bio ?? '',
+      location: profile.location ?? '',
+      name: profile.name ?? '',
+      email: profile.email ?? '',
+      avatar: profile.avatar ?? '',
+    },
   })
 
   const { handleSubmit } = methods
 
-  const onSubmit = (data: EditProfileFormSchema) => {
-    console.log(data)
+  const onSubmit = (formValues: EditProfileFormSchema) => {
+    triggerProfileEdit(formValues)
   }
 
   return (
@@ -42,7 +44,7 @@ const EditProfileForm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mt-1 flex items-center">
           <Avatar className="h-20 w-20 rounded-xl">
-            <AvatarImage src="/placeholder.svg" alt="AS" className="rounded-xl" />
+            <AvatarImage src={profile.avatar || '/placeholder.svg'} alt="Avatar" className="rounded-xl" />
             <AvatarFallback className="rounded-xl">AS</AvatarFallback>
           </Avatar>
           <div className="ml-4 flex">
@@ -55,11 +57,10 @@ const EditProfileForm = () => {
           <TextField name="name" label="Name" placeholder="Enter your name" className="mt-1 rounded-xl" />
           <TextField name="location" label="Location" placeholder="Enter your location" className="mt-1 rounded-xl" />
           <TextAreaField name="bio" label="Bio" placeholder="Write a short bio" className="mt-1 rounded-xl" />
-          <MultiTextField name="workHistory" label="Work history & Education" addButtonText="Add Work History" className="space-y-4" />
         </div>
         <div className="flex justify-end">
-          <Button type="submit" variant={'secondary'} className="mt-5 rounded-xl">
-            Save chnages
+          <Button type="submit" variant="secondary" className="mt-5 rounded-xl">
+            Save changes
           </Button>
         </div>
       </form>
