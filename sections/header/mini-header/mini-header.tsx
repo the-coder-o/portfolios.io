@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Clock, Menu, Sparkle } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
-import { isAuthenticated } from '@/lib/auth'
+import { useIsAuth } from '@/hooks/use-isAuth'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -15,8 +15,7 @@ import { FeedbackModal } from '@/components/modals/feedback-modal'
 
 export const MiniHeader = () => {
   const route = usePathname()
-
-  const isAuthenticatedUser = isAuthenticated()
+  const isAuthUser = useIsAuth()
 
   return (
     <div className="flex flex-1 items-center justify-end gap-2 sm:gap-2 md:justify-end">
@@ -26,7 +25,7 @@ export const MiniHeader = () => {
       <div className="max-md:hidden">
         <FeedbackModal />
       </div>
-      {isAuthenticatedUser ? (
+      {isAuthUser ? (
         <ProfileMenu />
       ) : (
         <Link href="/sign-in" className="group relative z-20 hidden h-10 cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-8 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:flex">
