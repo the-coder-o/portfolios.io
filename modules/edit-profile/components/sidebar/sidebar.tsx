@@ -12,8 +12,8 @@ export const Sidebar = () => {
   const [activeTab, setActiveTab] = useState('Edit Profile')
 
   const tabs = [
-    { name: 'General', icon: Settings },
     { name: 'Edit Profile', icon: User },
+    { name: 'General', icon: Settings },
     { name: 'Password', icon: Lock },
     { name: 'Social Profiles', icon: Share2 },
     { name: 'Sessions', icon: Laptop },
