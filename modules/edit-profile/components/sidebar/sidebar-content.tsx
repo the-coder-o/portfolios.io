@@ -20,8 +20,8 @@ export const SidebarContent = ({ activeTab }: any) => {
         <>
           {isLoading ? null : (
             <>
-              {activeTab === 'General' && <GeneralForm />}
               {activeTab === 'Edit Profile' && <EditProfileForm profile={profile} />}
+              {activeTab === 'General' && <GeneralForm />}
               {activeTab === 'Password' && <PasswordForm />}
               {activeTab === 'Social Profiles' && <SocialProfileForm />}
               {activeTab === 'Sessions' && <Session />}

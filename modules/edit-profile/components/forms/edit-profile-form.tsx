@@ -5,7 +5,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { countries } from '@/constants/countries'
 import { Form } from '@/components/ui/form'
 import { Button } from '@/components/ui/button'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import WebsiteField from '@/components/fields/website-input'
 import UserNameField from '@/components/fields/username-input'
 import TextField from '@/components/fields/text-field'
@@ -48,17 +47,6 @@ const EditProfileForm = ({ profile }: IProps) => {
   return (
     <Form {...methods}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mt-1 flex items-center">
-          <Avatar className="h-20 w-20 rounded-xl">
-            <AvatarImage src={profile.avatar || '/placeholder.svg'} alt="Avatar" className="rounded-xl" />
-            <AvatarFallback className="rounded-xl">{profile.name?.slice(0, 2)}</AvatarFallback>
-          </Avatar>
-          <div className="ml-4 flex">
-            <Button variant="outline" size="sm" className="mr-2 rounded-xl">
-              Upload new picture
-            </Button>
-          </div>
-        </div>
         <div className="mt-5 flex flex-col gap-5">
           <TextField name="name" label="Name" placeholder="Enter your name" className="mt-1 rounded-xl" />
           <SelectField name="location" label="Location" placeholder="Enter your location" data={countries} />
