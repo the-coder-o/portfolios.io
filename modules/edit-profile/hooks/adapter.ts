@@ -6,6 +6,7 @@ export const getProfile = (item?: IProfile) => {
     name: item?.name ?? '',
     email: item?.email ?? '',
     username: item?.username ?? '',
+    website_name: item?.website_name ?? '',
     avatar: item?.avatar ?? '',
     location: item?.location ?? '',
     bio: item?.bio ?? '',
