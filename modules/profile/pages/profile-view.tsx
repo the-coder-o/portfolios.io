@@ -6,7 +6,7 @@ import { ProfileHeader } from '../components/profile-header'
 export const ProfileView = () => {
   return (
     <div className="container">
-      <div className="mb-[150px] mt-[120px] max-md:mt-[50px]">
+      <div className="mb-[150px] mt-5">
         <ProfileHeader />
       </div>
       <ProfileTabs />

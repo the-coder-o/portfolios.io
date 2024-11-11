@@ -52,9 +52,11 @@ export const MiniHeader = () => {
           </nav>
           <div className="flex flex-col gap-3">
             <FeedbackModal />
-            <Link href="/sign-in" className="group relative z-20 flex h-10 cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-8 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black">
-              Login
-            </Link>
+            {isAuthUser ? null : (
+              <Link href="/sign-in" className="group relative z-20 h-10 cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-8 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:flex">
+                Login
+              </Link>
+            )}
           </div>
         </SheetContent>
       </Sheet>

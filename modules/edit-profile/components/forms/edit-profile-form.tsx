@@ -47,7 +47,7 @@ const EditProfileForm = ({ profile }: IProps) => {
         <div className="mt-1 flex items-center">
           <Avatar className="h-20 w-20 rounded-xl">
             <AvatarImage src={profile.avatar || '/placeholder.svg'} alt="Avatar" className="rounded-xl" />
-            <AvatarFallback className="rounded-xl">AS</AvatarFallback>
+            <AvatarFallback className="rounded-xl">{profile.name?.slice(0, 2)}</AvatarFallback>
           </Avatar>
           <div className="ml-4 flex">
             <Button variant="outline" size="sm" className="mr-2 rounded-xl">
