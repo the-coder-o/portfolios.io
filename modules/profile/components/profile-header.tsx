@@ -14,7 +14,7 @@ export const ProfileHeader = () => {
 
   return (
     <div className="w-full">
-      <div className="h-32 rounded-xl bg-gradient-to-r from-purple-600 to-orange-400 sm:h-40 md:h-48" />
+      <div className="h-32 rounded-xl bg-gradient-to-r from-purple-600 to-orange-400 sm:h-40 md:h-52" />
       <div className="px-8 max-sm:px-0">
         <div className="-mt-14 flex flex-col items-start justify-between sm:flex-row sm:items-center">
           <div className="flex flex-col sm:mt-5 sm:flex-row sm:items-center sm:gap-5">

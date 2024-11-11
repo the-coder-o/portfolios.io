@@ -14,13 +14,13 @@ export const EditProfileView = () => {
   return (
     <div className="container">
       <div className="relative">
-        <div className="mt-5 h-32 w-full rounded-xl bg-gradient-to-r from-purple-500 to-orange-300 sm:h-40 md:h-48" />
+        <div className="mt-5 h-32 w-full rounded-xl bg-gradient-to-r from-purple-500 to-orange-300 sm:h-40 md:h-52" />
         <div className="relative px-2 pb-4 sm:px-4 sm:pb-6 md:px-6">
           <div className="absolute -top-16 mt-4 flex flex-col items-center gap-4 sm:mt-6 sm:flex-row sm:items-end md:mt-8">
             {isLoading ? (
-              <Skeleton className="h-24 w-24 rounded-[16px] sm:h-28 sm:w-28 sm:rounded-[20px]" />
+              <Skeleton className="h-24 w-24 rounded-[16px] sm:h-[108px] sm:w-[108px] sm:rounded-[20px]" />
             ) : (
-              <Avatar className="h-24 w-24 rounded-[16px] border-white sm:h-28 sm:w-28 sm:rounded-[20px]">
+              <Avatar className="h-24 w-24 rounded-[16px] border-white sm:h-[108px] sm:w-[108px] sm:rounded-[20px]">
                 <AvatarImage src={profile?.avatar} alt="Profile" className="rounded-xl" />
                 <AvatarFallback className="rounded-xl text-xl sm:text-2xl">{profile?.name?.slice(0, 2) || '?'}</AvatarFallback>
               </Avatar>
