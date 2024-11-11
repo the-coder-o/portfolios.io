@@ -1,11 +1,11 @@
 'use client'
 
-import Link from 'next/link'
 import Image from 'next/image'
 import { LocateFixed, Mail } from 'lucide-react'
 
 import { Skeleton } from '@/components/ui/skeleton'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+import { UploadBannerModal } from '@/components/modals/upload-banner-modal'
 
 import { useGetProfileMe } from '../hooks/useGetProfileMe'
 import { Sidebar } from '../components/sidebar/sidebar'
@@ -62,9 +62,7 @@ export const EditProfileView = () => {
               </div>
             </div>
           </div>
-          <Link href="#" className="group relative flex h-11 w-full cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-4 py-2 text-center text-sm text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-40">
-            Upload avatar
-          </Link>
+          <UploadBannerModal />
         </div>
       </div>
       <div className="mb-[100px] mt-24 sm:mb-[150px] sm:mt-32 md:mt-[100px]">
