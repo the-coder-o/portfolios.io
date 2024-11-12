@@ -23,7 +23,7 @@ export default function TextAreaField({ placeholder, required, name, label, clas
         <FormItem className={cx('w-full', className)}>
           {label && (
             <FormLabel>
-              {`${label} `}
+              ${label}
               {required && <span className="text-red-500 dark:text-red-900">*</span>}
             </FormLabel>
           )}
