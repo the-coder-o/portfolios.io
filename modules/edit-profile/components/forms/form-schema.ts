@@ -4,8 +4,14 @@ import { z } from 'zod'
 export const userProfileSchema = z.object({
   name: z.string().optional(),
   email: z.string().email().optional(),
-  username: z.string().regex(/^[a-zA-Z0-9_-]{3,20}$/, 'Invalid username'),
-  website_name: z.string().regex(/^(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/, 'Invalid website name'),
+  username: z
+    .string()
+    .regex(/^[a-zA-Z0-9_-]{3,20}$/, 'Invalid username')
+    .optional(),
+  website_name: z
+    .string()
+    .regex(/^(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/, 'Invalid website name')
+    .optional(),
   avatar: z.string().optional(),
   location: z.string().optional(),
   bio: z.string().optional(),

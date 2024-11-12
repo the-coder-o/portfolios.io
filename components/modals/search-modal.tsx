@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Search } from 'lucide-react'
 
+import { formatToSlug } from '@/lib/format-to-slug'
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command'
 import { Button } from '@/components/ui/button'
 
@@ -50,7 +51,7 @@ export const Searchmodal = () => {
           <CommandGroup heading="Top Portfolios">
             {portfoliosData.slice(0, 5).map((portfolios: CardProps, index: number) => (
               <CommandItem key={index} className="flex items-center justify-between">
-                <Link href={portfolios?.singlePageDetails?.githubLink} target="_blank" className="flex">
+                <Link href={`/portfolios/${formatToSlug(portfolios.title)}`} className="flex">
                   <Image src={portfolios?.image} alt={`${portfolios?.author?.name}'s profile`} width={1200} height={1200} className="mr-2 !h-[80px] !w-[110px] rounded-lg bg-cover object-cover" />
                   <div className="flex flex-col gap-1">
                     <div className="flex items-center">

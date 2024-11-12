@@ -21,7 +21,7 @@ export const RezumeSection = () => {
           <Link href="/rezume" className="hidden text-white underline max-md:block">
             View all Rezume
           </Link>
-          <Link href="/rezume" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center rounded-xl bg-black px-5 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black max-md:hidden sm:w-52">
+          <Link href="/rezume" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center rounded-xl bg-black px-5 py-2 text-center text-sm font-medium text-white no-underline transition duration-200 dark:bg-white dark:text-black max-md:hidden sm:w-52">
             View all Rezume
           </Link>
         </div>

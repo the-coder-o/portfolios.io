@@ -4,7 +4,6 @@ const Page = () => {
   return (
     <>
       <PageTitle title="All Portfoliso" />
-      <h1>All Portfolios</h1>
     </>
   )
 }
