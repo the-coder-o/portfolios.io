@@ -4,7 +4,6 @@ const Page = () => {
   return (
     <>
       <PageTitle title="Create Portfoliso" />
-      <h1>Create Portfolio</h1>
     </>
   )
 }

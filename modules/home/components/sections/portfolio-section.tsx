@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import { portfoliosData } from '@/.mock/portfolios.data'
+
 import { PortfolioCard } from '@/components/cards/portfolio-card'
+
+import { portfoliosData } from '@/.mock/portfolios.data'
 
 export const PortfolioSection = () => {
   return (
@@ -15,7 +17,7 @@ export const PortfolioSection = () => {
           <Link href="/portfolios" className="hidden text-white underline max-md:block">
             View all Portfolios
           </Link>
-          <Link href="/portfolios" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center rounded-xl bg-black px-5 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black max-md:hidden sm:w-52">
+          <Link href="/portfolios" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center rounded-xl bg-black px-5 py-2 text-center text-sm font-medium text-white no-underline transition duration-200 dark:bg-white dark:text-black max-md:hidden sm:w-52">
             View all Portfolios
           </Link>
         </div>

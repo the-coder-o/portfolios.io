@@ -38,7 +38,7 @@ export const Portfolioscard = () => {
   }, [currentPage])
 
   return (
-    <div className="space-y-2">
+    <div className="mb-[120px] space-y-2">
       <div className="flex items-center justify-between gap-10 max-md:flex-col">
         <div className="flex-1 overflow-x-auto scrollbar-hide max-md:max-w-[100%]">
           <div className="flex items-center gap-1 whitespace-nowrap px-4 py-4 max-md:p-0">
