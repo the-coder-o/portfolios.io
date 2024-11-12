@@ -8,7 +8,7 @@ export const PortfoliView = () => {
     <>
       <Spotlight />
       <div className="container">
-        <div className="mb-[150px] mt-[120px] max-md:mt-[50px]">
+        <div className="mt-[160px] max-md:mt-[120px]">
           <HeroSection />
           <Portfolioscard />
         </div>

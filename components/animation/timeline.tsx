@@ -32,7 +32,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="container w-full" ref={containerRef}>
-      <div className="mt-[50px]">
+      <div className="mt-[160px]">
         <h2 className="mb-4 flex max-w-4xl items-center gap-2 text-lg font-medium text-black dark:text-white md:text-4xl">Latest updates of - PortfoliosIo</h2>
       </div>
       <div ref={ref} className="relative pb-20">

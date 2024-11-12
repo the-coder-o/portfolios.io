@@ -25,7 +25,7 @@ export const PortfolioDetailView = () => {
 
   return (
     <div className="container">
-      <div className="mb-[150px] mt-10 space-y-8">
+      <div className="mb-[150px] mt-[160px] space-y-8">
         <BreadcrumbComponent items={[{ label: 'Home', href: '/' }, { label: 'Portfolios', href: '/portfolios' }, { label: portfolio?.title }]} />
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
           <div className="flex items-center gap-4">

@@ -16,7 +16,7 @@ export const EditProfileView = () => {
   return (
     <div className="container">
       <div className="relative">
-        <div className="mt-5 h-32 w-full rounded-xl bg-gradient-to-r from-purple-500 to-orange-300 sm:h-40 md:h-52" />
+        <div className="mt-[120px] h-32 w-full rounded-xl bg-gradient-to-r from-purple-500 to-orange-300 sm:h-40 md:h-52" />
         <div className="mt-5 flex items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-5">
           <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
             <div className="flex flex-col max-sm:items-start sm:flex-row sm:items-center sm:gap-5">
