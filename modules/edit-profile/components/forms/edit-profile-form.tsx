@@ -7,12 +7,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { roles } from '@/constants/roles'
 import { countries } from '@/constants/countries'
 import { Form } from '@/components/ui/form'
-import { Button } from '@/components/ui/button'
 import WebsiteField from '@/components/fields/website-input'
 import UserNameField from '@/components/fields/username-input'
 import TextField from '@/components/fields/text-field'
 import TextAreaField from '@/components/fields/text-area'
 import SelectField from '@/components/fields/select'
+import LoadingButton from '@/components/buttons/loading-button'
 
 import { IProfile } from '../../types/profile.interface'
 import { useEditProfileMe } from '../../hooks/useEditProfileMe'
@@ -26,7 +26,7 @@ interface IProps {
 }
 
 const EditProfileForm = ({ profile }: IProps) => {
-  const { triggerProfileEdit } = useEditProfileMe()
+  const { triggerProfileEdit, isPending } = useEditProfileMe()
 
   const methods = useForm<EditProfileFormSchema>({
     resolver: zodResolver(userProfileSchema),
@@ -59,10 +59,10 @@ const EditProfileForm = ({ profile }: IProps) => {
           <UserNameField name="username" label="Username" placeholder="Enter your username" className="rounded-xl" />
           <TextAreaField name="bio" label="Bio" placeholder="Write a short bio" className="mt-1 rounded-xl" />
         </div>
-        <div className="flex justify-end">
-          <Button type="submit" variant="secondary" className="mt-5 rounded-xl">
+        <div className="mt-5 flex justify-end">
+          <LoadingButton isLoading={isPending} variant={'secondary'} className="rounded-xl">
             Save changes
-          </Button>
+          </LoadingButton>
         </div>
       </form>
     </Form>

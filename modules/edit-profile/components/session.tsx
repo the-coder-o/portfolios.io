@@ -10,7 +10,7 @@ import { SessionInterface } from '../types/session-interface'
 export const Session = () => {
   const sessions: SessionInterface[] = [
     {
-      id: '2',
+      id: '2898',
       ip: '89.249.63.114',
       browser: 'Chrome',
       os: 'Windows',
@@ -20,7 +20,7 @@ export const Session = () => {
       isCurrent: true,
     },
     {
-      id: '1',
+      id: '198989',
       ip: '89.249.63.114',
       browser: 'Chrome',
       os: 'Windows',
@@ -29,7 +29,7 @@ export const Session = () => {
       signedIn: 'Oct 10, 2024',
     },
     {
-      id: '1',
+      id: '176',
       ip: '89.249.63.114',
       browser: 'Chrome',
       os: 'Windows',
@@ -38,7 +38,7 @@ export const Session = () => {
       signedIn: 'Oct 10, 2024',
     },
     {
-      id: '1',
+      id: '1222111',
       ip: '89.249.63.114',
       browser: 'Chrome',
       os: 'Windows',
@@ -47,7 +47,7 @@ export const Session = () => {
       signedIn: 'Oct 10, 2024',
     },
     {
-      id: '1',
+      id: '12323',
       ip: '89.249.63.114',
       browser: 'Chrome',
       os: 'Windows',
@@ -56,7 +56,7 @@ export const Session = () => {
       signedIn: 'Oct 10, 2024',
     },
     {
-      id: '1',
+      id: '123',
       ip: '89.249.63.114',
       browser: 'Chrome',
       os: 'Windows',
