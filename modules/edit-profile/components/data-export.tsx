@@ -13,7 +13,7 @@ export const DataExport = () => {
       name: profile.name ?? '',
       email: profile.email ?? '',
       username: profile.username ?? '',
-      website_name: profile.website_name ?? '',
+      website_url: profile.website_url ?? '',
       avatar: profile.avatar ?? '',
       location: profile.location ?? '',
       bio: profile.bio ?? '',

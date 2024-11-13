@@ -8,7 +8,7 @@ export const userProfileSchema = z.object({
     .string()
     .regex(/^[a-zA-Z0-9_-]{3,20}$/, 'Invalid username')
     .optional(),
-  website_name: z
+  website_url: z
     .string()
     .regex(/^(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/, 'Invalid website name')
     .optional(),
