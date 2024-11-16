@@ -3,23 +3,32 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { Form } from '@/components/ui/form'
-import { Button } from '@/components/ui/button'
 import TextField from '@/components/fields/text-field'
+import LoadingButton from '@/components/buttons/loading-button'
+
+import { IProfile } from '../../types/profile.interface'
+import { useEditProfileMe } from '../../hooks/useEditProfileMe'
 
 import { generalSchema } from './form-schema'
 
 type GeneralFormSchema = z.infer<typeof generalSchema>
 
-const GeneralForm = () => {
+interface IProps {
+  profile: IProfile
+}
+
+const GeneralForm = ({ profile }: IProps) => {
+  const { triggerProfileEdit, isPending } = useEditProfileMe()
+
   const methods = useForm<GeneralFormSchema>({
     resolver: zodResolver(generalSchema),
-    defaultValues: { email: '', username: '' },
+    defaultValues: { email: profile.email ?? '', username: profile.username ?? '' },
   })
 
   const { handleSubmit } = methods
 
   const onSubmit = (data: GeneralFormSchema) => {
-    console.log(data)
+    triggerProfileEdit(data)
   }
 
   return (
@@ -29,10 +38,10 @@ const GeneralForm = () => {
           <TextField name="username" label="Username" placeholder="Enter your username" className="mt-1 rounded-xl" />
           <TextField name="email" label="Email" placeholder="Enter your email" className="mt-1 rounded-xl" />
         </div>
-        <div className="flex justify-end">
-          <Button type="submit" variant={'secondary'} className="mt-5 rounded-xl">
-            Save chnages
-          </Button>
+        <div className="mt-5 flex justify-end">
+          <LoadingButton isLoading={isPending} variant={'secondary'} className="rounded-xl max-md:w-full">
+            Save changes
+          </LoadingButton>
         </div>
       </form>
     </Form>

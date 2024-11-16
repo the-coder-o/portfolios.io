@@ -60,7 +60,7 @@ const EditProfileForm = ({ profile }: IProps) => {
           <TextAreaField name="bio" label="Bio" placeholder="Write a short bio" className="mt-1 rounded-xl" />
         </div>
         <div className="mt-5 flex justify-end">
-          <LoadingButton isLoading={isPending} variant={'secondary'} className="rounded-xl">
+          <LoadingButton isLoading={isPending} variant={'secondary'} className="rounded-xl max-md:w-full">
             Save changes
           </LoadingButton>
         </div>

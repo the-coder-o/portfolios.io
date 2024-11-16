@@ -21,7 +21,7 @@ export const SidebarContent = ({ activeTab }: any) => {
           {isLoading ? null : (
             <>
               {activeTab === 'Edit Profile' && <EditProfileForm profile={profile} />}
-              {activeTab === 'General' && <GeneralForm />}
+              {activeTab === 'General' && <GeneralForm profile={profile} />}
               {activeTab === 'Password' && <PasswordForm />}
               {activeTab === 'Social Profiles' && <SocialProfileForm />}
               {activeTab === 'Sessions' && <Session />}

@@ -22,3 +22,8 @@ export interface ProfileEdit {
   location?: string
   bio?: string
 }
+
+export interface EditPassword {
+  old_password: string
+  new_password: string
+}

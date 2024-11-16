@@ -21,7 +21,7 @@ export const MiniHeader = () => {
       {isAuthUser ? (
         <ProfileMenu />
       ) : (
-        <Link href="/sign-in" className="group relative z-20 hidden h-10 cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-8 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:flex">
+        <Link href="/sign-in" className="group relative z-20 flex h-10 cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-8 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black max-sm:py-0 sm:flex">
           Login
         </Link>
       )}
