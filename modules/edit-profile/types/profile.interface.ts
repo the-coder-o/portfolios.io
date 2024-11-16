@@ -4,6 +4,7 @@ export interface IProfile {
   email?: string
   username?: string
   website_url?: string
+  banner?: string
   role?: string
   avatar?: string
   location?: string
@@ -15,6 +16,7 @@ export interface ProfileEdit {
   email?: string
   username?: string
   website_url?: string
+  banner?: string
   role?: string
   avatar?: string
   location?: string

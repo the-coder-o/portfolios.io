@@ -14,7 +14,12 @@ export const ProfileHeader = () => {
 
   return (
     <div className="w-full">
-      <div className="h-32 rounded-xl bg-gradient-to-r from-purple-600 to-orange-400 sm:h-40 md:h-52" />
+      <div
+        className="mt-[120px] h-32 w-full rounded-xl sm:h-40 md:h-52"
+        style={{
+          background: profile?.banner || '#ff9a9e',
+        }}
+      />
       <div className="mt-5">
         <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
           <div className="flex flex-col max-sm:items-start sm:flex-row sm:items-center sm:gap-5">
@@ -39,7 +44,7 @@ export const ProfileHeader = () => {
                   </>
                 )}
               </div>
-              <div className="mt-2 flex flex-col sm:flex-row sm:items-center sm:gap-3">
+              <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
                 {isLoading ? (
                   <Skeleton className="h-6 w-32" />
                 ) : (
