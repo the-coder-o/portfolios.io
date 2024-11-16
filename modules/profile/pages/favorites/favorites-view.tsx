@@ -4,7 +4,7 @@ import { Bookmark } from 'lucide-react'
 export const FavoritesView = () => {
   return (
     <div className="container">
-      <div className="mb-10 mt-5">
+      <div className="mb-10 mt-5 max-md:mb-[100px]">
         <div className="rounded-xl border border-dashed border-border p-8 text-center">
           <div className="mb-4 flex justify-center">
             <div className="h-12 w-12">

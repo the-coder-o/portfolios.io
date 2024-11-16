@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 export const AboutView = () => {
   return (
     <div className="container">
-      <div className="my-10">
+      <div className="my-10 max-md:mb-[100px]">
         <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <Avatar className="h-20 w-20 rounded-xl">

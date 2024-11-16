@@ -19,6 +19,6 @@ export const tabData = [
   {
     pageUrl: '/profile/about',
     icon: <User size={17} />,
-    title: 'About',
+    title: 'About Me',
   },
 ]

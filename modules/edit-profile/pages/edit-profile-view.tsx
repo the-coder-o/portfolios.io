@@ -41,7 +41,7 @@ export const EditProfileView = () => {
                     </>
                   )}
                 </div>
-                <div className="mt-2 flex flex-col sm:flex-row sm:items-center sm:gap-3">
+                <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
                   {isLoading ? (
                     <Skeleton className="h-6 w-32" />
                   ) : (
@@ -73,7 +73,7 @@ export const EditProfileView = () => {
           <UploadBannerModal />
         </div>
       </div>
-      <div className="mb-[100px] mt-24 sm:mb-[150px] sm:mt-32 md:mt-[100px]">
+      <div className="mb-[100px] mt-5 sm:mb-[150px] sm:mt-32 md:mt-[100px]">
         {isLoading ? (
           <div className="space-y-4">
             <Skeleton className="h-10 w-full" />
