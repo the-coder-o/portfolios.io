@@ -7,7 +7,6 @@ body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -91,7 +90,6 @@ body {
   }
 }
 
-/* Add Inter as the default font family */
 * {
   font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
