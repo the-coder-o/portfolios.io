@@ -17,7 +17,7 @@ export const LogoSlider = () => {
         <div className="flex items-center gap-6 max-md:flex-wrap">
           <div className="flex items-center space-x-2">
             <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" className="flex-shrink-0 stroke-1 text-neutral-500 md:h-10 md:w-10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 stroke-1 text-neutral-500 md:h-10 md:w-10">
                 <path d="M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993"></path>
                 <path d="M15 12v-3"></path>
               </svg>
@@ -26,7 +26,7 @@ export const LogoSlider = () => {
           </div>
           <div className="flex items-center space-x-2">
             <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" className="flex-shrink-0 stroke-1 text-neutral-500 md:h-10 md:w-10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 stroke-1 text-neutral-500 md:h-10 md:w-10">
                 <path d="M6.306 8.711c-2.602 .723 -4.306 1.926 -4.306 3.289c0 2.21 4.477 4 10 4c.773 0 1.526 -.035 2.248 -.102"></path>
                 <path d="M17.692 15.289c2.603 -.722 4.308 -1.926 4.308 -3.289c0 -2.21 -4.477 -4 -10 -4c-.773 0 -1.526 .035 -2.25 .102"></path>
                 <path d="M6.305 15.287c-.676 2.615 -.485 4.693 .695 5.373c1.913 1.105 5.703 -1.877 8.464 -6.66c.387 -.67 .733 -1.339 1.036 -2"></path>
@@ -48,7 +48,7 @@ export const LogoSlider = () => {
           </div>
           <div className="flex items-center space-x-2">
             <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" className="flex-shrink-0 stroke-1 text-neutral-500 md:h-10 md:w-10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 stroke-1 text-neutral-500 md:h-10 md:w-10">
                 <path d="M12 12l-8 -8v16l16 -16v16l-4 -4"></path>
                 <path d="M20 12l-8 8l-4 -4"></path>
               </svg>
