@@ -12,6 +12,7 @@ export const userProfileSchema = z.object({
     .string()
     .regex(/^(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/, 'Invalid website name')
     .optional(),
+  banner: z.string().optional(),
   role: z.string().optional(),
   avatar: z.string().optional(),
   location: z.string().optional(),

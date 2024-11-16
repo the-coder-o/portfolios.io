@@ -3,7 +3,6 @@ import { Calendar, Clock, Monitor, ShieldAlert, Smartphone } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 import { SessionInterface } from '../types/session-interface'
 
@@ -68,13 +67,6 @@ export const Session = () => {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between pb-5">
-        <h1 className="text-3xl font-bold">Your sessions history</h1>
-        <Avatar className="h-12 w-12 rounded-xl">
-          <AvatarImage src="/placeholder-avatar.jpg" alt="User" className="rounded-xl" />
-          <AvatarFallback className="rounded-xl">AB</AvatarFallback>
-        </Avatar>
-      </div>
       <p className="text-muted-foreground">This is a list of devices that have logged into your account. Revoke any sessions that you do not recognize.</p>
       <div className="grid gap-2 md:grid-cols-2">
         {sessions.map((session: SessionInterface) => (
