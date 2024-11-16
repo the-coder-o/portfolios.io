@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { LocateFixed, Mail } from 'lucide-react'
+import { BriefcaseBusiness, LocateFixed, Mail } from 'lucide-react'
 
 import { useGetProfileMe } from '@/modules/edit-profile/hooks/useGetProfileMe'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -44,8 +44,16 @@ export const ProfileHeader = () => {
                   <Skeleton className="h-6 w-32" />
                 ) : (
                   <p className="sm:text-md flex items-center gap-1 text-sm dark:text-[#999]">
+                    <BriefcaseBusiness size={18} />
+                    {profile?.role ? profile?.role : 'Not found role'}
+                  </p>
+                )}
+                {isLoading ? (
+                  <Skeleton className="h-6 w-32" />
+                ) : (
+                  <p className="sm:text-md flex items-center gap-1 text-sm dark:text-[#999]">
                     <LocateFixed size={18} />
-                    {profile?.location ?? 'Not found :('}
+                    {profile?.location ? profile?.location : 'Not found location'}
                   </p>
                 )}
                 {isLoading ? (
@@ -53,7 +61,7 @@ export const ProfileHeader = () => {
                 ) : (
                   <p className="sm:text-md mt-1 flex items-center gap-1 text-sm dark:text-[#999] sm:mt-0">
                     <Mail size={18} />
-                    {profile?.email ?? 'abdulbosit@gmail.com'}
+                    {profile?.email ? profile?.email : 'Not found email'}
                   </p>
                 )}
               </div>

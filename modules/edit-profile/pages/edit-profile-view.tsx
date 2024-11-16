@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { LocateFixed, Mail } from 'lucide-react'
+import { BriefcaseBusiness, LocateFixed, Mail } from 'lucide-react'
 
 import { Skeleton } from '@/components/ui/skeleton'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
@@ -16,7 +16,7 @@ export const EditProfileView = () => {
   return (
     <div className="container">
       <div className="relative">
-        <div className="mt-[120px] h-32 w-full rounded-xl bg-gradient-to-r from-purple-500 to-orange-300 sm:h-40 md:h-52" />
+        {isLoading ? <Skeleton className="mt-[120px] h-32 w-full rounded-xl md:h-52" /> : <div className="mt-[120px] h-32 w-full rounded-xl bg-gradient-to-r from-purple-500 to-orange-300 sm:h-40 md:h-52" />}
         <div className="mt-5 flex items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-5">
           <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
             <div className="flex flex-col max-sm:items-start sm:flex-row sm:items-center sm:gap-5">
@@ -46,8 +46,16 @@ export const EditProfileView = () => {
                     <Skeleton className="h-6 w-32" />
                   ) : (
                     <p className="sm:text-md flex items-center gap-1 text-sm dark:text-[#999]">
+                      <BriefcaseBusiness size={18} />
+                      {profile?.role ? profile?.role : 'Not found role'}
+                    </p>
+                  )}
+                  {isLoading ? (
+                    <Skeleton className="h-6 w-32" />
+                  ) : (
+                    <p className="sm:text-md flex items-center gap-1 text-sm dark:text-[#999]">
                       <LocateFixed size={18} />
-                      {profile?.location ?? 'Not found :('}
+                      {profile?.location ? profile?.location : 'Not found location'}
                     </p>
                   )}
                   {isLoading ? (
@@ -55,7 +63,7 @@ export const EditProfileView = () => {
                   ) : (
                     <p className="sm:text-md mt-1 flex items-center gap-1 text-sm dark:text-[#999] sm:mt-0">
                       <Mail size={18} />
-                      {profile?.email ?? 'abdulbosit@gmail.com'}
+                      {profile?.email ? profile?.email : 'Not found email'}
                     </p>
                   )}
                 </div>
