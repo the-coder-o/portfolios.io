@@ -10,7 +10,7 @@ export const HomeView = () => {
           <HeroSection />
         </div>
       </div>
-      <div className="bg-gradient-to-b from-[#151618] to-black pt-[100px]">
+      <div className="bg-gradient-to-b from-[#151618] to-black pt-[100px] max-md:pt-10">
         <div className="container">
           <PortfolioSection />
           <RezumeSection />

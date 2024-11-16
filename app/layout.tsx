@@ -1,3 +1,4 @@
+import { MobileHeader } from '@/sections/mobile-header'
 import { Header } from '@/sections/header/header'
 import { Footer } from '@/sections/footer/footer'
 import { ClientProviders, ScrollToTop, ThemeProvider } from '@/components/providers'
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <ScrollToTop />
             <Header />
             {children}
+            <MobileHeader />
             <Footer />
           </ThemeProvider>
         </ClientProviders>
