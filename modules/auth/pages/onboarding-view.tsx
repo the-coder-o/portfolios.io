@@ -1,12 +1,10 @@
-import React from 'react'
-import Link from 'next/link'
+'use client'
 
 import { AuthHeader } from '../components/header/auth-header'
-import { SignUpForm } from '../components/forms/sign-up-form'
+import { OnboardingForm } from '../components/forms/onboarding-form'
 import { AuthGlobalFooter } from '../components/footers/auth-global-footer'
-import { AuthFooter } from '../components/footers/auth-footer'
 
-export const SignUpView = () => {
+export const OnboardingView = () => {
   return (
     <div
       className="grid min-h-screen w-full grid-cols-1 md:grid-cols-2"
@@ -16,19 +14,12 @@ export const SignUpView = () => {
         backgroundPosition: 'center',
       }}
     >
-      <div className="absolute right-0 top-0 z-20 flex items-center gap-4 p-6">
-        <span className="text-sm text-white">Already have an account?</span>
-        <Link href={'/sign-in'} className="flex items-center justify-center rounded-xl border-white/20 bg-white/10 px-5 py-2 text-white hover:bg-white/20">
-          Sign In
-        </Link>
-      </div>
       <div className="flex h-full min-h-screen w-full">
         <div className="absolute inset-0 z-0 bg-black/10"></div>
         <div className="relative z-10 flex w-full items-center justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-md">
             <AuthHeader title={'Sign Up'} />
-            <SignUpForm />
-            <AuthFooter description="By clicking on sign in, you agree to our Terms of Service and Privacy Policy." />
+            <OnboardingForm />
           </div>
         </div>
       </div>

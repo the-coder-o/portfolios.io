@@ -16,7 +16,7 @@ export const Header = () => {
 
   const launchDate = new Date('2024-12-11T00:00:00')
 
-  const isHidden = route === '/sign-in' || route === '/sign-up' || route.startsWith('/dashboard')
+  const isHidden = route === '/sign-in' || route === '/sign-up' || route.startsWith('/dashboard') || route === '/onboarding'
 
   return (
     <div className="!fixed left-0 right-0 top-0 z-50 bg-black/10 backdrop-blur-lg">

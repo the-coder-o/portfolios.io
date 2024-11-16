@@ -1,4 +1,5 @@
 import { useFormContext } from 'react-hook-form'
+import { LucideIcon } from 'lucide-react'
 import { cx } from 'class-variance-authority'
 
 import { Input } from '../ui/input'
@@ -10,9 +11,12 @@ interface IProps {
   placeholder?: string
   required?: boolean
   className?: string
+  iconLeft?: LucideIcon
+  iconRight?: LucideIcon
+  iconClassName?: string
 }
 
-export default function TextField({ placeholder, required, name, label, className }: IProps) {
+export default function TextField({ placeholder, required, name, label, className, iconLeft: IconLeft, iconRight: IconRight, iconClassName }: IProps) {
   const { control } = useFormContext()
 
   return (
@@ -28,7 +32,19 @@ export default function TextField({ placeholder, required, name, label, classNam
             </FormLabel>
           )}
           <FormControl>
-            <Input {...field} placeholder={placeholder} className={cx('rounded-xl', className)} />
+            <div className="relative">
+              {IconLeft && (
+                <div className="absolute left-3 top-1/2 -translate-y-1/2">
+                  <IconLeft className={cx('h-5 w-5 text-muted-foreground', iconClassName)} />
+                </div>
+              )}
+              <Input {...field} placeholder={placeholder} className={cx('rounded-xl', IconLeft && 'pl-10', IconRight && 'pr-10', className)} />
+              {IconRight && (
+                <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                  <IconRight className={cx('h-5 w-5 text-muted-foreground', iconClassName)} />
+                </div>
+              )}
+            </div>
           </FormControl>
           <FormMessage />
         </FormItem>

@@ -1,11 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Database, Laptop, Lock, Menu, Settings, Share2, Trash, User } from 'lucide-react'
+import { Database, Laptop, Lock, Menu, Settings, Share2, Trash, User, Clock } from 'lucide-react'
 
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 
 import { SidebarContent } from './sidebar-content'
 
@@ -14,12 +15,12 @@ export const Sidebar = () => {
   const [sheetOpen, setSheetOpen] = useState(false)
 
   const tabs = [
-    { name: 'Edit Profile', icon: User },
-    { name: 'General', icon: Settings },
-    { name: 'Password', icon: Lock },
-    { name: 'Social Profiles', icon: Share2 },
-    { name: 'Sessions', icon: Laptop },
-    { name: 'Data Export', icon: Database },
+    { name: 'Edit Profile', icon: User, isNew: false },
+    { name: 'General', icon: Settings, isNew: false },
+    { name: 'Password', icon: Lock, isNew: false },
+    { name: 'Social Profiles', icon: Share2, isNew: true },
+    { name: 'Sessions', icon: Laptop, isNew: false },
+    { name: 'Data Export', icon: Database, isNew: false },
   ]
 
   return (
@@ -39,7 +40,7 @@ export const Sidebar = () => {
             <div className="mt-4 flex h-full flex-col">
               <div className="md:col-span-1">
                 <div className="space-y-1">
-                  {tabs.map((tab: any, index) => (
+                  {tabs.map((tab, index) => (
                     <button
                       key={index}
                       onClick={() => setActiveTab(tab.name)}
@@ -47,6 +48,11 @@ export const Sidebar = () => {
                     >
                       <tab.icon className="h-4 w-4" />
                       {tab.name}
+                      {tab.isNew && (
+                        <Badge className="ml-auto flex h-[20px] items-center justify-center gap-1 rounded-lg px-1 dark:border-green-300 dark:bg-green-700 dark:text-white">
+                          <Clock size={12} /> Soon
+                        </Badge>
+                      )}
                     </button>
                   ))}
                 </div>
@@ -68,7 +74,7 @@ export const Sidebar = () => {
       <div className="mt-4 flex h-full flex-col max-md:hidden">
         <div className="md:col-span-1">
           <div className="space-y-1">
-            {tabs.map((tab: any, index) => (
+            {tabs.map((tab, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTab(tab.name)}
@@ -76,6 +82,11 @@ export const Sidebar = () => {
               >
                 <tab.icon className="h-4 w-4" />
                 {tab.name}
+                {tab.isNew && (
+                  <Badge className="ml-auto flex h-[20px] items-center justify-center gap-1 rounded-lg px-1 dark:border-green-300 dark:bg-green-700 dark:text-white">
+                    <Clock size={12} /> Soon
+                  </Badge>
+                )}
               </button>
             ))}
           </div>
