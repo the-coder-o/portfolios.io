@@ -10,7 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const AuthButton = ({ type = 'submit', className = '', isPending = false, title, ...props }: ButtonProps) => {
   return (
-    <Button type={type} className={`relative z-10 flex w-full items-center justify-center rounded-xl border bg-white px-4 py-2 text-sm font-medium text-black transition duration-200 hover:bg-white/90 md:text-sm ${className}`} {...props}>
+    <Button type={type} className={`relative z-10 flex w-full items-center justify-center rounded-xl border border-[#FFFFFF40] bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition duration-200 hover:bg-black/90 md:text-sm ${className}`} {...props}>
       {isPending ? (
         <div role="status">
           <svg aria-hidden="true" className="inline h-4 w-4 animate-spin fill-gray-600 text-gray-200 dark:fill-gray-300 dark:text-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
