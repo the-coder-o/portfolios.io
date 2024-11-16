@@ -11,7 +11,12 @@ export const Footer = () => {
   const route = usePathname()
 
   return (
-    <footer className={cn('max-sm:hidden', route === '/sign-in' || route === '/sign-up' || route.startsWith('/dashboard') || route.startsWith('/profile') || route.startsWith('/edit-profile') ? 'hidden' : `w-full border-t-[1px] pt-12 text-foreground transition-colors duration-300`)}>
+    <footer
+      className={cn(
+        'max-sm:hidden',
+        route === '/sign-in' || route === '/sign-up' || route.startsWith('/dashboard') || route.startsWith('/profile') || route.startsWith('/edit-profile') || route === '/onboarding' ? 'hidden' : `w-full border-t-[1px] pt-12 text-foreground transition-colors duration-300`,
+      )}
+    >
       <div className="container">
         <div className="flex items-center justify-between max-lg:flex-col max-lg:items-start max-lg:gap-10">
           <div className="flex flex-col items-start gap-4">

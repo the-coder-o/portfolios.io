@@ -2,6 +2,7 @@
 
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
+import { Lock, Mail } from 'lucide-react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { Form } from '@/components/ui/form'
@@ -34,8 +35,8 @@ export const SignInForm = () => {
   return (
     <Form {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        <TextField name="email" label="Email address" placeholder="jhondou@gmail.com" required />
-        <TextField name="password" label="Password" placeholder="Enter your password" required />
+        <TextField name="email" label="Email address" placeholder="jhondou@gmail.com" iconLeft={Mail} className="border-transparent bg-white/10" />
+        <TextField name="password" label="Password" placeholder="Enter your password" iconLeft={Lock} className="border-transparent bg-white/10" />
         <AuthButton isPending={isPending} type="submit" title={'Sign In'} />
       </form>
     </Form>
