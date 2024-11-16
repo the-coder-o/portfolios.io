@@ -13,8 +13,6 @@ import { Sidebar } from '../components/sidebar/sidebar'
 export const EditProfileView = () => {
   const { data: profile, isLoading } = useGetProfileMe()
 
-  console.log(profile)
-
   return (
     <div className="container">
       <div className="relative">

@@ -28,16 +28,10 @@ export const generalSchema = z.object({
 })
 
 //*****************************************************/
-export const passwordSchema = z
-  .object({
-    oldPassword: z.string().nonempty('Old password is required'),
-    newPassword: z.string().min(8, 'New password must be at least 8 characters'),
-    repeatPassword: z.string().min(8, 'Repeat password must be at least 8 characters'),
-  })
-  .refine((data) => data.newPassword === data.repeatPassword, {
-    message: 'New passwords do not match',
-    path: ['repeatPassword'],
-  })
+export const passwordSchema = z.object({
+  old_password: z.string().nonempty('Old password is required'),
+  new_password: z.string().min(8, 'New password must be at least 8 characters'),
+})
 
 //*****************************************************/
 export const socialProfileSchema = z.object({

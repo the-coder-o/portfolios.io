@@ -53,7 +53,7 @@ const SocialProfileForm = () => {
           ))}
         </div>
         <div className="flex justify-end">
-          <Button type="submit" variant={'secondary'} className="mt-5 rounded-xl">
+          <Button type="submit" variant={'secondary'} className="mt-5 rounded-xl max-sm:w-full">
             Save changes
           </Button>
         </div>
