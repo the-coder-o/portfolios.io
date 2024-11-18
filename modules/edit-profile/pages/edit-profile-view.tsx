@@ -13,19 +13,21 @@ import { Sidebar } from '../components/sidebar/sidebar'
 export const EditProfileView = () => {
   const { data: profile, isLoading } = useGetProfileMe()
 
+  const getBannerStyle = (banner: string | undefined) => {
+    if (!banner) return { background: '#ff9a9e' }
+
+    try {
+      new URL(banner)
+      return { backgroundImage: `url(${banner})`, backgroundSize: 'cover', backgroundPosition: 'center' }
+    } catch {
+      return { background: banner }
+    }
+  }
+
   return (
     <div className="container">
       <div className="relative">
-        {isLoading ? (
-          <Skeleton className="mt-[120px] h-32 w-full rounded-xl md:h-52" />
-        ) : (
-          <div
-            className="mt-[120px] h-32 w-full rounded-xl sm:h-40 md:h-52"
-            style={{
-              background: profile?.banner || '#ff9a9e',
-            }}
-          />
-        )}
+        {isLoading ? <Skeleton className="mt-[120px] h-32 w-full rounded-xl md:h-52" /> : <div className="mt-[120px] h-32 w-full rounded-xl bg-cover bg-center object-cover sm:h-40 md:h-52" style={getBannerStyle(profile?.banner)} />}
         <div className="mt-5 flex items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-5">
           <div className="flex flex-col max-sm:items-start sm:flex-row sm:items-center sm:gap-5">
             <div>

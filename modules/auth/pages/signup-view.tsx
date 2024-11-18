@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 
+import { LogoAuth } from '@/components/logo/logo-auth'
+
 import { AuthHeader } from '../components/header/auth-header'
 import { SignUpForm } from '../components/forms/sign-up-form'
 import { AuthGlobalFooter } from '../components/footers/auth-global-footer'
@@ -9,26 +11,28 @@ import { AuthFooter } from '../components/footers/auth-footer'
 export const SignUpView = () => {
   return (
     <div
-      className="grid min-h-screen w-full grid-cols-1 md:grid-cols-2"
+      className="flex min-h-screen w-full flex-col bg-cover bg-center"
       style={{
         backgroundImage: "url('https://daily-now-res.cloudinary.com/image/upload/s--r2ffZPB4--/f_auto/v1716969841/dailydev_where_developers_suffer_together_sfvfog')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
       }}
     >
-      <div className="absolute right-0 top-0 z-20 flex items-center gap-4 p-6">
-        <span className="text-sm text-white">Already have an account?</span>
-        <Link href={'/sign-in'} className="flex items-center justify-center rounded-xl border-white/20 bg-white/10 px-5 py-2 text-white hover:bg-white/20">
-          Sign In
-        </Link>
-      </div>
-      <div className="flex h-full min-h-screen w-full">
-        <div className="absolute inset-0 z-0 bg-black/10"></div>
-        <div className="relative z-10 flex w-full items-center justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-          <div className="mx-auto w-full max-w-md">
-            <AuthHeader title={'Sign Up'} />
-            <SignUpForm />
-            <AuthFooter description="By clicking on sign in, you agree to our Terms of Service and Privacy Policy." />
+      <div className="container mx-auto flex flex-col">
+        <div className="flex items-center justify-between pt-5 max-md:pt-2">
+          <LogoAuth />
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-white max-sm:hidden">Already have an account?</span>
+            <Link href="/sign-in" className="flex items-center justify-center rounded-xl border-white/20 bg-white/10 px-5 py-2 text-white hover:bg-white/20">
+              Sign In
+            </Link>
+          </div>
+        </div>
+        <div className="flex h-[85vh] items-center justify-center">
+          <div className="relative z-10 w-[450px] max-md:w-full">
+            <div className="relative">
+              <AuthHeader title="Sign Up" />
+              <SignUpForm />
+              <AuthFooter />
+            </div>
           </div>
         </div>
       </div>
