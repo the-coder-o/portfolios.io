@@ -76,7 +76,7 @@ export const UploadBannerModal = ({ profile }: IProps) => {
               <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'colors' | 'wallpapers')} className="mt-4">
                 <TabsList className="grid w-full grid-cols-2 rounded-xl">
                   <TabsTrigger value="colors" className="rounded-xl">
-                    Colors
+                    Gradients
                   </TabsTrigger>
                   <TabsTrigger value="wallpapers" className="rounded-xl">
                     Wallpapers
@@ -99,7 +99,7 @@ export const UploadBannerModal = ({ profile }: IProps) => {
                 <TabsContent value="wallpapers">
                   <div className="mt-4 grid max-h-[180px] grid-cols-4 gap-2 overflow-auto max-sm:grid-cols-3">
                     {wallpapers.map((wallpaper) => (
-                      <Button key={wallpaper.id} variant="outline" className={`h-20 w-full rounded-lg p-0 ${selectedBackground === wallpaper.url ? 'ring-2 ring-primary ring-offset-2' : ''}`} onClick={() => setSelectedBackground(wallpaper.url)} aria-label={`Select wallpaper ${wallpaper.id}`}>
+                      <Button key={wallpaper.id} variant="outline" className={`h-20 w-full rounded-xl p-0 ${selectedBackground === wallpaper.url ? 'ring-2 ring-primary ring-offset-2' : ''}`} onClick={() => setSelectedBackground(wallpaper.url)} aria-label={`Select wallpaper ${wallpaper.id}`}>
                         <div className="relative h-full w-full overflow-hidden rounded-lg">
                           <Image src={wallpaper.url} alt={`Wallpaper ${wallpaper.id}`} fill sizes="(max-width: 640px) 33vw, 25vw" priority={wallpaper.id <= 8} loading={wallpaper.id <= 8 ? 'eager' : 'lazy'} style={{ objectFit: 'cover', objectPosition: 'center' }} />
                         </div>
