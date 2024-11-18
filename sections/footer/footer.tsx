@@ -13,7 +13,7 @@ export const Footer = () => {
   return (
     <footer
       className={cn(
-        'max-sm:hidden',
+        'bg-black max-sm:hidden',
         route === '/sign-in' || route === '/sign-up' || route.startsWith('/dashboard') || route.startsWith('/profile') || route.startsWith('/edit-profile') || route === '/onboarding' ? 'hidden' : `w-full border-t-[1px] pt-12 text-foreground transition-colors duration-300`,
       )}
     >

@@ -7,11 +7,10 @@ import { Button } from '@/components/ui/button'
 interface AuthFooterProps {
   pageTitle?: string
   pageDescription?: string
-  description?: string
   pageUrl?: string
 }
 
-export const AuthFooter = ({ pageTitle, pageDescription, description, pageUrl }: AuthFooterProps) => {
+export const AuthFooter = ({ pageTitle, pageDescription, pageUrl }: AuthFooterProps) => {
   return (
     <>
       <div className="mt-10">
@@ -32,16 +31,15 @@ export const AuthFooter = ({ pageTitle, pageDescription, description, pageUrl }:
           </div>
         </div>
         <div className="mt-6 flex w-full flex-col items-center justify-center gap-2">
-          <Button className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm">
+          <Button disabled className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm">
             <Image src={'https://freelogopng.com/images/all_img/1657952440google-logo-png-transparent.png'} alt="google" width={15} height={15} />
             <span className="ml-2 text-sm font-semibold leading-6">Google</span>
           </Button>
-          <Button className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm">
+          <Button disabled className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm">
             <Image src={'https://cdn-icons-png.flaticon.com/512/25/25231.png'} alt="google" width={15} height={15} />
             <span className="ml-2 text-sm font-semibold leading-6">Github</span>
           </Button>
         </div>
-        <p className="mt-8 text-center text-sm text-neutral-600 dark:text-[#a3a3a3]">{description}</p>
       </div>
     </>
   )

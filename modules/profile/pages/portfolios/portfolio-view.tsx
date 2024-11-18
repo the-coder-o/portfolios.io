@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const PortfolioView = () => {
   return (
     <div className="container">
-      <div className="mb-10 mt-5 max-md:mb-[100px]">
+      <div className="mb-10 mt-5 bg-black max-md:mb-[100px]">
         <div className="rounded-xl border border-dashed border-border p-8 text-center">
           <div className="mb-4 flex justify-center"></div>
           <h3 className="mb-2 text-2xl font-semibold">Create your first portfolio</h3>
