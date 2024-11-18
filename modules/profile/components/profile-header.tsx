@@ -12,14 +12,20 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 export const ProfileHeader = () => {
   const { data: profile, isLoading } = useGetProfileMe()
 
+  const getBannerStyle = (banner: string | undefined) => {
+    if (!banner) return { background: '#ff9a9e' }
+
+    try {
+      new URL(banner)
+      return { backgroundImage: `url(${banner})`, backgroundSize: 'cover', backgroundPosition: 'center' }
+    } catch {
+      return { background: banner }
+    }
+  }
+
   return (
     <div className="w-full">
-      <div
-        className="mt-[120px] h-32 w-full rounded-xl sm:h-40 md:h-52"
-        style={{
-          background: profile?.banner || '#ff9a9e',
-        }}
-      />
+      {isLoading ? <Skeleton className="mt-[120px] h-32 w-full rounded-xl md:h-52" /> : <div className="mt-[120px] h-32 w-full rounded-xl bg-cover bg-center object-cover sm:h-40 md:h-52" style={getBannerStyle(profile?.banner)} />}
       <div className="mt-5">
         <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
           <div className="flex flex-col max-sm:items-start sm:flex-row sm:items-center sm:gap-5">
