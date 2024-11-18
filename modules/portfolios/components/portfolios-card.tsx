@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 
+import { cn } from '@/lib/utils'
 import { sortOptions } from '@/constants/sort-option'
 import { languageTools } from '@/constants/language-tools'
 import { jobCategories } from '@/constants/job-categories'
@@ -45,7 +46,12 @@ export const Portfolioscard = () => {
             {jobCategories.map((category) => {
               const Icon = category.icon
               return (
-                <Button key={category.name} variant={activeCategory === category.name ? 'default' : 'ghost'} size="sm" onClick={() => setActiveCategory(category.name)} className="flex-shrink-0 rounded-xl">
+                <Button
+                  key={category.name}
+                  size="sm"
+                  onClick={() => setActiveCategory(category.name)}
+                  className={cn('flex-shrink-0 rounded-xl border-2 border-[#000] hover:border-green-300 hover:bg-green-700', activeCategory === category.name ? 'border-2 border-green-300 bg-green-700 text-white' : 'bg-transparent text-white')}
+                >
                   <Icon className="mr-2 h-4 w-4" />
                   {category.name}
                 </Button>
