@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Database, Laptop, Lock, Menu, Settings, Share2, Trash, User, Clock } from 'lucide-react'
 
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -28,16 +28,13 @@ export const Sidebar = () => {
       <div className="hidden max-md:block">
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="absolute right-0 flex h-10 w-10">
+            <Button variant="outline" size="icon" className="absolute -top-1 right-0 flex h-10 w-10">
               <Menu className="h-4 w-4" />
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="left">
-            <SheetHeader>
-              <SheetTitle>Menu</SheetTitle>
-            </SheetHeader>
-            <div className="mt-4 flex h-full flex-col">
+            <div className="mt-7 flex h-full flex-col">
               <div className="md:col-span-1">
                 <div className="space-y-1">
                   {tabs.map((tab, index) => (

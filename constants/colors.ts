@@ -38,7 +38,6 @@ export const colors: Color[] = [
   { id: 27, value: 'linear-gradient(to right, #4481eb, #04befe)' },
   { id: 28, value: 'linear-gradient(to right, #dad4ec, #f3e7e9)' },
   { id: 29, value: 'linear-gradient(to right, #874da2, #c43a30)' },
-  { id: 30, value: 'linear-gradient(to right, #4481eb, #04befe)' },
 ]
 
 export const wallpapers: Wallpaper[] = [

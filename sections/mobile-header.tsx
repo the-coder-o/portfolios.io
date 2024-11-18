@@ -27,7 +27,7 @@ export const MobileHeader = () => {
             <PlusCircle className="h-6 w-6" />
             <span className="text-xs">Create</span>
           </Link>
-          <Link href="/rezume" className={cn('flex flex-col items-center gap-1 p-2 text-sm transition-colors', pathname === '/activity' ? 'text-foreground' : 'text-muted-foreground')}>
+          <Link href="/rezume" className={cn('flex flex-col items-center gap-1 p-2 text-sm transition-colors', pathname === '/rezume' ? 'text-foreground' : 'text-muted-foreground')}>
             <FileUser className="h-5 w-5" />
             <span className="text-xs">Rezume</span>
           </Link>

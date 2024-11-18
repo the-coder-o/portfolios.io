@@ -4,7 +4,7 @@ import React from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Bookmark, CalendarRange, CircleDollarSign, Clock, Eye, Heart, Layers } from 'lucide-react'
+import { Bookmark, CalendarRange, Clock, Eye, Heart, Layers } from 'lucide-react'
 import Autoplay from 'embla-carousel-autoplay'
 
 import { formatToSlug } from '@/lib/format-to-slug'
@@ -41,8 +41,7 @@ export const PortfolioDetailView = () => {
           <div className="flex flex-wrap gap-2">
             <Button asChild>
               <Link href={`${portfolio?.singlePageDetails?.githubLink}`} target="_blank" className="rounded-xl">
-                Use for Free
-                <CircleDollarSign className="ml-2 h-4 w-4" />
+                Clone the project
               </Link>
             </Button>
             {portfolio?.singlePageDetails?.demoLink && (
