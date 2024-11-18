@@ -42,34 +42,69 @@ export const colors: Color[] = [
 ]
 
 export const wallpapers: Wallpaper[] = [
-  { id: 1, url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 2, url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 3, url: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 4, url: 'https://images.unsplash.com/photo-1542224566-6e85f2e6772f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 5, url: 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 6, url: 'https://images.unsplash.com/photo-1485160497022-3e09382fb310?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 7, url: 'https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80' },
-  { id: 8, url: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=2076&q=80' },
-  { id: 9, url: 'https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2051&q=80' },
-  { id: 10, url: 'https://images.unsplash.com/photo-1443632864897-14973fa006cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 11, url: 'https://images.unsplash.com/photo-1491904768633-2b7e3e7fede5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80' },
-  { id: 12, url: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 13, url: 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80' },
-  { id: 14, url: 'https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 15, url: 'https://images.unsplash.com/photo-1464278533981-50106e6176b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 16, url: 'https://images.unsplash.com/photo-1458668383970-8ddd3927deed?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 17, url: 'https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 18, url: 'https://images.unsplash.com/photo-1439853949127-fa647821eba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 19, url: 'https://images.unsplash.com/photo-1455156218388-5e61b526818b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 20, url: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 21, url: 'https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80' },
-  { id: 22, url: 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 23, url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 24, url: 'https://images.unsplash.com/photo-1472791108553-c9405341e398?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 25, url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 26, url: 'https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 27, url: 'https://images.unsplash.com/photo-1488441770602-aed21fc49bd5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 28, url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
-  { id: 29, url: 'https://images.unsplash.com/photo-1459213599465-03ab6a4d5931?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80' },
-  { id: 30, url: 'https://images.unsplash.com/photo-1495312040802-a929cd14a6ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  // Abstract Wallpapers
+  { id: 1, url: 'https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 2, url: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 3, url: 'https://images.unsplash.com/photo-1507808973436-a4ed7b5e87c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 4, url: 'https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 5, url: 'https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+
+  // Nature Wallpapers
+  { id: 6, url: 'https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 7, url: 'https://images.unsplash.com/photo-1505144808419-1957a94ca61e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 8, url: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 9, url: 'https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 10, url: 'https://images.unsplash.com/photo-1504567961542-e24d9439a724?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+
+  // City Wallpapers
+  { id: 11, url: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 12, url: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 13, url: 'https://images.unsplash.com/photo-1470219556762-1771e7f9427d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 14, url: 'https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 15, url: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+
+  // Space Wallpapers
+  { id: 16, url: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 17, url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 18, url: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 19, url: 'https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 20, url: 'https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+
+  // Minimal Wallpapers
+  { id: 21, url: 'https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 22, url: 'https://images.unsplash.com/photo-1507646227500-4d389b0012be?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 23, url: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 24, url: 'https://images.unsplash.com/photo-1486551937199-baf066858de7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+
+  // Ocean Wallpapers
+  { id: 25, url: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 26, url: 'https://images.unsplash.com/photo-1513553404607-988bf2703777?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 27, url: 'https://images.unsplash.com/photo-1502085671122-2d218cd434e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 28, url: 'https://images.unsplash.com/photo-1468581264429-2548ef9eb732?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 29, url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+
+  // Desert Wallpapers
+  { id: 30, url: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 32, url: 'https://images.unsplash.com/photo-1682686580186-b55d2a91053c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 33, url: 'https://images.unsplash.com/photo-1682686580950-960d1d513532?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 34, url: 'https://images.unsplash.com/photo-1682687982501-1e58ab814714?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+
+  // Aerial Wallpapers
+  { id: 35, url: 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 36, url: 'https://images.unsplash.com/photo-1488866022504-f2584929ca5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 37, url: 'https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 38, url: 'https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+
+  // Winter Wallpapers
+  { id: 40, url: 'https://images.unsplash.com/photo-1418985991508-e47386d96a71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 41, url: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 42, url: 'https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 43, url: 'https://images.unsplash.com/photo-1517299321609-52687d1bc55a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 44, url: 'https://images.unsplash.com/photo-1520209759809-a9bcb6cb3241?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+
+  // Autumn Wallpapers
+  { id: 45, url: 'https://images.unsplash.com/photo-1507783548227-544c3b8fc065?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 46, url: 'https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 47, url: 'https://images.unsplash.com/photo-1507484467459-0c01be16726e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+  { id: 48, url: 'https://images.unsplash.com/photo-1506543277633-99deabfcd722?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
 ]
