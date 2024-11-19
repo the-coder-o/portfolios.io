@@ -13,3 +13,7 @@ export const EditUserProfileMe = async (values: ProfileEdit) => {
 export const EditUserPassword = async (values: EditPassword) => {
   return await http.put(`/profile/password`, values)
 }
+
+export const DeleteProfile = async (id: string) => {
+  return await http.delete(`/profile/${id}`)
+}

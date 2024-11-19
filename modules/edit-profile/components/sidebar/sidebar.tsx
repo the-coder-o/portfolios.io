@@ -3,14 +3,18 @@
 import { useState } from 'react'
 import { Database, Laptop, Lock, Menu, Settings, Share2, Trash, User, Clock } from 'lucide-react'
 
+import { useGetProfileMe } from '@/modules/edit-profile/hooks/useGetProfileMe'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { DeleteModal } from '@/components/modals/delete-account'
 
 import { SidebarContent } from './sidebar-content'
 
 export const Sidebar = () => {
+  const profile_id = useGetProfileMe()
+
   const [activeTab, setActiveTab] = useState('Edit Profile')
   const [sheetOpen, setSheetOpen] = useState(false)
 
@@ -54,10 +58,7 @@ export const Sidebar = () => {
                   ))}
                 </div>
                 <Separator className="my-4 max-md:hidden" />
-                <Button variant={'destructive'} className="flex w-full items-center justify-start gap-2 rounded-xl bg-transparent px-3 py-2 max-md:hidden">
-                  <Trash className="h-4 w-4" />
-                  Delete Account
-                </Button>
+                <DeleteModal profile_id={profile_id?.data?._id} />
               </div>
               <Separator className="my-4" />
               <Button variant="destructive" className="flex w-full items-center justify-start gap-2 rounded-xl px-3 py-2">
@@ -88,10 +89,7 @@ export const Sidebar = () => {
             ))}
           </div>
           <Separator className="my-4 max-md:hidden" />
-          <Button variant={'destructive'} className="flex w-full items-center justify-start gap-2 rounded-xl bg-transparent px-3 py-2 max-md:hidden">
-            <Trash className="h-4 w-4" />
-            Delete Account
-          </Button>
+          <DeleteModal profile_id={profile_id?.data?._id} />
         </div>
       </div>
       <SidebarContent activeTab={activeTab} />
