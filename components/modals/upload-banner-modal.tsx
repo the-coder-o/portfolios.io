@@ -2,6 +2,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { ImageUp } from 'lucide-react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { IProfile } from '@/modules/edit-profile/types/profile.interface'
@@ -28,7 +29,7 @@ export const UploadBannerModal = ({ profile }: IProps) => {
   const [activeTab, setActiveTab] = useState<'colors' | 'wallpapers'>('colors')
   const [selectedCategory, setSelectedCategory] = useState(wallpaperCategories[0].slug)
 
-  const { triggerProfileEdit, isPending } = useEditProfileMe()
+  const { triggerProfileEdit, isPending, isSuccess } = useEditProfileMe()
 
   const methods = useForm<EditProfileFormSchema>({
     resolver: zodResolver(userProfileSchema),
@@ -49,9 +50,12 @@ export const UploadBannerModal = ({ profile }: IProps) => {
     setSelectedBackground(profile?.banner || '')
   }, [profile?.banner])
 
+  useEffect(() => {
+    if (isSuccess) setOpen(false)
+  }, [isSuccess])
+
   const onSubmit = (formValues: EditProfileFormSchema) => {
     triggerProfileEdit(formValues)
-    setOpen(false)
   }
 
   const getBackgroundStyle = () => {
@@ -66,7 +70,8 @@ export const UploadBannerModal = ({ profile }: IProps) => {
     <Form {...methods}>
       <form className="max-md:w-full">
         <div className="max-md:mb-5">
-          <Button onClick={() => setOpen(true)} type="button" className="rounded-xl max-md:!w-full">
+          <Button onClick={() => setOpen(true)} type="button" className="flex items-center gap-1.5 rounded-xl max-md:!w-full">
+            <ImageUp size={17} />
             Upload banner
           </Button>
           <Dialog open={open} onOpenChange={setOpen}>
@@ -77,11 +82,11 @@ export const UploadBannerModal = ({ profile }: IProps) => {
               <div style={getBackgroundStyle()} className="mt-4 flex h-[300px] items-center justify-center rounded-xl border-black bg-cover bg-center transition-all duration-300" />
               <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'colors' | 'wallpapers')} className="mt-4">
                 <TabsList className="grid w-full grid-cols-2 rounded-xl">
-                  <TabsTrigger value="colors" className="rounded-xl">
-                    Gradients
-                  </TabsTrigger>
                   <TabsTrigger value="wallpapers" className="rounded-xl">
                     Wallpapers
+                  </TabsTrigger>
+                  <TabsTrigger value="colors" className="rounded-xl">
+                    Gradients
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent value="colors">
@@ -112,7 +117,7 @@ export const UploadBannerModal = ({ profile }: IProps) => {
                         ))}
                       </SelectContent>
                     </Select>
-                    <div className="grid max-h-[180px] grid-cols-4 gap-2 overflow-auto max-sm:grid-cols-3">
+                    <div className="grid max-h-[180px] grid-cols-4 gap-2 overflow-auto px-1 py-2 max-sm:grid-cols-3">
                       {wallpaperCategories
                         .find((cat) => cat.slug === selectedCategory)
                         ?.wallpapers.map((wallpaper) => (

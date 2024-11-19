@@ -60,6 +60,9 @@ export const wallpaperCategories: WallpaperCategory[] = [
       { id: 3, url: 'https://images.unsplash.com/photo-1507808973436-a4ed7b5e87c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 4, url: 'https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 5, url: 'https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 6, url: 'https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 7, url: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 8, url: 'https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
     ],
   },
   {
@@ -73,6 +76,9 @@ export const wallpaperCategories: WallpaperCategory[] = [
       { id: 3, url: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 4, url: 'https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 5, url: 'https://images.unsplash.com/photo-1504567961542-e24d9439a724?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 6, url: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 7, url: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 8, url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
     ],
   },
   {
@@ -86,6 +92,9 @@ export const wallpaperCategories: WallpaperCategory[] = [
       { id: 3, url: 'https://images.unsplash.com/photo-1470219556762-1771e7f9427d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 4, url: 'https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 5, url: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 6, url: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 7, url: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 8, url: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
     ],
   },
   {
@@ -99,6 +108,9 @@ export const wallpaperCategories: WallpaperCategory[] = [
       { id: 3, url: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 4, url: 'https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 5, url: 'https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 6, url: 'https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 7, url: 'https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 8, url: 'https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
     ],
   },
   {
@@ -112,6 +124,9 @@ export const wallpaperCategories: WallpaperCategory[] = [
       { id: 3, url: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 4, url: 'https://images.unsplash.com/photo-1486551937199-baf066858de7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 5, url: 'https://images.unsplash.com/photo-1629197680383-78c8a8028086?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 6, url: 'https://images.unsplash.com/photo-1495476479092-6ece1898a101?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 7, url: 'https://images.unsplash.com/photo-1487260211189-670c54da558d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 8, url: 'https://images.unsplash.com/photo-1504198322253-cfa87a0ff25f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
     ],
   },
   {
@@ -125,6 +140,9 @@ export const wallpaperCategories: WallpaperCategory[] = [
       { id: 3, url: 'https://images.unsplash.com/photo-1534766438357-2b270dbd1b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 4, url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 5, url: 'https://images.unsplash.com/photo-1520116468816-95b69f847357?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 6, url: 'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 7, url: 'https://images.unsplash.com/photo-1498811008858-d95a0f5e1fca?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 8, url: 'https://images.unsplash.com/photo-1514999037859-b486988734f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
     ],
   },
   {
@@ -138,6 +156,9 @@ export const wallpaperCategories: WallpaperCategory[] = [
       { id: 3, url: 'https://images.unsplash.com/photo-1542401886-65d6c61db217?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 4, url: 'https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 5, url: 'https://images.unsplash.com/photo-1511860810434-a92f84c6f01e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 6, url: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 7, url: 'https://images.unsplash.com/photo-1503022932596-30e96f1e2f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 8, url: 'https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
     ],
   },
   {
@@ -151,6 +172,9 @@ export const wallpaperCategories: WallpaperCategory[] = [
       { id: 3, url: 'https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 4, url: 'https://images.unsplash.com/photo-1503435824048-a799a3a84bf7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 5, url: 'https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 6, url: 'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 7, url: 'https://images.unsplash.com/photo-1507041957456-9c397ce39c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 8, url: 'https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
     ],
   },
   {
@@ -164,6 +188,9 @@ export const wallpaperCategories: WallpaperCategory[] = [
       { id: 3, url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 4, url: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 5, url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 6, url: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 7, url: 'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 8, url: 'https://images.unsplash.com/photo-1497449493050-aad1e7cad165?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
     ],
   },
   {
@@ -177,6 +204,9 @@ export const wallpaperCategories: WallpaperCategory[] = [
       { id: 3, url: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 4, url: 'https://images.unsplash.com/photo-1498081959737-f3ba1af08103?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
       { id: 5, url: 'https://images.unsplash.com/photo-1472120435266-53107fd0c44a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 6, url: 'https://images.unsplash.com/photo-1506815444479-bfdb1e96c566?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 7, url: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
+      { id: 8, url: 'https://images.unsplash.com/photo-1501436513145-30f24e19fcc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' },
     ],
   },
 ]
