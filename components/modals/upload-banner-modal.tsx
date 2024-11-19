@@ -7,8 +7,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { IProfile } from '@/modules/edit-profile/types/profile.interface'
 import { useEditProfileMe } from '@/modules/edit-profile/hooks/useEditProfileMe'
 import { userProfileSchema } from '@/modules/edit-profile/components/forms/form-schema'
-import { colors, wallpapers } from '@/constants/colors'
+import { colors, wallpaperCategories } from '@/constants/colors'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Form } from '@/components/ui/form'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
@@ -25,6 +26,7 @@ export const UploadBannerModal = ({ profile }: IProps) => {
   const [open, setOpen] = useState(false)
   const [selectedBackground, setSelectedBackground] = useState<string>(profile?.banner || 'linear-gradient(to right, #ff9a9e, #fad0c4)')
   const [activeTab, setActiveTab] = useState<'colors' | 'wallpapers'>('colors')
+  const [selectedCategory, setSelectedCategory] = useState(wallpaperCategories[0].slug)
 
   const { triggerProfileEdit, isPending } = useEditProfileMe()
 
@@ -97,14 +99,30 @@ export const UploadBannerModal = ({ profile }: IProps) => {
                   </div>
                 </TabsContent>
                 <TabsContent value="wallpapers">
-                  <div className="mt-4 grid max-h-[180px] grid-cols-4 gap-2 overflow-auto max-sm:grid-cols-3">
-                    {wallpapers.map((wallpaper) => (
-                      <Button key={wallpaper.id} variant="outline" className={`h-20 w-full rounded-xl p-0 ${selectedBackground === wallpaper.url ? 'ring-2 ring-primary ring-offset-2' : ''}`} onClick={() => setSelectedBackground(wallpaper.url)} aria-label={`Select wallpaper ${wallpaper.id}`}>
-                        <div className="relative h-full w-full overflow-hidden rounded-lg">
-                          <Image src={wallpaper.url} alt={`Wallpaper ${wallpaper.id}`} fill sizes="(max-width: 640px) 33vw, 25vw" priority={wallpaper.id <= 8} loading={wallpaper.id <= 8 ? 'eager' : 'lazy'} style={{ objectFit: 'cover', objectPosition: 'center' }} />
-                        </div>
-                      </Button>
-                    ))}
+                  <div className="mt-4 space-y-4">
+                    <Select value={selectedCategory} onValueChange={(value) => setSelectedCategory(value)}>
+                      <SelectTrigger className="w-full rounded-xl">
+                        <SelectValue placeholder="Select a category" />
+                      </SelectTrigger>
+                      <SelectContent className={'rounded-xl'}>
+                        {wallpaperCategories.map((category) => (
+                          <SelectItem key={category.id} value={category.slug} className={'rounded-xl'}>
+                            {category.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <div className="grid max-h-[180px] grid-cols-4 gap-2 overflow-auto max-sm:grid-cols-3">
+                      {wallpaperCategories
+                        .find((cat) => cat.slug === selectedCategory)
+                        ?.wallpapers.map((wallpaper) => (
+                          <Button key={wallpaper.id} variant="outline" className={`h-20 w-full rounded-xl p-0 ${selectedBackground === wallpaper.url ? 'ring-2 ring-primary ring-offset-2' : ''}`} onClick={() => setSelectedBackground(wallpaper.url)} aria-label={`Select wallpaper ${wallpaper.id}`}>
+                            <div className="relative h-full w-full overflow-hidden rounded-lg">
+                              <Image src={wallpaper.url} alt={`Wallpaper ${wallpaper.id}`} fill sizes="(max-width: 640px) 33vw, 25vw" priority={wallpaper.id <= 8} loading={wallpaper.id <= 8 ? 'eager' : 'lazy'} style={{ objectFit: 'cover', objectPosition: 'center' }} />
+                            </div>
+                          </Button>
+                        ))}
+                    </div>
                   </div>
                 </TabsContent>
               </Tabs>
