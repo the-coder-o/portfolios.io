@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Set the font family to Inter globally */
 body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
