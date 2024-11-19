@@ -12,7 +12,7 @@ export const SidebarContent = ({ activeTab }: any) => {
   const { data: profile, isLoading } = useGetProfileMe()
 
   return (
-    <div className="mt-5 md:col-span-3 md:mt-0">
+    <div className="mt-5 md:col-span-3 md:mt-3.5">
       <div className="space-y-6 pl-6 max-md:pl-0">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold">{activeTab}</h1>
