@@ -1,4 +1,5 @@
-import { RezumeSection } from '../components/sections/rezume-section'
+import { MarqueeDemo } from '@/modules/home/components/sections/reviewcard-section'
+
 import { PortfolioSection } from '../components/sections/portfolio-section'
 import { HeroSection } from '../components/hero'
 
@@ -13,9 +14,9 @@ export const HomeView = () => {
       <div className="pt-[130px] max-md:pt-10">
         <div className="container">
           <PortfolioSection />
-          <RezumeSection />
         </div>
       </div>
+      <MarqueeDemo />
     </div>
   )
 }
