@@ -7,7 +7,7 @@ import { portfoliosData } from '@/.mock/portfolios.data'
 
 export const PortfolioSection = () => {
   return (
-    <div className="mb-[160px]">
+    <div className="mb-[130px]">
       <div className="mb-5 flex items-center justify-between max-md:mb-2">
         <div className="flex flex-col gap-1">
           <h2 className="text-xl font-bold text-purple-500 md:text-lg">Best Portfolios</h2>

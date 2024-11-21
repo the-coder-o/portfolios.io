@@ -4,7 +4,6 @@ import React from 'react'
 import Link from 'next/link'
 
 import { useIsAuth } from '@/hooks/use-isAuth'
-import { Spotlight } from '@/components/animation/spotlight'
 import { Cover } from '@/components/animation/cover'
 
 import { portfoliosData } from '@/.mock/portfolios.data'
@@ -16,7 +15,6 @@ export const HeroSection = () => {
 
   return (
     <>
-      <Spotlight />
       <div className="mt-[160px] flex flex-col items-center gap-4 max-md:mt-[120px] max-sm:items-start max-sm:gap-0">
         <h1 className="relative z-20 max-w-7xl bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 bg-clip-text py-6 text-center text-4xl font-semibold text-transparent dark:from-neutral-800 dark:via-white dark:to-white max-md:hidden max-sm:text-start md:text-4xl lg:text-7xl">
           Best place to find <br /> portfolio <Cover>inspiration.</Cover>

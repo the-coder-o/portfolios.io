@@ -11,7 +11,7 @@ export const RezumeSection = () => {
   })
 
   return (
-    <div className="mb-[160px]">
+    <div className="mb-[125px]">
       <div className="mb-5 flex items-center justify-between">
         <div className="flex flex-col gap-1">
           <h2 className="text-xl font-bold text-purple-500 md:text-lg">Rezume for developers</h2>
