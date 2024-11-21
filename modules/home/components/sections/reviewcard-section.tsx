@@ -45,13 +45,7 @@ const secondRow = reviews.slice(reviews.length / 2)
 
 const ReviewCard = ({ img, name, username, body }: { img: string; name: string; username: string; body: string }) => {
   return (
-    <figure
-      className={cn(
-        'relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4',
-        // dark styles
-        'dark:border-gray-50/[.1] dark:backdrop-blur-md dark:hover:bg-[#111]',
-      )}
-    >
+    <figure className={cn('relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4', 'dark:border-gray-50/[.1] dark:backdrop-blur-md dark:hover:bg-[#111]')}>
       <div className="flex flex-row items-center gap-2">
         <img className="rounded-full" width="32" height="32" alt="" src={img} />
         <div className="flex flex-col">
@@ -66,8 +60,8 @@ const ReviewCard = ({ img, name, username, body }: { img: string; name: string; 
 
 export function MarqueeDemo() {
   return (
-    <div className={'relative mb-[150px] max-md:pt-10'}>
-      <h2 className="mb-4 text-center text-5xl font-bold leading-[1.2] tracking-tighter text-foreground">What People Are Saying</h2>
+    <div className={'relative mb-[150px] max-md:pt-5'}>
+      <h2 className="mb-4 text-center text-5xl font-bold leading-[1.2] tracking-tighter text-foreground max-sm:mb-1 max-sm:text-3xl">What People Are Saying</h2>
       <h3 className="mx-auto mb-8 text-balance text-center text-lg font-medium tracking-tight text-foreground/80">
         Don&apos;t just take our word for it. Here&apos;s what <strong>real people</strong> are saying about PortfoliosIo on Twitter.
       </h3>
