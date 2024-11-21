@@ -42,11 +42,6 @@ export const Footer = () => {
                     <Sparkle size={14} className="text-pink-500" /> Rezume
                   </Link>
                 </li>
-                <li>
-                  <Link href="#" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-white" prefetch={false}>
-                    <Clock size={13.5} className="text-pink-500" /> Templates
-                  </Link>
-                </li>
               </ul>
             </div>
             <div className="space-y-2">
