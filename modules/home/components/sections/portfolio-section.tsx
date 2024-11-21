@@ -7,26 +7,19 @@ import { portfoliosData } from '@/.mock/portfolios.data'
 
 export const PortfolioSection = () => {
   return (
-    <div className="mb-[130px]">
-      <div className="mb-5 flex items-center justify-between max-md:mb-2">
-        <div className="flex flex-col gap-1">
-          <h2 className="text-xl font-bold text-purple-500 md:text-lg">Best Portfolios</h2>
-          <p className="relative z-20 w-full text-left text-sm text-neutral-600 dark:text-neutral-400 max-md:hidden">Here are some portfolios that you can use to get started.</p>
-        </div>
-        <div>
-          <Link href="/portfolios" className="hidden text-white underline max-md:block">
-            View all Portfolios
-          </Link>
-          <Link href="/portfolios" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center rounded-xl bg-black px-5 py-2 text-center text-sm font-medium text-white no-underline transition duration-200 dark:bg-white dark:text-black max-md:hidden sm:w-52">
-            View all Portfolios
-          </Link>
-        </div>
-      </div>
-      <div className="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
-        {portfoliosData.slice(0, 9).map((card, index) => (
+    <div className="relative mb-[200px] max-md:mb-10">
+      <div className="grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
+        {portfoliosData.slice(0, 12).map((card, index) => (
           <PortfolioCard key={index} {...card} />
         ))}
       </div>
+      <div className="absolute inset-x-0 bottom-5 z-30 h-[400px] bg-gradient-to-t from-white to-transparent dark:from-black"></div>
+      <Link
+        className="group relative z-40 mx-auto mt-10 flex h-10 w-full cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-4 py-2 text-center text-sm font-semibold text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-44 md:-mt-0"
+        href="/portfolios"
+      >
+        Show more
+      </Link>
     </div>
   )
 }

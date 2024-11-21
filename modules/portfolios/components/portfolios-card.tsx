@@ -13,7 +13,7 @@ import { PortfolioCard } from '@/components/cards/portfolio-card'
 import { portfoliosData } from '@/.mock/portfolios.data'
 
 export const Portfolioscard = () => {
-  const itemsPerPage = 6
+  const itemsPerPage = 8
 
   const [currentPage, setCurrentPage] = useState(1)
   const [activeCategory, setActiveCategory] = useState('All')
@@ -86,7 +86,7 @@ export const Portfolioscard = () => {
           </Select>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-3 px-4 max-md:px-0 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 px-4 max-md:px-0 sm:grid-cols-2 lg:grid-cols-4">
         {displayedItems.map((card, index) => (
           <PortfolioCard key={index} {...card} />
         ))}
