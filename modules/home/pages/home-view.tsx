@@ -1,4 +1,5 @@
 import { TemplatesSection } from '@/modules/home/components/sections/template-section'
+import { ShowcaseSection } from '@/modules/home/components/sections/showcase-section'
 import { MarqueeDemo } from '@/modules/home/components/sections/reviewcard-section'
 
 import { PortfolioSection } from '../components/sections/portfolio-section'
@@ -16,6 +17,7 @@ export const HomeView = () => {
           <TemplatesSection />
         </div>
       </div>
+      <ShowcaseSection />
       <MarqueeDemo />
     </div>
   )
