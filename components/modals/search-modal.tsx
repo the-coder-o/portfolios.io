@@ -51,7 +51,7 @@ export const Searchmodal = () => {
           <CommandGroup heading="Top Portfolios">
             {portfoliosData.slice(0, 5).map((portfolios: CardProps, index: number) => (
               <CommandItem key={index} className="flex items-center justify-between">
-                <Link href={`/portfolios/${formatToSlug(portfolios.title)}`} className="flex">
+                <Link href={`/portfolios/${formatToSlug(portfolios.title)}`} prefetch={false} className="flex">
                   <Image src={portfolios?.image} alt={`${portfolios?.author?.name}'s profile`} width={1200} height={1200} className="mr-2 !h-[80px] !w-[110px] rounded-lg bg-cover object-cover" />
                   <div className="flex flex-col gap-1">
                     <div className="flex items-center">
@@ -67,7 +67,7 @@ export const Searchmodal = () => {
           <CommandGroup heading="Top Rezume">
             {rezumeData.slice(0, 5).map((rezume: RezumeProps) => (
               <CommandItem key={rezume?.id} className="flex items-center justify-between">
-                <Link href={rezume?.url} target="_blank" className="flex">
+                <Link href={rezume?.url} target="_blank" prefetch={false} className="flex">
                   <Image src={rezume?.image} alt={`${rezume?.creatorName}'s profile`} width={1200} height={1200} className="mr-2 !h-[80px] !w-[55px] rounded-lg bg-cover object-cover" />
                   <div className="flex flex-col gap-1">
                     <div className="flex items-center">

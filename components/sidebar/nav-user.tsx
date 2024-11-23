@@ -52,7 +52,7 @@ export function NavUser({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <div className="flex flex-col">
-              <Link href={'/profile/portfolios'} className="flex h-[35px] items-center gap-2 rounded-xl pl-2 text-[15px] dark:hover:bg-accent dark:hover:text-white">
+              <Link href={'/profile/portfolios'} prefetch={false} className="flex h-[35px] items-center gap-2 rounded-xl pl-2 text-[15px] dark:hover:bg-accent dark:hover:text-white">
                 <User size={16} />
                 Profile
               </Link>
@@ -60,12 +60,12 @@ export function NavUser({
                 <Plus size={16} />
                 Add portfolio
               </Link>
-              <Link href={'/profile/favorites'} className="flex h-[35px] items-center gap-2 rounded-xl pl-2 text-[15px] dark:hover:bg-accent dark:hover:text-white">
+              <Link href={'/profile/favorites'} prefetch={false} className="flex h-[35px] items-center gap-2 rounded-xl pl-2 text-[15px] dark:hover:bg-accent dark:hover:text-white">
                 <BookmarkCheck size={16} />
                 Favorites
               </Link>
               <DropdownMenuSeparator />
-              <Link href={'/edit-profile'} className="flex h-[35px] items-center gap-2 rounded-xl pl-2 text-[15px] dark:hover:bg-accent dark:hover:text-white">
+              <Link href={'/edit-profile'} prefetch={false} className="flex h-[35px] items-center gap-2 rounded-xl pl-2 text-[15px] dark:hover:bg-accent dark:hover:text-white">
                 <Settings size={16} />
                 Profile settings
               </Link>
