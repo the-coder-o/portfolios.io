@@ -11,7 +11,7 @@ export const HomeView = () => {
       <div className="container">
         <HeroSection />
       </div>
-      <div className="pt-[130px] max-md:pt-10">
+      <div className="pt-[80px] max-md:pt-10">
         <div className="container">
           <PortfolioSection />
           <TemplatesSection />
