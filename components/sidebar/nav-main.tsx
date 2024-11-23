@@ -34,7 +34,7 @@ export function NavMain({
           <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
             <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip={item.title}>
-                <Link href={item.url}>
+                <Link href={item.url} prefetch={false}>
                   <item.icon />
                   <span className="flex w-full items-center justify-between">
                     {item.title}
@@ -57,7 +57,7 @@ export function NavMain({
                       {item.items?.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.title}>
                           <SidebarMenuSubButton asChild className={cn(route.split('/')[3].toLowerCase() === subItem.url.toLowerCase() ? '!bg-sidebar-accent' : '')}>
-                            <Link href={subItem.url}>
+                            <Link href={subItem.url} prefetch={false}>
                               <span>{subItem.title}</span>
                             </Link>
                           </SidebarMenuSubButton>

@@ -28,7 +28,7 @@ export interface CardProps {
 
 export const PortfolioCard = ({ image, title, price, description, author, singlePageDetails }: CardProps) => {
   return (
-    <Link href={`/portfolios/${formatToSlug(title)}`} className="group relative h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 antialiased dark:border-gray-50/[.1] dark:bg-black dark:backdrop-blur-md">
+    <Link href={`/portfolios/${formatToSlug(title)}`} prefetch={false} className="group relative h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 antialiased dark:border-gray-50/[.1] dark:bg-black dark:backdrop-blur-md">
       <div className="relative overflow-hidden rounded-2xl transition duration-200">
         <Image alt="Component Thumbnail" loading="lazy" width={720} height={500} decoding="async" className="aspect-video rounded-2xl bg-cover object-cover object-top blur-0 transition duration-300 group-hover:scale-105" src={image || '/fallback-image.jpg'} style={{ color: 'transparent' }} />
         <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">

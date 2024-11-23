@@ -13,7 +13,7 @@ export interface RezumeProps {
 
 export const RezumeCard = ({ url, title, image, creatorName, creatorLink }: RezumeProps) => {
   return (
-    <Link href={url} target="_blank" className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 antialiased dark:border-neutral-800 dark:bg-[#111]">
+    <Link href={`${url}`} prefetch={false} target="_blank" className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 antialiased dark:border-neutral-800 dark:bg-[#111]">
       <div className="relative overflow-hidden rounded-2xl transition duration-200">
         <Image alt="Component Thumbnail" loading="lazy" width={720} height={500} decoding="async" className="aspect-video rounded-2xl bg-cover object-cover object-top blur-0 transition duration-300 group-hover:scale-105" src={image || '/fallback-image.jpg'} style={{ color: 'transparent' }} />
       </div>
