@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Trash2, AlertTriangle } from 'lucide-react'
+import { AlertTriangle, Trash2 } from 'lucide-react'
 
 import { useDeleteProfile } from '@/modules/edit-profile/hooks/useDeleteProfile'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
@@ -23,7 +23,7 @@ export const DeleteModal = ({ profile_id }: DeleteModalProps) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button type={'button'} variant={'destructive'} className="flex w-full items-center justify-start gap-2 rounded-xl bg-transparent px-3 py-2 max-md:hidden">
+        <Button type={'button'} variant={'destructive'} className="flex w-full items-center justify-start gap-2 rounded-xl bg-transparent px-3 py-2">
           <Trash2 className="h-4 w-4" />
           Delete Account
         </Button>
@@ -44,11 +44,11 @@ export const DeleteModal = ({ profile_id }: DeleteModalProps) => {
             <li className={'text-red-500'}>Delete all your posts and comments</li>
           </ul>
         </div>
-        <DialogFooter>
+        <DialogFooter className={'flex gap-2'}>
           <Button variant="outline" onClick={() => setOpen(false)} className={'rounded-xl'}>
             Cancel
           </Button>
-          <LoadingButton onClick={handleDelete} isLoading={isPending} variant={'destructive'} className="flex items-center justify-start gap-2 rounded-xl px-3 py-2 max-md:hidden">
+          <LoadingButton onClick={handleDelete} isLoading={isPending} variant={'destructive'} className="flex items-center justify-center gap-2 rounded-xl px-3 py-2">
             <Trash2 className="h-4 w-4" />
             Delete Account
           </LoadingButton>
