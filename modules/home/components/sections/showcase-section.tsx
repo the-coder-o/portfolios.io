@@ -114,7 +114,7 @@ export function ShowcaseSection() {
           </div>
         </div>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute bottom-0 left-0 right-0 h-[300px] bg-gradient-to-t from-black to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-[600px] bg-gradient-to-t from-black to-transparent" />
         </div>
       </div>
     </section>
