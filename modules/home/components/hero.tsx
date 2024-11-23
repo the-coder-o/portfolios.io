@@ -2,42 +2,117 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { useIsAuth } from '@/hooks/use-isAuth'
-import { Cover } from '@/components/animation/cover'
+import WordRotate from '@/components/ui/word-rotate'
+import { AnimatedTooltip } from '@/components/animation/animated-toolip'
 
-import { portfoliosData } from '@/.mock/portfolios.data'
-
-import { LogoSlider } from './logo-slider'
+import { people } from '@/.mock/people.data'
 
 export const HeroSection = () => {
   const isAuthUser = useIsAuth()
 
   return (
-    <>
-      <div className="mt-[160px] flex flex-col items-center gap-4 max-md:mt-[120px] max-sm:items-start max-sm:gap-0">
-        <h1 className="relative z-20 max-w-7xl bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 bg-clip-text py-6 text-center text-4xl font-semibold text-transparent dark:from-neutral-800 dark:via-white dark:to-white max-md:hidden max-sm:text-start md:text-4xl lg:text-7xl">
-          Best place to find <br /> portfolio <Cover>inspiration.</Cover>
+    <div className="mt-[150px] flex flex-col items-center justify-between gap-16 lg:flex-row">
+      <div className="max-w-[650px] flex-1 text-center lg:text-left">
+        <h1 className="text-5xl font-bold leading-tight tracking-tight text-white md:text-7xl lg:text-8xl">
+          <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">Make your portfolios look</span>
+          <span className="flex items-center justify-center gap-3 lg:justify-start">
+            10x
+            <WordRotate words={['better', 'modern', 'beautiful', 'awesome']} />
+          </span>
         </h1>
-        <h1 className="relative z-20 hidden max-w-7xl bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 bg-clip-text py-6 text-center text-4xl font-semibold text-transparent dark:from-neutral-800 dark:via-white dark:to-white max-md:block max-sm:text-start md:text-4xl lg:text-7xl">
-          Best place to find <br /> portfolio inspiration.
-        </h1>
-        <p className="relative z-20 max-w-5xl text-center text-base font-normal leading-normal text-neutral-600 dark:text-neutral-200 max-sm:text-start md:text-[22px]">
-          Unlock your potential with our curated collection of {portfoliosData?.length}+ exceptional portfolio designs. Each template is crafted to highlight your unique skills and creativity, helping you stand out in any industry.
-        </p>
-        <div className="mt-4 flex w-full flex-col items-center justify-center gap-4 px-8 max-md:px-0 sm:flex-row">
-          <Link href="/portfolios" className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center space-x-2 rounded-xl bg-black p-px px-4 py-2 text-center text-sm font-medium text-white no-underline transition duration-200 dark:bg-white dark:text-black sm:w-52">
+        <p className="mt-4 text-xl text-neutral-400">Unlock your potential with our curated collection of 179+ exceptional portfolio designs. Each template is crafted to highlight your unique skills and creativity, helping you stand out in any industry.</p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+          <Link href="/portfolios" className="group relative z-20 flex h-11 w-full items-center justify-center space-x-2 rounded-xl bg-black p-px px-4 py-2 text-center text-sm font-medium text-white transition duration-200 hover:-translate-y-0.5 dark:bg-white dark:text-black sm:w-52">
             Explore Collection
           </Link>
           <Link
             href={isAuthUser ? '/dashboard/portfolios/all-portfolios' : '/sign-in'}
-            className="group relative z-20 flex h-11 w-full cursor-pointer items-center justify-center space-x-2 rounded-xl bg-white p-px px-4 py-2 text-sm font-medium text-black no-underline shadow-input transition duration-200 hover:-translate-y-0.5 dark:bg-neutral-800 dark:text-white sm:w-52"
+            className="group relative z-20 flex h-11 w-full items-center justify-center space-x-2 rounded-xl bg-white p-px px-4 py-2 text-sm font-medium text-black shadow-input transition duration-200 hover:-translate-y-0.5 dark:bg-neutral-800 dark:text-white sm:w-52"
           >
             Go to dashboard
           </Link>
         </div>
       </div>
-      <LogoSlider />
-    </>
+      <div className="flex flex-1 flex-col items-center gap-6">
+        <div className="relative mt-10 flex w-full flex-col items-end gap-3">
+          <h2 className="relative z-10 text-xs text-neutral-500">Trusted by Founders and Entrepreneurs from all over the world</h2>
+          <div className="flex">
+            <AnimatedTooltip items={people} />
+          </div>
+        </div>
+        <PortfolioShowcase portfolios={featuredPortfolios} />
+        <div className="grid grid-cols-4 gap-8 text-center">
+          <div>
+            <h2 className="text-3xl font-bold text-white">179+</h2>
+            <p className="mt-1 text-neutral-400">Portfolios</p>
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold text-white">10,000+</h2>
+            <p className="mt-1 text-neutral-400">Satisfied Creators</p>
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold text-white">80+</h2>
+            <p className="mt-1 text-neutral-400">Resume</p>
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold text-white">1 Years</h2>
+            <p className="mt-1 text-neutral-400">Of Excellence</p>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
+
+const featuredPortfolios = [
+  {
+    id: 1,
+    title: 'Creative Designer Portfolio',
+    description: 'Showcase your artistic talent with this stunning template.',
+    image: 'https://portfoliosio.vercel.app/_next/image?url=https%3A%2F%2Fi.postimg.cc%2FR0FP9t5B%2FScreenshot-2024-11-21-141242.png&w=640&q=75',
+  },
+  {
+    id: 2,
+    title: 'Developer Portfolio',
+    description: 'Highlight your coding projects with a sleek, modern design.',
+    image: 'https://portfoliosio.vercel.app/_next/image?url=https%3A%2F%2Fi.postimg.cc%2F4Nj2BNm5%2FScreenshot-2024-11-21-151236.png&w=640&q=75',
+  },
+  {
+    id: 3,
+    title: 'Photographer Portfolio',
+    description: 'Perfect for showcasing high-quality photography work.',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2fgq48xaswtxpeb9s4x8apzn6vtggc&w=640&q=75',
+  },
+]
+
+interface Portfolio {
+  id: number
+  title: string
+  description: string
+  image: string
+}
+
+interface PortfolioShowcaseProps {
+  portfolios: Portfolio[]
+}
+
+const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ portfolios }) => {
+  return (
+    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+      {portfolios.map((portfolio) => (
+        <div key={portfolio.id} className="group relative overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900 shadow-md transition-transform hover:scale-105 hover:shadow-lg">
+          <Image src={portfolio.image} alt={portfolio.title} width={400} height={300} className="!h-[200px] !w-[400px] object-cover transition-opacity duration-300 group-hover:opacity-75" />
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 className="line-clamp-1 text-lg font-semibold text-white">{portfolio.title}</h3>
+            <p className="line-clamp-2 text-sm text-neutral-400">{portfolio.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export default PortfolioShowcase
