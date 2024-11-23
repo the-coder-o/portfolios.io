@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Database, Laptop, Lock, Menu, Settings, Share2, Trash, User, Clock } from 'lucide-react'
+import { Clock, Database, Laptop, Lock, Menu, Settings, Share2, User } from 'lucide-react'
 
 import { useGetProfileMe } from '@/modules/edit-profile/hooks/useGetProfileMe'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
@@ -61,10 +61,7 @@ export const Sidebar = () => {
                 <DeleteModal profile_id={profile_id?.data?._id} />
               </div>
               <Separator className="my-4" />
-              <Button variant="destructive" className="flex w-full items-center justify-start gap-2 rounded-xl px-3 py-2">
-                <Trash className="h-4 w-4" />
-                Delete Account
-              </Button>
+              <DeleteModal profile_id={profile_id?.data?._id} />
             </div>
           </SheetContent>
         </Sheet>
@@ -89,7 +86,9 @@ export const Sidebar = () => {
             ))}
           </div>
           <Separator className="my-4 max-md:hidden" />
-          <DeleteModal profile_id={profile_id?.data?._id} />
+          <div className={'max-md:hidden'}>
+            <DeleteModal profile_id={profile_id?.data?._id} />
+          </div>
         </div>
       </div>
       <SidebarContent activeTab={activeTab} />
