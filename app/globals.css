@@ -122,3 +122,36 @@ body {
   display: flex;
   animation: scroll 25s linear infinite;
 }
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  padding: 16px;
+}
+
+.grid-desktop {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.showcase-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.showcase-card-title {
+  margin-top: 8px;
+  text-align: center;
+  color: #333;
+}
+
+.icon {
+  color: rgba(177, 177, 177);
+}
