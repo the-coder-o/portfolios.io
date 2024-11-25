@@ -4,7 +4,7 @@ import { CreatePortfolioForm } from '@/modules/dashboard/components/forms/create
 
 export const CreatePortfolioView = () => {
   return (
-    <div className={'container'}>
+    <div>
       <CreatePortfolioForm />
     </div>
   )
