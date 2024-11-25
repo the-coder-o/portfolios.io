@@ -14,17 +14,17 @@ export const HeroSection = () => {
   const isAuthUser = useIsAuth()
 
   return (
-    <div className="mt-[150px] flex flex-col items-center justify-between gap-16 lg:flex-row">
-      <div className="max-w-[650px] flex-1 text-center lg:text-left">
-        <h1 className="text-5xl font-bold leading-tight tracking-tight text-white md:text-7xl lg:text-8xl">
+    <div className="mt-[150px] flex justify-between gap-16 lg:flex-row">
+      <div className="max-w-[650px] lg:text-left">
+        <h1 className="text-5xl font-bold text-white md:text-7xl lg:text-[90px]">
           <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">Make your portfolios look</span>
-          <span className="flex items-center justify-center gap-3 lg:justify-start">
+          <span className="flex gap-3 lg:justify-start">
             10x
             <WordRotate words={['better', 'modern', 'beautiful', 'awesome']} />
           </span>
         </h1>
         <p className="mt-4 text-xl text-neutral-400">Unlock your potential with our curated collection of 179+ exceptional portfolio designs. Each template is crafted to highlight your unique skills and creativity, helping you stand out in any industry.</p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+        <div className="mt-8 flex flex-wrap gap-4 lg:justify-start">
           <Link href="/portfolios" className="group relative z-20 flex h-11 w-full items-center justify-center space-x-2 rounded-xl bg-black p-px px-4 py-2 text-center text-sm font-medium text-white transition duration-200 hover:-translate-y-0.5 dark:bg-white dark:text-black sm:w-52">
             Explore Collection
           </Link>
@@ -36,7 +36,7 @@ export const HeroSection = () => {
           </Link>
         </div>
       </div>
-      <div className="flex flex-1 flex-col items-center gap-6">
+      <div className="flex flex-col items-center gap-6 max-xl:hidden">
         <div className="relative mt-10 flex w-full flex-col items-end gap-3">
           <h2 className="relative z-10 text-xs text-neutral-500">Trusted by Founders and Entrepreneurs from all over the world</h2>
           <div className="flex">
@@ -44,7 +44,7 @@ export const HeroSection = () => {
           </div>
         </div>
         <PortfolioShowcase portfolios={featuredPortfolios} />
-        <div className="grid grid-cols-4 gap-8 text-center">
+        <div className="grid grid-cols-4 gap-8 text-center max-sm:grid-cols-2">
           <div>
             <h2 className="text-3xl font-bold text-white">179+</h2>
             <p className="mt-1 text-neutral-400">Portfolios</p>
@@ -103,11 +103,11 @@ const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ portfolios }) => 
   return (
     <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
       {portfolios.map((portfolio) => (
-        <div key={portfolio.id} className="group relative overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900 shadow-md transition-transform hover:scale-105 hover:shadow-lg">
-          <Image src={portfolio.image} alt={portfolio.title} width={400} height={300} className="!h-[200px] !w-[400px] object-cover transition-opacity duration-300 group-hover:opacity-75" />
+        <div key={portfolio.id} className="group relative w-[200px] overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900 shadow-lg transition-transform">
+          <Image src={portfolio.image} alt={portfolio.title} width={400} height={300} className="!h-[200px] !w-[400px] object-cover opacity-75 transition duration-300 group-hover:scale-105" />
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
             <h3 className="line-clamp-1 text-lg font-semibold text-white">{portfolio.title}</h3>
-            <p className="line-clamp-2 text-sm text-neutral-400">{portfolio.description}</p>
+            <p className="line-clamp-1 text-sm text-neutral-400">{portfolio.description}</p>
           </div>
         </div>
       ))}

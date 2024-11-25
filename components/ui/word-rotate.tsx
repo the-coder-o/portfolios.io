@@ -35,7 +35,7 @@ export default function WordRotate({
   }, [words, duration])
 
   return (
-    <div className="overflow-hidden py-2">
+    <div className="overflow-hidden">
       <AnimatePresence mode="wait">
         {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
         {/*@ts-expect-error*/}
