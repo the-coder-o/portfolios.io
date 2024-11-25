@@ -1,5 +1,6 @@
 import { useFormContext } from 'react-hook-form'
 import { FileUploader } from 'react-drag-drop-files'
+import { useState } from 'react'
 import Image from 'next/image'
 import { FileText, Upload, X as CloseIcon } from 'lucide-react'
 
@@ -12,10 +13,31 @@ interface IProps {
   label?: string
   required?: boolean
   isFileUpload?: boolean
+  maxFiles?: number
 }
 
-export default function FileField({ name, label, required, isFileUpload }: IProps) {
+export default function FileField({ name, label, required, isFileUpload, maxFiles = 5 }: IProps) {
   const { control } = useFormContext()
+  const [error, setError] = useState<string | null>(null)
+
+  const handleFileChange = (files: FileList, value: any[], onChange: (newValue: any[]) => void) => {
+    const newFiles = Array.from(files)
+    const fileTypes = isFileUpload ? ['application/pdf'] : ['image/png', 'image/jpeg']
+    const invalidFiles = newFiles.filter((file) => !fileTypes.includes(file.type))
+
+    if (invalidFiles.length > 0) {
+      setError(`Invalid file type(s). Only ${isFileUpload ? 'PDF' : 'PNG/JPG'} files are allowed.`)
+      return
+    }
+
+    if (value.length + newFiles.length > maxFiles) {
+      setError(`You can upload up to ${maxFiles} files only.`)
+      return
+    }
+
+    setError(null)
+    onChange([...value, ...newFiles])
+  }
 
   return (
     <FormField
@@ -48,14 +70,14 @@ export default function FileField({ name, label, required, isFileUpload }: IProp
                           <Image src={typeof file === 'string' ? normalizeImgUrl(file) : URL.createObjectURL(file)} width={500} height={500} alt="preview" className="mb-5 !h-[100px] !w-[100px] rounded-xl object-cover" />
                         </div>
                       )}
-                      <button onClick={() => onChange(value.filter((_: any, i: any) => i !== index))} className="absolute right-2 top-2 rounded-full bg-gray-900/60 p-1.5 text-white opacity-0 transition-opacity hover:bg-gray-900/80 group-hover:opacity-100">
+                      <button type={'button'} onClick={() => onChange(value.filter((_: any, i: any) => i !== index))} className="absolute right-2 top-2 rounded-full bg-gray-900/60 p-1.5 text-white opacity-0 transition-opacity hover:bg-gray-900/80 group-hover:opacity-100">
                         <CloseIcon className="size-4" />
                       </button>
                     </div>
                   ))}
                 </div>
               )}
-              <FileUploader handleChange={(files: FileList) => onChange([...value, ...Array.from(files)])} name="file" multiple types={isFileUpload ? ['PDF'] : ['PNG', 'JPG']} classes="file-uploader">
+              <FileUploader handleChange={(files: FileList) => handleFileChange(files, value, onChange)} name="file" multiple types={isFileUpload ? ['PDF'] : ['PNG', 'JPG']} classes="file-uploader">
                 <div className="flex min-h-[200px] cursor-pointer flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 p-6 transition-colors hover:bg-gray-100 dark:border dark:border-input dark:bg-transparent dark:hover:bg-black/10">
                   <Upload className="size-10 stroke-1 text-gray-400" />
                   <div className="text-center">
@@ -64,6 +86,7 @@ export default function FileField({ name, label, required, isFileUpload }: IProp
                   </div>
                 </div>
               </FileUploader>
+              {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
             </div>
           </FormControl>
           <FormMessage className="mt-2 text-sm" />

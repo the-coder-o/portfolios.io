@@ -36,7 +36,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </Breadcrumb>
           </div>
         </header>
-        {children}
+        <div className={'px-5'}>{children}</div>
       </SidebarInset>
     </SidebarProvider>
   )

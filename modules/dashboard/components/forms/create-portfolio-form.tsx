@@ -8,6 +8,7 @@ import { portfolioSchema } from '@/modules/dashboard/components/forms/form-schem
 import { Form } from '@/components/ui/form'
 import TextField from '@/components/fields/text-field'
 import TextAreaField from '@/components/fields/text-area'
+import SkillsField from '@/components/fields/skills-field'
 import SelectField from '@/components/fields/select'
 import FileField from '@/components/fields/file-upload'
 import LoadingButton from '@/components/buttons/loading-button'
@@ -25,6 +26,7 @@ export const CreatePortfolioForm = () => {
       github_link: '',
       live_demo: '',
       page: 0,
+      skills: [],
       type: '',
     },
   })
@@ -50,28 +52,31 @@ export const CreatePortfolioForm = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="space-y-2">
-              <TextField name="name" label="Portfolio name" placeholder="Portfolio name" className="rounded-xl" />
+              <TextField name="name" label="Portfolio name" required={true} placeholder="Portfolio name" className="rounded-xl" />
             </div>
             <div className="space-y-2">
-              <SelectField name="type" label="type" placeholder="Select type" data={countType} />
+              <SelectField name="type" label="Payment type" required={true} placeholder="Select payment type" data={countType} />
             </div>
           </div>
           <div className="space-y-2">
-            <TextField type={'number'} name="page" label="Page number" placeholder="Page number" className="rounded-xl" />
+            <TextField type={'number'} name="page" label="Page number" required={true} placeholder="Page number" className="rounded-xl" />
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="space-y-2">
-              <TextField name={'github_link'} label={'Github link'} placeholder="https://github.com/username/repo" />
+              <TextField name={'github_link'} label={'Github link'} required={true} placeholder="https://github.com/username/repo" />
             </div>
             <div className="space-y-2">
-              <TextField name={'live_demo'} label={'Live Demo'} placeholder="https://your-demo-site.com" />
+              <TextField name={'live_demo'} label={'Live Demo'} required={true} placeholder="https://your-demo-site.com" />
             </div>
           </div>
           <div className="space-y-2">
-            <TextAreaField name={'description'} label={'Description'} placeholder="Describe your portfolio" className="min-h-[100px]" />
+            <SkillsField name="skills" label="Skills & Technologies" required={true} />
           </div>
           <div className="space-y-2">
-            <FileField name="images" label="Portfolios" />
+            <TextAreaField name={'description'} label={'Description'} required={true} placeholder="Describe your portfolio" className="min-h-[100px]" />
+          </div>
+          <div className="space-y-2">
+            <FileField name="images" label="Portfolios" maxFiles={5} />
           </div>
           <div className="mt-5 flex justify-end">
             <LoadingButton isLoading={isPending} variant={'secondary'} className="rounded-xl max-md:w-full">
