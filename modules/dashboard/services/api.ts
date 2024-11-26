@@ -28,5 +28,5 @@ export const createPortfolio = async (portfolioData: CreatePortfolio) => {
 }
 
 export const GetPortfolios = async () => {
-  return await http.get('/portfolio')
+  return await http.get('/portfolio/user/me')
 }

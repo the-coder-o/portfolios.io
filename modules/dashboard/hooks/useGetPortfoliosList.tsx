@@ -3,18 +3,18 @@ import { useQuery } from '@tanstack/react-query'
 
 import { GetPortfolios } from '../services/api'
 
-import { getPortfolio } from './adapter'
+import { getPortfolios } from './adapter'
 
 export const useGetPortfoliosList = () => {
   const initialData = {
-    data: getPortfolio(),
+    data: getPortfolios(),
   }
 
   const { data = initialData, ...args } = useQuery({
-    queryKey: ['profileMe'],
+    queryKey: ['portfolio_list'],
     queryFn: () => GetPortfolios(),
     select: (data) => ({
-      data: getPortfolio(get(data, 'data.data')),
+      data: getPortfolios(get(data, 'data.data')),
     }),
   })
 
