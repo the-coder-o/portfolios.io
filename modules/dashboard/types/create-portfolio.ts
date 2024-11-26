@@ -1,3 +1,5 @@
+import { Skill } from '@/.mock/skills.data'
+
 export interface CreatePortfolio {
   name: string
   category: string
@@ -7,4 +9,5 @@ export interface CreatePortfolio {
   live_demo: string
   page: number
   type: string
+  skills: Skill[]
 }
