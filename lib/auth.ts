@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from 'firebase/auth'
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 
 import { auth } from '@/firebase/firebase.config'
 
@@ -9,10 +9,8 @@ export const signInWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, googleProvider)
     const user = result.user
-    console.log('Google User:', user)
     return user
   } catch (error) {
-    console.error('Google Sign-In Error:', error)
     throw error
   }
 }
@@ -21,10 +19,8 @@ export const signInWithGitHub = async () => {
   try {
     const result = await signInWithPopup(auth, githubProvider)
     const user = result.user
-    console.log('GitHub User:', user)
     return user
   } catch (error) {
-    console.error('GitHub Sign-In Error:', error)
     throw error
   }
 }

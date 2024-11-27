@@ -4,9 +4,14 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**',
+        hostname: '**', // Allow all HTTPS hosts
+      },
+      {
+        protocol: 'http',
+        hostname: '**', // Allow all HTTP hosts
       },
     ],
+    unoptimized: true, // Disable strict optimization checks if necessary
   },
   reactStrictMode: true,
 }

@@ -1,4 +1,4 @@
-import { TemplateItem } from '@/modules/home/components/TemplateItem'
+import { TemplateItem } from '@/modules/home/components/template-item'
 
 const templates = [
   {

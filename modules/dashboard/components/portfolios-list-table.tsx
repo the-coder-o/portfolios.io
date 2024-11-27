@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { ExternalLink, Eye, Github, Pencil, Trash2 } from 'lucide-react'
 
 import { PortfolioList } from '@/modules/dashboard/types/portfolios-list'
+import { TableSkeleton } from '@/modules/dashboard/components/table-skeleton'
+import { EmptyPortfolioState } from '@/modules/dashboard/components/empty-portfolio-state'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination'
 import { Button } from '@/components/ui/button'
@@ -14,31 +16,39 @@ interface PortfolioTableProps {
   onEdit?: (id: string) => void
   onDelete?: (id: string) => void
   onView?: (id: string) => void
+  isPending: boolean
 }
 
-export const PortfolioTable = ({ portfolios, onEdit, onDelete, onView }: PortfolioTableProps) => {
+export const PortfolioTable = ({ portfolios, onEdit, onDelete, onView, isPending }: PortfolioTableProps) => {
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 8
   const totalPages = Math.ceil(portfolios.length / itemsPerPage)
 
   const paginatedPortfolios = portfolios.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
 
+  if (isPending) {
+    return <TableSkeleton />
+  }
+
+  if (portfolios.length === 0) {
+    return <EmptyPortfolioState />
+  }
+
   return (
     <div className="space-y-4">
-      <div className="overflow-hidden rounded-xl border">
+      <div className="rounded-xl border">
         <Table>
           <TableHeader>
             <TableRow>
               <TableHead>Image</TableHead>
               <TableHead>Name</TableHead>
               <TableHead>Description</TableHead>
-              <TableHead>Skills</TableHead>
               <TableHead>Links</TableHead>
               <TableHead>Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {paginatedPortfolios?.reverse()?.map((portfolio, index: number) => (
+            {paginatedPortfolios?.reverse()?.map((portfolio) => (
               <TableRow key={portfolio._id}>
                 <TableCell>
                   <Image src={`https://portfolio.shohjahon1code.uz/${portfolio.images?.[0]}` || '/placeholder.svg'} alt={portfolio.name} className="!h-[60px] !w-[110px] rounded-xl bg-cover object-cover" width={2000} height={1400} />
@@ -49,7 +59,7 @@ export const PortfolioTable = ({ portfolios, onEdit, onDelete, onView }: Portfol
                 <TableCell className="max-w-xs">
                   <p className="line-clamp-2 text-sm text-muted-foreground">{portfolio.description}</p>
                 </TableCell>
-                <TableCell>
+                <TableCell className={'w-[120px]'}>
                   <div className="grid grid-cols-2">
                     {portfolio.github_link && (
                       <Button variant="outline" size="icon" className="rounded-xl" asChild>
@@ -67,7 +77,7 @@ export const PortfolioTable = ({ portfolios, onEdit, onDelete, onView }: Portfol
                     )}
                   </div>
                 </TableCell>
-                <TableCell>
+                <TableCell className={'w-[165px]'}>
                   <div className="grid grid-cols-3">
                     <Button variant="outline" size="icon" className="rounded-xl" onClick={() => onEdit?.(portfolio._id)}>
                       <Pencil className="h-4 w-4" />

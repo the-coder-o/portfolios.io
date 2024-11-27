@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import { useIsAuth } from '@/hooks/use-isAuth'
 import { ProfileMenu } from '@/components/profile-menu'
-import { Searchmodal } from '@/components/modals/search-modal'
+import { SearchModal } from '@/components/modals/search-modal'
 import { FeedbackModal } from '@/components/modals/feedback-modal'
 
 export const MiniHeader = () => {
@@ -13,7 +13,7 @@ export const MiniHeader = () => {
   return (
     <div className="flex flex-1 items-center justify-end gap-2 sm:gap-2 md:justify-end">
       <div className="max-xl:hidden">
-        <Searchmodal />
+        <SearchModal />
       </div>
       <div className="max-md:hidden">
         <FeedbackModal />

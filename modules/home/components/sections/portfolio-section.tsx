@@ -1,17 +1,24 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 
+import { useGetUsersPortfolios } from '@/modules/portfolios/hooks/useGetUsersPortfolios'
+import { PortfolioCardLoading } from '@/components/loading/portfolios-loading'
 import { PortfolioCard } from '@/components/cards/portfolio-card'
 
-import { portfoliosData } from '@/.mock/portfolios.data'
-
 export const PortfolioSection = () => {
+  const { data, isPending } = useGetUsersPortfolios()
+
   return (
     <div className="relative mb-[200px] max-md:mb-10">
       <div className="grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
-        {portfoliosData.slice(0, 12).map((card, index) => (
-          <PortfolioCard key={index} {...card} />
-        ))}
+        {isPending
+          ? Array.from({ length: 8 }).map((_, index) => <PortfolioCardLoading isPending={isPending} key={index} />)
+          : data
+              ?.reverse()
+              ?.slice(0, 8)
+              ?.map((portfolio) => <PortfolioCard key={portfolio._id} portfolio={portfolio} />)}
       </div>
       <div className="absolute inset-x-0 bottom-5 z-30 h-[400px] bg-gradient-to-t from-white to-transparent dark:from-black"></div>
       <Link

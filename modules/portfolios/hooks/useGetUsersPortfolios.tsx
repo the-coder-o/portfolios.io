@@ -2,19 +2,18 @@ import { get } from 'lodash'
 import Cookies from 'js-cookie'
 import { useQuery } from '@tanstack/react-query'
 
-import { GetPortfolios } from '../services/api'
+import { GetUsersPortfolios } from '@/modules/portfolios/services/api'
+import { getPortfolios } from '@/modules/dashboard/hooks/adapter'
 
-import { getPortfolios } from './adapter'
-
-export const useGetPortfoliosList = () => {
+export const useGetUsersPortfolios = () => {
   const initialData = {
     data: getPortfolios(),
   }
   const token = Cookies.get('access_token')
 
   const { data = initialData, ...args } = useQuery({
-    queryKey: ['portfolio_list', token],
-    queryFn: () => GetPortfolios(),
+    queryKey: ['users_portfolio_list', token],
+    queryFn: () => GetUsersPortfolios(),
     select: (data) => ({
       data: getPortfolios(get(data, 'data.data')),
     }),

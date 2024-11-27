@@ -5,17 +5,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Search } from 'lucide-react'
 
-import { formatToSlug } from '@/lib/format-to-slug'
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command'
 import { Button } from '@/components/ui/button'
 
 import { rezumeData } from '@/.mock/rezume.data'
-import { portfoliosData } from '@/.mock/portfolios.data'
 
 import { RezumeProps } from '../cards/rezume-card'
-import { CardProps } from '../cards/portfolio-card'
 
-export const Searchmodal = () => {
+export const SearchModal = () => {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -48,22 +45,23 @@ export const Searchmodal = () => {
         <CommandInput placeholder="Type the author's name or portfolio name..." />
         <CommandList className="rounded-xl">
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Top Portfolios">
-            {portfoliosData.slice(0, 5).map((portfolios: CardProps, index: number) => (
-              <CommandItem key={index} className="flex items-center justify-between">
-                <Link href={`/portfolios/${formatToSlug(portfolios.title)}`} prefetch={false} className="flex">
-                  <Image src={portfolios?.image} alt={`${portfolios?.author?.name}'s profile`} width={1200} height={1200} className="mr-2 !h-[80px] !w-[110px] rounded-lg bg-cover object-cover" />
-                  <div className="flex flex-col gap-1">
-                    <div className="flex items-center">
-                      <Image src={portfolios?.author?.profileImage} alt={`${portfolios?.author?.name}'s profile`} width={24} height={24} className="mr-2 rounded-lg" />
-                      <h2 className="text-[18px] text-xl font-medium">{portfolios?.author?.name}</h2>
-                    </div>
-                    <p className="line-clamp-2">{portfolios?.description}</p>
-                  </div>
-                </Link>
-              </CommandItem>
-            ))}
-          </CommandGroup>
+          {/*<CommandGroup heading="Top Portfolios">*/}
+          {/*  {data?.map((portfolios) => (*/}
+          {/*    <CommandItem key={portfolios._id} className="flex items-center justify-between">*/}
+          {/*      <Link href={`/portfolios/${formatToSlug(portfolios.name)}`} prefetch={false} className="flex">*/}
+          {/*        <Image src={`https://portfolio.shohjahon1code.uz${portfolios?.images[0]}`} alt={`${portfolios?.user?.name}'s profile`} width={1200} height={1200} className="mr-2 !h-[80px] !w-[110px] rounded-lg bg-cover object-cover" />*/}
+          {/*        <div className="flex flex-col gap-1">*/}
+          {/*          <p className="line-clamp-2">{portfolios.user.name}</p>*/}
+          {/*          <Avatar className="h-8 w-8 rounded-xl">*/}
+          {/*            <AvatarImage src={portfolios.user.avatar} alt={portfolios.user.name} />*/}
+          {/*            <AvatarFallback className="rounded-xl">{portfolios.user.name.slice(0, 2)}</AvatarFallback>*/}
+          {/*          </Avatar>*/}
+          {/*          <p className="line-clamp-2">{portfolios?.description}</p>*/}
+          {/*        </div>*/}
+          {/*      </Link>*/}
+          {/*    </CommandItem>*/}
+          {/*  ))}*/}
+          {/*</CommandGroup>*/}
           <CommandGroup heading="Top Rezume">
             {rezumeData.slice(0, 5).map((rezume: RezumeProps) => (
               <CommandItem key={rezume?.id} className="flex items-center justify-between">

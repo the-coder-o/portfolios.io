@@ -1,42 +1,23 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
+import { useGetUsersPortfolios } from '@/modules/portfolios/hooks/useGetUsersPortfolios'
 import { cn } from '@/lib/utils'
 import { sortOptions } from '@/constants/sort-option'
 import { languageTools } from '@/constants/language-tools'
 import { jobCategories } from '@/constants/job-categories'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Button } from '@/components/ui/button'
+import { PortfolioCardLoading } from '@/components/loading/portfolios-loading'
 import { PortfolioCard } from '@/components/cards/portfolio-card'
 
-import { portfoliosData } from '@/.mock/portfolios.data'
+export const PortfoliosCard = () => {
+  const { data, isPending } = useGetUsersPortfolios()
 
-export const Portfolioscard = () => {
-  const itemsPerPage = 8
-
-  const [currentPage, setCurrentPage] = useState(1)
   const [activeCategory, setActiveCategory] = useState('All')
-  const [displayedItems, setDisplayedItems] = useState(portfoliosData.slice(0, itemsPerPage))
 
-  const loadMoreItems = () => {
-    const nextPage = currentPage + 1
-    const newItems = portfoliosData.slice(0, itemsPerPage * nextPage)
-    setDisplayedItems(newItems)
-    setCurrentPage(nextPage)
-  }
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerHeight + document.documentElement.scrollTop + 50 >= document.documentElement.scrollHeight) {
-        loadMoreItems()
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentPage])
+  const filteredPortfolios = activeCategory === 'All' ? data : data?.filter((categories) => categories.category?.name === activeCategory)
 
   return (
     <div className="mb-[120px] space-y-2">
@@ -87,9 +68,7 @@ export const Portfolioscard = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-3 px-4 max-md:px-0 sm:grid-cols-2 lg:grid-cols-4">
-        {displayedItems.map((card, index) => (
-          <PortfolioCard key={index} {...card} />
-        ))}
+        {isPending ? Array.from({ length: 8 }).map((_, index) => <PortfolioCardLoading isPending={isPending} key={index} />) : filteredPortfolios?.reverse()?.map((portfolio) => <PortfolioCard key={portfolio._id} portfolio={portfolio} />)}
       </div>
     </div>
   )
