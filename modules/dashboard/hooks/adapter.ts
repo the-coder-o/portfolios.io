@@ -5,7 +5,14 @@ export const getPortfolios = (items: PortfolioList[] = []) => {
     _id: item?._id ?? '',
     name: item?.name ?? '',
     description: item?.description ?? '',
-    category: item?.category ?? null,
+    category: item?.category
+      ? {
+          id: item.category.id ?? '',
+          name: item.category.name ?? '',
+          description: item.category.description ?? '',
+          image: item.category.image ?? '',
+        }
+      : null,
     user: {
       _id: item?.user?._id ?? '',
       name: item?.user?.name ?? '',

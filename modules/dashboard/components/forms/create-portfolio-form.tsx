@@ -5,10 +5,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useCreatePortfolio } from '@/modules/dashboard/hooks/useCreatePortfolio'
 import { portfolioSchema } from '@/modules/dashboard/components/forms/form-schema'
+import { categories } from '@/constants/categories'
 import { Form } from '@/components/ui/form'
 import TextField from '@/components/fields/text-field'
 import TextAreaField from '@/components/fields/text-area'
 import SkillsField from '@/components/fields/skills-field'
+import SelectCategoryField from '@/components/fields/select-category-field'
 import SelectField from '@/components/fields/select'
 import FileField from '@/components/fields/file-upload'
 import LoadingButton from '@/components/buttons/loading-button'
@@ -19,7 +21,7 @@ export const CreatePortfolioForm = () => {
   const methods = useForm<CreatePortfolioFormSchema>({
     resolver: zodResolver(portfolioSchema),
     defaultValues: {
-      category: '672f0fd67303b18cfb20e53c',
+      category: '',
       name: '',
       description: '',
       images: [],
@@ -57,6 +59,9 @@ export const CreatePortfolioForm = () => {
             <div className="space-y-2">
               <SelectField name="type" label="Payment type" required={true} placeholder="Select payment type" data={countType} />
             </div>
+          </div>
+          <div className="space-y-2">
+            <SelectCategoryField name="category" label="Select category" required={true} placeholder="Select payment type" data={categories} />
           </div>
           <div className="space-y-2">
             <TextField type={'number'} name="page" label="Page number" required={true} placeholder="Page number" className="rounded-xl" />

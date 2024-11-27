@@ -29,7 +29,7 @@ export const useCreatePortfolio = () => {
       toast.success('Portfolio successfully created!')
       queryClient.invalidateQueries({ queryKey: ['portfolio_list'] })
 
-      router.push('/dashboard/portfolios/all-portfolios')
+      // router.push('/dashboard/portfolios/all-portfolios')
     },
     onError: (error: unknown | any) => {
       const errorMessage = error?.response?.data?.message || 'An error occurred while creating the portfolio.'

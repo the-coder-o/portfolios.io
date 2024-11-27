@@ -1,7 +1,8 @@
 'use client'
 
 import { Toaster } from 'sonner'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { Metadata } from 'next'
 import { Cookie, X } from 'lucide-react'
 import { Analytics } from '@vercel/analytics/react'
 import { QueryClientProvider } from '@tanstack/react-query'
@@ -9,6 +10,10 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from '@/services/react-query/query-client'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+
+export const metadata: Metadata = {
+  icons: '/favicon.ico',
+}
 
 function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false)

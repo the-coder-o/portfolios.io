@@ -1,8 +1,10 @@
+import { Category } from '@/modules/dashboard/types/create-portfolio'
+
 export interface PortfolioList {
   _id: string
   name: string
   description: string
-  category: string | null
+  category: Category | null
   user: {
     _id: string
     name: string

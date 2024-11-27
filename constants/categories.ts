@@ -1,20 +1,38 @@
-import { BarChart, Briefcase, Code, Database, Edit3, Globe, GraduationCap, Grid, Layers, Monitor, PenTool, Rocket, ShieldCheck, Smartphone, TrendingUp, Wrench } from 'lucide-react'
-
-export const categories = [
-  { name: 'All', type: Grid },
-  { name: 'Designers', type: PenTool },
-  { name: 'Developers', type: Code },
-  { name: 'Students', type: GraduationCap },
-  { name: 'Engineers', type: Wrench },
-  { name: 'Founders', type: Rocket },
-  { name: 'Marketers', type: BarChart },
-  { name: 'Product Managers', type: Briefcase },
-  { name: 'Content Creators', type: Edit3 },
-  { name: 'UI/UX Designers', type: Layers },
-  { name: 'Cybersecurity', type: ShieldCheck },
-  { name: 'Mobile Developers', type: Smartphone },
-  { name: 'Web Developers', type: Monitor },
-  { name: 'Data Engineers', type: Database },
-  { name: 'Growth Hackers', type: TrendingUp },
-  { name: 'International', type: Globe },
+export const categories: any[] = [
+  {
+    type: '674720015dd4663eeb4feef8',
+    name: 'Designers',
+    description: 'Designers',
+    image: 'string',
+  },
+  {
+    type: '674720185dd4663eeb4feefc',
+    name: 'Developers',
+    description: 'Developers',
+    image: 'string',
+  },
+  {
+    type: '674720245dd4663eeb4feeff',
+    name: 'Entrepreneurs',
+    description: 'Entrepreneurs',
+    image: 'string',
+  },
+  {
+    type: '6747203e5dd4663eeb4fef02',
+    name: 'Students',
+    description: 'Students',
+    image: 'string',
+  },
+  {
+    type: '6747204a5dd4663eeb4fef05',
+    name: 'Engineers',
+    description: 'Engineers',
+    image: 'string',
+  },
+  {
+    type: '674720535dd4663eeb4fef08',
+    name: 'Founders',
+    description: 'Founders',
+    image: 'string',
+  },
 ]
