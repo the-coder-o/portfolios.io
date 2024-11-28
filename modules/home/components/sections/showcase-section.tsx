@@ -37,7 +37,7 @@ const showcases = [
   },
   {
     title: 'Portfolio 6',
-    image: 'https://portfoliosio.vercel.app/_next/image?url=https%3A%2F%2Fpro.aceternity.com%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fassets.aceternity.com%252Ftemplates%252Fsidefolio.png%26w%3D640%26q%3D75&w=640&q=75',
+    image: 'https://i.postimg.cc/9QT22BTS/Screenshot-2024-11-28-211759.png',
     height: 480,
     width: 640,
   },
@@ -93,6 +93,11 @@ export function ShowcaseSection() {
           <h2 className="mb-10 text-center text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl xl:text-5xl">The framework of choice when it matters</h2>
           <div className="-mx-4 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
             <div className="col-span-1 space-y-2 sm:space-y-2">
+              <ShowcaseItem showcase={showcases[5]} />
+              <ShowcaseItem showcase={showcases[11]} />
+              <ShowcaseItem showcase={showcases[9]} />
+            </div>
+            <div className="col-span-1 space-y-2 sm:space-y-2">
               <ShowcaseItem showcase={showcases[10]} />
               <ShowcaseItem showcase={showcases[0]} />
             </div>
@@ -100,11 +105,6 @@ export function ShowcaseSection() {
               <ShowcaseItem showcase={showcases[4]} />
               <ShowcaseItem showcase={showcases[7]} />
               <ShowcaseItem showcase={showcases[12]} />
-            </div>
-            <div className="col-span-1 space-y-2 sm:space-y-2">
-              <ShowcaseItem showcase={showcases[5]} />
-              <ShowcaseItem showcase={showcases[11]} />
-              <ShowcaseItem showcase={showcases[9]} />
             </div>
             <div className="col-span-1 space-y-2 sm:space-y-2">
               <ShowcaseItem showcase={showcases[6]} />
