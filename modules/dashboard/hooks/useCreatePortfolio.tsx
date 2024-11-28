@@ -10,29 +10,33 @@ export const useCreatePortfolio = () => {
 
   const { mutateAsync, isPending, isSuccess, isError, data } = useMutation({
     mutationFn: async (values: any) => {
-      try {
-        const uploadedImages = await Promise.all(values.images.map((image: File) => uploadImage('portfolio', image)))
-        const imageUrls = uploadedImages.map((response) => response.url)
+      const uploadedImages = await Promise.all(
+        values.images.map(async (image: File) => {
+          try {
+            return await uploadImage('portfolio', image)
+          } catch (uploadError: any) {
+            throw new Error(uploadError?.response?.data?.message || `Failed to upload image: ${image.name}`)
+          }
+        }),
+      )
 
-        const portfolioData = {
-          ...values,
-          images: imageUrls,
-        }
+      const imageUrls = uploadedImages.map((response) => response.url)
 
-        return await createPortfolio(portfolioData)
-      } catch (error: unknown | any) {
-        const errorMessage = error?.response?.data?.message || 'An error occurred while creating the portfolio.'
-        toast.error(errorMessage)
+      const portfolioData = {
+        ...values,
+        images: imageUrls,
       }
+
+      return await createPortfolio(portfolioData)
     },
     onSuccess: () => {
       toast.success('Portfolio successfully created!')
       queryClient.invalidateQueries({ queryKey: ['portfolio_list'] })
 
-      // router.push('/dashboard/portfolios/all-portfolios')
+      router.push('/dashboard/portfolios/all-portfolios')
     },
-    onError: (error: unknown | any) => {
-      const errorMessage = error?.response?.data?.message || 'An error occurred while creating the portfolio.'
+    onError: (error: any) => {
+      const errorMessage = error?.message || error?.response?.data?.message || 'An unexpected error occurred while creating the portfolio.'
       toast.error(errorMessage)
     },
   })
