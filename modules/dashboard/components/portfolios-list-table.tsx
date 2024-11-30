@@ -1,25 +1,25 @@
 'use client'
 
 import { useState } from 'react'
-import { ExternalLink, Eye, Github, Pencil, Trash2 } from 'lucide-react'
+import Link from 'next/link'
+import { ExternalLink, Eye, Github, Pencil } from 'lucide-react'
 
 import { PortfolioList } from '@/modules/dashboard/types/portfolios-list'
 import { TableSkeleton } from '@/modules/dashboard/components/table-skeleton'
 import { EmptyPortfolioState } from '@/modules/dashboard/components/empty-portfolio-state'
+import { formatToSlug } from '@/lib/format-to-slug'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination'
 import { Button } from '@/components/ui/button'
 import OptimizedImage from '@/components/optimize-image'
+import { DeletePortfolio } from '@/components/modals/delete-portfolio'
 
 interface PortfolioTableProps {
   portfolios: PortfolioList[]
-  onEdit?: (id: string) => void
-  onDelete?: (id: string) => void
-  onView?: (id: string) => void
   isPending: boolean
 }
 
-export const PortfolioTable = ({ portfolios, onEdit, onDelete, onView, isPending }: PortfolioTableProps) => {
+export const PortfolioTable = ({ portfolios, isPending }: PortfolioTableProps) => {
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 8
   const totalPages = Math.ceil(portfolios.length / itemsPerPage)
@@ -79,14 +79,14 @@ export const PortfolioTable = ({ portfolios, onEdit, onDelete, onView, isPending
                 </TableCell>
                 <TableCell className={'w-[165px]'}>
                   <div className="grid grid-cols-3">
-                    <Button variant="outline" size="icon" className="rounded-xl" onClick={() => onEdit?.(portfolio._id)}>
+                    <Button variant="outline" size="icon" className="rounded-xl">
                       <Pencil className="h-4 w-4" />
                     </Button>
-                    <Button variant="outline" size="icon" className="rounded-xl" onClick={() => onDelete?.(portfolio._id)}>
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                    <Button variant="outline" size="icon" className="rounded-xl" onClick={() => onView?.(portfolio._id)}>
-                      <Eye className="h-4 w-4" />
+                    <DeletePortfolio portfolio_id={portfolio._id} />
+                    <Button variant="outline" size="icon" className="rounded-xl">
+                      <Link href={`/portfolios/${formatToSlug(portfolio.name)}`}>
+                        <Eye className="h-4 w-4" />
+                      </Link>
                     </Button>
                   </div>
                 </TableCell>

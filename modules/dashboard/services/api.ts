@@ -30,3 +30,7 @@ export const createPortfolio = async (portfolioData: CreatePortfolio) => {
 export const GetPortfolios = async () => {
   return await http.get('/portfolio/user/me')
 }
+
+export const DeletePortfolio = async (id: string) => {
+  return await http.delete(`/portfolio/${id}`)
+}
