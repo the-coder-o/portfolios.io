@@ -4,14 +4,18 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import { useGetUsersPortfolios } from '@/modules/portfolios/hooks/useGetUsersPortfolios'
+import { PortfolioList } from '@/modules/dashboard/types/portfolios-list'
 import { useIsAuth } from '@/hooks/use-isAuth'
 import WordRotate from '@/components/ui/word-rotate'
+import { Skeleton } from '@/components/ui/skeleton'
 import { AnimatedTooltip } from '@/components/animation/animated-toolip'
 
 import { people } from '@/.mock/people.data'
 
 export const HeroSection = () => {
   const isAuthUser = useIsAuth()
+  const { data, isPending } = useGetUsersPortfolios()
 
   return (
     <div className="mt-[150px] flex justify-between gap-16 lg:flex-row">
@@ -43,7 +47,7 @@ export const HeroSection = () => {
             <AnimatedTooltip items={people} />
           </div>
         </div>
-        <PortfolioShowcase portfolios={featuredPortfolios} />
+        <PortfolioShowcase portfolios={data} isPending={isPending} />
         <div className="grid grid-cols-4 gap-8 text-center max-sm:grid-cols-2">
           <div>
             <h2 className="text-3xl font-bold text-white">179+</h2>
@@ -67,52 +71,27 @@ export const HeroSection = () => {
   )
 }
 
-const featuredPortfolios = [
-  {
-    id: 1,
-    title: 'Creative Designer Portfolio',
-    description: 'Showcase your artistic talent with this stunning template.',
-    image: 'https://portfoliosio.vercel.app/_next/image?url=https%3A%2F%2Fi.postimg.cc%2FR0FP9t5B%2FScreenshot-2024-11-21-141242.png&w=640&q=75',
-  },
-  {
-    id: 2,
-    title: 'Developer Portfolio',
-    description: 'Highlight your coding projects with a sleek, modern design.',
-    image: 'https://portfoliosio.vercel.app/_next/image?url=https%3A%2F%2Fi.postimg.cc%2F4Nj2BNm5%2FScreenshot-2024-11-21-151236.png&w=640&q=75',
-  },
-  {
-    id: 3,
-    title: 'Photographer Portfolio',
-    description: 'Perfect for showcasing high-quality photography work.',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2fgq48xaswtxpeb9s4x8apzn6vtggc&w=640&q=75',
-  },
-]
-
-interface Portfolio {
-  id: number
-  title: string
-  description: string
-  image: string
-}
-
 interface PortfolioShowcaseProps {
-  portfolios: Portfolio[]
+  portfolios: PortfolioList[]
+  isPending: boolean
 }
 
-const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ portfolios }) => {
+const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ portfolios, isPending }) => {
   return (
     <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
-      {portfolios.map((portfolio) => (
-        <div key={portfolio.id} className="group relative w-[200px] overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900 shadow-lg transition-transform">
-          <Image src={portfolio.image} alt={portfolio.title} width={400} height={300} className="!h-[200px] !w-[400px] object-cover opacity-75 transition duration-300 group-hover:scale-105" />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-            <h3 className="line-clamp-1 text-lg font-semibold text-white">{portfolio.title}</h3>
-            <p className="line-clamp-1 text-sm text-neutral-400">{portfolio.description}</p>
-          </div>
-        </div>
-      ))}
+      {isPending
+        ? Array(3)
+            .fill(0)
+            .map((_, index) => <Skeleton key={index} className={'h-[200px] w-[200px] rounded-xl'} />)
+        : portfolios.slice(0, 3).map((portfolio) => (
+            <div key={portfolio._id} className="group relative h-[200px] w-[200px] overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900 shadow-lg transition-transform">
+              <Image src={`https://portfolio.shohjahon1code.uz${portfolio.images[0]}`} alt={portfolio.name} width={1000} height={1000} className="!h-full !w-full bg-cover object-cover opacity-75 transition duration-300 group-hover:scale-105" />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                <h3 className="line-clamp-1 text-lg font-semibold text-white">{portfolio.name}</h3>
+                <p className="line-clamp-1 text-sm text-neutral-400">{portfolio.description}</p>
+              </div>
+            </div>
+          ))}
     </div>
   )
 }
-
-export default PortfolioShowcase
