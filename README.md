@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <img src="public/favicon/favicon.ico" alt="Portfoliosio Logo" width="50"/>
+  <h1>Portfoliosio</h1>
+  <p>The best place to find portfolio inspiration</p>
+</div>
 
-## Getting Started
+<div align="center">
+  <a href="https://portfoliosio.vercel.app">View Live Demo</a> •
+  <a href="#features">Features</a> •
+  <a href="#showcase">Showcase</a> •
+  <a href="#getting-started">Getting Started</a>
+</div>
 
-First, run the development server:
+![Portfoliosio Banner](public/images/portfolios.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 About Portfoliosio
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Portfoliosio is your ultimate destination for portfolio inspiration. We've curated a collection of 309+ exceptional portfolio designs to help creators, developers, and designers craft their perfect online presence. Our platform showcases the best portfolio examples from around the world, making it easier for you to create a standout portfolio that captures attention and demonstrates your unique skills.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Curated Collection**: Browse through 309+ handpicked portfolio designs
+- **Resume Templates**: Access professionally designed resume templates
+- **Portfolio Templates**: Coming soon - customizable portfolio templates
+- **Search & Filter**: Easily find portfolios by industry, style, or technology
+- **Responsive Design**: Perfect viewing experience across all devices
 
-## Learn More
+## 📊 Platform Statistics
 
-To learn more about Next.js, take a look at the following resources:
+- **179+** Curated Portfolios
+- **500+** Satisfied Creators
+- **80+** Resume Templates
+- **1 Year** of Excellence
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 Why Choose Portfoliosio?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Inspiration**: Discover unique portfolio designs from successful professionals
+- **Diversity**: Examples from various industries and creative fields
+- **Modern Design**: Contemporary, clean interface for easy browsing
+- **Regular Updates**: New portfolios added regularly
+- **Community Driven**: Built for creators, by creators
 
-## Deploy on Vercel
+## 🚀 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Visit [portfoliosio.vercel.app](https://portfoliosio.vercel.app)
+2. Browse through our curated collection
+3. Filter by your preferred category
+4. Click on any portfolio to view details
+5. Get inspired and create your own amazing portfolio!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details. "# portfolios.io"
+## 🛠️ Technologies Used
+
+- Next.js
+- React
+- Tailwind CSS
+- TypeScript
+- Vercel
+
+## 📫 Contact & Support
+
+Have questions or suggestions? We'd love to hear from you!
+
+- **Website**: [portfoliosio.vercel.app](https://portfoliosio.vercel.app)
+- **Feedback**: Use the "Send Feedback" button on our platform
+- **Email**: support@portfoliosio.com
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+---
+
+<div align="center">
+  Made with ❤️ by the Portfoliosio Team
+</div>
