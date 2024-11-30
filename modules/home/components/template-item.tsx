@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { Eye } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import OptimizedImage from '@/components/optimize-image'
 
 interface TemplateItemProps {
   title: string
@@ -26,7 +26,7 @@ export const TemplateItem = ({ title, description, href, images }: TemplateItemP
       </div>
       {images.map((src, index) => (
         <div key={index} className={index === 0 ? '' : 'hidden md:block'} style={{ height: '100%', width: '100%' }}>
-          <Image
+          <OptimizedImage
             src={src}
             alt={`${title} screenshot ${index + 1}`}
             width={500}

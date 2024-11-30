@@ -7,79 +7,79 @@ import { ArrowUpRight } from 'lucide-react'
 const showcases = [
   {
     title: 'Portfolio 1',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2eaha87ms5gjmr3rq6w45hrd74b300&w=640&q=75',
+    image: '/images/showcase-image-1.webp',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 2',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg20nhvf19w4b1a46f7sf1rcns71dbn0&w=640&q=75',
+    image: '/images/showcase-image-2.webp',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 3',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2f3v613gp8nt71f8jmpf1z7x6zkgry&w=640&q=75',
+    image: '/images/showcase-image-3.webp',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 4',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2eez46mcy550sktarwqv12sh6wscf1&w=640&q=75',
+    image: '/images/showcase-image-4.webp',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 5',
-    image: 'https://portfoliosio.vercel.app/_next/image?url=https%3A%2F%2Fi.postimg.cc%2FR0FP9t5B%2FScreenshot-2024-11-21-141242.png&w=640&q=75',
+    image: '/images/showcase-image-5.webp',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 6',
-    image: 'https://i.postimg.cc/9QT22BTS/Screenshot-2024-11-28-211759.png',
+    image: '/images/showcase-image-6.png',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 7',
-    image: 'https://portfoliosio.vercel.app/_next/image?url=https%3A%2F%2Fi.postimg.cc%2F4Nj2BNm5%2FScreenshot-2024-11-21-151236.png&w=640&q=75',
+    image: '/images/showcase-image-7.webp',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 8',
-    image: 'https://portfoliosio.vercel.app/_next/image?url=https%3A%2F%2Fi.postimg.cc%2F4Nj2BNm5%2FScreenshot-2024-11-21-151236.png&w=640&q=75',
+    image: '/images/showcase-image-8.webp',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 9',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg235bk8fp92z7f8wy4njbspcs6wam8z&w=640&q=75',
+    image: '/images/showcase-image-9.webp',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 10',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg21ehfjs09q0hgjvjmt13ba7n74k0bh&w=640&q=75',
+    image: '/images/showcase-image-10.webp',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 11',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg24xngfmxctwy0yz228qedvn56wwnq1&w=640&q=75',
+    image: '/images/showcase-image-11.webp',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 12',
-    image: 'https://i.postimg.cc/gcCVSw-4j/Screenshot-2024-11-23-100434.png',
+    image: '/images/showcase-image-12.png',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 13',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg23474kwtctj7s2ktwadb2x1h73k0hm&w=640&q=75',
+    image: '/images/showcase-image-12.webp',
     height: 480,
     width: 640,
   },
@@ -103,8 +103,9 @@ export function ShowcaseSection() {
             </div>
             <div className="col-span-1 space-y-2 sm:space-y-2">
               <ShowcaseItem showcase={showcases[4]} />
-              <ShowcaseItem showcase={showcases[7]} />
+              <ShowcaseItem showcase={showcases[11]} />
               <ShowcaseItem showcase={showcases[12]} />
+              <ShowcaseItem showcase={showcases[7]} />
             </div>
             <div className="col-span-1 space-y-2 sm:space-y-2">
               <ShowcaseItem showcase={showcases[6]} />
