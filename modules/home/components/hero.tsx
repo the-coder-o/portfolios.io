@@ -2,13 +2,13 @@
 
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 import { useGetUsersPortfolios } from '@/modules/portfolios/hooks/useGetUsersPortfolios'
 import { PortfolioList } from '@/modules/dashboard/types/portfolios-list'
 import { useIsAuth } from '@/hooks/use-isAuth'
 import WordRotate from '@/components/ui/word-rotate'
 import { Skeleton } from '@/components/ui/skeleton'
+import OptimizedImage from '@/components/optimize-image'
 import { AnimatedTooltip } from '@/components/animation/animated-toolip'
 
 import { people } from '@/.mock/people.data'
@@ -85,7 +85,7 @@ const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ portfolios, isPen
             .map((_, index) => <Skeleton key={index} className={'h-[200px] w-[200px] rounded-xl'} />)
         : portfolios.slice(0, 3).map((portfolio) => (
             <div key={portfolio._id} className="group relative h-[200px] w-[200px] overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900 shadow-lg transition-transform">
-              <Image src={`https://portfolio.shohjahon1code.uz${portfolio.images[0]}`} alt={portfolio.name} width={1000} height={1000} className="!h-full !w-full bg-cover object-cover opacity-75 transition duration-300 group-hover:scale-105" />
+              <OptimizedImage src={`https://portfolio.shohjahon1code.uz${portfolio.images[0]}`} alt={portfolio.name} width={1000} height={1000} className="!h-full !w-full bg-cover object-cover opacity-75 transition duration-300 group-hover:scale-105" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
                 <h3 className="line-clamp-1 text-lg font-semibold text-white">{portfolio.name}</h3>
                 <p className="line-clamp-1 text-sm text-neutral-400">{portfolio.description}</p>
