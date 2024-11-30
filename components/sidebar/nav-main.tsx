@@ -2,13 +2,12 @@
 
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, Clock, type LucideIcon } from 'lucide-react'
+import { ChevronRight, Clock, type LucideIcon, Sparkle } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuAction, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem } from '@/components/ui/sidebar'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
-
-import { Badge } from '../ui/badge'
+import { Badge } from '@/components/ui/badge'
 
 export function NavMain({
   items,
@@ -38,9 +37,15 @@ export function NavMain({
                   <item.icon />
                   <span className="flex w-full items-center justify-between">
                     {item.title}
-                    <Badge className="flex h-[20px] items-center justify-center gap-1 rounded-lg px-2 text-[10px] dark:border-green-300 dark:bg-green-700 dark:text-white">
-                      <Clock size={10} /> Soon
-                    </Badge>
+                    {item.title === 'Portfolio' ? (
+                      <Badge className="flex h-[20px] items-center justify-center gap-1 rounded-lg px-2 text-[10px] dark:border-green-300 dark:bg-green-700 dark:text-white">
+                        <Sparkle size={10} /> New
+                      </Badge>
+                    ) : (
+                      <Badge className="flex h-[20px] items-center justify-center gap-1 rounded-lg px-2 text-[10px] dark:border-green-300 dark:bg-green-700 dark:text-white">
+                        <Clock size={10} /> Soon
+                      </Badge>
+                    )}
                   </span>
                 </Link>
               </SidebarMenuButton>
