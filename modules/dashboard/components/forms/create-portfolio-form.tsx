@@ -61,7 +61,7 @@ export const CreatePortfolioForm = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <SelectCategoryField name="category" label="Select category" required={true} placeholder="Select payment type" data={categories} />
+            <SelectCategoryField name="category" label="Select category" required={true} placeholder="Select category" data={categories} />
           </div>
           <div className="space-y-2">
             <TextField type={'number'} name="page" label="Page number" required={true} placeholder="Page number" className="rounded-xl" />

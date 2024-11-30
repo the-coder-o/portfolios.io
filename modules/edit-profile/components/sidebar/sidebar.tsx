@@ -23,7 +23,7 @@ export const Sidebar = () => {
     { name: 'General', icon: Settings, isNew: false },
     { name: 'Password', icon: Lock, isNew: false },
     { name: 'Social Profiles', icon: Share2, isNew: true },
-    { name: 'Sessions', icon: Laptop, isNew: false },
+    { name: 'Sessions', icon: Laptop, isNew: true },
     { name: 'Data Export', icon: Database, isNew: false },
   ]
 

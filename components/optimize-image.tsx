@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 
 interface OptimizedImageProps {
@@ -6,10 +6,11 @@ interface OptimizedImageProps {
   alt: string
   width: number
   height: number
+  style?: React.CSSProperties
   className?: string
 }
 
-const OptimizedImage: React.FC<OptimizedImageProps> = ({ src, alt, width, height, className }) => {
+const OptimizedImage: React.FC<OptimizedImageProps> = ({ src, alt, width, height, className, style }) => {
   const [isLoading, setLoading] = useState(true)
   const baseUrl = 'https://portfolio.shohjahon1code.uz'
   const fallbackImage = '/fallback-image.jpg'
@@ -23,6 +24,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({ src, alt, width, height
         alt={alt}
         width={width}
         height={height}
+        style={style}
         className={`duration-700 ease-in-out ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'} ${className || ''} `}
         onLoadingComplete={() => setLoading(false)}
         onError={(e) => {
