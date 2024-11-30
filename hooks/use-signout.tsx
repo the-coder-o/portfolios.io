@@ -25,12 +25,12 @@ const SignOutButton = () => {
   return (
     <>
       {isAuthUser ? (
-        <Button onClick={signOut} className="flex h-[35px] w-full items-center justify-center gap-2 rounded-xl text-[15px] dark:bg-accent dark:text-white dark:hover:text-white">
+        <Button onClick={signOut} className="flex h-[35px] w-full items-center justify-center gap-2 rounded-xl text-[15px] dark:bg-secondary dark:text-white dark:hover:text-white">
           Sign out
           <LogOut size={16} />
         </Button>
       ) : (
-        <Button onClick={() => router.push('/sign-in')} className="flex h-[35px] w-full items-center justify-center gap-2 rounded-xl text-[15px] dark:bg-accent dark:text-white dark:hover:text-white">
+        <Button onClick={() => router.push('/sign-in')} className="flex h-[35px] w-full items-center justify-center gap-2 rounded-xl text-[15px] dark:bg-secondary dark:text-white dark:hover:text-white">
           Sign In
         </Button>
       )}

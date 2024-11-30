@@ -12,7 +12,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination'
 import { Button } from '@/components/ui/button'
 import OptimizedImage from '@/components/optimize-image'
-import { DeletePortfolio } from '@/components/modals/delete-portfolio'
+import { DeletePortfolioModal } from '@/components/modals/delete-portfolio-modal'
 
 interface PortfolioTableProps {
   portfolios: PortfolioList[]
@@ -82,7 +82,7 @@ export const PortfolioTable = ({ portfolios, isPending }: PortfolioTableProps) =
                     <Button variant="outline" size="icon" className="rounded-xl">
                       <Pencil className="h-4 w-4" />
                     </Button>
-                    <DeletePortfolio portfolio_id={portfolio._id} />
+                    <DeletePortfolioModal portfolio_id={portfolio._id} />
                     <Button variant="outline" size="icon" className="rounded-xl">
                       <Link href={`/portfolios/${formatToSlug(portfolio.name)}`}>
                         <Eye className="h-4 w-4" />

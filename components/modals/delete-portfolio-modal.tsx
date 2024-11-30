@@ -12,7 +12,7 @@ interface DeleteModalProps {
   portfolio_id: string
 }
 
-export const DeletePortfolio = ({ portfolio_id }: DeleteModalProps) => {
+export const DeletePortfolioModal = ({ portfolio_id }: DeleteModalProps) => {
   const { triggerPortfolioDelete, isPending } = useDeletePortfolio(portfolio_id)
   const [open, setOpen] = useState(false)
 

@@ -8,7 +8,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { DeleteModal } from '@/components/modals/delete-account'
+import { DeleteModal } from '@/components/modals/delete-account-modal'
 
 import { SidebarContent } from './sidebar-content'
 

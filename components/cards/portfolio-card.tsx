@@ -50,7 +50,7 @@ export const PortfolioCard = ({ portfolio }: PortfolioCardProps) => {
         )}
         <div className="mt-5 flex w-full items-center justify-between">
           <div className="flex items-center">
-            <Image src={user.avatar || 'https://api-private.atlassian.com/users/4c06973565b718b273c7db95e58dca2f/avatar'} alt={`${user.name.slice(0, 1)}`} width={24} height={24} className="mr-2 !rounded-xl" />
+            <OptimizedImage src={user.avatar || 'https://api-private.atlassian.com/users/4c06973565b718b273c7db95e58dca2f/avatar'} alt={`${user.name.slice(0, 1)}`} width={200} height={200} className="mr-2 !h-[25px] !w-[25px] !rounded-lg border border-border" />
             <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">{user.name}</span>
           </div>
           {live_demo && (

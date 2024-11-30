@@ -4,8 +4,9 @@ import Image from 'next/image'
 import { BriefcaseBusiness, LocateFixed, Mail } from 'lucide-react'
 
 import { Skeleton } from '@/components/ui/skeleton'
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { UploadBannerModal } from '@/components/modals/upload-banner-modal'
+import { UploadAvatarModal } from '@/components/modals/upload-avatar-modal'
 
 import { useGetProfileMe } from '../hooks/useGetProfileMe'
 import { Sidebar } from '../components/sidebar/sidebar'
@@ -79,7 +80,10 @@ export const EditProfileView = () => {
               </div>
             </div>
           </div>
-          <UploadBannerModal profile={profile} />
+          <div className={'flex items-center gap-2'}>
+            <UploadAvatarModal profile={profile} />
+            <UploadBannerModal profile={profile} />
+          </div>
         </div>
       </div>
       <div className="mb-[100px] mt-5 sm:mb-[150px] sm:mt-32 md:mt-[100px]">

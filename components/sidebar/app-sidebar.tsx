@@ -13,11 +13,6 @@ import { NavMain } from '@/components/sidebar/nav-main'
 import { LogoAuth } from '../logo/logo-auth'
 
 const data = {
-  user: {
-    name: 'shadcn',
-    email: 'm@example.com',
-    avatar: '/avatars/shadcn.jpg',
-  },
   navMain: [
     {
       title: 'Portfolio',

@@ -109,7 +109,7 @@ export const PortfolioDetailView = () => {
                     <div className="p-1">
                       <Card className="overflow-hidden rounded-xl">
                         <CardContent className="aspect-video p-0">
-                          <Image src={`https://portfolio.shohjahon1code.uz${image}`} width={2000} height={2000} alt={`${portfolio.name} image ${index + 1}`} className="h-full w-full object-cover" />
+                          <Image src={`https://portfolio.shohjahon1code.uz${image}`} width={2000} height={2000} alt={`${portfolio.name} image ${index + 1}`} className="h-full w-full object-cover object-top" />
                         </CardContent>
                       </Card>
                     </div>
