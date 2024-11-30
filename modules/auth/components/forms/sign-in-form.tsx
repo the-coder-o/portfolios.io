@@ -5,16 +5,12 @@ import { useForm } from 'react-hook-form'
 import { Lock, Mail } from 'lucide-react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+import { signInSchema } from '@/modules/auth/components/forms/form.schema'
 import { Form } from '@/components/ui/form'
 import AuthButton from '@/components/loading/auth-loading'
 import TextField from '@/components/fields/text-field'
 
 import { useAuthSignIn } from '../../hooks/useAuthSignin'
-
-const signInSchema = z.object({
-  email: z.string().email('Invalid email address'),
-  password: z.string().min(6, 'Password must be at least 6 characters'),
-})
 
 type SignInFormSchema = z.infer<typeof signInSchema>
 

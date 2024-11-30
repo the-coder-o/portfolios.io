@@ -1,5 +1,5 @@
 export interface Category {
-  id: string
+  _id: string
   name: string
   description: string
   image: string
@@ -20,4 +20,9 @@ export interface CreatePortfolio {
   page: number
   type: string
   skills: Skill[]
+}
+
+export interface IUpdatePortfolio {
+  id: string
+  values: CreatePortfolio
 }

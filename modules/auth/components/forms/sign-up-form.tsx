@@ -6,21 +6,18 @@ import { useRouter } from 'next/navigation'
 import { Mail } from 'lucide-react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+import { onboardingSchema } from '@/modules/auth/components/forms/form.schema'
 import { Form } from '@/components/ui/form'
 import AuthButton from '@/components/loading/auth-loading'
 import TextField from '@/components/fields/text-field'
 
-const signUpSchema = z.object({
-  email: z.string().email('Invalid email address'),
-})
-
-type SignUpFormSchema = z.infer<typeof signUpSchema>
+type SignUpFormSchema = z.infer<typeof onboardingSchema>
 
 export const SignUpForm = () => {
   const router = useRouter()
 
   const methods = useForm<SignUpFormSchema>({
-    resolver: zodResolver(signUpSchema),
+    resolver: zodResolver(onboardingSchema),
     defaultValues: { email: '' },
   })
 
