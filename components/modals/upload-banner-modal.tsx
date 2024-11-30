@@ -1,7 +1,6 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import { ImageUp } from 'lucide-react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -12,8 +11,9 @@ import { colors, wallpaperCategories } from '@/constants/colors'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Form } from '@/components/ui/form'
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
+import OptimizedImage from '@/components/optimize-image'
 
 import LoadingButton from '../buttons/loading-button'
 
@@ -123,7 +123,7 @@ export const UploadBannerModal = ({ profile }: IProps) => {
                         ?.wallpapers.map((wallpaper) => (
                           <Button key={wallpaper.id} variant="outline" className={`h-20 w-full rounded-xl p-0 ${selectedBackground === wallpaper.url ? 'ring-2 ring-primary ring-offset-2' : ''}`} onClick={() => setSelectedBackground(wallpaper.url)} aria-label={`Select wallpaper ${wallpaper.id}`}>
                             <div className="relative h-full w-full overflow-hidden rounded-lg">
-                              <Image src={wallpaper.url} alt={`Wallpaper ${wallpaper.id}`} fill sizes="(max-width: 640px) 33vw, 25vw" priority={wallpaper.id <= 8} loading={wallpaper.id <= 8 ? 'eager' : 'lazy'} style={{ objectFit: 'cover', objectPosition: 'center' }} />
+                              <OptimizedImage src={wallpaper.url} alt={`Wallpaper ${wallpaper.id}`} width={1000} height={1000} className={'bg-cover object-cover'} />
                             </div>
                           </Button>
                         ))}

@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { User } from 'lucide-react'
+
+import OptimizedImage from '@/components/optimize-image'
 
 export interface RezumeProps {
   id?: string | any
@@ -15,7 +16,7 @@ export const RezumeCard = ({ url, title, image, creatorName, creatorLink }: Rezu
   return (
     <Link href={`${url}`} prefetch={false} target="_blank" className="group h-full overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 antialiased dark:border-neutral-800 dark:bg-[#111]">
       <div className="relative overflow-hidden rounded-2xl transition duration-200">
-        <Image alt="Component Thumbnail" loading="lazy" width={720} height={500} decoding="async" className="aspect-video rounded-2xl bg-cover object-cover object-top blur-0 transition duration-300 group-hover:scale-105" src={image || '/fallback-image.jpg'} style={{ color: 'transparent' }} />
+        <OptimizedImage alt="Component Thumbnail" width={720} height={500} className="aspect-video rounded-2xl bg-cover object-cover object-top blur-0 transition duration-300 group-hover:scale-105" src={image || '/fallback-image.jpg'} />
       </div>
       <div className="mt-4 flex flex-col items-start p-3">
         <div className="mb-2 flex w-full items-center justify-between">
