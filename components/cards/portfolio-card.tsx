@@ -5,6 +5,7 @@ import { Eye } from 'lucide-react'
 import { PortfolioList } from '@/modules/dashboard/types/portfolios-list'
 import { formatToSlug } from '@/lib/format-to-slug'
 import { Badge } from '@/components/ui/badge'
+import OptimizedImage from '@/components/optimize-image'
 
 export interface PortfolioCardProps {
   portfolio: PortfolioList | any
@@ -16,16 +17,7 @@ export const PortfolioCard = ({ portfolio }: PortfolioCardProps) => {
   return (
     <Link href={`/portfolios/${formatToSlug(name)}`} prefetch={false} className="group relative h-full rounded-3xl border border-gray-200 bg-gray-100 p-2 dark:border-gray-50/[.1] dark:bg-black dark:backdrop-blur-md">
       <div className="relative overflow-hidden rounded-2xl transition duration-200">
-        <Image
-          alt={name}
-          loading="lazy"
-          width={720}
-          height={500}
-          decoding="async"
-          src={`https://portfolio.shohjahon1code.uz${images?.[0]}` || '/fallback-image.jpg'}
-          style={{ color: 'transparent' }}
-          className="aspect-video rounded-2xl bg-cover object-cover object-top blur-0 transition duration-300 group-hover:scale-105"
-        />
+        <OptimizedImage alt={name} width={720} height={500} src={`https://portfolio.shohjahon1code.uz${images?.[0]}` || '/fallback-image.jpg'} className="aspect-video rounded-2xl bg-cover object-top blur-0 transition duration-300 group-hover:scale-105" />
         <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           {github_link && (
             <Link href={`${github_link}`} target="_blank" className="flex h-11 w-11 items-center justify-center rounded-full bg-background/80 shadow-md backdrop-blur-sm">

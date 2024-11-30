@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { ExternalLink, Eye, Github, Pencil, Trash2 } from 'lucide-react'
 
 import { PortfolioList } from '@/modules/dashboard/types/portfolios-list'
@@ -10,6 +9,7 @@ import { EmptyPortfolioState } from '@/modules/dashboard/components/empty-portfo
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination'
 import { Button } from '@/components/ui/button'
+import OptimizedImage from '@/components/optimize-image'
 
 interface PortfolioTableProps {
   portfolios: PortfolioList[]
@@ -51,7 +51,7 @@ export const PortfolioTable = ({ portfolios, onEdit, onDelete, onView, isPending
             {paginatedPortfolios?.reverse()?.map((portfolio) => (
               <TableRow key={portfolio._id}>
                 <TableCell>
-                  <Image src={`https://portfolio.shohjahon1code.uz/${portfolio.images?.[0]}` || '/placeholder.svg'} alt={portfolio.name} className="!h-[60px] !w-[110px] rounded-xl bg-cover object-cover" width={2000} height={1400} />
+                  <OptimizedImage src={`https://portfolio.shohjahon1code.uz/${portfolio.images?.[0]}` || '/placeholder.svg'} alt={portfolio.name} className="!h-[60px] !w-[110px] rounded-xl bg-cover object-top" width={2000} height={1400} />
                 </TableCell>
                 <TableCell className="max-w-xs">
                   <p className={'line-clamp-2 text-sm'}>{portfolio.name}</p>
