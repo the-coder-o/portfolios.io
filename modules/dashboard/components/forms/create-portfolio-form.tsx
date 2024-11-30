@@ -4,14 +4,13 @@ import React from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useCreatePortfolio } from '@/modules/dashboard/hooks/useCreatePortfolio'
-import { portfolioSchema } from '@/modules/dashboard/components/forms/form-schema'
+import { portfolioSchema } from '@/modules/dashboard/components/forms/form.schema'
 import { categories } from '@/constants/categories'
 import { Form } from '@/components/ui/form'
 import TextField from '@/components/fields/text-field'
 import TextAreaField from '@/components/fields/text-area'
 import SkillsField from '@/components/fields/skills-field'
 import SelectCategoryField from '@/components/fields/select-category-field'
-import SelectField from '@/components/fields/select'
 import FileField from '@/components/fields/file-upload'
 import LoadingButton from '@/components/buttons/loading-button'
 
@@ -29,35 +28,24 @@ export const CreatePortfolioForm = () => {
       live_demo: '',
       page: 0,
       skills: [],
-      type: '',
+      type: 'free',
     },
   })
 
   const { handleSubmit } = methods
-
   const { triggerPortfolioCreate, isPending } = useCreatePortfolio()
 
-  const onSubmit = async (formValues: CreatePortfolioFormSchema) => {
-    await triggerPortfolioCreate(formValues)
+  const onSubmit = (formValues: CreatePortfolioFormSchema) => {
+    triggerPortfolioCreate(formValues)
   }
-
-  const countType = [
-    {
-      type: 'free',
-      name: 'free',
-    },
-  ]
 
   return (
     <div className={'mb-5'}>
       <Form {...methods}>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1">
             <div className="space-y-2">
               <TextField name="name" label="Portfolio name" required={true} placeholder="Portfolio name" className="rounded-xl" />
-            </div>
-            <div className="space-y-2">
-              <SelectField name="type" label="Payment type" required={true} placeholder="Select payment type" data={countType} />
             </div>
           </div>
           <div className="space-y-2">

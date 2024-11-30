@@ -1,5 +1,5 @@
 import http from '@/services/api'
-import { CreatePortfolio } from '@/modules/dashboard/types/create-portfolio'
+import { CreatePortfolio, IUpdatePortfolio } from '@/modules/dashboard/types/create-portfolio'
 
 interface UploadImageResponse {
   url: string
@@ -29,6 +29,10 @@ export const createPortfolio = async (portfolioData: CreatePortfolio) => {
 
 export const GetPortfolios = async () => {
   return await http.get('/portfolio/user/me')
+}
+
+export const UpdatePortfolio = async ({ id, values }: IUpdatePortfolio) => {
+  return http.put(`/portfolio/${id}`, { ...values })
 }
 
 export const DeletePortfolio = async (id: string) => {

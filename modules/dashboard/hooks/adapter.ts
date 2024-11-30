@@ -7,7 +7,7 @@ export const getPortfolios = (items: PortfolioList[] = []) => {
     description: item?.description ?? '',
     category: item?.category
       ? {
-          id: item.category.id ?? '',
+          _id: item.category._id ?? '',
           name: item.category.name ?? '',
           description: item.category.description ?? '',
           image: item.category.image ?? '',

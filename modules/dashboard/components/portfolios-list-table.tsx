@@ -63,31 +63,33 @@ export const PortfolioTable = ({ portfolios, isPending }: PortfolioTableProps) =
                   <div className="grid grid-cols-2">
                     {portfolio.github_link && (
                       <Button variant="outline" size="icon" className="rounded-xl" asChild>
-                        <a href={portfolio.github_link} target="_blank" rel="noopener noreferrer">
+                        <Link href={portfolio.github_link} target="_blank" rel="noopener noreferrer">
                           <Github className="h-4 w-4" />
-                        </a>
+                        </Link>
                       </Button>
                     )}
                     {portfolio.live_demo && (
                       <Button variant="outline" size="icon" className="rounded-xl" asChild>
-                        <a href={portfolio.live_demo} target="_blank" rel="noopener noreferrer">
+                        <Link href={portfolio.live_demo} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="h-4 w-4" />
-                        </a>
+                        </Link>
                       </Button>
                     )}
                   </div>
                 </TableCell>
                 <TableCell className={'w-[165px]'}>
                   <div className="grid grid-cols-3">
-                    <Button variant="outline" size="icon" className="rounded-xl">
-                      <Pencil className="h-4 w-4" />
-                    </Button>
+                    <Link href={`/dashboard/portfolios/${formatToSlug(portfolio.name)}`}>
+                      <Button variant="outline" size="icon" className="rounded-xl">
+                        <Pencil className="h-4 w-4" />
+                      </Button>
+                    </Link>
                     <DeletePortfolioModal portfolio_id={portfolio._id} />
-                    <Button variant="outline" size="icon" className="rounded-xl">
-                      <Link href={`/portfolios/${formatToSlug(portfolio.name)}`}>
+                    <Link href={`/portfolios/${formatToSlug(portfolio.name)}`}>
+                      <Button variant="outline" size="icon" className="rounded-xl">
                         <Eye className="h-4 w-4" />
-                      </Link>
-                    </Button>
+                      </Button>
+                    </Link>
                   </div>
                 </TableCell>
               </TableRow>

@@ -1,4 +1,4 @@
-export const categories: any[] = [
+export const categories = [
   {
     type: '674720015dd4663eeb4feef8',
     name: 'Designers',
