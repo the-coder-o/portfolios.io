@@ -15,7 +15,7 @@ export const portfolioSchema = z.object({
   images: z.array(z.union([z.instanceof(File), z.string().url()]).or(z.string())).min(1, { message: 'At least one image is required' }),
   github_link: z.string().url({ message: 'GitHub link must be a valid URL' }).min(1, { message: 'GitHub link is required' }),
   live_demo: z.string().url({ message: 'Live demo link must be a valid URL' }).min(1, { message: 'Live demo link is required' }),
-  page: z.number().min(1, { message: 'Page number must be at least 1' }),
-  skills: z.array(skillSchema).min(5).max(10),
+  page: z.number().min(0, { message: 'Page number must be at least 1' }),
+  skills: z.array(skillSchema).min(1).max(15),
   type: z.string().min(1, { message: 'Type is required' }),
 })

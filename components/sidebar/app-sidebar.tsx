@@ -4,6 +4,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import { Briefcase, FileUser, LifeBuoy, Send } from 'lucide-react'
 
+import { useGetProfileMe } from '@/modules/edit-profile/hooks/useGetProfileMe'
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar'
 import { NavUser } from '@/components/sidebar/nav-user'
 import { NavSecondary } from '@/components/sidebar/nav-secondary'
@@ -66,6 +67,8 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { data: profile, isLoading } = useGetProfileMe()
+
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
@@ -84,7 +87,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser profile={profile} isLoading={isLoading} />
       </SidebarFooter>
     </Sidebar>
   )
