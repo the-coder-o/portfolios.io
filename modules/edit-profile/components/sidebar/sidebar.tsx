@@ -58,7 +58,6 @@ export const Sidebar = () => {
                   ))}
                 </div>
                 <Separator className="my-4 max-md:hidden" />
-                <DeleteModal profile_id={profile_id?.data?._id} />
               </div>
               <Separator className="my-4" />
               <DeleteModal profile_id={profile_id?.data?._id} />

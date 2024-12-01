@@ -1,8 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
-import Image from 'next/image'
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+
+import OptimizedImage from '@/components/optimize-image'
 
 import { Button } from '../ui/button'
 
@@ -64,7 +65,7 @@ export const AnimatedTooltip = ({
               </motion.div>
             )}
           </AnimatePresence>
-          <Image onMouseMove={handleMouseMove} height={100} width={100} src={item.image} alt={item.name} className="relative !m-0 h-14 w-14 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105" />
+          <OptimizedImage onMouseMove={handleMouseMove} height={100} width={100} src={item.image} alt={item.name} className="relative !m-0 h-14 w-14 rounded-full border-2 border-white bg-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105" />
         </div>
       ))}
       <Button variant="outline" className="h-14 w-14 rounded-full border-2 border-gray-500 bg-white text-black hover:bg-white hover:text-black">
