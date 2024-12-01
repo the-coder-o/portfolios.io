@@ -1,12 +1,25 @@
+'use client'
+
 import React from 'react'
 
-import { PlaceholdersAndVanishInput } from '@/components/animation/placeholders-and-vanish-input'
+import { useGetUsersPortfolios } from '@/modules/portfolios/hooks/useGetUsersPortfolios'
+import { MultiSearch } from '@/components/animation/placeholders-and-vanish-input'
 import { Cover } from '@/components/animation/cover'
 
 import { portfoliosData } from '@/.mock/portfolios.data'
 
 export const HeroSection = () => {
-  const placeholders = ['Explore the top portfolio templates in my project.', 'Discover the best designs to showcase your work.', 'Create a stunning portfolio with ease.', 'Find your perfect portfolio template here.', 'Build your portfolio using top-rated designs.']
+  const { data } = useGetUsersPortfolios()
+
+  const handleSearch = (query: string) => {
+    if (!data) return []
+
+    return data.filter((portfolio) => {
+      const searchFields = [portfolio.name, portfolio.description]
+      const searchString = searchFields.join(' ').toLowerCase()
+      return searchString.includes(query.toLowerCase())
+    })
+  }
 
   return (
     <div className="relative mb-[120px] flex flex-col overflow-hidden max-md:mb-10 max-sm:mb-10 sm:items-center sm:text-center">
@@ -20,7 +33,7 @@ export const HeroSection = () => {
         <p className="relative max-w-5xl text-center text-base font-normal leading-normal text-neutral-600 dark:text-neutral-200 max-md:mb-5 max-sm:text-start md:text-[22px]">
           Unlock your potential with our curated collection of {portfoliosData?.length}+ exceptional portfolio designs. Each template is crafted to highlight your unique skills and creativity, helping you stand out in any industry.
         </p>
-        <PlaceholdersAndVanishInput placeholders={placeholders} />
+        <MultiSearch onSearch={handleSearch} portfolios={data || []} />
       </div>
     </div>
   )

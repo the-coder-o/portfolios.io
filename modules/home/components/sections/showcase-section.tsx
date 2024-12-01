@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
+
+import OptimizedImage from '@/components/optimize-image'
 
 const showcases = [
   {
@@ -103,7 +104,14 @@ function ShowcaseItem({ showcase }: { showcase: (typeof showcases)[0] }) {
   return (
     <Link href="/showcase" className="group relative block overflow-hidden rounded-xl">
       <div className="aspect-[4/3] w-full">
-        <Image src={showcase.image} alt={`Screenshot of ${showcase.title}`} fill sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" className="object-cover object-top transition-transform duration-300 group-hover:scale-105" />
+        <OptimizedImage
+          src={showcase.image}
+          alt={`Screenshot of ${showcase.title}`}
+          width={showcase.width}
+          height={showcase.height}
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          className="!h-[280px] object-cover object-top transition-transform duration-300 group-hover:scale-105"
+        />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       <div className="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { FolderX } from 'lucide-react'
 
 import { useGetUsersPortfolios } from '@/modules/portfolios/hooks/useGetUsersPortfolios'
 import { cn } from '@/lib/utils'
@@ -68,7 +69,17 @@ export const PortfoliosCard = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-3 px-4 max-md:px-0 sm:grid-cols-2 lg:grid-cols-4">
-        {isPending ? Array.from({ length: 8 }).map((_, index) => <PortfolioCardLoading isPending={isPending} key={index} />) : filteredPortfolios?.reverse()?.map((portfolio) => <PortfolioCard key={portfolio._id} portfolio={portfolio} />)}
+        {isPending ? (
+          Array.from({ length: 8 }).map((_, index) => <PortfolioCardLoading isPending={isPending} key={index} />)
+        ) : filteredPortfolios && filteredPortfolios.length > 0 ? (
+          filteredPortfolios.reverse().map((portfolio) => <PortfolioCard key={portfolio._id} portfolio={portfolio} />)
+        ) : (
+          <div className="col-span-full flex flex-col items-center justify-center py-12 text-center">
+            <FolderX className="mb-4 h-16 w-16 text-muted-foreground" />
+            <h3 className="mb-2 text-2xl font-semibold">No portfolios found</h3>
+            <p className="max-w-md text-muted-foreground">There are no portfolios available in the {activeCategory} category. Try selecting a different category or check back later.</p>
+          </div>
+        )}
       </div>
     </div>
   )

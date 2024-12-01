@@ -10,9 +10,11 @@ interface OptimizedImageProps {
   height: number
   style?: React.CSSProperties
   className?: string
+  sizes?: string
+  onMouseMove?: (e: React.MouseEvent) => void
 }
 
-const OptimizedImage: React.FC<OptimizedImageProps> = ({ src, alt, width, height, className, style }) => {
+const OptimizedImage: React.FC<OptimizedImageProps> = ({ src, alt, width, height, className, style, sizes, onMouseMove }) => {
   const [isLoading, setLoading] = useState(true)
   const baseUrl = 'https://portfolio.shohjahon1code.uz'
   const fallbackImage = '/fallback-image.jpg'
@@ -27,6 +29,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({ src, alt, width, height
         width={width}
         height={height}
         style={style}
+        sizes={sizes}
+        onMouseMove={onMouseMove}
         className={`duration-700 ease-in-out ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'} ${className || ''} `}
         onLoadingComplete={() => setLoading(false)}
         onError={(e) => {
