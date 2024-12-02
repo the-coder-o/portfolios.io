@@ -74,8 +74,6 @@ export const metadata: Metadata = {
     canonical: 'https://portfoliosio.vercel.app',
     languages: {
       'en-US': 'https://portfoliosio.vercel.app',
-      'es-ES': 'https://portfoliosio.vercel.app/es',
-      'fr-FR': 'https://portfoliosio.vercel.app/fr',
     },
   },
   icons: {
@@ -93,19 +91,9 @@ export const metadata: Metadata = {
   category: 'technology',
   classification: 'Portfolio Builder, Resume Creator',
   referrer: 'origin-when-cross-origin',
-  colorScheme: 'dark light',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
   formatDetection: {
     telephone: false,
   },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f5f5f5' },
-    { media: '(prefers-color-scheme: dark)', color: '#1a1a1a' },
-  ],
   appleWebApp: {
     title: 'Portfoliosio',
     statusBarStyle: 'black-translucent',
