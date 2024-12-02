@@ -71,16 +71,14 @@ export const metadata: Metadata = {
     canonical: 'https://portfoliosio.vercel.app',
     languages: {
       'en-US': 'https://portfoliosio.vercel.app',
-      'es-ES': 'https://portfoliosio.vercel.app/es',
-      'fr-FR': 'https://portfoliosio.vercel.app/fr',
     },
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon/favicon.ico', sizes: '32x32' },
+      { url: '/favicon/icon.svg', type: 'image/svg+xml' },
     ],
-    apple: [{ url: '/apple-icon.png', sizes: '180x180' }],
+    apple: [{ url: '/favicon/apple-icon.png', sizes: '180x180' }],
     other: [{ rel: 'mask-icon', url: '/mask-icon.svg', color: '#000000' }],
   },
   manifest: '/site.webmanifest',
@@ -98,15 +96,6 @@ export const metadata: Metadata = {
   },
   formatDetection: {
     telephone: false,
-  },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f5f5f5' },
-    { media: '(prefers-color-scheme: dark)', color: '#1a1a1a' },
-  ],
-  appleWebApp: {
-    title: 'Portfoliosio',
-    statusBarStyle: 'black-translucent',
-    startupImage: ['/apple-splash-2048-2732.jpg', '/apple-splash-1668-2224.jpg', '/apple-splash-1536-2048.jpg', '/apple-splash-1125-2436.jpg', '/apple-splash-1242-2208.jpg'],
   },
   applicationName: 'Portfoliosio',
   generator: 'Next.js',
