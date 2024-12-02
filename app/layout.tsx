@@ -8,13 +8,16 @@ import { ClientProviders, ScrollToTop, ThemeProvider } from '@/components/provid
 
 import './globals.css'
 
+const baseUrl = 'https://portfoliosio.vercel.app'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: 'PortfoliosIo - Make Your Portfolio Look 10x Better | Professional Portfolio Builder',
   description: 'Create exceptional portfolio designs with our curated collection of 179+ templates. Stand out in any industry with professionally crafted portfolio designs that highlight your unique skills and creativity. Trusted by 500+ satisfied creators.',
   openGraph: {
     title: 'PortfoliosIo - Make Your Portfolio Look 10x Better | Professional Portfolio Builder',
     description: 'Create exceptional portfolio designs with our curated collection of 179+ templates. Stand out in any industry with professionally crafted portfolio designs. Unlock your potential and showcase your work like never before.',
-    url: 'https://portfoliosio.vercel.app',
+    url: baseUrl,
     siteName: 'PortfoliosIo',
     images: [
       {
@@ -110,7 +113,6 @@ export const metadata: Metadata = {
   },
   applicationName: 'Portfoliosio',
   generator: 'Next.js',
-  metadataBase: new URL('https://portfoliosio.vercel.app'),
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -118,6 +120,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="c0Nfbo-a10LzJzVERkuuwwPY_dIBZy6i9RJBzFo6H_M" />
+        <meta property="og:title" content="PortfoliosIo - Make Your Portfolio Look 10x Better" />
+        <meta property="og:description" content="Create exceptional portfolio designs with our curated collection of 179+ templates." />
+        <meta property="og:image" content="https://github.com/the-coder-o/portfolios.io/raw/main/public/images/portfolios.png" />
+        <meta property="og:url" content="https://portfoliosio.vercel.app" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="PortfoliosIo - Professional Portfolio Builder" />
+        <meta name="twitter:description" content="Stand out in any industry with professionally crafted portfolio designs." />
+        <meta name="twitter:image" content="https://github.com/the-coder-o/portfolios.io/raw/main/public/images/portfolios.png" />
       </head>
       <body className="dark:bg-[#000]">
         <div className="absolute bottom-0 left-0 right-0 top-0 -z-10 bg-white bg-dot-black/[0.2] dark:bg-black dark:bg-dot-white/[0.2]">
