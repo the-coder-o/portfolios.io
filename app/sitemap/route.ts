@@ -1,10 +1,8 @@
-import { GetServerSideProps } from 'next'
+import { NextResponse } from 'next/server'
 
-const Sitemap = () => {
-  return null
-}
+export const dynamic = 'force-dynamic'
 
-export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+export async function GET() {
   const baseUrl = 'https://portfoliosio.vercel.app'
 
   const sitemap = [
@@ -27,7 +25,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/templates`,
+      url: `${baseUrl}/timeline`,
       lastModified: new Date().toISOString(),
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -50,13 +48,9 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     .join('')}
 </urlset>`
 
-  res.setHeader('Content-Type', 'application/xml')
-  res.write(xml)
-  res.end()
-
-  return {
-    props: {},
-  }
+  return new NextResponse(xml, {
+    headers: {
+      'Content-Type': 'application/xml',
+    },
+  })
 }
-
-export default Sitemap
