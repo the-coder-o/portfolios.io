@@ -7,6 +7,8 @@ import { formatToSlug } from '@/lib/format-to-slug'
 import { Badge } from '@/components/ui/badge'
 import OptimizedImage from '@/components/optimize-image'
 
+import { Skill } from '@/.mock/skills.data'
+
 export interface PortfolioCardProps {
   portfolio: PortfolioList | any
 }
@@ -35,10 +37,10 @@ export const PortfolioCard = ({ portfolio }: PortfolioCardProps) => {
         </div>
         {skills && skills.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">
-            {skills.slice(0, 2).map((skill: any, index: number) => (
-              <Badge key={index} variant="secondary" className="flex items-center rounded-lg">
-                <Image src={skill.logo} alt={skill.name} width={16} height={16} className="mr-1" />
-                <span className="text-xs font-medium text-neutral-700 dark:text-neutral-300">{skill.name}</span>
+            {skills.slice(0, 2).map((skill: Skill, index: number) => (
+              <Badge key={index} variant="secondary" className="flex items-center gap-1 rounded-xl py-1.5 pl-3 pr-2">
+                <Image src={skill.logo} alt={skill.name} width={200} height={200} className="mr-1 !h-4 !w-4" />
+                {skill.name}
               </Badge>
             ))}
             {skills.length > 2 && (

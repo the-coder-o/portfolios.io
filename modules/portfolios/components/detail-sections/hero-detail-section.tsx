@@ -19,8 +19,8 @@ export const HeroDetailSection = ({ portfolio }: any) => {
           <div>
             <div className="flex flex-wrap gap-2">
               {portfolio.skills.map((skill: Skill, index: number) => (
-                <Badge key={index} variant="secondary" className="flex items-center gap-1 rounded-lg text-sm font-medium">
-                  <Image src={skill.logo} alt={skill.name} width={16} height={16} className="mr-1 !h-[15px] !w-[15px] bg-cover object-cover" />
+                <Badge key={index} variant="secondary" className="flex items-center gap-1 rounded-xl py-1.5 pl-3 pr-2">
+                  <Image src={skill.logo} alt={skill.name} width={200} height={200} className="mr-1 !h-4 !w-4" />
                   {skill.name}
                 </Badge>
               ))}
