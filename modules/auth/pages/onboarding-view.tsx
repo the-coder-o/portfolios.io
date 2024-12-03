@@ -11,7 +11,7 @@ import { AuthGlobalFooter } from '../components/footers/auth-global-footer'
 
 export const OnboardingView = () => {
   return (
-    <div
+    <section
       className="flex min-h-screen w-full flex-col bg-cover bg-center"
       style={{
         backgroundImage: "url('https://daily-now-res.cloudinary.com/image/upload/s--r2ffZPB4--/f_auto/v1716969841/dailydev_where_developers_suffer_together_sfvfog')",
@@ -37,6 +37,6 @@ export const OnboardingView = () => {
         </div>
       </div>
       <AuthGlobalFooter />
-    </div>
+    </section>
   )
 }

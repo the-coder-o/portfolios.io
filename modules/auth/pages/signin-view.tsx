@@ -12,7 +12,7 @@ import { AuthFooter } from '../components/footers/auth-footer'
 
 export const SignInView = () => {
   return (
-    <div
+    <section
       className="flex min-h-screen w-full flex-col bg-cover bg-center"
       style={{
         backgroundImage: "url('https://daily-now-res.cloudinary.com/image/upload/s--r2ffZPB4--/f_auto/v1716969841/dailydev_where_developers_suffer_together_sfvfog')",
@@ -39,6 +39,6 @@ export const SignInView = () => {
         </div>
       </div>
       <AuthGlobalFooter />
-    </div>
+    </section>
   )
 }

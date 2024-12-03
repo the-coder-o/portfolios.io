@@ -27,7 +27,7 @@ const templates = [
 
 export const TemplatesSection = () => {
   return (
-    <div className="mb-[130px] bg-white dark:bg-black max-md:mb-5">
+    <section className="mb-[130px] bg-white dark:bg-black max-md:mb-5">
       <div className="mb-10 flex items-center justify-between max-md:mb-2">
         <div className="flex flex-col gap-1">
           <h2 className="text-xl font-bold text-purple-500 md:text-lg">Templates</h2>
@@ -39,6 +39,6 @@ export const TemplatesSection = () => {
           <TemplateItem key={index} {...template} />
         ))}
       </div>
-    </div>
+    </section>
   )
 }
