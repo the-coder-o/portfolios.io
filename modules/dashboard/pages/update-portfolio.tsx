@@ -16,8 +16,8 @@ export const UpdatePortfolioView = ({ data }: Props) => {
   const portfolio = data?.find((item) => formatToSlug(item.name) === portfolioSlug)
 
   return (
-    <div>
+    <section>
       <UpdatePortfolioForm portfolio={portfolio} />
-    </div>
+    </section>
   )
 }

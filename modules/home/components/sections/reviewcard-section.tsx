@@ -60,7 +60,7 @@ const ReviewCard = ({ img, name, username, body }: { img: string; name: string; 
 
 export function MarqueeDemo() {
   return (
-    <div className={'relative mb-[150px] max-md:pt-5'}>
+    <section className={'relative mb-[150px] max-md:pt-5'}>
       <h2 className="text-center text-5xl font-bold tracking-tighter text-foreground max-sm:mb-1 max-sm:text-3xl">What People Are Saying</h2>
       <h3 className="mx-auto mb-8 text-balance text-center text-lg font-medium tracking-tight text-foreground/80">
         Don&apos;t just take our word for it. Here&apos;s what <strong>real people</strong> are saying about PortfoliosIo on Twitter.
@@ -77,6 +77,6 @@ export function MarqueeDemo() {
       </Marquee>
       <div className="pointer-events-none absolute inset-y-0 left-0 h-full w-1/3 bg-gradient-to-r from-black"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 h-full w-1/3 bg-gradient-to-l from-black"></div>
-    </div>
+    </section>
   )
 }

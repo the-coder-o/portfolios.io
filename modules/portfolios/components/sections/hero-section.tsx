@@ -22,7 +22,7 @@ export const HeroSection = () => {
   }
 
   return (
-    <div className="relative mb-[120px] flex flex-col overflow-hidden max-md:mb-10 max-sm:mb-10 sm:items-center sm:text-center">
+    <section className="relative mb-[120px] flex flex-col overflow-hidden max-md:mb-10 max-sm:mb-10 sm:items-center sm:text-center">
       <div className="flex flex-col items-center justify-center gap-5 max-sm:items-start max-sm:gap-0">
         <h1 className="relative z-20 max-w-7xl bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 bg-clip-text py-6 text-center text-4xl font-semibold text-transparent dark:from-neutral-800 dark:via-white dark:to-white max-md:hidden max-sm:text-start md:text-4xl lg:text-7xl">
           Best place to find <br /> portfolio <Cover>inspiration.</Cover>
@@ -35,6 +35,6 @@ export const HeroSection = () => {
         </p>
         <MultiSearch onSearch={handleSearch} portfolios={data || []} />
       </div>
-    </div>
+    </section>
   )
 }

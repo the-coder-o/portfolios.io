@@ -14,7 +14,7 @@ import { Button } from '@/components/ui/button'
 import { PortfolioCardLoading } from '@/components/loading/portfolios-loading'
 import { PortfolioCard } from '@/components/cards/portfolio-card'
 
-export const PortfoliosCard = () => {
+export const PortfoliosCardSection = () => {
   const { data, isPending } = useGetUsersPortfolios()
 
   const [activeCategory, setActiveCategory] = useState('All')
@@ -34,7 +34,7 @@ export const PortfoliosCard = () => {
   }, [])
 
   return (
-    <div className="mb-[120px]">
+    <section className="mb-[120px]">
       <div className="mb-2.5 flex items-center justify-between gap-10 max-md:flex-col">
         <div className="flex-1 overflow-x-auto scrollbar-hide max-md:max-w-[100%]">
           <div className="flex items-center gap-1 whitespace-nowrap px-4 py-4 max-md:p-0">
@@ -106,6 +106,6 @@ export const PortfoliosCard = () => {
           </div>
         )}
       </div>
-    </div>
+    </section>
   )
 }

@@ -11,7 +11,7 @@ export const PortfolioSection = () => {
   const { data, isPending } = useGetUsersPortfolios()
 
   return (
-    <div className="relative mb-[200px] max-md:mb-10">
+    <section className="relative mb-[200px] max-md:mb-10">
       <div className="grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">
         {isPending
           ? Array.from({ length: 8 }).map((_, index) => <PortfolioCardLoading isPending={isPending} key={index} />)
@@ -27,6 +27,6 @@ export const PortfolioSection = () => {
       >
         Show more
       </Link>
-    </div>
+    </section>
   )
 }

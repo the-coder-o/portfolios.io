@@ -26,7 +26,7 @@ export const EditProfileView = () => {
   }
 
   return (
-    <div className="container">
+    <section className="container">
       <div className="relative">
         {isLoading ? <Skeleton className="mt-[120px] h-32 w-full rounded-xl md:h-52" /> : <div className="mt-[120px] h-32 w-full rounded-xl bg-cover bg-center object-cover sm:h-40 md:h-52" style={getBannerStyle(profile?.banner)} />}
         <div className="mt-5 flex items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-5">
@@ -97,6 +97,6 @@ export const EditProfileView = () => {
           <Sidebar />
         )}
       </div>
-    </div>
+    </section>
   )
 }
