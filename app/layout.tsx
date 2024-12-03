@@ -1,7 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 
-import { MobileHeader } from '@/sections/mobile-header'
+import { MobileHeader } from '@/sections/header/mobile-header'
 import { Header } from '@/sections/header/header'
 import { Footer } from '@/sections/footer/footer'
 import { ClientProviders, ScrollToTop, ThemeProvider } from '@/components/providers'
