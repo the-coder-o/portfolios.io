@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
-import { Bookmark, Eye, Heart } from 'lucide-react'
+import { Bookmark, BookmarkCheck, Eye, Heart } from 'lucide-react'
 
+import { cn } from '@/lib/utils'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { BreadcrumbComponent } from '@/components/breadcrumb'
 
 export const HeaderDetailSection = ({ portfolio }: any) => {
+  const [isSaved, setIsSaved] = useState(false)
+
+  const handleClick = () => {
+    setIsSaved(!isSaved)
+  }
+
   return (
     <section className={'space-y-8'}>
       <BreadcrumbComponent items={[{ label: 'Home', href: '/' }, { label: 'Portfolios', href: '/portfolios' }, { label: portfolio.name }]} />
@@ -39,8 +46,8 @@ export const HeaderDetailSection = ({ portfolio }: any) => {
           <Button variant="outline" size="icon" className="rounded-xl">
             <Heart className="h-5 w-5" />
           </Button>
-          <Button variant="outline" size="icon" className="rounded-xl">
-            <Bookmark className="h-5 w-5" />
+          <Button variant="outline" size="icon" className={cn('rounded-xl transition-colors duration-200', isSaved && 'bg-muted')} onClick={handleClick} aria-label={isSaved ? 'Remove bookmark' : 'Add bookmark'}>
+            {isSaved ? <BookmarkCheck className="h-5 w-5" /> : <Bookmark className="h-5 w-5" />}
           </Button>
         </div>
       </div>
