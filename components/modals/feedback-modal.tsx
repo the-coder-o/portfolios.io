@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { MessageSquare } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { MessageCircle, MessageSquare } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { Textarea } from '@/components/ui/textarea'
@@ -7,6 +8,8 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Button } from '@/components/ui/button'
 
 export const FeedbackModal = () => {
+  const pathname = usePathname()
+
   const [isOpen, setIsOpen] = useState(false)
   const [feedback, setFeedback] = useState('')
   const [mood, setMood] = useState<'sad' | 'neutral' | 'happy' | null>(null)
@@ -20,9 +23,15 @@ export const FeedbackModal = () => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" className="h-11 rounded-xl">
-          <MessageSquare className="mr-2 h-4 w-4" /> Send Feedback
-        </Button>
+        <>
+          <Button onClick={() => setIsOpen(true)} variant="outline" className="h-11 rounded-xl max-md:hidden">
+            <MessageSquare className="mr-2 h-4 w-4" /> Send Feedback
+          </Button>
+          <div onClick={() => setIsOpen(true)} className={cn('hidden flex-col items-center gap-1 p-2 text-sm transition-colors max-md:flex', pathname === '/squads' ? 'text-foreground' : 'text-muted-foreground')}>
+            <MessageCircle className="h-5 w-5" />
+            <span className="text-xs">Feedback</span>
+          </div>
+        </>
       </DialogTrigger>
       <DialogContent className="!rounded-xl !bg-[#0a0a0a] sm:max-w-[425px]">
         <DialogHeader>
@@ -41,11 +50,11 @@ export const FeedbackModal = () => {
             😊
           </Button>
         </div>
-        <DialogFooter>
-          <Button variant="secondary" onClick={() => setIsOpen(false)} className="h-11 rounded-xl">
+        <DialogFooter className={'flex w-full items-center gap-2'}>
+          <Button variant="secondary" onClick={() => setIsOpen(false)} className="h-11 w-full rounded-xl">
             Cancel
           </Button>
-          <Button onClick={handleSubmit} className="h-11 rounded-xl">
+          <Button onClick={handleSubmit} className="h-11 w-full rounded-xl">
             Submit
           </Button>
         </DialogFooter>
