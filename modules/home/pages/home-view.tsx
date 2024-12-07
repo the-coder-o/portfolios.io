@@ -4,7 +4,7 @@ import { MarqueeDemo } from '@/modules/home/components/sections/reviewcard-secti
 import { LogoCarousel } from '@/components/logo/logo-slider'
 
 import { PortfolioSection } from '../components/sections/portfolio-section'
-import { HeroSection } from '../components/hero'
+import { HeroSection } from '../components/sections/hero-section'
 
 export const HomeView = () => {
   return (
