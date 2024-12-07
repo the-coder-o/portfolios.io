@@ -62,8 +62,8 @@ export const PortfoliosCardSection = () => {
                 <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-[180px] p-0">
-              <Command>
+            <PopoverContent className="w-[180px] rounded-xl p-0">
+              <Command className={'rounded-xl'}>
                 <CommandInput placeholder="Search skills..." />
                 <CommandList>
                   <CommandEmpty>No skills found.</CommandEmpty>

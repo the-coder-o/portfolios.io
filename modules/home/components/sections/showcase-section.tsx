@@ -8,43 +8,43 @@ import OptimizedImage from '@/components/optimize-image'
 const showcases = [
   {
     title: 'Portfolio 1',
-    image: 'https://portfolio.shohjahon1code.uz/uploads/portfolio/d17213da-467b-4865-af2e-b16f1bd6a9eb.png',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg24knzh3vde437zj5khhf2ttd70zv4q&w=640&q=75',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 2',
-    image: 'https://portfolio.shohjahon1code.uz/uploads/portfolio/94c8cbfe-255e-4e9a-adf0-1954aa3dec32.png',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2eez46mcy550sktarwqv12sh6wscf1&w=640&q=75',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 3',
-    image: 'https://portfolio.shohjahon1code.uz/uploads/portfolio/bd70e991-b095-42c3-b71f-76c0a178663f.png',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg22jzmmasm3jtsr9fr69ax0m16wt6bv&w=640&q=75',
     height: 100,
     width: 640,
   },
   {
     title: 'Portfolio 4',
-    image: 'https://portfolio.shohjahon1code.uz/uploads/portfolio/46dbd10a-0fed-4e22-bc99-334319cee887.png',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2apf9vvsdfzzkyd6amdc1k4x6wnpwt&w=640&q=75',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 6',
-    image: 'https://portfolio.shohjahon1code.uz/uploads/portfolio/7e86d29d-32eb-4f0a-8a79-37d50cbc9ad2.jpg',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2e82ambhtt7qt0tg88rs0qgd6vvv22&w=640&q=75',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 7',
-    image: 'https://portfolio.shohjahon1code.uz/uploads/portfolio/42defc83-e701-4adf-a18c-47dd5981f37c.png',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg29804t70qt2neb9f9v1cwby96w81bg&w=640&q=75',
     height: 480,
     width: 640,
   },
   {
     title: 'Portfolio 8',
-    image: 'https://portfolio.shohjahon1code.uz/uploads/portfolio/f9f3e044-aacf-4fc3-99f4-b348958ca395.png',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2387arjg1566ta87pq0m5cmd6wntw4&w=640&q=75',
     height: 480,
     width: 640,
   },
@@ -102,7 +102,7 @@ export function ShowcaseSection() {
 
 function ShowcaseItem({ showcase }: { showcase: (typeof showcases)[0] }) {
   return (
-    <Link href="/showcase" className="group relative block overflow-hidden rounded-xl">
+    <Link href="/showcase" className="group relative block h-[280px] overflow-hidden rounded-xl border-2">
       <div className="aspect-[4/3] w-full">
         <OptimizedImage
           src={showcase.image}
