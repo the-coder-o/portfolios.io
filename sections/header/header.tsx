@@ -25,8 +25,9 @@ export const Header = () => {
     <div className="!fixed left-0 right-0 top-0 z-50 bg-black/90 backdrop-blur-lg">
       <div className={cn(isHidden ? '!fixed left-0 right-0 top-0 z-50 hidden' : 'block')}>
         <div className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-4 py-0.5 text-center font-sans text-sm font-medium tracking-tight text-white">
-          Our new website is coming soon. 😍
+          Our new website is coming soon.
           <CountdownTimer targetDate={launchDate} />
+          😍
         </div>
       </div>
       <div className={cn(isHidden ? 'hidden' : 'block')}>

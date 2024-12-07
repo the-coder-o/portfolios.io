@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-
 import Image from 'next/image'
 
 import { Button } from '@/components/ui/button'
@@ -37,7 +36,7 @@ export const SocialButtons = () => {
           </svg>
         </Button>
       </Link>
-      <Link href="https://peerlist.io/thecodero" target="_blank" rel="noopener noreferrer">
+      <Link href="https://peerlist.io/thecoder" target="_blank" rel="noopener noreferrer">
         <Button variant="ghost" size="sm" className="flex items-center gap-1 rounded-xl px-0 hover:bg-transparent">
           <Image src="https://dqy38fnwh4fqs.cloudfront.net/company/COMHQ7BA9GLL7K8683MNBGDOG66PBN/logo-1695017827473.webp" alt="Peerlist.io" width="20" height="20" className={'!h-4 !w-4 rounded-sm'} />
         </Button>
