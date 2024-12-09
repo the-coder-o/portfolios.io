@@ -36,8 +36,8 @@ export const UpdatePortfolioForm = ({ portfolio }: UpdatePortfolio) => {
     },
   })
 
-  const { handleSubmit } = methods
   const { triggerUpdatePortfolio, isPending } = useUpdatePortfolio(portfolio?._id)
+  const { handleSubmit } = methods
 
   const onSubmit = (formValues: UpdatePortfolioFormSchema | any) => {
     triggerUpdatePortfolio(formValues)
