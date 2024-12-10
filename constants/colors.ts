@@ -10,7 +10,6 @@ export const colors: Color[] = [
   { id: 4, value: 'linear-gradient(to right, #84fab0, #8fd3f4)' },
   { id: 5, value: 'linear-gradient(to right, #a6c0fe, #f68084)' },
   { id: 6, value: 'linear-gradient(to right, #d4fc79, #96e6a1)' },
-  { id: 7, value: 'linear-gradient(to right, #fa709a, #fee140)' },
   { id: 8, value: 'linear-gradient(to right, #667eea, #764ba2)' },
   { id: 9, value: 'linear-gradient(to right, #ff758c, #ff7eb3)' },
   { id: 10, value: 'linear-gradient(to right, #6a11cb, #2575fc)' },
@@ -18,7 +17,6 @@ export const colors: Color[] = [
   { id: 12, value: 'linear-gradient(to right, #ebbba7, #cfc7f8)' },
   { id: 13, value: 'linear-gradient(to right, #f6d365, #fda085)' },
   { id: 14, value: 'linear-gradient(to right, #00dbde, #fc00ff)' },
-  { id: 15, value: 'linear-gradient(to right, #f093fb, #f5576c)' },
   { id: 16, value: 'linear-gradient(to right, #4facfe, #00f2fe)' },
   { id: 17, value: 'linear-gradient(to right, #43e97b, #38f9d7)' },
   { id: 18, value: 'linear-gradient(to right, #fa709a, #fee140)' },
@@ -33,6 +31,15 @@ export const colors: Color[] = [
   { id: 27, value: 'linear-gradient(to right, #4481eb, #04befe)' },
   { id: 28, value: 'linear-gradient(to right, #dad4ec, #f3e7e9)' },
   { id: 29, value: 'linear-gradient(to right, #874da2, #c43a30)' },
+  { id: 30, value: 'linear-gradient(to right, #2af598, #009efd)' },
+  { id: 31, value: 'linear-gradient(to right, #ff6e7f, #bfe9ff)' },
+  { id: 32, value: 'linear-gradient(to right, #b465da, #cf6cc9)' },
+  { id: 33, value: 'linear-gradient(to right, #ee9ca7, #ffdde1)' },
+  { id: 34, value: 'linear-gradient(to right, #06beb6, #48b1bf)' },
+  { id: 35, value: 'linear-gradient(to right, #eb3349, #f45c43)' },
+  { id: 36, value: 'linear-gradient(to right, #dd5e89, #f7bb97)' },
+  { id: 37, value: 'linear-gradient(to right, #56ab2f, #a8e063)' },
+  { id: 38, value: 'linear-gradient(to right, #614385, #516395)' },
 ]
 
 interface Wallpaper {

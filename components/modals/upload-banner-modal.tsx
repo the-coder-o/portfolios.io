@@ -95,7 +95,7 @@ export const UploadBannerModal = ({ profile }: IProps) => {
                       <Button
                         key={color.id}
                         variant="outline"
-                        className={`h-8 w-8 rounded-full p-0 ${selectedBackground === color.value ? 'ring-2 ring-primary ring-offset-2' : ''}`}
+                        className={`h-8 w-8 rounded-lg p-0 ${selectedBackground === color.value ? 'ring-2 ring-primary ring-offset-2' : ''}`}
                         style={{ backgroundImage: color.value }}
                         onClick={() => setSelectedBackground(color.value)}
                         aria-label={`Select color ${color.id}`}

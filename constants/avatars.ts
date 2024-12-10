@@ -21,7 +21,7 @@ export const avatarCategories = [
   },
   {
     id: 2,
-    name: 'Cities',
+    name: 'Buildings',
     slug: 'cartoon-characters',
     description: 'Fun and playful cartoon character avatars',
     wallpapers: [
