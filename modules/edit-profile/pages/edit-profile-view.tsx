@@ -80,7 +80,7 @@ export const EditProfileView = () => {
               </div>
             </div>
           </div>
-          <div className={'flex items-center gap-2'}>
+          <div className={'flex items-center gap-2 max-sm:w-full'}>
             <UploadAvatarModal profile={profile} />
             <UploadBannerModal profile={profile} />
           </div>
