@@ -8,7 +8,7 @@ import OptimizedImage from '@/components/optimize-image'
 const showcases = [
   {
     title: 'Portfolio 1',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg24knzh3vde437zj5khhf2ttd70zv4q&w=640&q=75',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg23474kwtctj7s2ktwadb2x1h73k0hm&w=640&q=75',
     height: 480,
     width: 640,
   },
@@ -20,7 +20,7 @@ const showcases = [
   },
   {
     title: 'Portfolio 3',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg22jzmmasm3jtsr9fr69ax0m16wt6bv&w=640&q=75',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg221v3w2y9fsvrpvmkfv26qph73ctcx&w=640&q=75',
     height: 100,
     width: 640,
   },
@@ -31,14 +31,14 @@ const showcases = [
     width: 640,
   },
   {
-    title: 'Portfolio 6',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2e82ambhtt7qt0tg88rs0qgd6vvv22&w=640&q=75',
+    title: 'Portfolio 7',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2b5gvrb5dq3me1259w7mrg4570hhdn&w=640&q=75',
     height: 480,
     width: 640,
   },
   {
-    title: 'Portfolio 7',
-    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg29804t70qt2neb9f9v1cwby96w81bg&w=640&q=75',
+    title: 'Portfolio 6',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg2e82ambhtt7qt0tg88rs0qgd6vvv22&w=640&q=75',
     height: 480,
     width: 640,
   },
@@ -62,7 +62,7 @@ const showcases = [
   },
   {
     title: 'Portfolio 5',
-    image: 'https://i.postimg.cc/5N3J8n4L/showcase-image-2.webp',
+    image: 'https://www.portfolioshub.com/_next/image?url=https%3A%2F%2Fspotted-swordfish-236.convex.site%2FgetImage%3FstorageId%3Dkg24zpeseay6a2j42q9kjajbt56wm00j&w=640&q=75',
     height: 480,
     width: 640,
   },
@@ -102,7 +102,7 @@ export function ShowcaseSection() {
 
 function ShowcaseItem({ showcase }: { showcase: (typeof showcases)[0] }) {
   return (
-    <Link href="/showcase" className="group relative block h-[280px] overflow-hidden rounded-xl border-2">
+    <Link href="/showcase" className="group relative block h-[280px] overflow-hidden rounded-xl">
       <div className="aspect-[4/3] w-full">
         <OptimizedImage
           src={showcase.image}
