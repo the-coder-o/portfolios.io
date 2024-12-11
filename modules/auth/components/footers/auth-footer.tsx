@@ -1,10 +1,8 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-import Cookies from 'js-cookie'
 
 import { Button } from '@/components/ui/button'
 
@@ -15,20 +13,6 @@ interface AuthFooterProps {
 }
 
 export const AuthFooter = ({ pageTitle, pageDescription, pageUrl }: AuthFooterProps) => {
-  const router = useRouter()
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search)
-
-    const accessToken = urlParams.get('access_token')
-
-    if (accessToken) {
-      Cookies.set('access_token', accessToken, { expires: 7 })
-      alert('Sign-in successful! Token saved.')
-      router.replace('/')
-    }
-  }, [router])
-
   return (
     <>
       <div className="mt-10">
