@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { signInWithGoogle, signInWithGitHub } from '@/lib/auth'
+import { signInWithGitHub, signInWithGoogle } from '@/lib/auth'
 import { Button } from '@/components/ui/button'
 
 interface AuthFooterProps {
@@ -58,9 +58,9 @@ export const AuthFooter = ({ pageTitle, pageDescription, pageUrl }: AuthFooterPr
             <Image src={'https://freelogopng.com/images/all_img/1657952440google-logo-png-transparent.png'} alt="google" width={15} height={15} />
             <span className="ml-2 text-sm font-semibold leading-6">Google</span>
           </Button>
-          <Button onClick={handleGitHubSignIn} className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm">
+          <Button onClick={handleGitHubSignIn} disabled className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm">
             <Image src={'https://cdn-icons-png.flaticon.com/512/25/25231.png'} alt="google" width={15} height={15} />
-            <span className="ml-2 text-sm font-semibold leading-6">Github</span>
+            <span className="ml-2 text-sm font-semibold leading-6">Github soon !</span>
           </Button>
         </div>
       </div>
