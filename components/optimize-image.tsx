@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 interface OptimizedImageProps {
@@ -12,34 +12,119 @@ interface OptimizedImageProps {
   className?: string
   sizes?: string
   onMouseMove?: (e: React.MouseEvent) => void
+  priority?: boolean
 }
 
-const OptimizedImage: React.FC<OptimizedImageProps> = ({ src, alt, width, height, className, style, sizes, onMouseMove }) => {
+type ConnectionSpeed = 'slow' | 'good' | 'fast'
+
+const OptimizedImage: React.FC<OptimizedImageProps> = ({ src, alt, width, height, className, style, sizes, onMouseMove, priority = false }) => {
   const [isLoading, setLoading] = useState(true)
+  const [connectionSpeed, setConnectionSpeed] = useState<ConnectionSpeed>('good')
+  const [isVisible, setIsVisible] = useState(false)
+  const imageRef = useRef<HTMLImageElement>(null)
   const baseUrl = 'https://portfolio.shohjahon1code.uz'
   const fallbackImage = '/fallback-image.jpg'
 
+  useEffect(() => {
+    const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection
+
+    if (connection) {
+      const updateConnectionSpeed = () => {
+        if (connection.downlink < 1) {
+          setConnectionSpeed('slow')
+        } else if (connection.downlink >= 1 && connection.downlink < 5) {
+          setConnectionSpeed('good')
+        } else {
+          setConnectionSpeed('fast')
+        }
+      }
+
+      updateConnectionSpeed()
+      connection.addEventListener('change', updateConnectionSpeed)
+
+      return () => {
+        connection.removeEventListener('change', updateConnectionSpeed)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!imageRef.current || priority) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.unobserve(entry.target)
+        }
+      },
+      { rootMargin: '200px' },
+    )
+
+    observer.observe(imageRef.current)
+
+    return () => {
+      if (imageRef.current) {
+        observer.unobserve(imageRef.current)
+      }
+    }
+  }, [priority])
+
+  const getImageSize = (originalSize: number) => {
+    switch (connectionSpeed) {
+      case 'slow':
+        return Math.round(originalSize * 0.5)
+      case 'good':
+        return originalSize
+      case 'fast':
+        return Math.round(originalSize * 1.5)
+      default:
+        return originalSize
+    }
+  }
+
   const imageSource = src.startsWith('http') ? src : `${baseUrl}${src}`
+  const adjustedWidth = getImageSize(width)
+  const adjustedHeight = getImageSize(height)
+
+  const generateSrcSet = () => {
+    const widths = [0.5, 1, 1.5, 2].map((scale) => Math.round(adjustedWidth * scale))
+    return widths.map((w) => `${imageSource}?w=${w} ${w}w`).join(', ')
+  }
+
+  useEffect(() => {
+    if (priority) {
+      //@ts-expect-error it is an error
+      const img = new Image()
+      img.src = imageSource
+    }
+  }, [imageSource, priority])
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
-      <Image
-        src={imageSource}
-        alt={alt}
-        width={width}
-        height={height}
-        style={style}
-        sizes={sizes}
-        onMouseMove={onMouseMove}
-        className={`duration-700 ease-in-out ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'} ${className || ''} `}
-        onLoadingComplete={() => setLoading(false)}
-        onError={(e) => {
-          ;(e.target as HTMLImageElement).src = fallbackImage
-          setLoading(false)
-        }}
-        placeholder="blur"
-        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(width, height))}`}
-      />
+    <div className={`relative overflow-hidden ${className}`} ref={imageRef}>
+      {(isVisible || priority) && (
+        <Image
+          src={imageSource}
+          alt={alt}
+          width={adjustedWidth}
+          height={adjustedHeight}
+          style={style}
+          sizes={sizes || `(max-width: 768px) 100vw, ${adjustedWidth}px`}
+          onMouseMove={onMouseMove}
+          className={`duration-700 ease-in-out ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'} ${className || ''}`}
+          onLoadingComplete={() => setLoading(false)}
+          onError={(e) => {
+            ;(e.target as HTMLImageElement).src = fallbackImage
+            setLoading(false)
+          }}
+          placeholder="blur"
+          blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(adjustedWidth, adjustedHeight))}`}
+          priority={priority}
+          loading={priority ? 'eager' : 'lazy'}
+          //@ts-expect-error it is an error
+          srcSet={generateSrcSet()}
+        />
+      )}
     </div>
   )
 }

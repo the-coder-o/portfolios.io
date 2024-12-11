@@ -38,7 +38,7 @@ export const PortfolioCard = ({ portfolio }: PortfolioCardProps) => {
         {skills && skills.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">
             {skills.slice(0, 2).map((skill: Skill, index: number) => (
-              <Badge key={index} variant="secondary" className="flex items-center gap-1 rounded-xl py-1.5 pl-3 pr-2">
+              <Badge key={index} variant="secondary" className={`flex items-center gap-1 rounded-xl py-1.5 pl-3 pr-2 reveal-${index % 3}`}>
                 <Image src={skill.logo} alt={skill.name} width={200} height={200} className="mr-1 !h-4 !w-4" />
                 {skill.name}
               </Badge>
