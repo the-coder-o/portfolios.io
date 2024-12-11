@@ -40,11 +40,14 @@ export const AuthFooter = ({ pageTitle, pageDescription, pageUrl }: AuthFooterPr
             <Image src={'https://freelogopng.com/images/all_img/1657952440google-logo-png-transparent.png'} alt="google" width={15} height={15} />
             <span className="ml-2 text-sm font-semibold leading-6">Google</span>
           </Button>
-          {/* Uncomment and update for GitHub sign-in */}
-          {/*<Button onClick={handleGitHubSignIn} disabled className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm">*/}
-          {/*  <Image src={'https://cdn-icons-png.flaticon.com/512/25/25231.png'} alt="google" width={15} height={15} />*/}
-          {/*  <span className="ml-2 text-sm font-semibold leading-6">Github soon !</span>*/}
-          {/*</Button>*/}
+          <Button
+            onClick={() => window.open('https://portfolio.shohjahon1code.uz/api/auth/github/callback')}
+            disabled
+            className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm"
+          >
+            <Image src={'https://cdn-icons-png.flaticon.com/512/25/25231.png'} alt="google" width={15} height={15} />
+            <span className="ml-2 text-sm font-semibold leading-6">Github soon !</span>
+          </Button>
         </div>
       </div>
     </>
