@@ -1,10 +1,11 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import Cookies from 'js-cookie'
 
-import { signInWithGitHub, signInWithGoogle } from '@/lib/auth'
 import { Button } from '@/components/ui/button'
 
 interface AuthFooterProps {
@@ -14,25 +15,19 @@ interface AuthFooterProps {
 }
 
 export const AuthFooter = ({ pageTitle, pageDescription, pageUrl }: AuthFooterProps) => {
-  const handleGoogleSignIn = async () => {
-    try {
-      const user = await signInWithGoogle()
-      alert(`Welcome, ${user.displayName}`)
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (error: unknown) {
-      alert('Google Sign-In Failed!')
-    }
-  }
+  const router = useRouter()
 
-  const handleGitHubSignIn = async () => {
-    try {
-      const user = await signInWithGitHub()
-      alert(`Welcome, ${user.displayName}`)
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (error: unknown) {
-      alert('GitHub Sign-In Failed!')
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+
+    const accessToken = urlParams.get('access_token')
+
+    if (accessToken) {
+      Cookies.set('access_token', accessToken, { expires: 7 })
+      alert('Sign-in successful! Token saved.')
+      router.replace('/')
     }
-  }
+  }, [router])
 
   return (
     <>
@@ -54,14 +49,18 @@ export const AuthFooter = ({ pageTitle, pageDescription, pageUrl }: AuthFooterPr
           </div>
         </div>
         <div className="mt-6 flex w-full flex-col items-center justify-center gap-2">
-          <Button onClick={handleGoogleSignIn} className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm">
+          <Button
+            onClick={() => window.open('https://portfolio.shohjahon1code.uz/api/auth/google/callback')}
+            className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm"
+          >
             <Image src={'https://freelogopng.com/images/all_img/1657952440google-logo-png-transparent.png'} alt="google" width={15} height={15} />
             <span className="ml-2 text-sm font-semibold leading-6">Google</span>
           </Button>
-          <Button onClick={handleGitHubSignIn} disabled className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm">
-            <Image src={'https://cdn-icons-png.flaticon.com/512/25/25231.png'} alt="google" width={15} height={15} />
-            <span className="ml-2 text-sm font-semibold leading-6">Github soon !</span>
-          </Button>
+          {/* Uncomment and update for GitHub sign-in */}
+          {/*<Button onClick={handleGitHubSignIn} disabled className="justify-centxl relative z-10 flex h-11 w-full items-center rounded-xl border-2 bg-white px-4 py-1.5 text-sm font-medium text-black transition duration-200 hover:bg-white/80 md:text-sm">*/}
+          {/*  <Image src={'https://cdn-icons-png.flaticon.com/512/25/25231.png'} alt="google" width={15} height={15} />*/}
+          {/*  <span className="ml-2 text-sm font-semibold leading-6">Github soon !</span>*/}
+          {/*</Button>*/}
         </div>
       </div>
     </>
