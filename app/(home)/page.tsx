@@ -1,11 +1,11 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import Cookies from 'js-cookie'
 
-import PageTitle from '@/components/page-title'
-import { useRouter } from 'next/navigation'
 import { HomeView } from '@/modules/home/pages/home-view'
+import PageTitle from '@/components/page-title'
 
 const Page = () => {
   const router = useRouter()
