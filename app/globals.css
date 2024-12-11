@@ -123,3 +123,17 @@ body {
   animation: scroll 25s linear infinite;
 }
 
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.reveal-0 { animation: reveal 0.5s ease-out; }
+.reveal-1 { animation: reveal 0.5s 0.1s ease-out both; }
+.reveal-2 { animation: reveal 0.5s 0.2s ease-out both; }
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

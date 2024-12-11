@@ -11,25 +11,15 @@ import { Badge } from '@/components/ui/badge'
 import { ProfileMenu } from '@/components/profile-menu'
 import { FeedbackModal } from '@/components/modals/feedback-modal'
 import { Logo } from '@/components/logo/logo'
-import CountdownTimer from '@/components/down-timer'
 
 export const Header = () => {
   const route = usePathname()
   const isAuthUser = useIsAuth()
 
-  const launchDate = new Date('2024-12-11T00:00:00')
-
   const isHidden = route === '/sign-in' || route === '/sign-up' || route.startsWith('/dashboard') || route === '/onboarding'
 
   return (
     <div className="!fixed left-0 right-0 top-0 z-50 bg-black/90 backdrop-blur-lg">
-      <div className={cn(isHidden ? '!fixed left-0 right-0 top-0 z-50 hidden' : 'block')}>
-        <div className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-4 py-0.5 text-center font-sans text-sm font-medium tracking-tight text-white">
-          Our new website is coming soon.
-          <CountdownTimer targetDate={launchDate} />
-          😍
-        </div>
-      </div>
       <div className={cn(isHidden ? 'hidden' : 'block')}>
         <header className="container">
           <div className="flex items-center justify-between py-4">
