@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { BookmarkCheck, Plus, Settings, User } from 'lucide-react'
 
 import { useGetProfileMe } from '@/modules/edit-profile/hooks/useGetProfileMe'
+import { maskEmail } from '@/lib/masl-email'
 import SignOutButton from '@/hooks/use-signout'
 import { Skeleton } from '@/components/ui/skeleton'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
@@ -12,6 +13,9 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 export const ProfileMenu = () => {
   const { data: profile, isLoading } = useGetProfileMe()
   const [isOpen, setIsOpen] = useState(false)
+
+  const email = profile?.email || 'test@gmail.com'
+  const maskedEmail = maskEmail(email)
 
   const pathname = usePathname()
 
@@ -54,7 +58,7 @@ export const ProfileMenu = () => {
             ) : (
               <>
                 <h2 className="font-medium">{profile?.name || 'Test Test'}</h2>
-                <p className="text-xs dark:text-[#999]">{profile?.email || 'test@gmail.com'}</p>
+                <p className="text-xs dark:text-[#999]">{maskedEmail}</p>
               </>
             )}
           </div>

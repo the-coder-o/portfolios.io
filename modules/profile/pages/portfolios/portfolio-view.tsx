@@ -13,7 +13,7 @@ export const PortfolioView = () => {
   if (isPending) {
     return (
       <div className={'container'}>
-        <div className={'mb-10 mt-5 grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1'}>
+        <div className={'mb-[100px] mt-5 grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1'}>
           {Array.from({ length: 4 }).map((_, index) => (
             <PortfolioCardLoading key={index} isPending={isPending} />
           ))}
@@ -41,7 +41,7 @@ export const PortfolioView = () => {
 
   return (
     <div className="container">
-      <div className="mb-10 mt-5 grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">{data?.reverse()?.map((portfolio) => <PortfolioCard key={portfolio._id} portfolio={portfolio} />)}</div>
+      <div className="mb-[100px] mt-5 grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-lg:gap-3 max-sm:grid-cols-1">{data?.reverse()?.map((portfolio) => <PortfolioCard key={portfolio._id} portfolio={portfolio} />)}</div>
     </div>
   )
 }
