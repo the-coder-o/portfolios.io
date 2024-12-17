@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { Bookmark, BookmarkCheck, Eye, Heart } from 'lucide-react'
+import { Bookmark, BookmarkCheck, Eye } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { Separator } from '@/components/ui/separator'
@@ -43,9 +43,6 @@ export const HeaderDetailSection = ({ portfolio }: any) => {
               </Link>
             </Button>
           )}
-          <Button variant="outline" size="icon" className="rounded-xl">
-            <Heart className="h-5 w-5" />
-          </Button>
           <Button variant="outline" size="icon" className={cn('rounded-xl transition-colors duration-200', isSaved && 'bg-muted')} onClick={handleClick} aria-label={isSaved ? 'Remove bookmark' : 'Add bookmark'}>
             {isSaved ? <BookmarkCheck className="h-5 w-5" /> : <Bookmark className="h-5 w-5" />}
           </Button>
