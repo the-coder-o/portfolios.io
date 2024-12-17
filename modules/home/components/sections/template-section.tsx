@@ -17,11 +17,7 @@ const templates = [
     title: 'Sidefolio Portfolio Template',
     description: 'Sidefolio is a portfolio template for developers with blogs, projects, resume and everything. A sidebar layout with a modern design. Mobile responsive with toggleable sidebar.\n' + '\n',
     href: 'https://sidefolio.vercel.app/',
-    images: [
-      'https://pro.aceternity.com/_next/image?url=https%3A%2F%2Fassets.aceternity.com%2Ftemplates%2Fsidefolio.png&w=640&q=75',
-      'https://pro.aceternity.com/_next/image?url=https%3A%2F%2Fassets.aceternity.com%2Ftemplates%2Fsidefolio2.png&w=640&q=75',
-      'https://pro.aceternity.com/_next/image?url=https%3A%2F%2Fassets.aceternity.com%2Ftemplates%2Fsidefolio3.png&w=640&q=75',
-    ],
+    images: ['https://i.imghippo.com/files/NKo4431ns.webp', 'https://i.imghippo.com/files/vUc2183rxk.webp', 'https://i.imghippo.com/files/GRL3741NlE.webp'],
   },
 ]
 
