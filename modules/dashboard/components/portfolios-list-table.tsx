@@ -24,15 +24,15 @@ export const PortfolioTable = ({ portfolios, isPending }: PortfolioTableProps) =
   const itemsPerPage = 8
   const totalPages = Math.ceil(portfolios.length / itemsPerPage)
 
-  const paginatedPortfolios = portfolios.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
-
   if (isPending) {
     return <TableSkeleton />
   }
 
-  if (portfolios.length === 0) {
+  if (!portfolios || portfolios.length === 0) {
     return <EmptyPortfolioState />
   }
+
+  const paginatedPortfolios = portfolios.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
 
   return (
     <div className="space-y-4">
