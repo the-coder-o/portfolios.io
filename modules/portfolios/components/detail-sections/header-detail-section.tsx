@@ -1,19 +1,53 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
-import { Bookmark, BookmarkCheck, Eye } from 'lucide-react'
+'use client'
 
+import { toast } from 'sonner'
+import React, { useCallback, useState } from 'react'
+import Link from 'next/link'
+import { Bookmark, BookmarkCheck, Eye, Loader } from 'lucide-react'
+
+import { useAddFavorite } from '@/modules/portfolios/hooks/useAddFavorite'
 import { cn } from '@/lib/utils'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { BreadcrumbComponent } from '@/components/breadcrumb'
 
-export const HeaderDetailSection = ({ portfolio }: any) => {
-  const [isSaved, setIsSaved] = useState(false)
-
-  const handleClick = () => {
-    setIsSaved(!isSaved)
+interface Portfolio {
+  _id: string
+  name: string
+  github_link: string
+  live_demo?: string
+  user: {
+    name: string
+    avatar: string
   }
+}
+
+interface HeaderDetailSectionProps {
+  portfolio: Portfolio
+  initialSavedState?: boolean
+}
+
+export const HeaderDetailSection = ({ portfolio, initialSavedState = false }: HeaderDetailSectionProps) => {
+  const [isSaved, setIsSaved] = useState(initialSavedState)
+  const { triggerAddFavorite, isPending } = useAddFavorite(portfolio._id)
+
+  const handleClick = useCallback(() => {
+    const newSavedState = !isSaved
+    setIsSaved(newSavedState)
+
+    try {
+      triggerAddFavorite()
+      toast(newSavedState ? 'Saved to favorites' : 'Removed from favorites', {
+        description: newSavedState ? 'This portfolio has been added to your favorites.' : 'This portfolio has been removed from your favorites.',
+      })
+    } catch (error: any) {
+      setIsSaved(!newSavedState)
+      toast.error(`Failed to update favorite status ${error}`, {
+        description: 'Please try again.',
+      })
+    }
+  }, [isSaved, portfolio._id, triggerAddFavorite, toast])
 
   return (
     <section className={'space-y-8'}>
@@ -43,8 +77,8 @@ export const HeaderDetailSection = ({ portfolio }: any) => {
               </Link>
             </Button>
           )}
-          <Button variant="outline" size="icon" className={cn('rounded-xl transition-colors duration-200', isSaved && 'bg-muted')} onClick={handleClick} aria-label={isSaved ? 'Remove bookmark' : 'Add bookmark'}>
-            {isSaved ? <BookmarkCheck className="h-5 w-5" /> : <Bookmark className="h-5 w-5" />}
+          <Button variant="outline" size="icon" className={cn('rounded-xl transition-colors duration-200', isSaved && 'bg-muted')} onClick={handleClick} aria-label={isSaved ? 'Remove from favorites' : 'Add to favorites'} disabled={isPending}>
+            {isPending ? <Loader className="h-5 w-5 animate-spin" /> : isSaved ? <BookmarkCheck className="h-5 w-5" /> : <Bookmark className="h-5 w-5" />}
           </Button>
         </div>
       </div>

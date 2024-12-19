@@ -81,7 +81,7 @@ export function MultiSearch({ onSearch, portfolios }: MultiSearchProps) {
               {filteredPortfolios.map((portfolio) => (
                 <Link href={`/portfolios/${formatToSlug(portfolio.name)}`} key={portfolio._id} className="flex gap-2 rounded-xl bg-[#2A2A2A] p-2 text-white hover:bg-[#2A2A2A]/80">
                   <div>
-                    <OptimizedImage src={`https://portfolio.shohjahon1code.uz${portfolio.images[0]}`} alt={portfolio.name} width={100} height={100} className="!h-[80px] !w-[80px] rounded-xl object-cover" />
+                    <OptimizedImage src={`http://178.128.113.232/${portfolio.images[0]}`} alt={portfolio.name} width={100} height={100} className="!h-[80px] !w-[80px] rounded-xl object-cover" />
                   </div>
                   <div className={'flex flex-col items-start'}>
                     <h3 className="text-[15px] font-medium">{portfolio.name}</h3>
