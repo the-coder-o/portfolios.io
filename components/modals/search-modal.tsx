@@ -49,7 +49,7 @@ export const SearchModal = () => {
           {/*  {data?.map((portfolios) => (*/}
           {/*    <CommandItem key={portfolios._id} className="flex items-center justify-between">*/}
           {/*      <Link href={`/portfolios/${formatToSlug(portfolios.name)}`} prefetch={false} className="flex">*/}
-          {/*        <Image src={`https://portfolio.shohjahon1code.uz${portfolios?.images[0]}`} alt={`${portfolios?.user?.name}'s profile`} width={1200} height={1200} className="mr-2 !h-[80px] !w-[110px] rounded-lg bg-cover object-cover" />*/}
+          {/*        <Image src={`http://178.128.113.232/${portfolios?.images[0]}`} alt={`${portfolios?.user?.name}'s profile`} width={1200} height={1200} className="mr-2 !h-[80px] !w-[110px] rounded-lg bg-cover object-cover" />*/}
           {/*        <div className="flex flex-col gap-1">*/}
           {/*          <p className="line-clamp-2">{portfolios.user.name}</p>*/}
           {/*          <Avatar className="h-8 w-8 rounded-xl">*/}

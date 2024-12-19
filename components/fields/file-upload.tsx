@@ -66,7 +66,7 @@ export default function FileField({ name, label, required, isFileUpload, maxFile
                         </div>
                       ) : (
                         <div className="relative max-w-md">
-                          <Image src={typeof file === 'string' ? `https://portfolio.shohjahon1code.uz/${file}` : URL.createObjectURL(file)} width={500} height={500} alt="preview" className="mb-5 !h-[100px] !w-[100px] rounded-xl bg-cover object-contain" />
+                          <Image src={typeof file === 'string' ? `http://178.128.113.232//${file}` : URL.createObjectURL(file)} width={500} height={500} alt="preview" className="mb-5 !h-[100px] !w-[100px] rounded-xl bg-cover object-contain" />
                         </div>
                       )}
                       <button type={'button'} onClick={() => onChange(value.filter((_: any, i: any) => i !== index))} className="absolute right-2 top-2 rounded-full bg-gray-900/60 p-1.5 text-white opacity-0 transition-opacity hover:bg-gray-900/80 group-hover:opacity-100">

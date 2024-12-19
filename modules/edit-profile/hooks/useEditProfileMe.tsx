@@ -10,8 +10,8 @@ export const useEditProfileMe = () => {
   const { mutate, isPending, isSuccess, isError } = useMutation({
     mutationFn: (values: IProfile) => EditUserProfileMe(values),
     onSuccess: () => {
-      toast.success('Profile updated successfully!')
       queryClient.invalidateQueries({ queryKey: ['profileMe'] })
+      toast.success('Profile updated successfully!')
     },
     onError: (error: any) => {
       const errorMessage = error?.response?.data?.message || 'Failed to update profile'
