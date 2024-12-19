@@ -2,6 +2,7 @@
 
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
+import { useEffect } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { roles } from '@/constants/roles'
@@ -26,7 +27,7 @@ interface IProps {
 }
 
 const EditProfileForm = ({ profile }: IProps) => {
-  const { triggerProfileEdit, isPending } = useEditProfileMe()
+  const { triggerProfileEdit, isPending, isSuccess } = useEditProfileMe()
 
   const methods = useForm<EditProfileFormSchema>({
     resolver: zodResolver(userProfileSchema),
@@ -42,11 +43,21 @@ const EditProfileForm = ({ profile }: IProps) => {
     },
   })
 
-  const { handleSubmit } = methods
+  const {
+    handleSubmit,
+    formState: { isDirty },
+    reset,
+  } = methods
 
   const onSubmit = (formValues: EditProfileFormSchema) => {
     triggerProfileEdit(formValues)
   }
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset(methods.getValues())
+    }
+  }, [isSuccess, reset, methods])
 
   return (
     <Form {...methods}>
@@ -60,7 +71,7 @@ const EditProfileForm = ({ profile }: IProps) => {
           <TextAreaField name="bio" label="Bio" placeholder="Write a short bio" className="mt-1 rounded-xl" />
         </div>
         <div className="mt-5 flex justify-end">
-          <LoadingButton isLoading={isPending} variant={'secondary'} className="rounded-xl max-md:w-full">
+          <LoadingButton isLoading={isPending} variant={'secondary'} className="rounded-xl max-md:w-full" disabled={!isDirty}>
             Save changes
           </LoadingButton>
         </div>
