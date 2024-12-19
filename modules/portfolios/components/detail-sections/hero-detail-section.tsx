@@ -47,7 +47,7 @@ export const HeroDetailSection = ({ portfolio }: any) => {
                   <div className="p-1">
                     <Card className="overflow-hidden rounded-xl">
                       <CardContent className="aspect-video p-0">
-                        <Image src={`http://178.128.113.232/${image}`} width={2000} height={2000} alt={`${portfolio.name} image ${index + 1}`} className="h-full w-full object-cover object-top" />
+                        <Image src={`http://portfolio.shohjahon1code.uz${image}`} width={2000} height={2000} alt={`${portfolio.name} image ${index + 1}`} className="h-full w-full object-cover object-top" />
                       </CardContent>
                     </Card>
                   </div>
