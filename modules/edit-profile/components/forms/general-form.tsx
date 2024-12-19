@@ -1,5 +1,8 @@
+'use client'
+
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
+import { useEffect } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { Form } from '@/components/ui/form'
@@ -18,18 +21,28 @@ interface IProps {
 }
 
 const GeneralForm = ({ profile }: IProps) => {
-  const { triggerProfileEdit, isPending } = useEditProfileMe()
+  const { triggerProfileEdit, isPending, isSuccess } = useEditProfileMe()
 
   const methods = useForm<GeneralFormSchema>({
     resolver: zodResolver(generalSchema),
     defaultValues: { email: profile.email ?? '', username: profile.username ?? '' },
   })
 
-  const { handleSubmit } = methods
+  const {
+    handleSubmit,
+    formState: { isDirty },
+    reset,
+  } = methods
 
   const onSubmit = (data: GeneralFormSchema) => {
     triggerProfileEdit(data)
   }
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset(methods.getValues())
+    }
+  }, [isSuccess, reset, methods])
 
   return (
     <Form {...methods}>
@@ -39,7 +52,7 @@ const GeneralForm = ({ profile }: IProps) => {
           <TextField name="email" label="Email" placeholder="Enter your email" className="mt-1 rounded-xl" />
         </div>
         <div className="mt-5 flex justify-end">
-          <LoadingButton isLoading={isPending} variant={'secondary'} className="rounded-xl max-md:w-full">
+          <LoadingButton isLoading={isPending} variant={'secondary'} className="rounded-xl max-md:w-full" disabled={!isDirty}>
             Save changes
           </LoadingButton>
         </div>

@@ -8,11 +8,12 @@ interface IProps extends VariantProps<typeof buttonVariants> {
   onClick?: () => void
   children: ReactNode
   isLoading: boolean
+  disabled?: boolean
 }
 
-export default function LoadingButton({ className, onClick, variant, children, isLoading }: IProps) {
+export default function LoadingButton({ className, onClick, variant, children, isLoading, disabled }: IProps) {
   return (
-    <Button type="submit" variant={variant} className={className} disabled={isLoading} onClick={onClick}>
+    <Button type="submit" variant={variant} className={className} disabled={isLoading || disabled} onClick={onClick}>
       {isLoading ? (
         <div role="status" className="flex items-center gap-1.5">
           <span>Loading...</span>

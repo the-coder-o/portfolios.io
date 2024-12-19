@@ -41,8 +41,8 @@ export const OnboardingForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <TextField name="name" label="Your name" placeholder="Jhon Dou" iconLeft={ALargeSmall} className="border-transparent bg-white/10" />
         <TextField name="username" label="Your username" placeholder="@jhondou" iconLeft={User} className="border-transparent bg-white/10" />
-        <TextField name="email" label="Email address" placeholder="jhondou@gmail.com" iconLeft={Mail} className="border-transparent bg-white/10" />
-        <TextField name="password" label="Password" placeholder="Enter your password" iconLeft={Lock} className="border-transparent bg-white/10" />
+        <TextField name="email" label="Email address" type={'email'} placeholder="jhondou@gmail.com" iconLeft={Mail} className="border-transparent bg-white/10" />
+        <TextField name="password" label="Password" type={'password'} placeholder="Enter your password" iconLeft={Lock} className="border-transparent bg-white/10" />
         <AuthButton isPending={isPending} type="submit" title={'Complete Sign Up'} />
       </form>
     </Form>
