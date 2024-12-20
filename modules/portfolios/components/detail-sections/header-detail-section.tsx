@@ -1,10 +1,11 @@
 'use client'
 
 import { toast } from 'sonner'
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Bookmark, BookmarkCheck, Eye, Loader } from 'lucide-react'
 
+import { useGetUserFavorites } from '@/modules/profile/hooks/useGetUserFavorites'
 import { useAddFavorite } from '@/modules/portfolios/hooks/useAddFavorite'
 import { cn } from '@/lib/utils'
 import { Separator } from '@/components/ui/separator'
@@ -25,12 +26,18 @@ interface Portfolio {
 
 interface HeaderDetailSectionProps {
   portfolio: Portfolio
-  initialSavedState?: boolean
 }
 
-export const HeaderDetailSection = ({ portfolio, initialSavedState = false }: HeaderDetailSectionProps) => {
-  const [isSaved, setIsSaved] = useState(initialSavedState)
+export const HeaderDetailSection = ({ portfolio }: HeaderDetailSectionProps) => {
+  const [isSaved, setIsSaved] = useState(false)
   const { triggerAddFavorite, isPending } = useAddFavorite(portfolio._id)
+  const { data } = useGetUserFavorites()
+
+  useEffect(() => {
+    if (data) {
+      setIsSaved(data.some((favorite) => favorite._id === portfolio._id))
+    }
+  }, [data, portfolio._id])
 
   const handleClick = useCallback(() => {
     const newSavedState = !isSaved
@@ -43,11 +50,11 @@ export const HeaderDetailSection = ({ portfolio, initialSavedState = false }: He
       })
     } catch (error: any) {
       setIsSaved(!newSavedState)
-      toast.error(`Failed to update favorite status ${error}`, {
+      toast.error(`Failed to update favorite status: ${error}`, {
         description: 'Please try again.',
       })
     }
-  }, [isSaved, portfolio._id, triggerAddFavorite, toast])
+  }, [isSaved, portfolio._id, triggerAddFavorite])
 
   return (
     <section className={'space-y-8'}>
