@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useUpdatePortfolio } from '@/modules/dashboard/hooks/useUpdatePortfolio'
@@ -36,12 +36,22 @@ export const UpdatePortfolioForm = ({ portfolio }: UpdatePortfolio) => {
     },
   })
 
-  const { triggerUpdatePortfolio, isPending } = useUpdatePortfolio(portfolio?._id)
-  const { handleSubmit } = methods
+  const { triggerUpdatePortfolio, isPending, isSuccess } = useUpdatePortfolio(portfolio?._id)
+  const {
+    handleSubmit,
+    formState: { isDirty },
+    reset,
+  } = methods
 
   const onSubmit = (formValues: UpdatePortfolioFormSchema | any) => {
     triggerUpdatePortfolio(formValues)
   }
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset(methods.getValues())
+    }
+  }, [isSuccess, reset, methods])
 
   return (
     <div className={'mb-5'}>
@@ -76,7 +86,7 @@ export const UpdatePortfolioForm = ({ portfolio }: UpdatePortfolio) => {
             <FileField name="images" label="Portfolios" maxFiles={5} />
           </div>
           <div className="mt-5 flex justify-end">
-            <LoadingButton isLoading={isPending} variant={'secondary'} className="rounded-xl max-md:w-full">
+            <LoadingButton isLoading={isPending} disabled={!isDirty} variant={'secondary'} className="rounded-xl max-md:w-full">
               Update Portfolio
             </LoadingButton>
           </div>
