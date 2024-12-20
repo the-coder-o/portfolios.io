@@ -7,14 +7,14 @@ export const tabData = [
     title: 'Your Portfolios',
   },
   {
+    pageUrl: '/profile/favorites',
+    icon: <Bookmark size={17} />,
+    title: 'Favorite Portfolios',
+  },
+  {
     pageUrl: '/profile/liked',
     icon: <Heart size={17} />,
     title: 'Liked Portfolios',
-  },
-  {
-    pageUrl: '/profile/favorites',
-    icon: <Bookmark size={17} />,
-    title: 'Favorites',
   },
   // {
   //   pageUrl: '/profile/about',
