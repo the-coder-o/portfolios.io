@@ -45,7 +45,7 @@ export const PortfolioCard = ({ portfolio }: PortfolioCardProps) => {
             ))}
             {skills.length > 2 && (
               <div className="flex items-center rounded-lg bg-gray-200 p-1.5 px-2 dark:bg-secondary">
-                <div className="text-xs font-medium text-neutral-700 dark:text-neutral-300">+{skills.length - 3}</div>
+                <div className="text-xs font-medium text-neutral-700 dark:text-neutral-300">+{skills.length - 2}</div>
               </div>
             )}
           </div>

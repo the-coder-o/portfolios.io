@@ -3,18 +3,21 @@ import { CalendarRange, Clock, Eye, Layers } from 'lucide-react'
 import Autoplay from 'embla-carousel-autoplay'
 
 import { PortfolioList } from '@/modules/dashboard/types/portfolios-list'
+import { usePageViews } from '@/hooks/use-page-views'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import { Card, CardContent } from '@/components/ui/card'
 import { PortfolioCard } from '@/components/cards/portfolio-card'
 
 export const FooterDetailSection = ({ portfolio, data }: any) => {
+  const views = usePageViews(portfolio._id)
+
   return (
     <section className={'space-y-8'}>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         {[
           { icon: CalendarRange, label: 'Posted', value: '36d ago' },
           { icon: Clock, label: 'Updated', value: '36d ago' },
-          { icon: Eye, label: 'Views', value: '19.5K+' },
+          { icon: Eye, label: 'Views', value: views.toLocaleString() },
           { icon: Layers, label: 'Pages', value: portfolio.page || 'N/A' },
         ].map((item, index) => (
           <Card key={index} className="rounded-xl">

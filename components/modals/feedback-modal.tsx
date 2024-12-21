@@ -68,7 +68,7 @@ export const FeedbackModal = () => {
           <div className="grid gap-4 py-4">
             <div className="grid gap-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" required />
+              <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" required className={'rounded-xl'} />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="feedback">Feedback</Label>

@@ -14,6 +14,7 @@
     "check:packages": "npm audit"
   },
   "dependencies": {
+    "@fingerprintjs/fingerprintjs": "^4.5.1",
     "@hookform/resolvers": "^3.9.0",
     "@intercom/messenger-js-sdk": "^0.0.14",
     "@radix-ui/react-accordion": "^1.2.1",
@@ -40,6 +41,7 @@
     "@tsparticles/engine": "^3.5.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
+    "@upstash/redis": "^1.34.3",
     "@vercel/analytics": "^1.3.2",
     "axios": "^1.7.7",
     "cheerio": "^1.0.0",

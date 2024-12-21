@@ -8,6 +8,7 @@ import { Bookmark, BookmarkCheck, Eye, Loader } from 'lucide-react'
 import { useGetUserFavorites } from '@/modules/profile/hooks/useGetUserFavorites'
 import { useAddFavorite } from '@/modules/portfolios/hooks/useAddFavorite'
 import { cn } from '@/lib/utils'
+import { useIsAuth } from '@/hooks/use-isAuth'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -29,9 +30,11 @@ interface HeaderDetailSectionProps {
 }
 
 export const HeaderDetailSection = ({ portfolio }: HeaderDetailSectionProps) => {
+  const isAuthed = useIsAuth()
   const [isSaved, setIsSaved] = useState(false)
-  const { triggerAddFavorite, isPending } = useAddFavorite(portfolio._id)
+
   const { data } = useGetUserFavorites()
+  const { triggerAddFavorite, isPending } = useAddFavorite(portfolio._id)
 
   useEffect(() => {
     if (data) {
@@ -40,6 +43,11 @@ export const HeaderDetailSection = ({ portfolio }: HeaderDetailSectionProps) => 
   }, [data, portfolio._id])
 
   const handleClick = useCallback(() => {
+    if (!isAuthed) {
+      toast.error('You must be logged in to save portfolio to favorites.')
+      return
+    }
+
     const newSavedState = !isSaved
     setIsSaved(newSavedState)
 
@@ -54,7 +62,7 @@ export const HeaderDetailSection = ({ portfolio }: HeaderDetailSectionProps) => 
         description: 'Please try again.',
       })
     }
-  }, [isSaved, portfolio._id, triggerAddFavorite])
+  }, [isAuthed, isSaved, portfolio._id, triggerAddFavorite])
 
   return (
     <section className={'space-y-8'}>
