@@ -15,7 +15,7 @@ const nextConfig = {
   },
   reactStrictMode: true,
   typescript: {
-    ignoreBuildErrors: ['app/api/views/[id]/route.ts'],
+    ignoreBuildErrors: true,
   },
 }
 

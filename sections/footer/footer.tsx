@@ -77,6 +77,11 @@ export const Footer = () => {
                     <Sparkle size={14} className="text-pink-500" /> Timeline
                   </Link>
                 </li>
+                <li>
+                  <Link href="https://github.com/the-coder-o/portfolios.io/releases" target={'_blank'} className="flex items-center gap-1 text-sm text-muted-foreground hover:text-white" prefetch={false}>
+                    <Sparkle size={14} className="text-pink-500" /> Releases
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
