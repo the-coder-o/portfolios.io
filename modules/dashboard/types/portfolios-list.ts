@@ -4,7 +4,7 @@ export interface PortfolioList {
   _id: string
   name: string
   description: string
-  category: Category | null
+  category: Category | any
   user: {
     _id: string
     name: string

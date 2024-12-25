@@ -85,7 +85,7 @@ const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ portfolios, isPen
             .map((_, index) => <Skeleton key={index} className={'h-[200px] w-[200px] rounded-xl'} />)
         : portfolios.slice(0, 3).map((portfolio) => (
             <div key={portfolio._id} className="group relative h-[200px] w-[200px] overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900 shadow-lg transition-transform">
-              <OptimizedImage src={`http://178.128.113.232/${portfolio.images[0]}`} alt={portfolio.name} width={1000} height={1000} className="!h-full !w-full bg-cover object-cover opacity-75 transition duration-300 group-hover:scale-105" />
+              <OptimizedImage src={`http://api.portfoliosworld.com${portfolio.images[0]}`} alt={portfolio.name} width={1000} height={1000} className="!h-full !w-full bg-cover object-cover opacity-75 transition duration-300 group-hover:scale-105" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
                 <h3 className="line-clamp-1 text-lg font-semibold text-white">{portfolio.name}</h3>
                 <p className="line-clamp-1 text-sm text-neutral-400">{portfolio.description}</p>
