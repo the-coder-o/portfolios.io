@@ -14,7 +14,7 @@ export interface PortfolioCardProps {
 }
 
 export const PortfolioCard = ({ portfolio }: PortfolioCardProps) => {
-  const { name, description, user, images, github_link, live_demo, skills } = portfolio || {}
+  const { name, description, user, images, github_link, skills } = portfolio || {}
 
   return (
     <Link href={`/portfolios/${formatToSlug(name)}`} prefetch={false} className="group relative h-full rounded-3xl border border-gray-200 bg-gray-100 p-2 dark:border-gray-50/[.1] dark:bg-black dark:backdrop-blur-md">
@@ -51,17 +51,18 @@ export const PortfolioCard = ({ portfolio }: PortfolioCardProps) => {
         )}
         <div className="mt-5 flex w-full items-center justify-between">
           <div className="flex items-center">
-            <OptimizedImage src={user.avatar || 'https://api-private.atlassian.com/users/4c06973565b718b273c7db95e58dca2f/avatar'} alt={`${user.name.slice(0, 1)}`} width={200} height={200} className="mr-2 !h-[25px] !w-[25px] !rounded-lg border border-border" />
-            <span className="flex items-center gap-1 text-sm font-medium text-neutral-600 dark:text-neutral-400">
-              {user.name}
-              {user.email === 'portfoliosworld@gmail.com' ? <Image src={'https://telegram.org/file/464001906/107ca/Y-sn47RDLAk.1898/a6ad0e5cfb2699cf01'} width={15} height={15} alt="tick" /> : null}
-            </span>
-          </div>
-          {live_demo && (
-            <div className="flex h-[22px] w-[60px] items-center justify-center rounded-lg border border-transparent bg-primary text-sm font-semibold text-foreground transition-colors hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 dark:border-green-300 dark:bg-green-700">
-              Free
+            <OptimizedImage src={user.avatar || 'https://api-private.atlassian.com/users/4c06973565b718b273c7db95e58dca2f/avatar'} alt={`${user.name.slice(0, 1)}`} width={200} height={200} className="mr-2 !h-[35px] !w-[35px] !rounded-xl border border-border" />
+            <div className="flex flex-col">
+              <span className="flex items-center gap-1.5 text-sm font-semibold text-neutral-800 dark:text-neutral-200">
+                {user.name}
+                {user.email === 'portfoliosworld@gmail.com' && <Image src={'https://telegram.org/file/464001906/107ca/Y-sn47RDLAk.1898/a6ad0e5cfb2699cf01'} width={16} height={16} alt="Verified" className="translate-y-[1px]" />}
+              </span>
+              <span className="text-xs text-neutral-500 dark:text-neutral-400">{user.role || 'Software Engineer'}</span>
             </div>
-          )}
+          </div>
+          <div className="flex h-[22px] w-[60px] items-center justify-center rounded-lg border border-transparent bg-primary text-sm font-semibold text-foreground transition-colors hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 dark:border-green-300 dark:bg-green-700">
+            Free
+          </div>
         </div>
       </div>
     </Link>
