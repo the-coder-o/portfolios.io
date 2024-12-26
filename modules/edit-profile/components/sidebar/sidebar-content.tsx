@@ -1,5 +1,7 @@
 import React from 'react'
 
+import SkillsForm from '@/modules/edit-profile/components/forms/skills-form'
+
 import { Session } from '../session'
 import SocialProfileForm from '../forms/social-profile-form'
 import PasswordForm from '../forms/password-form'
@@ -23,6 +25,7 @@ export const SidebarContent = ({ activeTab }: any) => {
               {activeTab === 'Edit Profile' && <EditProfileForm profile={profile} />}
               {activeTab === 'General' && <GeneralForm profile={profile} />}
               {activeTab === 'Password' && <PasswordForm />}
+              {activeTab === 'Skills' && <SkillsForm />}
               {activeTab === 'Social Profiles' && <SocialProfileForm />}
               {activeTab === 'Sessions' && <Session />}
               {activeTab === 'Data Export' && <DataExport />}

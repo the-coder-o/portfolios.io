@@ -77,7 +77,7 @@ export default function SkillsField({ name, label, required }: SkillsFieldProps)
                   {selectedSkills.map((skill: Skill, index: number) => (
                     <Badge key={index} variant="secondary" className="flex items-center gap-1 rounded-xl py-1.5 pl-3 pr-2">
                       {skill.name}
-                      <Button type={'button'} variant="ghost" size="sm" className="h-auto p-0 hover:bg-transparent" onClick={() => handleRemoveSkill(skill.name)}>
+                      <Button variant="ghost" size="sm" className="h-auto p-0 hover:bg-transparent" onClick={() => handleRemoveSkill(skill.name)}>
                         <X className="h-4 w-4" />
                         <span className="sr-only">Remove {skill.name}</span>
                       </Button>
@@ -90,16 +90,16 @@ export default function SkillsField({ name, label, required }: SkillsFieldProps)
                     <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-muted-foreground" aria-hidden="true" />
                   </div>
                   {searchQuery && (
-                    <div className="rounded-lg border bg-card p-2">
+                    <div className="rounded-xl border bg-card p-2">
                       <div className="flex flex-col gap-1">
                         {filteredSkills.map((skill, index: number) => (
-                          <Button type={'button'} key={index} variant="ghost" size="sm" className="flex w-full items-center justify-start gap-2 rounded-md px-2" onClick={() => handleAddSkill(skill)} disabled={isSkillSelected(skill.name) || selectedSkills.length >= 10}>
+                          <Button key={index} variant="ghost" size="sm" className="flex w-full items-center justify-start gap-2 rounded-xl px-2" onClick={() => handleAddSkill(skill)} disabled={isSkillSelected(skill.name) || selectedSkills.length >= 10}>
                             <span className="flex-1 text-left">{skill.name}</span>
                             <Plus className="h-4 w-4" aria-hidden="true" />
                           </Button>
                         ))}
                         {isCustomSkill && (
-                          <Button type={'button'} variant="ghost" size="sm" className="flex w-full items-center justify-start gap-2 rounded-md px-2" onClick={handleAddCustomSkill} disabled={selectedSkills.length >= 10}>
+                          <Button variant="ghost" size="sm" className="flex w-full items-center justify-start gap-2 rounded-xl px-2" onClick={handleAddCustomSkill} disabled={selectedSkills.length >= 10}>
                             <span className="flex-1 text-left">Add &quot;{searchQuery.trim()}&quot;</span>
                             <Plus className="h-4 w-4" aria-hidden="true" />
                           </Button>
@@ -112,7 +112,7 @@ export default function SkillsField({ name, label, required }: SkillsFieldProps)
                       <h3 className="text-sm font-medium">Suggested Skills</h3>
                       <div className="flex flex-wrap gap-2">
                         {skills.slice(0, 17).map((skill) => (
-                          <Button type={'button'} key={skill.name} variant="outline" size="sm" className="flex items-center gap-2 rounded-xl" onClick={() => handleAddSkill(skill)} disabled={isSkillSelected(skill.name) || selectedSkills.length >= 10}>
+                          <Button key={skill.name} variant="outline" size="sm" className="flex items-center gap-2 rounded-xl" onClick={() => handleAddSkill(skill)} disabled={isSkillSelected(skill.name) || selectedSkills.length >= 10}>
                             {skill.name}
                             <Plus className="h-4 w-4" aria-hidden="true" />
                           </Button>

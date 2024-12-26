@@ -49,3 +49,16 @@ export const socialProfileSchema = z.object({
   threads: z.string().optional(),
   youtube: z.string().optional(),
 })
+
+//*****************************************************/
+const skillsSchema = z.object({
+  name: z.string(),
+  logo: z.string(),
+  category: z.string(),
+  level: z.string(),
+  description: z.string(),
+})
+
+export const skillSchema = z.object({
+  skills: z.array(skillsSchema).min(1).max(15),
+})
