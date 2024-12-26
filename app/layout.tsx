@@ -8,23 +8,23 @@ import { ClientProviders, ScrollToTop, ThemeProvider } from '@/components/provid
 
 import './globals.css'
 
-const baseUrl = 'https://portfoliosio.vercel.app'
+const baseUrl = 'https://www.portfoliosworld.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: 'PortfoliosIo - Make Your Portfolio Look 10x Better | Professional Portfolio Builder',
+  title: 'PortfoliosWorld - Make Your Portfolio Look 10x Better | Professional Portfolio Builder',
   description: 'Create exceptional portfolio designs with our curated collection of 179+ templates. Stand out in any industry with professionally crafted portfolio designs that highlight your unique skills and creativity. Trusted by 500+ satisfied creators.',
   openGraph: {
-    title: 'PortfoliosIo - Make Your Portfolio Look 10x Better | Professional Portfolio Builder',
+    title: 'PortfoliosWorld - Make Your Portfolio Look 10x Better | Professional Portfolio Builder',
     description: 'Create exceptional portfolio designs with our curated collection of 179+ templates. Stand out in any industry with professionally crafted portfolio designs. Unlock your potential and showcase your work like never before.',
     url: baseUrl,
-    siteName: 'PortfoliosIo',
+    siteName: 'PortfoliosWorld',
     images: [
       {
-        url: 'https://github.com/the-coder-o/portfolios.io/raw/main/public/images/portfolios.png',
+        url: 'https://i.ibb.co/NZvCpgb/Screenshot-2024-12-23-104850.png',
         width: 1200,
         height: 630,
-        alt: 'PortfoliosIo - Professional Portfolio Builder',
+        alt: 'PortfoliosWorld - Professional Portfolio Builder',
       },
     ],
     locale: 'en_US',
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PortfoliosIo - Make Your Portfolio Look 10x Better | Professional Portfolio Builder',
+    title: 'PortfoliosWorld - Make Your Portfolio Look 10x Better | Professional Portfolio Builder',
     description: 'Create exceptional portfolio designs with our curated collection of 179+ templates. Stand out in any industry. Trusted by 500+ satisfied creators.',
-    images: ['https://github.com/the-coder-o/portfolios.io/raw/main/public/images/portfolios.png'],
-    creator: '@portfoliosio',
-    site: '@portfoliosio',
+    images: ['https://i.ibb.co/NZvCpgb/Screenshot-2024-12-23-104850.png'],
+    creator: '@portfoliosworld',
+    site: '@portfoliosworld',
   },
   robots: {
     index: true,
@@ -67,21 +67,21 @@ export const metadata: Metadata = {
     'portfolio optimization',
     'portfolio analytics',
   ],
-  authors: [{ name: 'PortfoliosIo Team', url: 'https://portfoliosio.vercel.app/about-us' }],
-  creator: 'PortfoliosIo Team',
-  publisher: 'PortfoliosIo Inc.',
+  authors: [{ name: 'PortfoliosWorld Team', url: 'https://www.portfoliosworld.com/about-us' }],
+  creator: 'PortfoliosWorld Team',
+  publisher: 'PortfoliosWorld Inc.',
   alternates: {
-    canonical: 'https://portfoliosio.vercel.app',
+    canonical: 'https://www.portfoliosworld.com',
     languages: {
-      'en-US': 'https://portfoliosio.vercel.app',
+      'en-US': 'https://www.portfoliosworld.com',
     },
   },
   icons: {
     icon: [
-      { url: '/favicon/favicon.ico', sizes: '32x32' },
-      { url: '/favicon/icon.svg', type: 'image/svg+xml' },
+      { url: 'public/favicon/favicon.ico', sizes: '32x32' },
+      { url: 'public/favicon/favicon.svg', type: 'image/svg+xml' },
     ],
-    apple: [{ url: '/favicon/apple-icon.png', sizes: '180x180' }],
+    apple: [{ url: 'public/favicon/apple-touch-icon.png', sizes: '180x180' }],
     other: [{ rel: 'mask-icon', url: '/mask-icon.svg', color: '#000000' }],
   },
   manifest: '/site.webmanifest',
@@ -94,12 +94,7 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
-  appleWebApp: {
-    title: 'Portfoliosio',
-    statusBarStyle: 'black-translucent',
-    startupImage: ['/apple-splash-2048-2732.jpg', '/apple-splash-1668-2224.jpg', '/apple-splash-1536-2048.jpg', '/apple-splash-1125-2436.jpg', '/apple-splash-1242-2208.jpg'],
-  },
-  applicationName: 'Portfoliosio',
+  applicationName: 'PortfoliosWorld',
   generator: 'Next.js',
 }
 
@@ -108,14 +103,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="c0Nfbo-a10LzJzVERkuuwwPY_dIBZy6i9RJBzFo6H_M" />
-        <meta property="og:title" content="PortfoliosIo - Make Your Portfolio Look 10x Better" />
+        <meta property="og:title" content="PortfoliosWorld - Make Your Portfolio Look 10x Better" />
         <meta property="og:description" content="Create exceptional portfolio designs with our curated collection of 179+ templates." />
-        <meta property="og:image" content="https://github.com/the-coder-o/portfolios.io/raw/main/public/images/portfolios.png" />
-        <meta property="og:url" content="https://portfoliosio.vercel.app" />
+        <meta property="og:image" content="https://i.ibb.co/NZvCpgb/Screenshot-2024-12-23-104850.png" />
+        <meta property="og:url" content="https://www.portfoliosworld.com" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="PortfoliosIo - Professional Portfolio Builder" />
+        <meta name="twitter:title" content="PortfoliosWorld - Professional Portfolio Builder" />
         <meta name="twitter:description" content="Stand out in any industry with professionally crafted portfolio designs." />
-        <meta name="twitter:image" content="https://github.com/the-coder-o/portfolios.io/raw/main/public/images/portfolios.png" />
+        <meta name="twitter:image" content="https://i.ibb.co/NZvCpgb/Screenshot-2024-12-23-104850.png" />
       </head>
       <body className="dark:bg-[#000]">
         <div className="absolute bottom-0 left-0 right-0 top-0 -z-10 bg-white bg-dot-black/[0.2] dark:bg-black dark:bg-dot-white/[0.2]">

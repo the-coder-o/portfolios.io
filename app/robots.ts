@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/admin/'],
     },
-    sitemap: 'https://portfoliosio.vercel.app/sitemap.xml',
+    sitemap: 'https://www.portfoliosworld.com/sitemap.xml',
   }
 }

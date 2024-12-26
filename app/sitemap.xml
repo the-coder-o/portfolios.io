@@ -5,35 +5,33 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>https://portfoliosio.vercel.app/</loc>
+  <loc>https://www.portfoliosworld.com/</loc>
   <lastmod>2024-12-02T08:55:33+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://portfoliosio.vercel.app/portfolios</loc>
+  <loc>https://www.portfoliosworld.com/portfolios</loc>
   <lastmod>2024-12-02T08:55:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://portfoliosio.vercel.app/rezume</loc>
+  <loc>https://www.portfoliosworld.com/rezume</loc>
   <lastmod>2024-12-02T08:55:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://portfoliosio.vercel.app/sign-in</loc>
+  <loc>https://www.portfoliosworld.com/sign-in</loc>
   <lastmod>2024-12-02T08:55:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://portfoliosio.vercel.app/timeline</loc>
+  <loc>https://www.portfoliosworld.com/timeline</loc>
   <lastmod>2024-12-02T08:55:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://portfoliosio.vercel.app/sign-up</loc>
+  <loc>https://www.portfoliosworld.com/sign-up</loc>
   <lastmod>2024-12-02T08:55:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
-
-
 </urlset>

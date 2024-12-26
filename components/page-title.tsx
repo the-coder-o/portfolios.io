@@ -7,7 +7,7 @@ interface PageTitleProps {
 const PageTitle: React.FC<PageTitleProps> = ({ title }) => {
   return (
     <>
-      <title>{'PortfoliosIo | ' + title}</title>
+      <title>{'PortfoliosWorld | ' + title}</title>
     </>
   )
 }
