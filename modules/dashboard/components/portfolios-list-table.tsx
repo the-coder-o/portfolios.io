@@ -51,7 +51,7 @@ export const PortfolioTable = ({ portfolios, isPending }: PortfolioTableProps) =
             {paginatedPortfolios?.reverse()?.map((portfolio) => (
               <TableRow key={portfolio._id}>
                 <TableCell>
-                  <OptimizedImage src={`http://portfolio.shohjahon1code.uz${portfolio.images?.[0]}` || '/placeholder.svg'} alt={portfolio.name} className="!h-[60px] !w-[110px] rounded-xl bg-cover object-top" width={2000} height={1400} />
+                  <OptimizedImage src={`https://api.portfoliosworld.com${portfolio.images?.[0]}` || '/placeholder.svg'} alt={portfolio.name} className="!h-[60px] !w-[110px] rounded-xl bg-cover object-top" width={2000} height={1400} />
                 </TableCell>
                 <TableCell className="max-w-xs">
                   <p className={'line-clamp-2 text-sm'}>{portfolio.name}</p>
