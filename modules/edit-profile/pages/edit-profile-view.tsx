@@ -48,7 +48,7 @@ export const EditProfileView = () => {
                 ) : (
                   <>
                     <h1 className="text-xl font-semibold text-white sm:text-2xl">{profile?.name || 'N/A'}</h1>
-                    <Image src={'https://telegram.org/file/464001906/107ca/Y-sn47RDLAk.1898/a6ad0e5cfb2699cf01'} width={25} height={25} alt="tick" />
+                    {profile.email === 'portfoliosworld@gmail.com' ? <Image src={'https://telegram.org/file/464001906/107ca/Y-sn47RDLAk.1898/a6ad0e5cfb2699cf01'} width={25} height={25} alt="tick" /> : null}
                   </>
                 )}
               </div>

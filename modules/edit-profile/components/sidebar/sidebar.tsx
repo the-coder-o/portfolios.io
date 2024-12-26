@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Clock, Database, Laptop, Lock, Menu, Settings, Share2, User } from 'lucide-react'
+import { Briefcase, Clock, Database, Laptop, Lock, Menu, Settings, Share2, User } from 'lucide-react'
 
 import { useGetProfileMe } from '@/modules/edit-profile/hooks/useGetProfileMe'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
@@ -22,6 +22,7 @@ export const Sidebar = () => {
     { name: 'Edit Profile', icon: User, isNew: false },
     { name: 'General', icon: Settings, isNew: false },
     { name: 'Password', icon: Lock, isNew: false },
+    { name: 'Skills', icon: Briefcase, isNew: true },
     { name: 'Social Profiles', icon: Share2, isNew: true },
     { name: 'Sessions', icon: Laptop, isNew: true },
     { name: 'Data Export', icon: Database, isNew: false },
