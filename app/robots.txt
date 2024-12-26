@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /privacy/
+
+sitemap: https://https://www.portfoliosworld.com/sitemap.xml
