@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/favicon/favicon.ico" alt="Portfoliosio Logo" width="50"/>
+  <img src="app/favicon.ico" alt="Portfoliosio Logo" width="50"/>
   <h1>PortfoliosWorld</h1>
   <p>The best place to find portfolio inspiration</p>
 </div>
