@@ -68,7 +68,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { data: userPortfolios } = useGetUserPortfolio()
 
   const portfolioCount = userPortfolios?.length || 0
-  const isVipAccount = profile?.email === 'portfoliosio@gmail.com'
+  const isVipAccount = profile?.email === 'portfoliosworld@gmail.com'
 
   return (
     <Sidebar variant="inset" {...props}>

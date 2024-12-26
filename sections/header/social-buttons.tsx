@@ -19,7 +19,7 @@ export const SocialButtons = () => {
           <Image src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg" alt="Discord" width="20" height="20" className="!h-4 !w-4" />
         </Button>
       </Link>
-      <Link href="https://dly.to/y3ZwSXkMiik" target="_blank" rel="noopener noreferrer">
+      <Link href="https://app.daily.dev/squads/portfolios_world" target="_blank" rel="noopener noreferrer">
         <Button variant="ghost" size="sm" className="flex items-center gap-1 rounded-xl px-0 hover:bg-transparent">
           <svg viewBox="0 0 35 20" xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-auto">
             <g fill="currentColor" fillRule="nonzero">
@@ -29,7 +29,7 @@ export const SocialButtons = () => {
           </svg>
         </Button>
       </Link>
-      <Link href="https://x.com/the_coder_o" target="_blank" rel="noopener noreferrer">
+      <Link href="https://x.com/portfoliocworld" target="_blank" rel="noopener noreferrer">
         <Button variant="ghost" size="sm" className="flex items-center gap-1 rounded-xl px-0 hover:bg-transparent">
           <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
