@@ -11,7 +11,7 @@ export const LogoAuth = () => {
           fill="#fff"
         ></path>
       </svg>
-      PortfoliosIo
+      PortfoliosIo<span className={'!font-bold text-[#a855f7]'}>World</span>
       <div className="relative rounded-sm border border-transparent bg-white px-2 py-0.5 text-xs font-bold text-black shadow-input dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:shadow-none">beta</div>
     </Link>
   )

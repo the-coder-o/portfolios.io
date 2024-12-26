@@ -1,11 +1,11 @@
 <div align="center">
   <img src="public/favicon/favicon.ico" alt="Portfoliosio Logo" width="50"/>
-  <h1>Portfoliosio</h1>
+  <h1>PortfoliosWorld</h1>
   <p>The best place to find portfolio inspiration</p>
 </div>
 
 <div align="center">
-  <a href="https://portfoliosio.vercel.app">View Live Demo</a> •
+  <a href="https://www.portfoliosworld.com">View Live Demo</a> •
   <a href="#features">Features</a> •
   <a href="#showcase">Showcase</a> •
   <a href="#getting-started">Getting Started</a>
@@ -15,7 +15,7 @@
 
 ![Portfoliosio Banner](public/images/portfolios.png)
 
-## 🚀 About Portfoliosio
+## 🚀 About PortfoliosWorld
 
 Portfoliosio is your ultimate destination for portfolio inspiration. We've curated a collection of 309+ exceptional portfolio designs to help creators, developers, and designers craft their perfect online presence. Our platform showcases the best portfolio examples from around the world, making it easier for you to create a standout portfolio that captures attention and demonstrates your unique skills.
 
@@ -34,7 +34,7 @@ Portfoliosio is your ultimate destination for portfolio inspiration. We've curat
 - **80+** Resume Templates
 - **1 Year** of Excellence
 
-## 🎯 Why Choose Portfoliosio?
+## 🎯 Why Choose PortfoliosWorld?
 
 - **Inspiration**: Discover unique portfolio designs from successful professionals
 - **Diversity**: Examples from various industries and creative fields
@@ -62,7 +62,7 @@ Portfoliosio is your ultimate destination for portfolio inspiration. We've curat
 
 Have questions or suggestions? We'd love to hear from you!
 
-- **Website**: [portfoliosio.vercel.app](https://portfoliosio.vercel.app)
+- **Website**: [www.portfoliosworld.com](https://portfoliosio.vercel.app)
 - **Feedback**: Use the "Send Feedback" button on our platform
 - **Email**: support@portfoliosio.com
 
@@ -73,5 +73,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ---
 
 <div align="center">
-  Made with ❤️ by the Portfoliosio Team
+  Made with ❤️ by the PortfoliosWorld Team
 </div>
