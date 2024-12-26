@@ -99,6 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <meta name="robots" content="index, follow" />
         <meta name="google-site-verification" content="c0Nfbo-a10LzJzVERkuuwwPY_dIBZy6i9RJBzFo6H_M" />
         <meta property="og:title" content="PortfoliosWorld - Make Your Portfolio Look 10x Better" />
         <meta property="og:description" content="Create exceptional portfolio designs with our curated collection of 179+ templates." />
