@@ -82,7 +82,7 @@ const showcases = [
 
 export function ShowcaseSection() {
   return (
-    <section className="relative my-[200px] overflow-hidden bg-black text-white">
+    <section className="relative my-[200px] overflow-hidden bg-black text-white max-md:hidden">
       <div className="relative">
         <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="mb-10 text-center text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl xl:text-5xl">The framework of choice when it matters</h2>

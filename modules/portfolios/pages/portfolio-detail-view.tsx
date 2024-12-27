@@ -28,7 +28,7 @@ export const PortfolioDetailView = () => {
 
   return (
     <section className="container">
-      <div className="mb-[150px] mt-[160px] space-y-8">
+      <div className="mb-[150px] mt-[160px] space-y-8 max-md:mt-[50px]">
         <HeaderDetailSection portfolio={portfolio} />
         <HeroDetailSection portfolio={portfolio} />
         <FooterDetailSection portfolio={portfolio} data={data} />
