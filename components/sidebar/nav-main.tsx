@@ -1,16 +1,20 @@
 'use client'
 
+import * as React from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronRight, Clock, type LucideIcon, Sparkle } from 'lucide-react'
+import { ChevronRight, Clock, LucideIcon, Sparkle } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuAction, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem } from '@/components/ui/sidebar'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 import { Badge } from '@/components/ui/badge'
+import { UpgradePlanModal } from '@/components/modals/upgrade-plan-modal'
 
 export function NavMain({
   items,
+  profile,
+  userPortfolios,
 }: {
   items: {
     title: string
@@ -22,8 +26,23 @@ export function NavMain({
       url: string
     }[]
   }[]
+  profile: {
+    email: string
+  } | null
+  userPortfolios: any[] | undefined
 }) {
   const route = usePathname()
+  const isVipAccount = profile?.email === process.env.NEXT_PUBLIC_VIP_STATUS_EMAIL
+  const portfolioCount = userPortfolios?.length || 0
+
+  const [isDialogOpen, setIsDialogOpen] = React.useState(false)
+
+  const handleCreatePortfolioClick = (e: React.MouseEvent<HTMLAnchorElement>, subItem: { title: string; url: string }) => {
+    if (subItem.title === 'Create portfolio' && !isVipAccount && portfolioCount >= 8) {
+      e.preventDefault()
+      setIsDialogOpen(true)
+    }
+  }
 
   return (
     <SidebarGroup>
@@ -62,7 +81,7 @@ export function NavMain({
                       {item.items?.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.title}>
                           <SidebarMenuSubButton asChild className={cn(route.split('/')[3].toLowerCase() === subItem.url.toLowerCase() ? '!bg-sidebar-accent' : '')}>
-                            <Link href={subItem.url} prefetch={false}>
+                            <Link href={subItem.url} prefetch={false} onClick={(e) => handleCreatePortfolioClick(e, subItem)}>
                               <span>{subItem.title}</span>
                             </Link>
                           </SidebarMenuSubButton>
@@ -76,6 +95,7 @@ export function NavMain({
           </Collapsible>
         ))}
       </SidebarMenu>
+      <UpgradePlanModal isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} />
     </SidebarGroup>
   )
 }

@@ -55,6 +55,7 @@
     "firebase": "^11.0.2",
     "flatten-tailwindcss-theme": "^1.0.0",
     "framer-motion": "^11.11.17",
+    "jose": "^5.9.6",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
