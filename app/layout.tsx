@@ -109,6 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="twitter:title" content="PortfoliosWorld - Professional Portfolio Builder" />
         <meta name="twitter:description" content="Stand out in any industry with professionally crafted portfolio designs." />
         <meta name="twitter:image" content="https://i.ibb.co/NZvCpgb/Screenshot-2024-12-23-104850.png" />
+        <script src="//code.tidio.co/sldxatrjh47wqvgqneqf4hird0jlfis0.js" async></script>
       </head>
       <body className="dark:bg-[#000]">
         <div className="absolute bottom-0 left-0 right-0 top-0 -z-10 bg-white bg-dot-black/[0.2] dark:bg-black dark:bg-dot-white/[0.2]">
