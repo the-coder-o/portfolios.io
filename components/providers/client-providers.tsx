@@ -59,12 +59,14 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       {!shouldHideSnowfall && (
-        <Snowfall
-          style={{
-            position: 'fixed',
-            zIndex: 999,
-          }}
-        />
+        <div className={'max-md:hidden'}>
+          <Snowfall
+            style={{
+              position: 'fixed',
+              zIndex: 999,
+            }}
+          />
+        </div>
       )}
       <Toaster position="top-center" />
       {children}
