@@ -50,7 +50,7 @@ export const HeroSection = () => {
         <PortfolioShowcase portfolios={data} isPending={isPending} />
         <div className="grid grid-cols-4 gap-8 text-center max-sm:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-bold text-white">250+</h2>
+            <h2 className="text-3xl font-bold text-white">{data?.length}+</h2>
             <p className="mt-1 text-neutral-400">Portfolios</p>
           </div>
           <div>
