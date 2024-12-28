@@ -1,9 +1,7 @@
 'use client'
 
 import { Toaster } from 'sonner'
-import Snowfall from 'react-snowfall'
-import { useEffect, useState } from 'react'
-import { usePathname } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
 import { Cookie, X } from 'lucide-react'
 import { Analytics } from '@vercel/analytics/react'
 import { QueryClientProvider } from '@tanstack/react-query'
@@ -50,24 +48,8 @@ function CookieConsent() {
 }
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
-  const router = usePathname()
-
-  const hideSnowfallRoutes = ['/dashboard', '/profile', '/edit-profile']
-
-  const shouldHideSnowfall = hideSnowfallRoutes.some((route) => router.startsWith(route))
-
   return (
     <QueryClientProvider client={queryClient}>
-      {!shouldHideSnowfall && (
-        <div className={'max-md:hidden'}>
-          <Snowfall
-            style={{
-              position: 'fixed',
-              zIndex: 999,
-            }}
-          />
-        </div>
-      )}
       <Toaster position="top-center" />
       {children}
       <CookieConsent />
