@@ -32,7 +32,7 @@ function CookieConsent() {
   if (!isVisible) return null
 
   return (
-    <Card className="fixed bottom-0 right-0 z-50 w-full rounded-xl border-t border-[#2a2a2a] bg-[#111] p-4 text-white shadow-lg sm:bottom-4 sm:right-4 sm:w-[300px] sm:rounded-xl sm:border">
+    <Card className="fixed bottom-0 right-0 z-[100000000000] w-full rounded-xl border-t border-[#2a2a2a] bg-[#111] p-4 text-white shadow-lg sm:bottom-4 sm:right-4 sm:w-[300px] sm:rounded-xl sm:border">
       <button onClick={handleClose} className="absolute right-2 top-2 text-gray-400 transition-colors hover:text-white" aria-label="Close">
         <X className="h-4 w-4" />
       </button>
