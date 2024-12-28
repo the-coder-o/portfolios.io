@@ -67,8 +67,8 @@ export const AnimatedTooltip = ({
           <Image onMouseMove={handleMouseMove} height={100} width={100} src={item.image} alt={item.name} className="relative h-14 w-14 rounded-full border-2 border-white bg-secondary bg-cover !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105" />
         </div>
       ))}
-      <Button variant="outline" className="h-14 w-14 rounded-full border-2 border-gray-500 bg-white text-black hover:bg-white hover:text-black">
-        +20
+      <Button variant="outline" className="h-14 w-14 rounded-full border-2 border-gray-500 bg-white font-bold text-black hover:bg-white hover:text-black">
+        +68
       </Button>
     </>
   )
