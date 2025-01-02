@@ -82,15 +82,13 @@ const showcases = [
 
 export function ShowcaseSection() {
   return (
-    <section className="relative my-[200px] overflow-hidden bg-black text-white max-md:hidden">
+    <section className="container relative overflow-hidden bg-black text-white max-md:hidden">
       <div className="relative">
-        <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-10 text-center text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl xl:text-5xl">The framework of choice when it matters</h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {showcases.map((showcase, index) => (
-              <ShowcaseItem key={index} showcase={showcase} />
-            ))}
-          </div>
+        <h2 className="mb-10 text-center text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl xl:text-5xl">The framework of choice when it matters</h2>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {showcases.map((showcase, index) => (
+            <ShowcaseItem key={index} showcase={showcase} />
+          ))}
         </div>
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute bottom-0 left-0 right-0 h-[600px] bg-gradient-to-t from-black to-transparent" />
@@ -102,16 +100,9 @@ export function ShowcaseSection() {
 
 function ShowcaseItem({ showcase }: { showcase: (typeof showcases)[0] }) {
   return (
-    <Link href="/showcase" className="group relative block h-[280px] overflow-hidden rounded-xl">
-      <div className="aspect-[4/3] w-full">
-        <OptimizedImage
-          src={showcase.image}
-          alt={`Screenshot of ${showcase.title}`}
-          width={showcase.width}
-          height={showcase.height}
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="!h-[280px] object-cover object-top transition-transform duration-300 group-hover:scale-105"
-        />
+    <Link href="/showcase" className="group relative block h-[220px] overflow-hidden rounded-xl">
+      <div className="w-full">
+        <OptimizedImage src={showcase.image} alt={`Screenshot of ${showcase.title}`} width={showcase.width} height={showcase.height} className="!h-[220px] object-cover object-top transition-transform duration-300 group-hover:scale-105" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       <div className="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">

@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-}
+
 
 @layer base {
   :root {
@@ -90,8 +88,9 @@ body {
 }
 
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Nunito", serif;
   font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .container {

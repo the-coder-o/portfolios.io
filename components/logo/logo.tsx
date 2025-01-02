@@ -24,8 +24,8 @@ export const Logo = ({ className }: LogoProps) => {
           transform="translate(195.1484375,56.33984375)"
         ></path>
       </svg>
-      <span>
-        Portfolios<span className={'!font-bold text-[#a855f7]'}>World</span>
+      <span className={'!font-bold'}>
+        Portfolios<span className={'!font-[900] text-[#a855f7]'}>World</span>
       </span>
       <div className="relative rounded-sm border border-transparent bg-white px-2 py-0.5 text-xs font-bold text-black shadow-input dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:shadow-none">beta</div>
     </Link>

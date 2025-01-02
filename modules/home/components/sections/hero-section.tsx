@@ -20,7 +20,7 @@ export const HeroSection = () => {
   return (
     <section className="mt-[150px] flex justify-between gap-16 lg:flex-row">
       <div className="max-w-[650px] lg:text-left">
-        <h1 className="text-5xl font-bold text-white md:text-7xl lg:text-[90px]">
+        <h1 className="text-5xl font-[800] text-white md:text-7xl lg:text-[90px]">
           <span className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">Make your portfolios look</span>
           <span className="flex gap-3 lg:justify-start">
             10x

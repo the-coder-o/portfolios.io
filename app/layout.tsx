@@ -110,6 +110,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="twitter:description" content="Stand out in any industry with professionally crafted portfolio designs." />
         <meta name="twitter:image" content="https://i.ibb.co/NZvCpgb/Screenshot-2024-12-23-104850.png" />
         <script src="//code.tidio.co/sldxatrjh47wqvgqneqf4hird0jlfis0.js" async></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
       </head>
       <body className="dark:bg-[#000]">
         <div className="absolute bottom-0 left-0 right-0 top-0 -z-10 bg-white bg-dot-black/[0.2] dark:bg-black dark:bg-dot-white/[0.2]">

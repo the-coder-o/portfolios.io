@@ -1,6 +1,8 @@
+import { UserGridSection } from '@/modules/home/components/sections/user-grid-section'
 import { TemplatesSection } from '@/modules/home/components/sections/template-section'
 import { ShowcaseSection } from '@/modules/home/components/sections/showcase-section'
 import { MarqueeDemo } from '@/modules/home/components/sections/reviewcard-section'
+import { AboutSection } from '@/modules/home/components/sections/about-section'
 import { LogoCarousel } from '@/components/logo/logo-slider'
 
 import { PortfolioSection } from '../components/sections/portfolio-section'
@@ -20,7 +22,9 @@ export const HomeView = () => {
         </div>
       </div>
       <ShowcaseSection />
+      <UserGridSection />
       <MarqueeDemo />
+      <AboutSection />
     </div>
   )
 }
