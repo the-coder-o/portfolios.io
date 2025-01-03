@@ -4,7 +4,7 @@ import * as React from 'react'
 import { useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { AlertCircle, Briefcase, Crown, FileIcon as FileUser, LifeBuoy, Send } from 'lucide-react'
+import { AlertCircle, Briefcase, Crown, FileIcon as FileUser, FolderOpen, LifeBuoy, Send } from 'lucide-react'
 
 import { useGetUserPortfolio } from '@/modules/profile/hooks/useGetUserPortfolios'
 import { useGetProfileMe } from '@/modules/edit-profile/hooks/useGetProfileMe'
@@ -31,6 +31,22 @@ const data = {
         {
           title: 'Create portfolio',
           url: 'create-portfolio',
+        },
+      ],
+    },
+    {
+      title: 'Project',
+      url: 'all-projects',
+      icon: FolderOpen,
+      isActive: true,
+      items: [
+        {
+          title: 'All projects',
+          url: 'all-projects',
+        },
+        {
+          title: 'Add project',
+          url: 'add-projects',
         },
       ],
     },
@@ -85,7 +101,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
+            <SidebarMenuButton size="lg" asChild className="rounded-xl">
               <Link href="/" prefetch={false}>
                 <LogoAuth />
               </Link>

@@ -29,17 +29,17 @@ export const Header = () => {
                 <Link href={'/portfolios'} prefetch={false} className={cn('flex items-center gap-1.5 space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 dark:hover:text-white', route === '/portfolios' ? 'dark:text-white' : 'dark:text-foreground/60')}>
                   Portfolios
                 </Link>
+                <Link href={'/projects'} prefetch={false} className={cn('flex items-center gap-1.5 space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 dark:hover:text-white', route === '/templates' ? 'dark:text-white' : 'dark:text-foreground/60')}>
+                  <Badge className="flex h-[20px] items-center justify-center gap-1 rounded-lg px-1 dark:border-green-300 dark:bg-green-700 dark:text-white">
+                    <Clock size={12} /> Soon
+                  </Badge>
+                  Projects
+                </Link>
                 <Link href={'/rezume'} prefetch={false} className={cn('flex items-center gap-1.5 space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 dark:hover:text-white', route === '/rezume' ? 'dark:text-white' : 'dark:text-foreground/60')}>
                   <Badge className="flex h-[20px] items-center justify-center gap-1 rounded-lg px-1 dark:border-green-300 dark:bg-green-700 dark:text-white">
                     <Sparkle size={12} /> New
                   </Badge>
                   Resume
-                </Link>
-                <Link href={'#'} prefetch={false} className={cn('flex items-center gap-1.5 space-x-1 text-foreground/60 transition-colors hover:text-foreground/80 dark:hover:text-white', route === '/templates' ? 'dark:text-white' : 'dark:text-foreground/60')}>
-                  <Badge className="flex h-[20px] items-center justify-center gap-1 rounded-lg px-1 dark:border-green-300 dark:bg-green-700 dark:text-white">
-                    <Clock size={12} /> Soon
-                  </Badge>
-                  Templates
                 </Link>
               </nav>
             </div>
