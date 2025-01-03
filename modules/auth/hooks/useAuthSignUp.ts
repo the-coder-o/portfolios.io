@@ -19,7 +19,7 @@ export const useAuthSignUp = () => {
       http.defaults.headers.common = {
         Authorization: `Bearer ${token}`,
       }
-      Cookies.set('access_token', token, { expires: 1 })
+      Cookies.set('access_token', token, { expires: 7 })
       toast.success('You successfully registered !')
       router.push('/')
     },

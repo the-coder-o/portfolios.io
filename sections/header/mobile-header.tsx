@@ -24,7 +24,7 @@ export const MobileHeader = () => {
             <BriefcaseBusiness className="h-5 w-5" />
             <span className="text-xs">Portfolios</span>
           </Link>
-          <Link href={isAuth ? '/dashboard/portfolios/all-portfolios' : '/sign-in'} prefetch={false} className="flex flex-col items-center gap-1 p-2 text-sm">
+          <Link href={isAuth ? '/dashboard/projects/all-portfolios' : '/sign-in'} prefetch={false} className="flex flex-col items-center gap-1 p-2 text-sm">
             <PlusCircle className="h-6 w-6" />
             <span className="text-xs">Create</span>
           </Link>

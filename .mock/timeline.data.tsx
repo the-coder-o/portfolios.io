@@ -1,12 +1,29 @@
 import Image from 'next/image'
 
-export const timalineData = [
+export const timelineData = [
+  {
+    title: 'Jan, 2025',
+    content: (
+      <div>
+        <p className="mb-4 text-lg font-semibold">
+          Major updates to <span className="font-bold text-blue-500 dark:text-blue-400">PortfoliosWorld.com</span>
+        </p>
+        <ul className="list-inside list-disc space-y-2">
+          <li>Updated home page with modern design</li>
+          <li>Started development of v1.5 with new features</li>
+          <li>Redesigned profile page for better user experience</li>
+          <li>Finished comprehensive dashboard page</li>
+          <li>Enhanced portfolios page and added diverse new templates</li>
+        </ul>
+      </div>
+    ),
+  },
   {
     title: 'Nov, 2024',
     content: (
       <div>
         <p className="!text-lg font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
-          Built and launched <span className="font-bold">PortfoliosIo.com</span>
+          Built and launched <span className="font-bold">PortfoliosWorld.com</span>
         </p>
         <div className="mt-8 grid grid-cols-2 gap-4 max-sm:mt-3">
           <Image

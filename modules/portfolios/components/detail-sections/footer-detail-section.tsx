@@ -70,7 +70,7 @@ export const FooterDetailSection = ({ portfolio, data }: any) => {
       {relatedProjects.length > 0 && (
         <div className="pt-10">
           <div className="mb-3">
-            <h3 className="text-xl font-semibold">Related Projects</h3>
+            <h3 className="text-xl font-semibold">Related Portfolios</h3>
             <p className="text-sm text-muted-foreground">Other projects in {portfolio.category.name}</p>
           </div>
           <Carousel

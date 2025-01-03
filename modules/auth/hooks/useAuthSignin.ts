@@ -19,7 +19,7 @@ export const useAuthSignIn = () => {
       http.defaults.headers.common = {
         Authorization: `Bearer ${token}`,
       }
-      Cookies.set('access_token', token, { expires: 1 })
+      Cookies.set('access_token', token, { expires: 7 })
       toast.success('You successfully signed in')
       router.push('/')
     },

@@ -50,17 +50,17 @@ export const Footer = () => {
               <h4 className="text-lg font-semibold">Legal</h4>
               <ul className="space-y-1">
                 <li>
-                  <Link href="#" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
+                  <Link href="/terms-of-service" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
+                  <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
+                  <Link href="/cookies-policy" className="text-sm text-muted-foreground hover:text-white" prefetch={false}>
                     Cookie Policy
                   </Link>
                 </li>
