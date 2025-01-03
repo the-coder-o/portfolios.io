@@ -11,7 +11,9 @@ export const LogoAuth = () => {
           fill="#fff"
         ></path>
       </svg>
-      Portfolios<span className={'!font-[800] text-[#a855f7]'}>World</span>
+      <span>
+        Portfolios<span className={'!font-[800] text-[#a855f7]'}>World</span>
+      </span>
     </Link>
   )
 }
