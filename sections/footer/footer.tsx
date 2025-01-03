@@ -118,7 +118,7 @@ export const Footer = () => {
               <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1000px-Instagram_logo_2022.svg.png" alt="Peerlist.io" width="20" height="20" className={'!h-4 !w-4 rounded-sm'} />
             </Link>
           </div>
-          <div className="mt-12 text-sm text-muted-foreground max-md:mt-3">&copy; 2024 Acme Inc. All rights reserved.</div>
+          <div className="mt-12 text-sm text-muted-foreground max-md:mt-3">&copy; 2025 Acme Inc. All rights reserved.</div>
           <div className="mt-12 text-sm text-muted-foreground max-md:mt-3">
             Created by:{' '}
             <Link href={'https://www.a-bd.me'} target="_blank" className="font-bold text-white">
